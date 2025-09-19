@@ -15,10 +15,17 @@
       }
     },
     {
-      "query": "path:Actualizaciones  ",
+      "query": "file:Actualizaciones  ",
       "color": {
         "a": 1,
-        "rgb": 8453888
+        "rgb": 555520
+      }
+    },
+    {
+      "query": "path:Actualizaciones/docxConverter  ",
+      "color": {
+        "a": 1,
+        "rgb": 7077776
       }
     }
   ],
