@@ -1,0 +1,1 @@
+Acá se encuentra la información correspondiente a las actualizaciones realizadas sobre el plugin texture de OJS 
