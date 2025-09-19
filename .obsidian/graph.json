@@ -6,7 +6,15 @@
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": false,
-  "colorGroups": [],
+  "colorGroups": [
+    {
+      "query": "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas)",
+      "color": {
+        "a": 1,
+        "rgb": 65518
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
@@ -17,6 +25,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 1.1840535873752085,
+  "scale": 1.6235451402488346,
   "close": false
 }

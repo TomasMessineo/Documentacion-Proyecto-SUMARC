@@ -1,7 +1,4 @@
 
----
----
-
 SUMARC  es un sistema para el marcado de revistas científicas desarrollado por el equipo del PREBI-SEDICI junto con la Coordinación General de Revistas Científicas de la Universidad Nacional de La Plata (UNLP).
 
 La iniciativa integra el proceso de marcado y de exportación, permitiendo generar XML JATS en el OJS, la plataforma mediante la cual se gestionan y se publican todas las revistas científicas que son editadas o asistidas en el ámbito den la UNLP.

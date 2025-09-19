@@ -1,7 +1,3 @@
-
----
----
-
 #### Ultima actualización: 19/09/2025
 
 Se está implementando una nueva funcionalidad que permite enriquecer las referencias bibliográficas del XML JATS generado por este plugin utilizando la API de OpenAlex:[https://docs.openalex.org/how-to-use-the-api/api-overview]()
