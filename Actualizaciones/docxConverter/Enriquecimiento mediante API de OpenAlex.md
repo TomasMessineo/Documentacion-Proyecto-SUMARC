@@ -10,6 +10,8 @@ A continuación, se detallan los elementos del JSON recuperado mediante la API d
 - El **segundo valor** indica el dato del JSON retornado por OpenAlex que debe reemplazarse en la etiqueta correspondiente.
 ### Para referencias bibliográficas de tipo Journal:
 
+```xml jats
+
 <doi> ------>  "doi"
 
 <source> ----> "primary_location":{source{display_name:}}" = nombre de la revista
@@ -42,15 +44,17 @@ A continuación, se detallan los elementos del JSON recuperado mediante la API d
 
 De forma genérica para cualquier tipo de referencia, en el JSON aparece un elemento "type_crossref", el cual define el tipo de referencia que se va a procesar
 
----------------------------------------------------------------------------------------------------------------------------------------------------
+```
 
-Al modificar el JournalPrinter, se crea un método nuevo llamado enrichment() el cual se encarga de procesar la información recibida desde OpenAlex en formato JSON.
-Se define un array de elementos simples y un procesamiento específico llamando a nuevos métodos implementados en GenericPrinter para reemplazar o crear correctamente los datos correspondientes recibidos desde OpenAlex, enriqueciendo así el xml final.
-Este enfoque podría permitir en algún futuro, si se quieren utilizar otras APIs para recibir mas información y seguir enriqueciento el XML, poder agregar nuevos datos a este arreglo de datos simple o crear nuevos métodos para la realización de tareas específicas que requieran recorrer elementos del XML los cuales tienen subelementos dentro.
+--- 
 
-El método enrichment de JournalPrinter recibe todo el element citation para modificarlo completamente si es necesario y luego reemplazarlo (se asigna de nuevo a element-citation el nuevo element-citation modificado). Básicamente se le da prioridad a los datos de OpenAlex, reemplazando todo a su paso. 
-No sigo el enfoque de crear un elemento y meterlo en un array elements[] como se hace en los printers ya que en este caso no estoy creando elementos, sino que los estoy reemplazando... entonces yo entiendo que va a ser mejor recorrer el element citation de forma completa reemplazando lo necesario antes que crear los elementos, guardarlos en un arreglo elements[] y luego hacer un appendChild sobre element-citation. 
+## Información sobre las modificaciones técnicas y estrategias realizadas
 
-Puedo ver si aplicando la misma lógica de createElement en enrichment(), luego de volver del método retornar un arreglo elements[], iterarlo y en vez de ejecutar un appendChild, hacer un replaceChild
+- Al modificar el JournalPrinter, se crea un método nuevo llamado enrichment() el cual se encarga de procesar la información recibida desde OpenAlex en formato JSON.
+  Se crean elementos de tipo DOMElement, los cuales se agregan a un array llamado $elements.
+  Cada uno de los elementos almacenados en este array es procesado de manera tal que se creen si y solo si no existen en el XML JATS correspondiente a la referencia bibliográfica específica, o se reemplacen si es que ya existen en la misma. Se le da prioridad a los datos de OpenAlex, reemplazando todo a su paso (esto debido a que los datos recibidos mediante su API son mas fiables que los recuperados mediante las expresiones regulares, es decir, los ingresados por un usuario).
 
-En base al nombre y el apellido de los autores en una referencia, crear el tag person-group de forma correcta con given-names y surname. Además, esto me servirá para poder detectar si me llega información de openalex sobre una referencia que no tiene nada que ver con la procesada, en base al nombre puedo detectar si el doi utilizado es correcto o NO.
+### A realizar:
+
+- En base al nombre y el apellido de los autores en una referencia, crear el tag person-group de forma correcta con given-names y surname. Además, esto me servirá para poder detectar si me llega información de OpenAlex sobre una referencia que no tiene nada que ver con la procesada, en base al nombre puedo detectar si el doi utilizado es correcto o NO.
+  Si intento buscar el nombre y apellido indicado en el JSON dentro del XML JATS correspondiente a dicha referencia, podría identificar si coinciden o no. Si coinciden, eso quiere decir que la información del JSON es correcta con respecto a los datos ingresados manualmente por el usuario. Si no coinciden estos datos, entonces puedo suponer  
