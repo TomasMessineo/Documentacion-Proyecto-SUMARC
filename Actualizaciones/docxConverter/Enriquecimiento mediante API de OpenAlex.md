@@ -57,4 +57,4 @@ De forma genérica para cualquier tipo de referencia, en el JSON aparece un elem
 ### A realizar:
 
 - En base al nombre y el apellido de los autores en una referencia, crear el tag person-group de forma correcta con given-names y surname. Además, esto me servirá para poder detectar si me llega información de OpenAlex sobre una referencia que no tiene nada que ver con la procesada, en base al nombre puedo detectar si el doi utilizado es correcto o NO.
-  Si intento buscar el nombre y apellido indicado en el JSON dentro del XML JATS correspondiente a dicha referencia, podría identificar si coinciden o no. Si coinciden, eso quiere decir que la información del JSON es correcta con respecto a los datos ingresados manualmente por el usuario. Si no coinciden estos datos, entonces puedo suponer  
+  Si intento buscar el nombre y apellido indicado en el JSON dentro del XML JATS correspondiente a dicha referencia, podría identificar si coinciden o no. Si coinciden, eso quiere decir que la información del JSON es correcta con respecto a los datos ingresados manualmente por el usuario. Si no coinciden estos datos, entonces puedo suponer.
