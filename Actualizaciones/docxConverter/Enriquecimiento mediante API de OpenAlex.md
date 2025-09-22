@@ -50,13 +50,21 @@ De forma genérica para cualquier tipo de referencia, en el JSON aparece un elem
 
 ## Información sobre las modificaciones técnicas y estrategias realizadas
 
+**Implementación de método enrichment():**
 Al modificar el JournalPrinter, se crea un método nuevo llamado enrichment() el cual se encarga de procesar la información recibida desde OpenAlex en formato JSON.
 Se crean elementos de tipo DOMElement, los cuales se agregan a un array llamado $elements.
 Cada uno de los elementos almacenados en este array es procesado de manera tal que se creen si y solo si no existen en el XML JATS correspondiente a la referencia bibliográfica específica, o se reemplacen si es que ya existen en la misma. Se le da prioridad a los datos de OpenAlex, reemplazando todo a su paso (esto debido a que los datos recibidos mediante su API son mas fiables que los recuperados mediante las expresiones regulares, es decir, los ingresados por un usuario).
 
+**Detección de errores:**
 Se realizaron cambios en la manera por la cual se detectan los errores en las distintas secciones de la referencia (si los autores, fecha o título de la referencia estan mal escritos).
 Lo que se hacía anteriormente era ir concatenando un string el cual contenía todos los errores que se iban detectando de la referencia. Por ejemplo: Si tengo una referencia donde los autores están definidos correctamente según el estándar APA (por el momento este conversor solo convierte referencias que sigan el estándar APA) pero la fecha y el título están mal escritos, lo que se hace es detectar estos errores y concatenarlos en una variable. Luego, al imprimir el XML JATS de salida, el mixed-citation correspondiente a esta referencia incorporará este texto para que los usuarios puedan saber dónde están los errores.
-**Ahora lo que se añadió** es la indicación de error si un DOI específico NO existe en la base de datos de OpenAlex (si no existe el DOI se retorna un json sin resultados). Lo que se hace es verificar si el arreglo de datos retornado por OpenAlex para cada referencia está vacío
+**Ahora lo que se añadió** es la indicación de error si un DOI específico NO existe en la base de datos de OpenAlex (si no existe el DOI se retorna un json sin resultados). Este error se retorna si el arreglo de datos retornado por OpenAlex para cada referencia está vacío (no se encontró ningún resultado) y si la referencia que se está procesando tiene DOI.
+
+```php
+if ($this->reference->getURLType() == 'DOI' && empty($this->enrichmentData)){
+	$this->addError('The specified DOI does not exist in OpenAlex database.');
+}
+```
 
 ### A realizar:
 
