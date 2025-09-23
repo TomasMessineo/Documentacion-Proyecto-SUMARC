@@ -1,5 +1,4 @@
-
-##### **Implementación del módulo**  
+### **Implementación del módulo**  
 Para llevar a cabo la implementación de este módulo se procesaron todas las referencias provenientes del XML JATS, las cuales se almacenan en un arreglo asociativo con la forma **clave => valor**, donde:
 - **clave**: identificador único de la referencia.
 - **valor**: texto completo correspondiente a la referencia.
