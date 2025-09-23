@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Actualizaciones/docxConverter/Enriquecimiento mediante API de OpenAlex.md",
+                "file": "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Enriquecimiento mediante API de OpenAlex"
+              "title": "Desarrollo de un módulo para la numeración de referencias."
             }
           }
         ]
@@ -179,15 +179,17 @@
   },
   "active": "11ceef6903be7a55",
   "lastOpenFiles": [
-    "Actualizaciones/jatsParser/Actualizaciones de jatsParser.md",
-    "Actualizaciones/docxConverter/Enriquecimiento mediante API de OpenAlex.md",
-    "Untitled.base",
+    "Documentación SUMARC para OJS 3_3.md",
+    "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
+    "Documentación SUMARC para OJS 3_4.md",
     "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
-    "Actualizaciones/Actualizaciones.md",
     "Actualizaciones/texture/Actualizaciones de Texture.md",
+    "Untitled.base",
+    "Actualizaciones/docxConverter/Enriquecimiento mediante API de OpenAlex.md",
+    "Actualizaciones/jatsParser/Actualizaciones de jatsParser.md",
+    "Actualizaciones/Actualizaciones.md",
     "Actualizaciones/docxConverter/Actualizaciones de docxConverter.md",
     "README.md",
-    "Actualizaciones/jatsParser/Untitled.md",
     "jatsParser.md",
     "Notas SUMARC.md",
     "Actualizaciones/texture",
