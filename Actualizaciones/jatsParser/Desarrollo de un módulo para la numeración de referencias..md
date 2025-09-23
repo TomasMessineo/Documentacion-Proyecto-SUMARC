@@ -1,7 +1,25 @@
-**Lo que se hizo para llevar a cabo la implementación de este módulo fue:** 
-Procesar cada una de las referencias que llegan desde texture. Estas estan en un array de tipo clave => valor, donde clave = id y valor = referencia
-Este arreglo es enviado a una nueva clase a la cual yo nombré como ReferenceProcessor, que tiene un método llamado getNumberedReferences()
-En este método se procesan las referencias y lo que se hace es quedarse con todo el texto que hay antes del cierre del primer paréntesis, guardandolo como clave en un array y poniendo el texto de la referencia completa como valor... si al procesar otra referencia se detecta que el texto antes del cierre del primer paréntesis es igual al que está como alguna clave en mi array, entonces bajo esa clave ya existente se pone la nueva referencia.
-Luego de procesar todas las referencias y "agruparlas" por así decirlo, se ennumeran una por a partir de la letra "a", añadiendo esta letra antes del primer cierre de paréntesis, lo cual nos deja como resultado algo como: "Messineo, T. (2025a) Primer Título" y ""Messineo, T. (2025b) Segundo Título"" 
 
-- Además, ahora al clickear cada cita, puedo dirigirme a la referencia en cuestión y no solo a la página
+##### **Implementación del módulo**  
+Para llevar a cabo la implementación de este módulo se procesaron todas las referencias provenientes del XML JATS, las cuales se almacenan en un arreglo asociativo con la forma **clave => valor**, donde:
+- **clave**: identificador único de la referencia.
+- **valor**: texto completo correspondiente a la referencia.
+
+### Técnica utilizada en la implementación
+Este arreglo se envía a una nueva clase denominada **ReferenceProcessor**, que expone el método `getNumberedReferences()`.
+
+**Dentro de este método, las referencias se procesan siguiendo los siguientes pasos:**
+
+1. Se toma el texto previo al primer cierre de paréntesis y se guarda como **clave** en un nuevo arreglo, mientras que la **referencia completa** se almacena como valor.
+    
+2. Si otra referencia contiene el mismo fragmento de texto antes del primer cierre de paréntesis, se asocia bajo la misma clave ya existente.
+    
+3. Una vez procesadas todas las referencias y agrupadas, se procede a enumerarlas secuencialmente con letras (a, b, c, …). Para ello, se añade la letra correspondiente justo antes del primer cierre de paréntesis.
+
+**De este modo, el resultado queda con un formato similar a:**
+
+- `Messineo, T. (2025a) Primer Título`
+- `Messineo, T. (2025b) Segundo Título`
+
+Cabe mencionar que esta enumeración se aplica únicamente cuando, en la configuración del plugin dentro de la sección "Módulos", el estilo de citación seleccionado es **APA**.
+
+Además, se añadió la funcionalidad de que al hacer clic en cada cita, se dirija directamente a la referencia específica, y no solamente a la página en general.
