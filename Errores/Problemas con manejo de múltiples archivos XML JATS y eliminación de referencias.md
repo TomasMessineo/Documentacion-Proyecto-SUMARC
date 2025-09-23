@@ -1,4 +1,4 @@
-## 🎫 **Ticket:** Problemas con manejo de múltiples archivos XML JATS en etapa de publicación y el renderizado de la Tabla de Citaciones luego de la eliminación de referencias
+## Problemas con manejo de múltiples archivos XML JATS en etapa de publicación y el renderizado de la Tabla de Citaciones luego de la eliminación de referencias
 
 #### 📝 Descripción
 Se identificaron dos inconvenientes en la etapa de publicación relacionados con el manejo de múltiples archivos **XML JATS** y el renderizado de la **Tabla de Citaciones**.
