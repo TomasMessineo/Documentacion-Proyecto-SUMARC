@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Errores/Arreglar -> mejorar el procesamiento de datos de la tabla de citas.md",
+                "file": "Errores/Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Arreglar -> mejorar el procesamiento de datos de la tabla de citas"
+              "title": "Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias"
             }
           }
         ]
@@ -181,7 +181,7 @@
   "lastOpenFiles": [
     "Captura desde 2025-09-23 11-43-07.png",
     "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
-    "Errores/Arreglar -> mejorar el procesamiento de datos de la tabla de citas.md",
+    "Errores/Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias.md",
     "Documentación SUMARC para OJS 3_3.md",
     "Documentación SUMARC para OJS 3_4.md",
     "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
