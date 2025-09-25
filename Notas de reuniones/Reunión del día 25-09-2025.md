@@ -33,3 +33,4 @@
 -  Al pasar de docx a xml jats, 
 
 **LA PRIORIDAD SON LAS IMÁGENES.** Luego la tipografía.
+Averiguar por qué al subir una imágen a mano en OJS para un XML, se agrega un + automáticamente si hay un espacio.
