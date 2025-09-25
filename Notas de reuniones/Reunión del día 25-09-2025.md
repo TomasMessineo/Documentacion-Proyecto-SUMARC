@@ -5,6 +5,12 @@
 - Al sistema no le gustan las imágenes. Hay problemas con las imágenes donde a veces no aparecen. Una revista de agronomía probó con diferentes tipos de imágenes, y no le funcionó ninguna.
   EN EL HTML LAS IMAGENES NO SALEN, HAY QUE CORREGIR ESTO TAMBIÉN... DEBEN SALIR LAS IMÁGENES EN EL HTML DE PREVISUALIZACIÓN.
   **ESTO ES LO MAS URGENTE**.
+- Evaluar la estructura de la figura que contiene la imágen, a ver si cuando. 
+  No es que la imágen no se encuentre, sino que hay un problema de servidor.  Si se visualiza el HTML, entonces 
+  Encontrar en qué casos o no se hace el base64,, o se hace mal. Quizá alguna característica en el archivo haga que no se pase a base64 o se cargue mal.
+  Evaluar si es una característica del archivo o de como está metido ese archivo en el XML para saber si es un problema de alguna característica del mismo o de la construcción del XML para ese archivo.
+  
+- Hay un artículo en el cual no aparece el cuerpo del artículo, solo las referencias.
 
 - Tampoco salían los autores en las referencias del PDF en esta misma revista. Lu probó arreglar algunas referencias poniendo los autores pero estos tampoco salían... 
   Lo que pasó con los autores es que como esta revista los autores están cargados en inglés... el plugin solo debe estar recuperando en español. En esta revista los autores estaban cargados en inglés, cuando el idioma de la revista estaba en español.
