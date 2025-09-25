@@ -30,4 +30,4 @@
   **Quizá OJS detecte algo del html correspondiente a la referencia como código y lo elimine???**
   En el PDF los datos que no aparecen (traductor, editor, serie... etc) no son los mismos que no aparecen cuando se extraenlas referencias en el campo de referencias en los metadatos.
 
-- 
+-  Al pasar de docx a xml jats, 
