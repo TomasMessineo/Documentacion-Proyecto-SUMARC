@@ -9,6 +9,10 @@
   No es que la imágen no se encuentre, sino que hay un problema de servidor.  Si se visualiza el HTML, entonces 
   Encontrar en qué casos o no se hace el base64,, o se hace mal. Quizá alguna característica en el archivo haga que no se pase a base64 o se cargue mal.
   Evaluar si es una característica del archivo o de como está metido ese archivo en el XML para saber si es un problema de alguna característica del mismo o de la construcción del XML para ese archivo.
+- LAS IMAGENES PUEDEN ESTAR CARGADAS EN DIFERENTES IDIOMAS DESDE LA SECCIÓN EDITAR DEL XML
+  
+  El PROBLEMA VIENE POR EL LADO DEL NOMBRE DEL ARCHIVO DE LA IMÁGEN... SI HAY UN ESPACIO SE AGREGA UN "+", ASÍ QUE NO HAY QUE PONER ESPACIOS EN LOS NOMBRES DE LAS IMÁGENES YA QUE OJS AGREGA UN + AUTOMÁTICAMENTE
+  TAMBIÉN HAY UN TEMA DE TEXTURE QUE MUESTRA IMÁGENES DE ETAPAS ANTERIORES.
   
 - Hay un artículo en el cual no aparece el cuerpo del artículo, solo las referencias.
 
