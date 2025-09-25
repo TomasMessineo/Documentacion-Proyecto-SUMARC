@@ -11,10 +11,14 @@
             "id": "11ceef6903be7a55",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Notas de reuniones/Reunión del día 25-09-2025.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Reunión del día 25-09-2025"
             }
           }
         ]
@@ -175,6 +179,7 @@
   },
   "active": "11ceef6903be7a55",
   "lastOpenFiles": [
+    "Notas de reuniones/Reunión del día 25-09-2025.md",
     "Errores/Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias.md",
     "Captura desde 2025-09-23 11-43-07.png",
     "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
