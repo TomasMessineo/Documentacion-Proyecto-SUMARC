@@ -110,30 +110,15 @@ Pasos clave:
 
 6. El mapa final de `resources` usa como clave el `path` EXACTO del manifest (el que espera Texture), y como valor la URL de `media`.
 
-  
-
-Efecto: cuando re-subís una imagen en la etapa actual, el editor la resuelve automáticamente si su nombre coincide con el que aparece en el XML.
-
-  
+**Efecto:** cuando re-subís una imagen en la etapa actual, el editor la resuelve automáticamente si su nombre coincide con el que aparece en el XML.
 
 ### Asociación correcta durante extracción (DAR/ZIP)
 
-  
-
 Archivo: `plugins/generic/texture/TextureHandler.php`
-
 Función: `extract($args, $request)`
-
-  
 
 Al crear dependientes a partir de un DAR/ZIP, ahora el `assocId` se fija con el **ID lógico** del nuevo `SubmissionFile` (XML) creado (`$insertedSubmissionFile->getId()`), no con el `fileId` físico. Esto asegura que todos los dependientes quedan ligados al XML de la etapa actual.
 
-  
-
 ### Notas de compatibilidad
 
-  
-
-- Este comportamiento replica la lógica de OJS 3.3 (donde `media()` ya aplicaba el scoping por archivo base) y la adapta a OJS 3.4.
-
-- En tiempo de edición (IDE), pueden aparecer avisos sobre constantes/clases “indefinidas” (`ROUTE_PAGE`, `SUBMISSION_FILE_DEPENDENT`, `Repo`, `Services`, etc.). En ejecución dentro de OJS, están definidas por el framework.
+- Este comportamiento intenta replicar la lógica de texture en OJS 3.3 (donde `media()` ya aplicaba el scoping por archivo base) y la adapta a OJS 3.4.
