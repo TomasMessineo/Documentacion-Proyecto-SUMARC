@@ -51,57 +51,33 @@ Deberías ver solo las imágenes de esta etapa. Si una imagen no aparece:
 - Porque ahora el editor solo toma las imágenes asociadas al XML de la etapa actual.
 
 Subí una imagen y no se ve, ¿qué hago?
-- Asegurarse de que el nombre del archivo sea el mismo que aparece en el XML. Si no coincide, cambiarlo y volve a subirlo.
-
-  
+- Asegurarse de que el nombre del archivo sea el mismo que aparece en el XML. Si no coincide, cambiarlo y volver a subirlo.
 
 ---
 
-  
-
 Con esto, cada etapa muestra solo sus propias imágenes y no se mezclan con las de las etapas anteriores.
-
-  
 
 ## Detalles técnicos de la solución
 
-  
-
 Esta sección explica exactamente qué cambia en el código y por qué resuelve el problema.
 
-  
-
 ### Alcance correcto de archivos dependientes (scoping por assocId)
-
-  
 
 En OJS, los archivos dependientes deben estar vinculados al archivo base (el XML) mediante dos campos:
 
 - `assocType = ASSOC_TYPE_SUBMISSION_FILE`
-
 - `assocId = <ID lógico del SubmissionFile (XML) actual>`
 
-  
-
 Al aplicar este criterio en todas las rutas relevantes:
-
 - El editor no ve dependientes ajenos a ese XML (evita fugas entre etapas).
-
 - Cuando subís dependientes nuevos en la etapa actual, el editor los reconoce al instante.
 
-  
-
-### Servir media solo del XML abierto
-
-  
+### Mantener media (imágenes) solo del XML abierto
 
 Archivo: `plugins/generic/texture/TextureHandler.php`
-
 Función: `media($args, $request)`
 
-  
-
-Pasos clave:
+**Pasos clave:**
 
 1. Se obtiene el `assocId` (ID del SubmissionFile del XML abierto) desde la request.
 
@@ -113,21 +89,12 @@ Pasos clave:
 
 5. Se responde el binario con el `mimetype` correcto.
 
-  
-
-Efecto: aunque existan otros dependientes en la submission, solo se sirven los asociados a ese XML.
-
-  
+**Efecto:** aunque existan otros dependientes en la submission, solo se mantienen los asociados a ese XML.
 
 ### Construcción de resources (mapping por path del manuscrito)
 
-  
-
 Archivo: `plugins/generic/texture/classes/DAR.php`
-
 Función: `createMediaInfo($request, $assets)`
-
-  
 
 Pasos clave:
 
