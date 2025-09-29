@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notas de reuniones/Reunión del día 25-09-2025.md",
+                "file": "Actualizaciones/texture/Arreglo de archivos dependientes (imágenes) en OJS 3.4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Reunión del día 25-09-2025"
+              "title": "Arreglo de archivos dependientes (imágenes) en OJS 3.4"
             }
           }
         ]
@@ -179,6 +179,8 @@
   },
   "active": "11ceef6903be7a55",
   "lastOpenFiles": [
+    "Actualizaciones/texture/Actualizaciones de Texture.md",
+    "Actualizaciones/texture/Arreglo de archivos dependientes (imágenes) en OJS 3.4.md",
     "Notas de reuniones/Reunión del día 25-09-2025.md",
     "Errores/Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias.md",
     "Captura desde 2025-09-23 11-43-07.png",
@@ -186,7 +188,6 @@
     "Documentación SUMARC para OJS 3_3.md",
     "Documentación SUMARC para OJS 3_4.md",
     "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
-    "Actualizaciones/texture/Actualizaciones de Texture.md",
     "Untitled.base",
     "Actualizaciones/docxConverter/Enriquecimiento mediante API de OpenAlex.md",
     "Actualizaciones/jatsParser/Actualizaciones de jatsParser.md",
