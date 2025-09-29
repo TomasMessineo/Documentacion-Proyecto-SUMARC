@@ -22,38 +22,36 @@ Estas correciones solucionan dos cosas:
 
 1) Agregar imágenes en un XML JATS desde Texture
 2) Pasar a la etapa siguiente enviando el XML JATS que contiene las imágenes subidas en el paso 1) y abrir el XML en el editor texture.
-3) Subir las imágenes en la nueva etapa como archivos dependientes (desde el botón del editor o importando un DAR/ZIP). Lo que se puede hacer es ir al XML de la etapa anterior y descargar las imágenes que aparezcan como archivos dependientes (asegurarse de que el nombre del archivo descargado sea exactamente el mismo, no se debe modificar el)
-4) Actualizá la página del editor.
+3) Subir las imágenes en la nueva etapa como archivos dependientes (desde el botón del editor o importando un DAR/ZIP). Lo que se puede hacer es ir al XML de la etapa anterior y descargar las imágenes que aparezcan como archivos dependientes.
+   
+   En la etapa anterior, si vemos los archivos dependientes tendremos un listado con las imágenes subidas en el XML. Estos archivos son los que se pueden descargar para subirlos en la nueva etapa:
+   ![[Captura desde 2025-09-29 13-12-50.png]]
+   
+   En la nueva etapa, podemos subir los archivos de imágenes que se descargaron en la etapa anterior como archivos dependientes, y de esta forma se podrán visualizar las imágenes en Texture exactamente en el mismo lugar y posición donde se cargaron en la etapa anterior:
+    ![[Captura desde 2025-09-29 13-20-11.png]]
+   ![[Captura desde 2025-09-29 13-19-19.png]] ![[Captura desde 2025-09-29 13-21-38.png]]
+   La imágen cargada "image1.jpeg" corresponde a una imágen cargada como archivo dependiente existente en la etapa anterior. 
+   Luego, si abrimos el XML con el editor texture las imágen cargada aparecerá correctamente:
+   ![[Captura desde 2025-09-29 13-23-45.png]]
+   
+   4) Actualizá la página del editor.
 
 Deberías ver solo las imágenes de esta etapa. Si una imagen no aparece:
-
 - Revisá que el nombre del archivo coincida con el que el XML espera (por ejemplo, si el XML usa `figures/Fig1.png`, subí un archivo llamado `Fig1.png`).
-
 - Probá volver a subirla con ese nombre.
 
   
 
 ## Consejito con los nombres
 
-  
-
-El editor busca las imágenes por el nombre del archivo que figura en el XML. Si mantenés esos nombres cuando subís las imágenes, se vinculan solas y aparecen sin problemas.
-
-  
-
+***El editor busca las imágenes por el nombre del archivo que figura en el XML. Si se mantienen esos nombres cuando se suben las imágenes, se vinculan solas y aparecen sin problemas.***
 ## Preguntas rápidas
 
-  
-
-- ¿Por qué ya no veo imágenes viejas?
-
+¿Por qué ya no veo imágenes viejas?
 - Porque ahora el editor solo toma las imágenes asociadas al XML de la etapa actual.
 
-  
-
-- Subí una imagen y no se ve, ¿qué hago?
-
-- Asegurate de que el nombre del archivo sea el mismo que aparece en el XML. Si no coincide, cambialo y volvé a subirlo.
+Subí una imagen y no se ve, ¿qué hago?
+- Asegurarse de que el nombre del archivo sea el mismo que aparece en el XML. Si no coincide, cambiarlo y volve a subirlo.
 
   
 
