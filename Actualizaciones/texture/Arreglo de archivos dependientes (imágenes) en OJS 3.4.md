@@ -6,7 +6,7 @@
 
 Estas correciones solucionan dos cosas:
 - Al cambiar de etapa, ya no aparecen imágenes que pertenecen a etapas anteriores.
-- Si se suben de nuevo las imágenes como archivos dependientes en la nueva etapa, ahora sí aparecen en el editor texture (siempre y cuando en la etapa anterior hayan existido).
+- Si se suben de nuevo las imágenes como archivos dependientes en la nel ueva etapa, ahora sí aparecen en el editor texture (siempre y cuando en la etapa anterior hayan existido).
 
 ## Qué pasaba antes
 
@@ -70,7 +70,7 @@ En OJS, los archivos dependientes deben estar vinculados al archivo base (el XML
 
 Al aplicar este criterio en todas las rutas relevantes:
 - El editor no ve dependientes ajenos a ese XML (evita fugas entre etapas).
-- Cuando subís dependientes nuevos en la etapa actual, el editor los reconoce al instante.
+- Cuando se suben dependientes nuevos en la etapa actual, el editor los reconoce al instante.
 
 ### Mantener media (imágenes) solo del XML abierto
 
@@ -86,8 +86,6 @@ Función: `media($args, $request)`
 3. Se filtra por `assocType = ASSOC_TYPE_SUBMISSION_FILE` y `assocId = <XML actual>`.
 
 4. Se selecciona el archivo cuyo `fileId` coincide con el que pide el editor.
-
-5. Se responde el binario con el `mimetype` correcto.
 
 **Efecto:** aunque existan otros dependientes en la submission, solo se mantienen los asociados a ese XML.
 
@@ -110,7 +108,7 @@ Pasos clave:
 
 6. El mapa final de `resources` usa como clave el `path` EXACTO del manifest (el que espera Texture), y como valor la URL de `media`.
 
-**Efecto:** cuando re-subís una imagen en la etapa actual, el editor la resuelve automáticamente si su nombre coincide con el que aparece en el XML.
+**Efecto:** cuando se re-sube una imagen en la etapa actual, el editor la resuelve automáticamente si su nombre coincide con el que aparece en el XML.
 
 ### Asociación correcta durante extracción (DAR/ZIP)
 
