@@ -108,7 +108,7 @@ Pasos clave:
 
 6. El mapa final de `resources` usa como clave el `path` EXACTO del manifest (el que espera Texture), y como valor la URL de `media`.
 
-**Efecto:** cuando se re-sube una imagen en la etapa actual, el editor la resuelve automáticamente si su nombre coincide con el que aparece en el XML.
+**Efecto:** cuando se resube una imagen en la etapa actual, el editor la resuelve automáticamente si su nombre coincide con el que aparece en el XML.
 
 ### Asociación correcta durante extracción (DAR/ZIP)
 
