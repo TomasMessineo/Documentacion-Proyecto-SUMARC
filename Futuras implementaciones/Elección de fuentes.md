@@ -1,0 +1,1 @@
+- Seleccionar una fuente específica que se utilizará en todo el documento PDF generado, Philosopher no toma algunos caracteres, entonces hay que decidir si usaremos FreeSerif para TODO el documento o solo algunas partes.
