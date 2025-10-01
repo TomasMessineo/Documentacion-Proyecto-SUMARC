@@ -62,7 +62,7 @@ Si se agrega surname y given-names el tag cambia y está contenido en "name", qu
 
 - Cambiar tipografía de correo y afiliación -> **Solucionado**
 
-- Reducir un punto de tipografía en las notas
+- Reducir un punto de tipografía en las notas -> **Solucionado**
 
 - Aumentar el espacio entre el texto principal y el inicio de la cita a bando (imágen siguiente)
 
