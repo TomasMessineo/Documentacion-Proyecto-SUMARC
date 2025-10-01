@@ -55,3 +55,9 @@ Si se agrega surname y given-names el tag cambia y está contenido en "name", qu
 - Ajustar margen derecho, justificar aplicar estilos
 - Si no hay doi, que no salga el prefijo del doi
 - Reducir tamaño de fuente en el encabezado de las páginas
+- Cambiar tipografía de correo y afiliación
+- Reducir un punto de tipografía en las notas
+- Aumentar el espacio entre el texto principal y el inicio de la cita a bando (imágen siguiente)
+- Recuperar idioma primario del artículo para los autores
+- Buscar en el XML las citas obtenidas en la base de datos para filtrarlas en caso de que no existan
+- Priorizar idioma local del artículo a la hora de procesar autores, resumenes, palabras clave, titulos y subtítulos 
