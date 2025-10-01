@@ -58,9 +58,9 @@ Si se agrega surname y given-names el tag cambia y está contenido en "name", qu
 
 - Si no hay doi, que no salga el prefijo del doi -> **Solucionado**
 
-- Reducir tamaño de fuente en el encabezado de las páginas
+- Reducir tamaño de fuente en el encabezado de las páginas -> **Solucionado** 
 
-- Cambiar tipografía de correo y afiliación
+- Cambiar tipografía de correo y afiliación -> **Solucionado**
 
 - Reducir un punto de tipografía en las notas
 
