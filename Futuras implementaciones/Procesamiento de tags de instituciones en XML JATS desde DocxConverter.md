@@ -47,3 +47,9 @@ $authorElement->appendChild($collabElement);
 
 **ALGO QUE PUDE IDENTIFICAR:** Si desde texture se agrega solo "surname" de un autor en alguna referencia, el tag de base que se guardará es  "collab", que dentro tendrá un named-content que contendrá la institución.
 Si se agrega surname y given-names el tag cambia y está contenido en "name", que dentro tiene surname y given-names.
+
+---
+
+- Cambiar tipografía en el resumen y palabras clave (solo el contenido, no el título)
+- Cambiar tipografía en el pie de la carátula
+
