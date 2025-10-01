@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Errores/Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias.md",
+                "file": "Futuras implementaciones/Procesamiento de tags de instituciones en XML JATS desde DocxConverter.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias"
+              "title": "Procesamiento de tags de instituciones en XML JATS desde DocxConverter"
             }
           }
         ]
@@ -180,26 +180,26 @@
   },
   "active": "11ceef6903be7a55",
   "lastOpenFiles": [
-    "Futuras implementaciones/Procesamiento de tags de instituciones en XML JATS desde DocxConverter.md",
     "Futuras implementaciones/Elección de fuentes.md",
-    "Actualizaciones/texture/Arreglo de archivos dependientes (imágenes) en OJS 3.4.md",
+    "Futuras implementaciones/Procesamiento de tags de instituciones en XML JATS desde DocxConverter.md",
+    "Imágenes/Captura desde 2025-09-29 13-23-45.png",
+    "Imágenes/Captura desde 2025-09-29 13-21-38.png",
+    "Imágenes/Captura desde 2025-09-29 13-19-19.png",
+    "Imágenes/Captura desde 2025-09-29 13-12-50.png",
+    "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
     "Documentación SUMARC para OJS 3_4.md",
+    "Documentación SUMARC para OJS 3_3.md",
+    "Errores/Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias.md",
+    "Actualizaciones/texture/Arreglo de archivos dependientes (imágenes) en OJS 3.4.md",
     "Pasted image 20250929131754.png",
-    "Captura desde 2025-09-29 13-23-45.png",
-    "Captura desde 2025-09-29 13-21-38.png",
-    "Captura desde 2025-09-29 13-20-11.png",
-    "Captura desde 2025-09-29 13-19-19.png",
+    "Imágenes/Captura desde 2025-09-29 13-20-11.png",
     "Imágenes",
     "Imágenes/Captura desde 2025-09-29 13-17-11.png",
     "Imágenes/Captura desde 2025-09-29 13-14-01.png",
-    "Imágenes/Captura desde 2025-09-29 13-12-50.png",
     "Actualizaciones/texture/Actualizaciones de Texture.md",
     "Notas de reuniones/Reunión del día 25-09-2025.md",
-    "Errores/Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias.md",
     "Imágenes/Captura desde 2025-09-23 11-43-07.png",
     "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
-    "Documentación SUMARC para OJS 3_3.md",
-    "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
     "Untitled.base",
     "Actualizaciones/docxConverter/Enriquecimiento mediante API de OpenAlex.md",
     "Actualizaciones/jatsParser/Actualizaciones de jatsParser.md",
