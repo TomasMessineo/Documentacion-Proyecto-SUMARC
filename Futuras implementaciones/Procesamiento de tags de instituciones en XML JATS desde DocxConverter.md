@@ -52,4 +52,6 @@ Si se agrega surname y given-names el tag cambia y está contenido en "name", qu
 
 - Cambiar tipografía en el resumen y palabras clave (solo el contenido, no el título)
 - Cambiar tipografía en el pie de la carátula
-
+- Ajustar margen derecho, justificar aplicar estilos
+- Si no hay doi, que no salga el prefijo del doi
+- Reducir tamaño de fuente en el encabezado de las páginas
