@@ -60,3 +60,6 @@ Averiguar por qué al subir una imágen a mano en OJS para un XML, se agrega un 
 - Buscar en el XML las citas obtenidas en la base de datos para filtrarlas en caso de que no existan
 
 - Priorizar idioma local del artículo a la hora de procesar autores, resumenes, palabras clave, titulos y subtítulos. Una idea es agregar un botón para eliminar citas
+  
+  borde:80AD0B
+- TEXTO: 
