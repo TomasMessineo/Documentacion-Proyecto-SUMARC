@@ -5,3 +5,15 @@
 - O simplemente basta con imprimir un error_log indicando este mensaje de error o advertencia?
 
 En la imágen, si la institución no es válida entonces los demás datos de la referencia no se generan, solo se imprime el mixed-citation con la referencia y la indicación del error.
+
+En el caso de que una referencia tenga en su contenido una institución como autora, por ejemplo: "Universidad Nacional de La Pla", esto no machea con "Universidad Nacional de La Plata", por ende entiendo que por mas de que una institución esté mal escrita, si esta no es exactamente igual al nombre de la institución, OpenAlex retornará **null**... esto quiere decir que entonces debería evaluar:
+
+- Si la institución no existe en OpenAlex, entonces informar de un error que directamente no genere la referencia en XML (caso de la imágen anterior)
+- Si la institución no existe en OpenAlex, entonces informar de un error en consola pero igualmente generar la referencia con todos sus elementos y tags correspondientes
+
+La estrategia utilizada hasta el momento es: Si OpenAlex me retorna 0 resultados (null), entonces se imprime el error en el tag mixed-citation. Si retorna un solo resultado, entonces ese resultado será válido ya que por mas de que ponga una letra menos, como: "Universidad Nacional de La Plat", OpenAlex retornará "null" y no retornará la institución especificada (mas allá de que falte un solo caracter). 
+
+---
+
+- Si se buscan instituciones por sus SIGLAS, también OpenAlex puede encontrarlas. Todo dependerá de si retorna un solo resultado o varios. Si retorna uno solo, esa institución será válida, pero si retorna varios, directamente se deja la institución tal y como está.
+- 
