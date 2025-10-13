@@ -66,9 +66,9 @@ if ($this->reference->getURLType() == 'DOI' && empty($this->enrichmentData)){
 }
 ```
 
-**Dato extra:** Si en un artículo tengo 2 referencias diferentes, pero que especifican el mismo DOI, habrá una de las 2 que tendrá un error de "DOI no encontrado". Esto porque a la hora de agregar un DOI al array de DOIS, se evitan duplicados (esto hace que solo se )
+***Dato extra:*** Si en un artículo tengo 2 referencias diferentes, pero que especifican el mismo DOI, habrá una de las 2 que tendrá un error de "DOI no encontrado". Esto sucede porque a la hora de agregar un DOI al array de DOIS se evitan duplicados.
 
 ### A realizar:
 
 - En base al nombre y el apellido de los autores en una referencia, crear el tag person-group de forma correcta con given-names y surname. Además, esto me servirá para poder detectar si me llega información de OpenAlex sobre una referencia que no tiene nada que ver con la procesada, en base al nombre puedo detectar si el doi utilizado es correcto o NO.
-  Si intento buscar el nombre y apellido indicado en el JSON dentro del XML JATS correspondiente a dicha referencia, podría identificar si coinciden o no. Si coinciden, eso quiere decir que la información del JSON es correcta con respecto a los datos ingresados manualmente por el usuario. Si no coinciden estos datos, entonces puedo suponer.
+  Si intento buscar el nombre y apellido indicado en el JSON dentro del XML JATS correspondiente a dicha referencia, podría identificar si coinciden o no. Si coinciden, eso quiere decir que la información del JSON es correcta con respecto a los datos ingresados manualmente por el usuario. Si no coinciden estos datos, entonces puedo suponer que NO.
