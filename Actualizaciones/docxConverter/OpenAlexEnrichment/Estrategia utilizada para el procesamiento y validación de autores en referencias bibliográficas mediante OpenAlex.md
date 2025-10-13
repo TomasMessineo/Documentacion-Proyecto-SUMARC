@@ -39,19 +39,26 @@ Para validar los autores de una referencia frente a los datos obtenidos desde Op
 
 1. **Coincidencia de apellido:**  
 	- Se toma el apellido de cada autor en la referencia y se busca su ocurrencia en el `display_name` del autor obtenido desde OpenAlex.  
+	  
 	- Actualmente se utiliza `strpos` (PHP) para esta búsqueda, lo que permite manejar casos donde los nombres estén abreviados o en distinto orden.  
+	  
     - Si el apellido no se encuentra, se registra un error indicando que ese autor no existe para el DOI proporcionado.
    
 2. **Validación de nombres o iniciales:**  
 	- Una vez identificado el apellido, se elimina del `display_name` de OpenAlex para no necesitarlo más.  
 	  **Esto se hace "restándole" o quitándole al nombre completo de un autor (el de OpenAlex) el apellido identificado en la referencia, lo cual termina dejando como resultado solo el/los nombres, los cuales posteriormente serán validados.**
+	  
 	- Cada inicial o nombre del autor en la referencia se compara con las partes restantes del nombre completo de OpenAlex:
 		1. Si todas las iniciales/nombres del autor coinciden, se considera que el autor es válido.
 		2. Si alguna inicial/nombre no coincide, se registra un error indicando qué autor no pudo ser validado.
-	- **Además, el método contempla el caso en que la referencia contiene solo las iniciales de los nombres, mientras que OpenAlex posee los nombres completos.** Esto significa que, por ejemplo, un autor con nombre “J. A.” en la referencia coincidirá correctamente con “John Alexander” en OpenAlex, siempre que las iniciales correspondan a las primeras letras de los nombres. Así también si tuviera otro nombre extra en OpenAlex que en la referencia no existe, en este caso el autor será **valido**
+		   
+	- **Además, el método contempla el caso en que la referencia contiene solo las iniciales de los nombres, mientras que OpenAlex posee los nombres completos.**  
+	  Esto significa que, por ejemplo, un autor con nombre “J. A.” en la referencia coincidirá correctamente con “John Alexander” en OpenAlex, siempre que las iniciales correspondan a las primeras letras de los nombres.  
+	  Asimismo, si en OpenAlex se presenta un nombre adicional que no figura en la referencia, el autor también será considerado **válido**, ya que se asume que la información de OpenAlex es más completa y precisa en tales casos.
 
 3. **Resultado final:**  
-   - El método retorna `true` solo si **todos los autores de la referencia** fueron validados correctamente.  
-   - Retorna `false` si al menos un autor no coincide, registrando un error específico para cada caso.
+	- El método retorna `true` solo si **TODOS los autores de la referencia** fueron validados correctamente.  
+	     
+	- Retorna `false` si al menos un autor no coincide, registrando un error específico para cada caso.
 
-> Nota: La implementación actual con `strpos` permite aceptar abreviaciones en la referencia mientras el apellido coincida, pero no detecta errores tipográficos. En el futuro, se podrían usar funciones como `levenshtein` o `similar_text` para mejorar la detección de coincidencias aproximadas.
+> _**Nota:**_ La implementación actual con `stripos` considera válido un apellido si el texto de la referencia está incluido dentro del apellido obtenido de OpenAlex. Por ejemplo, “Aikhenval” será válido para “Aikhenvald”. Si se desea una validación más estricta (que detecte diferencias tipográficas), será necesario implementar un método adicional, como `levenshtein` o `similar_text`.
