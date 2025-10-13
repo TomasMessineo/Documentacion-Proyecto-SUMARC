@@ -1,0 +1,2 @@
+
+Se me ocurrió la idea de crear un mini-informe donde se pueda detallar qué dato se espera en texture para cada tipo de referencia... esto para una correcta generación de las mismas luego en el PDF de salida. Por ejemplo: explicar que es el campo e-location, qué es publisher-loc, etc.  
