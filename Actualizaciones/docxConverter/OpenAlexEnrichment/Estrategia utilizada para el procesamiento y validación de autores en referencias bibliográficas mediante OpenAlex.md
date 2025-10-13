@@ -1,7 +1,9 @@
 
 # Clase "AuthorValidator":
 
-Para validar si una institución autora o un nombre completo de un autor son válidos según lo obtenido mediante la API de OpenAlex, se implementó una clase denominada "AuthorValidator", la cual se encargará de realizar estas tareas de validación. El método `validateInstitutionAsAuthor()` verifica que el nombre de la institución exista en OpenAlex, y el método `validateFullNameAsAuthor()` se encarga de verificar si el nombre completo del autor indicado en la referencia es válido con respecto al autor obtenido mediante la API de OpenAlex (esto servirá para poder evaluar si el autor está ingresado de forma)
+Para validar si una institución autora o un nombre completo de un autor son válidos según lo obtenido mediante la API de OpenAlex, se implementó una clase denominada "AuthorValidator", la cual se encargará de realizar estas tareas de validación. El método `validateInstitutionAsAuthor()` verifica que el nombre de la institución exista en OpenAlex, y el método `validateFullNameAsAuthor()` se encarga de verificar si el nombre completo del autor indicado en la referencia es válido con respecto al autor obtenido mediante la API de OpenAlex (esto servirá para poder evaluar si el/los nombres de los autores en la referencia fueron escritos de forma correcta o no).
+
+A continuación se detallarán todos los 
 
 # Instituciones como Autores:
 
