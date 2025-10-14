@@ -6,3 +6,4 @@
 
 - Las referencias extraídas desde el metadato de "Referencias" en la pestaña de Publicación son las que aparecerán luego en el HTML o la página principal del artículo, y por otro lado, las que se generan para el PDF solo permanecerán allí (en el PDF). 
   Básicamente, si uno modifica de manera manual las referencias que están en el metadato "Referencias" en la pestaña de Publicación, lo que estaría modificando es el cómo se van a ver las Referencias en la página principal (el HTML) del artículo... estos cambios realizados de forma manual en las referencias NO se van a ver reflejados en el PDF.
+
