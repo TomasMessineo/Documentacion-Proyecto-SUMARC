@@ -10,4 +10,8 @@
   Básicamente, si uno modifica de manera manual las referencias que están en el metadato "Referencias" en la pestaña de Publicación, lo que estaría modificando es el cómo se van a ver las Referencias en la página principal (el HTML) del artículo... estos cambios realizados de forma manual en las referencias NO se van a ver reflejados en el PDF.
 
 - Para cargar los rangos de página en una referencia desde texture, existe el campo "Page Range", que se puede rellenar "24-26" por ejemplo, y también los campos "First Page" y "Last Page", que pueden cargarse con los datos "24" y "26" por ejemplo (lo cual dejaría como salida en la referencia 24-26 para el rango de página).
-  **CABE ACLARAR que el rango de página únicamente funciona con referencias de tipo "JOURNAL", si se quiere especificar un rango de página en referencias de tipo "" **
+  ***DATO IMPORTANTE*:** El rango de página **únicamente funciona con referencias de tipo "JOURNAL"**. 
+  Si se quiere especificar un rango de página en referencias de **tipo "CHAPTER" (capítulo de libro) este rango NO aparecerá** al extraer el metadato "Referencias" en publicación ni tampoco al generar el PDF. **Esto se debe a un error en la herramienta que se encarga de armar las referencias automáticamente, no es un error que se arrastre desde texture. ES un PROBLEMA INTERNO DE LA HERRAMIENTA.** 
+
+- Las imágenes no están cargadas en el artículo (tener en cuenta por si surge algún problema con esto)
+
