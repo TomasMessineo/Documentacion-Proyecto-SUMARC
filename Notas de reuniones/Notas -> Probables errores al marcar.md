@@ -27,15 +27,14 @@ Soy **Tomás**, uno de los desarrolladores de **SUMARC**. Estuve revisando el ca
     _Carrillo AM. ,Ley Brazos Vacíos: cuidado de la salud mental de la mujer y familia en duelo perinatal en Colombia [Archivo de video]. [https://www.youtube.com/watch?v=s8sk1oX_1Hc&t=2s  
     ](https://www.youtube.com/watch?v=s8sk1oX_1Hc&t=2s)_En el campo _Title_ hay una coma al inicio que **no debe estar**, ya que la herramienta que genera las referencias bibliográficas se encarga de colocar las puntuaciones y comas automáticamente.
     
-- Las **referencias extraídas desde el metadato “Referencias”** en la pestaña _Publicación_ son las que se muestran en el **HTML del artículo (la página principal)**.  
-    En cambio, las que se generan para el **PDF** permanecen sólo allí.  
-    Esto significa que, si se editan manualmente las referencias en el metadato _Referencias_, los cambios **solo se verán reflejados en la versión web**, **no en el PDF**.  
+  - Las **referencias extraídas desde el metadato “Referencias”** en la pestaña _Publicación_ son las que se muestran en el **HTML del artículo (la página principal)** y las del **PDF** salen del XML.  
+  Esto significa que, si se editan manualmente las referencias en el metadato _Referencias_, los cambios **solo se verán reflejados en la versión web**, **no en el PDF**.  
       
     
 - Para los **rangos de página** en _Texture_, podés usar el campo _Page Range_ (por ejemplo, “24-26”), o bien los campos _First Page_ y _Last Page_ (“24” y “26”).  
   Tené en cuenta que este rango **solo funciona con referencias del tipo “JOURNAL”**.  
-En las de tipo _CHAPTER_ (capítulo de libro), el rango **no se mostrará** ni en el HTML ni en el PDF.  
-    Esto se debe a una **limitación interna de la herramienta que arma las referencias automáticamente**, no a un problema en _Texture_.  
+  En las de tipo _CHAPTER_ (capítulo de libro), el rango **no se mostrará** ni en el HTML ni en el PDF.  
+  Esto se debe a una **limitación interna de la herramienta que arma las referencias automáticamente**, no a un problema en _Texture_.  
       
     
 - Finalmente, observamos que **las imágenes aún no están cargadas** en el artículo, por lo que sería bueno tenerlo presente en caso de que surja algún inconveniente con la visualización o exportación.
