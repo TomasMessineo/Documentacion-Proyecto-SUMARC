@@ -25,40 +25,143 @@ La estrategia utilizada hasta el momento es:
 - Si se buscan instituciones por sus SIGLAS, también OpenAlex puede encontrarlas.
 
 ---
-# Validación de autores con nombre completo
+# Autores: validación y construcción de JATS con una estrategia compartida
+  
+Este documento describe cómo se validan los autores contra OpenAlex y cómo se construye el XML JATS para los autores usando la misma estrategia de nombres, de forma consistente y reutilizable.
 
-### Contexto del problema
+## Objetivo
 
-Este problema surge debido a que en una referencia bibliográfica se pueden indicar autores que **no están registrados en OpenAlex para el DOI especificado**.  
-- Si no se valida correctamente, podría ocurrir que se pisen los datos existentes del XML JATS: los datos de un artículo podrían sobrescribir la referencia manual con información incorrecta de otro DOI.  
-- Por eso es fundamental verificar que todos los autores indicados en la referencia coincidan con los autores reportados por OpenAlex para el DOI correspondiente.
+- Evitar que un DOI incorrecto reemplace autores en el JATS si los autores de la referencia no coinciden con OpenAlex.
 
-### Estrategia de validación implementada
+- Reutilizar la misma heurística de nombres para dos tareas: validar y construir `<person-group>` con `<surname>` y `<given-names>`.
 
-Para validar los autores de una referencia frente a los datos obtenidos desde OpenAlex, se implementó el método `validateFullNameAsAuthor()` en la clase `AuthorValidator`. La lógica principal es:
+## Componentes  
 
-1. **Coincidencia de apellido:**  
-	- Se toma el apellido de cada autor en la referencia y se busca su ocurrencia en el `display_name` del autor obtenido desde OpenAlex.  
-	  
-	- Actualmente se utiliza `strpos` (PHP) para esta búsqueda, lo que permite manejar casos donde los nombres estén abreviados o en distinto orden.  
-	  
-    - Si el apellido no se encuentra, se registra un error indicando que ese autor no existe para el DOI proporcionado.
-   
-2. **Validación de nombres o iniciales:**  
-	- Una vez identificado el apellido, se elimina del `display_name` de OpenAlex para no necesitarlo más.  
-	  **Esto se hace "restándole" o quitándole al nombre completo de un autor (el de OpenAlex) el apellido identificado en la referencia, lo cual termina dejando como resultado solo el/los nombres, los cuales posteriormente serán validados.**
-	  
-	- Cada inicial o nombre del autor en la referencia se compara con las partes restantes del nombre completo de OpenAlex:
-		1. Si todas las iniciales/nombres del autor coinciden, se considera que el autor es válido.
-		2. Si alguna inicial/nombre no coincide, se registra un error indicando qué autor no pudo ser validado.
-		   
-	- **Además, el método contempla el caso en que la referencia contiene solo las iniciales de los nombres, mientras que OpenAlex posee los nombres completos.**  
-	  Esto significa que, por ejemplo, un autor con nombre “J. A.” en la referencia coincidirá correctamente con “John Alexander” en OpenAlex, siempre que las iniciales correspondan a las primeras letras de los nombres.  
-	  Asimismo, si en OpenAlex se presenta un nombre adicional que no figura en la referencia, el autor también será considerado **válido**, ya que se asume que la información de OpenAlex es más completa y precisa en tales casos.
+- `validators/AuthorFullNameProcessor.php`: utilitario reutilizable para matchear y partir nombres.
 
-3. **Resultado final:**  
-	- El método retorna `true` solo si **TODOS los autores de la referencia** fueron validados correctamente.  
-	     
-	- Retorna `false` si al menos un autor no coincide, registrando un error específico para cada caso.
+- `validators/AuthorValidator.php`: usa la estrategia para validar autores contra OpenAlex.
 
-> _**Nota:**_ La implementación actual con `stripos` considera válido un apellido si el texto de la referencia está incluido dentro del apellido obtenido de OpenAlex. Por ejemplo, “Aikhenval” será válido para “Aikhenvald”. Si se desea una validación más estricta (que detecte diferencias tipográficas), será necesario implementar un método adicional, como `levenshtein` o `similar_text`.
+- `JATSReference::setEnrichmentData()`: adjunta autores originales en `__reference_authors`.
+
+- `Printer/JournalPrinter.php::enrichment()`: usa la estrategia para generar `<surname>` y `<given-names>` con datos de OpenAlex.
+
+  
+
+## Estrategia única de nombres (AuthorFullNameProcessor)
+
+La clase `AuthorFullNameProcessor` encapsula la lógica para:
+
+- Las iniciales se matchean en orden y sin reutilizar tokens: cada inicial debe coincidir con el siguiente token disponible. Esto evita falsos positivos como "T. T." frente a "Tomas Nahuel" (la segunda "T" no puede volver a machar "Tomas").
+- 
+Parámetros esperados/Valores retornados
+- Input: `array $referenceAuthor` con claves `apellido` y `nombres`, y `string $openAlexDisplayName`.
+- Output: `['surname' => string, 'given-names' => string]` si hay match; `null` si no hay match.
+
+Ejemplo:
+- Referencia: `apellido = "García", nombres = "J. P."`
+- OpenAlex: `display_name = "Juan Pablo García"`
+- Resultado: `surname = "García"`, `given-names = "Juan Pablo"`.
+
+**Limitaciones conocidas y mejoras posibles:**
+
+- Apellidos compuestos y partículas ("de", "da", "van der"): la estrategia actual requiere que el `apellido` de la referencia figure como subcadena en `display_name`. Puede ampliarse con normalización y diccionario de partículas.
+
+- Diacríticos: se usa `stripos` (case-insensitive). Si se necesita normalizar acentos, agregar preprocesamiento.
+
+## Validación de autores (AuthorValidator)
+
+El método `validateFullNameAsAuthor()` mantiene el flujo existente, pero ahora delega la comparación y particionado de nombres completos a `AuthorFullNameProcessor`:
+
+1. Recorre los autores de la referencia y los compara contra `authorships` de OpenAlex (para el DOI).
+
+2. Usa `AuthorFullNameProcessor::matchReferenceToDisplayName()` para determinar si hay match.
+
+3. Devuelve `true` solo si todos los autores de la referencia encuentran match; si no, agrega errores detallados al `JATSReference`.  
+
+Esto evita enriquecer con un DOI cuando los autores no corresponden.
+
+## Enriquecimiento y construcción del XML JATS (JournalPrinter)
+
+Cuando hay datos de OpenAlex válidos, `JATSReference::setEnrichmentData()` inyecta `__reference_authors` (los autores originales de la referencia) al array de enriquecimiento. Luego, `JournalPrinter::enrichment()`:
+
+1. Construye `<person-group person-group-type="author">`.
+
+2. Para cada `display_name` de OpenAlex, intenta partirlo en `surname` y `given-names` usando la misma estrategia contra `__reference_authors`.
+
+3. Si logra partirlo, genera:
+
+```xml
+
+<name>
+
+<surname>García</surname>
+
+<given-names>Juan Pablo</given-names>
+
+</name>
+
+```
+
+4. Si no puede (no hay match), aplica un fallback conservador para no perder datos:
+
+```xml
+
+<name>
+
+<surname>Juan Pablo García</surname>
+
+</name>
+
+```
+
+De esta forma, la misma heurística guía tanto la validación como la construcción del JATS, garantizando consistencia. Ambos enfoques (validación y construcción) recurren a `AuthorFullNameProcessor`.
+
+## Casos específicos (ejemplos)  
+
+- Referencia: `T. T.` vs OpenAlex: `Tomas Nahuel` → Resultado: `NO MATCH` (correcto; no se permite reutilizar “Tomas”).
+
+- Referencia: `T. N.` vs OpenAlex: `Tomas Nahuel` → Resultado: `MATCH` → `given-names = "Tomas Nahuel"`.
+
+- Referencia: `J. P.` vs OpenAlex: `Juan Pablo` → Resultado: `MATCH` → `given-names = "Juan Pablo"`.
+
+- Referencia: `J. P.` vs OpenAlex: `Juan-Pablo` → Resultado: `MATCH` → `given-names = "Juan-Pablo"` (se divide en subpartes por guion para matchear iniciales).
+
+- Referencia: `A.` vs OpenAlex: `Ana María` → Resultado: `MATCH` → `given-names = "Ana María"` (la inicial A matchea el primer token disponible).
+
+- Referencia: `T. N. T.` vs OpenAlex: `Tomas Alfajor Termas` → Resultado: `NO MATCH` (falla en la “N”, no hay token que empiece con N).
+
+### Paso a paso de algunos casos
+
+- `T. T.` vs `Tomas Nahuel`
+1) T → matchea `Tomas` en display_name y luego se borra; nombres restantes en display_name: [`Nahuel`]
+2) T → no hay token `T*` disponible en display_name (solo `Nahuel`), por ende, falla → `NO MATCH`
+
+- `T. N.` vs `Tomas Nahuel`
+1) T → matchea `Tomas` en display_name y luego se borra; nombres restantes: [`Nahuel`]
+2) N → matchea `Nahuel` en display_name y se borra; nombres restantes: [] → `MATCH` → `given-names = "Tomas Nahuel"`
+
+- `J. P.` vs `Juan-Pablo`
+1) J → matchea la subparte `Juan` de display_name y consume todo el token `Juan-Pablo` (se lo considera como un único token para la secuencia, con subpartes para verificar inciales)
+2) P → como el token usado ya fue consumido, no se reutiliza. Si el nombre completo tuviera otro token `P*` a la derecha (p. ej. `Juan-Pablo Perez`), matchearía `Perez`. En la práctica, en `Juan-Pablo` a secas retornamos `MATCH` y los `given-names` que quedan son `Juan-Pablo`.
+
+- `T. N. T.` vs `Tomas Alfajor Termas`
+1) T → matchea `Tomas` y se consume; restantes: [`Alfajor`, `Termas`]
+2) N → no hay `N*` entre los tokens restantes (se pueden saltar tokens que no matchean, pero debe existir uno que sí). Falla → `NO MATCH`
+
+## Flujo de datos (resumen)
+
+1. `ReferencesManager` parsea referencias y, si hay DOI, consulta OpenAlex.
+
+2. `AuthorValidator::validateFullNameAsAuthor()` valida autores con la estrategia.
+
+3. Si la validación pasa, `JATSReference::setEnrichmentData()` guarda los datos de OpenAlex y `__reference_authors`.
+
+4. `JournalPrinter::enrichment()` agrega/actualiza elementos JATS, incluyendo `<person-group>` con `surname` y `given-names`.
+
+## Próximos pasos (tests sugeridos)
+
+  - Unit tests para `AuthorFullNameProcessor` (iniciales, apellidos compuestos, fallback).
+
+- Tests de integración para `JournalPrinter::enrichment()` verificando la emisión de `<surname>` y `<given-names>` según distintas combinaciones de referencia/OpenAlex.
+
+> Nota: Si se quiere endurecer o flexibilizar la validación (p. ej., distancia de Levenshtein para apellidos), hacerlo dentro de `AuthorNameStrategy` garantiza que la construcción del JATS siga la misma regla, sin duplicar lógica.
