@@ -49,7 +49,7 @@ Este documento describe cómo se validan los autores contra OpenAlex y cómo se 
 
 **La clase `AuthorFullNameProcessor` encapsula la lógica para:**
 
-- Las iniciales se matchean en orden y sin reutilizar tokens: cada inicial debe coincidir con el siguiente token disponible. Esto evita falsos positivos como "T. T." frente a "Tomas Nahuel" (la segunda "T" no puede volver a machar "Tomas").
+- Las iniciales se matchean y se van procesando en orden y sin reutilizar tokens (nombres ya procesados): cada inicial debe coincidir con el siguiente token disponible. Esto evita falsos positivos como "T. T." frente a "Tomas Nahuel" (la segunda "T" no puede volver a machar "Tomas").
 
 **Parámetros esperados/Valores retornados:**
 
@@ -57,33 +57,23 @@ Este documento describe cómo se validan los autores contra OpenAlex y cómo se 
 
 - Output: `['surname' => string, 'given-names' => string]` si hay match; `null` si no hay match.
 
-  
-
-Ejemplo:
+**Ejemplo:**
 
 - Referencia: `apellido = "García", nombres = "J. P."`
 
 - OpenAlex: `display_name = "Juan Pablo García"`
 
-- Resultado: `surname = "García"`, `given-names = "Juan Pablo"`.
+- Resultado: `surname = "García"`, `given-names = "Juan Pablo"`.  
 
-  
-
-Limitaciones conocidas y mejoras posibles:
+**Limitaciones conocidas y mejoras posibles:**
 
 - Apellidos compuestos y partículas ("de", "da", "van der"): la estrategia actual requiere que el `apellido` de la referencia figure como subcadena en `display_name`. Puede ampliarse con normalización y diccionario de partículas.
 
-- Diacríticos: se usa `stripos` (case-insensitive). Si se necesita normalizar acentos, agregar preprocesamiento.
-
-  
+- Se usa `stripos` (case-insensitive). Si se necesita normalizar acentos (por ejemplo), agregar preprocesamiento.
 
 ## Validación de autores (AuthorValidator)
 
-  
-
 El método `validateFullNameAsAuthor()` mantiene el flujo existente, pero ahora delega la comparación y particionado de nombres completos a `AuthorFullNameProcessor`:
-
-  
 
 1. Recorre los autores de la referencia y los compara contra `authorships` de OpenAlex (para el DOI).
 
@@ -91,19 +81,11 @@ El método `validateFullNameAsAuthor()` mantiene el flujo existente, pero ahora 
 
 3. Devuelve `true` solo si todos los autores de la referencia encuentran match; si no, agrega errores detallados al `JATSReference`.
 
-  
-
 Esto evita enriquecer con un DOI cuando los autores no corresponden.
 
-  
-
-## Enriquecimiento y construcción del XML JATS (JournalPrinter)
-
-  
+## Enriquecimiento y construcción del XML JATS (mediante la clase JournalPrinter)
 
 Cuando hay datos de OpenAlex válidos, `JATSReference::setEnrichmentData()` inyecta `__reference_authors` (los autores originales de la referencia) al array de enriquecimiento. Luego, `JournalPrinter::enrichment()`:
-
-  
 
 1. Construye `<person-group person-group-type="author">`.
 
@@ -135,15 +117,9 @@ Cuando hay datos de OpenAlex válidos, `JATSReference::setEnrichmentData()` inye
 
 ```
 
-  
-
 De esta forma, la misma heurística guía tanto la validación como la construcción del JATS, garantizando consistencia. Ambos enfoques (validación y construcción) recurren a `AuthorFullNameProcessor`.
 
-  
-
 ## Casos específicos (ejemplos)
-
-  
 
 - Referencia: `T. T.` vs OpenAlex: `Tomas Nahuel` → Resultado: `NO MATCH` (correcto; no se permite reutilizar “Tomas”).
 
