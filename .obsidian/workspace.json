@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notas de reuniones/TEST.md",
+                "file": "Notas de reuniones/Notas - Reunion BIREDIAL 2025.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TEST"
+              "title": "Notas - Reunion BIREDIAL 2025"
             }
           }
         ]
@@ -180,8 +180,9 @@
   },
   "active": "5fafc42c53f226ac",
   "lastOpenFiles": [
-    "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Notas de reuniones/TEST.md",
+    "Notas de reuniones/Notas - Reunion BIREDIAL 2025.md",
+    "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
     "Futuras implementaciones/Texture -> Manual de datos?.md",
     "Notas de reuniones/Notas -> Probables errores al marcar.md",
