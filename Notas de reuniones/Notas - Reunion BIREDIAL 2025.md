@@ -16,4 +16,9 @@ En el evento se habló de SUMARC. Estando allá, este problema ya se había plan
 
 **EN BRASIL:**
 
-**Feedback:** PKP plantea soluciones para manejar el XML para versiones futuras.. Muchas personas lo ven como una opción a tener en cuenta para marcar artículos en revistas.
+**Feedback:**
+- PKP plantea soluciones para manejar el XML para versiones futuras.. Muchas personas lo ven como una opción a tener en cuenta para marcar artículos en revistas.
+- Encarar LATEX en un futuro
+- El proyecto SUMARC se "solapa" hasta cierto punto con lo que va a integrar PKP en una o dos versiones.
+- Integración con PrePrints
+- 
