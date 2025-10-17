@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "9fd338108e2f3b8d",
+        "id": "89c6ba9ea6b1f50a",
         "type": "tabs",
         "children": [
           {
-            "id": "5fafc42c53f226ac",
+            "id": "8c46918dce1466c3",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -178,20 +178,20 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5fafc42c53f226ac",
+  "active": "8c46918dce1466c3",
   "lastOpenFiles": [
-    "Notas de reuniones/TEST.md",
+    "Notas de reuniones/Notas -> Probables errores al marcar.md",
+    "Notas de reuniones/Reunión del día 25-09-2025.md",
     "Notas de reuniones/Notas - Reunion BIREDIAL 2025.md",
+    "Notas de reuniones/TEST.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
     "Futuras implementaciones/Texture -> Manual de datos?.md",
-    "Notas de reuniones/Notas -> Probables errores al marcar.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Datos necesarios de OpenAlex para enriquecimiento de referencias en XML JATS.md",
     "Actualizaciones/docxConverter/Actualizaciones de docxConverter.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment",
     "Futuras implementaciones/Elección de fuentes.md",
     "Captura desde 2025-10-09 11-31-44.png",
-    "Notas de reuniones/Reunión del día 25-09-2025.md",
     "Imágenes/Captura desde 2025-09-29 13-23-45.png",
     "Imágenes/Captura desde 2025-09-29 13-21-38.png",
     "Imágenes/Captura desde 2025-09-29 13-19-19.png",
