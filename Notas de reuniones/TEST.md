@@ -10,6 +10,8 @@
 
 - El error con las imágenes puede deberse a que las mismas no están subidas como archivos dependientes del XML correspondiente. Este tema lo abordamos en la última actualización de texture. Es necesario subir las imágenes como archivos dependientes en el XML para que las imágenes puedan visualizarse.
 
+- Texture actualmente no soporta listados o viñetas dentro de tablas. A lo sumo puede copiarse un símbolo para el listado (como •) pero los items del listado saldrán uno tras otro sin salto de línea.
+
 - La justificación para texto del artículo fue solucionada con una de las últimas actualizaciones.
 
 - 
