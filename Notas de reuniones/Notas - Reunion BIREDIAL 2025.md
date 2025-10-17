@@ -13,3 +13,7 @@ En esta nube sale el EDCH y el DIAMAS -> dos proyectos muy grandes que buscan fo
 En este mundo de estos proyectos, surgióel CRAFT-OA -> Busca dar soluciones para las revistas de acceso abierto DIAMANTE.
 Allí se trabaja mucho con las comunidades. Tienen un sistema de intercambio de chat o foros para informáticos donde todos comparten problemas técnicos o sobre flujos de trabajo vinculados al acceso abierto. También tienen soporte distribuido.
 En el evento se habló de SUMARC. Estando allá, este problema ya se había planteado, los problemas de marcado de XML a nivel mundial, PKP no define bien qué se hace con esto. El impacto de SUMARC fue bastante grande.
+
+**EN BRASIL:**
+
+**Feedback:** PKP plantea soluciones para manejar el XML para versiones futuras.. Muchas personas lo ven como una opción a tener en cuenta para marcar artículos en revistas.
