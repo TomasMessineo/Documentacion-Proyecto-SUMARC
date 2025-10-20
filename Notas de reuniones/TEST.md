@@ -9,7 +9,7 @@
   Además, en las sección de "Tablas y Figuras" dentro de la Tabla de Citas, solo aparecerán aquellas citas a figuras y tablas que se hayan indicado en Texture. Si desde Texture no se indicó ninguna cita a tablas o figuras, entonces estas mismas no van a aparecer en la Tabla de Citas.
 
 - El error con las imágenes puede deberse a que las mismas no están subidas como archivos dependientes del XML correspondiente. Este tema lo abordamos en la última actualización de texture. Es necesario subir las imágenes como archivos dependientes en el XML para que las imágenes puedan visualizarse.
-  Revisando el workflow de Plurentes, pudimos notar que las imágenes NO están saliendo
+  Revisando el workflow de Plurentes, pudimos notar que las imágenes NO están saliendo debido a un problema 
 
 - Texture actualmente no soporta listados o viñetas dentro de tablas. A lo sumo puede copiarse un símbolo para el listado (como •) pero los items del listado saldrán uno tras otro sin salto de línea.
 
