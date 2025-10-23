@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notas de reuniones/Notas -> Probables errores al marcar.md",
+                "file": "Notas de reuniones/TEST.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notas -> Probables errores al marcar"
+              "title": "TEST"
             }
           }
         ]
@@ -180,8 +180,8 @@
   },
   "active": "a4bf8fb0988a8594",
   "lastOpenFiles": [
-    "Notas de reuniones/Reunión del día 25-09-2025.md",
     "Notas de reuniones/Notas -> Probables errores al marcar.md",
+    "Notas de reuniones/Reunión del día 25-09-2025.md",
     "Notas de reuniones/Notas - Reunion BIREDIAL 2025.md",
     "Actualizaciones/Actualizaciones.md",
     "Futuras implementaciones/Elección de fuentes.md",
