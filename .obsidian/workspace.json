@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notas de reuniones/TEST.md",
+                "file": "Futuras implementaciones/Tareas futuras.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TEST"
+              "title": "Tareas futuras"
             }
           }
         ]
@@ -180,6 +180,8 @@
   },
   "active": "a4bf8fb0988a8594",
   "lastOpenFiles": [
+    "Notas de reuniones/TEST.md",
+    "Futuras implementaciones/Tareas futuras.md",
     "Notas de reuniones/Notas -> Probables errores al marcar.md",
     "Notas de reuniones/Reunión del día 25-09-2025.md",
     "Notas de reuniones/Notas - Reunion BIREDIAL 2025.md",
@@ -189,7 +191,6 @@
     "Imágenes/Captura desde 2025-10-09 11-31-44.png",
     "Documentación SUMARC para OJS 3_4.md",
     "Documentación SUMARC para OJS 3_3.md",
-    "Notas de reuniones/TEST.md",
     "Futuras implementaciones/Texture -> Manual de datos?.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
