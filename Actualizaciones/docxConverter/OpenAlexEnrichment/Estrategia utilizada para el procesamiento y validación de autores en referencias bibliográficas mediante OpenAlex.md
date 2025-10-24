@@ -137,12 +137,9 @@ De esta forma, la misma heurística guía tanto la validación como la construcc
 
 ### Paso a paso de algunos casos
 
-  
-
 - `T. T.` vs `Tomas Nahuel`
 
 1) T → matchea `Tomas` en display_name y luego se borra; nombres restantes en display_name: [`Nahuel`]
-
 2) T → no hay token `T*` disponible en display_name (solo `Nahuel`), por ende, falla → `NO MATCH`
 
   
@@ -150,7 +147,6 @@ De esta forma, la misma heurística guía tanto la validación como la construcc
 - `T. N.` vs `Tomas Nahuel`
 
 1) T → matchea `Tomas` en display_name y luego se borra; nombres restantes: [`Nahuel`]
-
 2) N → matchea `Nahuel` en display_name y se borra; nombres restantes: [] → `MATCH` → `given-names = "Tomas Nahuel"`
 
   
@@ -158,22 +154,15 @@ De esta forma, la misma heurística guía tanto la validación como la construcc
 - `J. P.` vs `Juan-Pablo`
 
 1) J → matchea la subparte `Juan` de display_name y consume todo el token `Juan-Pablo` (se lo considera como un único token para la secuencia, con subpartes para verificar inciales)
-
 2) P → como el token usado ya fue consumido, no se reutiliza. Si el nombre completo tuviera otro token `P*` a la derecha (p. ej. `Juan-Pablo Perez`), matchearía `Perez`. En la práctica, en `Juan-Pablo` a secas retornamos `MATCH` y los `given-names` que quedan son `Juan-Pablo`.
 
   
-
 - `T. N. T.` vs `Tomas Alfajor Termas`
 
 1) T → matchea `Tomas` y se consume; restantes: [`Alfajor`, `Termas`]
-
 2) N → no hay `N*` entre los tokens restantes (se pueden saltar tokens que no matchean, pero debe existir uno que sí). Falla → `NO MATCH`
 
-  
-
 ## Flujo de datos (resumen)
-
-  
 
 1. `ReferencesManager` parsea referencias y, si hay DOI, consulta OpenAlex.
 
@@ -183,7 +172,6 @@ De esta forma, la misma heurística guía tanto la validación como la construcc
 
 4. `JournalPrinter::enrichment()` agrega/actualiza elementos JATS, incluyendo `<person-group>` con `surname` y `given-names`.
 
-  
 
 > Nota: Si se quiere endurecer o flexibilizar la validación (p. ej., distancia de Levenshtein para apellidos), hacerlo dentro de `AuthorFullNameProcessor` garantiza que la construcción del JATS siga la misma regla, sin duplicar lógica.
 
@@ -191,17 +179,10 @@ De esta forma, la misma heurística guía tanto la validación como la construcc
 
 ## Runner de pruebas y ejemplos JATS
 
-  
-
 - Script: `tests/run_author_fullname_processor.php`
-
 - Datos: `tests/data/authors_cases.json`
-
 - Qué hace: imprime por caso `[PASS]/[FAIL] — Matchea/No matchea` y, si matchea, muestra el `<name>` en línea.
-
 - Archivo de salida: `tests/output/jats_names_examples.xml` con todos los `<name>` correspondientes al XML JATS generados.
-
-  
 
 Cómo ejecutar (desde `citation-parser-ojs`):
 
