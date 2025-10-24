@@ -17,3 +17,7 @@
 - Con respecto a la edición de fechas de recepción, aceptación y publicación, el único valor que puede modificarse dentro de OJS es la fecha de PUBLICACIÓN. Las demás fechas no pueden modificarse de forma manual ya que OJS almacena estos metadatos internamente y los plugins recuperan estos mismos para mostrarlos 
 
 ---
+
+- Anotar/pensar prioridades sobre cosas a encarar en los siguientes días.
+- Tomar con pinzas el mail sobre el XML en Scielo
+
