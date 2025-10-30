@@ -5,9 +5,8 @@
 - Al sistema no le gustan las imágenes. Hay problemas con las imágenes donde a veces no aparecen. Una revista de agronomía probó con diferentes tipos de imágenes, y no le funcionó ninguna.
   EN EL HTML LAS IMAGENES NO SALEN, HAY QUE CORREGIR ESTO TAMBIÉN... DEBEN SALIR LAS IMÁGENES EN EL HTML DE PREVISUALIZACIÓN.
   **ESTO ES LO MAS URGENTE**.
-- Evaluar la estructura de la figura que contiene la imágen, a ver si cuando. 
-  No es que la imágen no se encuentre, sino que hay un problema de servidor.  Si se visualiza el HTML, entonces 
-  Encontrar en qué casos o no se hace el base64,, o se hace mal. Quizá alguna característica en el archivo haga que no se pase a base64 o se cargue mal.
+- Evaluar la estructura XML de la figura donde está contenida la imágen para ver si es correcta.
+  Encontrar en qué casos o no se hace el base64, o se hace mal. Quizá alguna característica en el archivo haga que no se pase a base64 o se cargue mal.
   Evaluar si es una característica del archivo o de como está metido ese archivo en el XML para saber si es un problema de alguna característica del mismo o de la construcción del XML para ese archivo.
 - LAS IMAGENES PUEDEN ESTAR CARGADAS EN DIFERENTES IDIOMAS DESDE LA SECCIÓN EDITAR DEL XML
   
@@ -28,9 +27,7 @@
 - En las referencias hay campos que no se tienen en cuenta o no aparecen. Hay que lograr que todos los campos se recuperen desde texture y que aparezcan en el PDF. El rango de página no sale en el campo de metadato de referencias de OJS pero en el PDF si.
   Los datos que no salen en el PDF son mas relacionados con texture... pero el rango de página sí sale en el PDF... 
   **Quizá OJS detecte algo del html correspondiente a la referencia como código y lo elimine???**
-  En el PDF los datos que no aparecen (traductor, editor, serie... etc) no son los mismos que no aparecen cuando se extraenlas referencias en el campo de referencias en los metadatos.
-
--  Al pasar de docx a xml jats, 
+  En el PDF los datos que no aparecen (traductor, editor, serie... etc) no son los mismos que no aparecen cuando se extraen las referencias en el campo de referencias en los metadatos.
 
 **LA PRIORIDAD SON LAS IMÁGENES.** Luego la tipografía.
 Averiguar por qué al subir una imágen a mano en OJS para un XML, se agrega un + automáticamente si hay un espacio.
@@ -51,10 +48,10 @@ Averiguar por qué al subir una imágen a mano en OJS para un XML, se agrega un 
 
 - Reducir un punto de tipografía en las notas -> **Solucionado**
 
-- Aumentar el espacio entre el texto principal y el inicio de la cita a bando -> ****
+- Aumentar el espacio entre el texto principal y el inicio de la cita a bando -> **Solucionado**
 
-- TEXTO DEL BODY JUSTIFICADO
+- TEXTO DEL BODY JUSTIFICADO -> **Solucionado**
 
-- Buscar en el XML las citas obtenidas en la base de datos para filtrarlas en caso de que no existan. Una idea es agregar un botón para eliminar citas
+- Buscar en el XML las citas obtenidas en la base de datos para filtrarlas en caso de que no existan. Una idea es agregar un botón para eliminar citas -> 
 
-- Priorizar idioma local del artículo a la hora de procesar autores, resumenes, palabras clave, titulos y subtítulos.
+- Priorizar idioma local del artículo a la hora de procesar autores, resumenes, palabras clave, titulos y subtítulos. -> **Solucionado**

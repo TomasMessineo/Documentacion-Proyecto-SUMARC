@@ -24,6 +24,8 @@ La estrategia utilizada hasta el momento es:
 
 - Si se buscan instituciones por sus SIGLAS, también OpenAlex puede encontrarlas.
 
+**Como futura implementación, aprovechar mas el enriquecimiento agregando el ROR al XML, entre otros datos.**
+
 ---
 # Autores: validación y construcción de JATS con una estrategia compartida
 
@@ -32,7 +34,7 @@ Este documento describe cómo se validan los autores contra OpenAlex y cómo se 
 ### Objetivo
 
 - Evitar que un DOI incorrecto reemplace autores en el JATS si los autores de la referencia no coinciden con OpenAlex.
-- 
+
 - Reutilizar la misma heurística de nombres para dos tareas: validar y construir `<person-group>` con `<surname>` y `<given-names>`.
 
 ### Componentes

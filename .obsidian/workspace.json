@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "49f5d15d57eb5aea",
+        "id": "1cedd1771ac2d3aa",
         "type": "tabs",
         "children": [
           {
-            "id": "a4bf8fb0988a8594",
+            "id": "58bc6225bb8d74a6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notas de reuniones/TEST.md",
+                "file": "Futuras implementaciones/Mejora en.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TEST"
+              "title": "Mejora en"
             }
           }
         ]
@@ -154,8 +154,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-ghost",
+              "title": "git-view"
             }
           }
         ],
@@ -178,45 +178,47 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a4bf8fb0988a8594",
+  "active": "58bc6225bb8d74a6",
   "lastOpenFiles": [
+    "Notas de reuniones/TEST.md",
+    "Futuras implementaciones/Mejora en.md",
+    "Notas de reuniones/Tareas a realizar.md",
+    "Notas de reuniones/Reunión del día 25-09-2025.md",
+    "Actualizaciones/texture/Arreglo de archivos dependientes (imágenes) en OJS 3.4.md",
+    "Actualizaciones/texture/Actualizaciones de Texture.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
-    "Actualizaciones/docxConverter/OpenAlexEnrichment/Datos necesarios de OpenAlex para enriquecimiento de referencias en XML JATS.md",
     "Futuras implementaciones/Tareas futuras.md",
-    "Notas de reuniones/TEST.md",
-    "Notas de reuniones/Notas -> Probables errores al marcar.md",
-    "Notas de reuniones/Reunión del día 25-09-2025.md",
-    "Notas de reuniones/Notas - Reunion BIREDIAL 2025.md",
-    "Actualizaciones/Actualizaciones.md",
-    "Futuras implementaciones/Elección de fuentes.md",
     "Futuras implementaciones/Márgenes dinámicos.md",
-    "Imágenes/Captura desde 2025-10-09 11-31-44.png",
-    "Documentación SUMARC para OJS 3_4.md",
-    "Documentación SUMARC para OJS 3_3.md",
-    "Futuras implementaciones/Texture -> Manual de datos?.md",
+    "Futuras implementaciones/Elección de fuentes.md",
+    "Futuras implementaciones/Texture - Manual de datos.md",
+    "Actualizaciones/docxConverter/Errores/Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias.md",
+    "Actualizaciones/Actualizaciones.md",
+    "Actualizaciones/jatsParser/Actualizaciones de jatsParser.md",
+    "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
+    "Actualizaciones/jatsParser/Desarrollo de modulo para la Numeración de Referencias.md",
     "Actualizaciones/docxConverter/Actualizaciones de docxConverter.md",
+    "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
+    "Documentación SUMARC para OJS 3_4.md",
+    "Notas de reuniones/Notas - Probables errores al marcar.md",
+    "Notas de reuniones/Notas - Reunion BIREDIAL 2025.md",
+    "Actualizaciones/Desarrollo de modulo para la Numeración de Referencias.md",
+    "Desarrollo de modulo para la Numeración de Referencias.md",
+    "Untitled.md",
+    "Untitled.base",
+    "Actualizaciones/docxConverter/OpenAlexEnrichment/Datos necesarios de OpenAlex para enriquecimiento de referencias en XML JATS.md",
+    "Imágenes/Captura desde 2025-10-09 11-31-44.png",
     "Actualizaciones/docxConverter/OpenAlexEnrichment",
     "Imágenes/Captura desde 2025-09-29 13-23-45.png",
     "Imágenes/Captura desde 2025-09-29 13-21-38.png",
     "Imágenes/Captura desde 2025-09-29 13-19-19.png",
     "Imágenes/Captura desde 2025-09-29 13-12-50.png",
-    "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
-    "Actualizaciones/docxConverter/Errores/Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias.md",
-    "Actualizaciones/texture/Arreglo de archivos dependientes (imágenes) en OJS 3.4.md",
     "Imágenes/Pasted image 20250929131754.png",
     "Imágenes/Captura desde 2025-09-29 13-20-11.png",
     "Imágenes",
     "Imágenes/Captura desde 2025-09-29 13-17-11.png",
     "Imágenes/Captura desde 2025-09-29 13-14-01.png",
-    "Actualizaciones/texture/Actualizaciones de Texture.md",
     "Imágenes/Captura desde 2025-09-23 11-43-07.png",
-    "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
-    "Untitled.base",
-    "Actualizaciones/jatsParser/Actualizaciones de jatsParser.md",
-    "README.md",
-    "jatsParser.md",
-    "Notas SUMARC.md",
     "Actualizaciones/texture",
     "Actualizaciones/docxConverter",
     "Actualizaciones/jatsParser",

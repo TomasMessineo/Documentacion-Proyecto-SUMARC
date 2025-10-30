@@ -40,8 +40,6 @@ Deberías ver solo las imágenes de esta etapa. Si una imagen no aparece:
 - Revisá que el nombre del archivo coincida con el que el XML espera (por ejemplo, si el XML usa `figures/Fig1.png`, subí un archivo llamado `Fig1.png`).
 - Probá volver a subirla con ese nombre.
 
-  
-
 ## Consejito con los nombres
 
 ***El editor busca las imágenes por el nombre del archivo que figura en el XML. Si se mantienen esos nombres cuando se suben las imágenes, se vinculan solas y aparecen sin problemas.***
