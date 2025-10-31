@@ -22,6 +22,20 @@
 **Se podría intentar armar documentación del plugin citation-parser indicando a NotebookLM las fuentes, papers o presentaciones que haya relacionadas a SUMARC.**
 
 ## v0
+| Concepto           | Qué es                                                                                                                              | Nivel de Interactividad    | Ejemplo                                                       |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | ------------------------------------------------------------- |
+| **Mockup**         | Una **representación visual estática** del diseño (boceto o maqueta). Muestra colores, tipografías, distribución de elementos, etc. | ❌ Sin interacción          | Imagen o diseño plano hecho en Photoshop, Figma o Illustrator |
+| **Prototipo**      | Una **versión funcional o simulada** del producto. Permite **interactuar** (botones, navegación, transiciones).                     | ✅ Interactivo              | Prototipo navegable hecho en Figma, Adobe XD o código         |
+| **Producto final** | El software real, implementado con código.                                                                                          | 💻 Completamente funcional | App web, móvil o sistema real                                 |
 
 
+**Resúmen:**
+
+| Etapa             | Qué hacés               | Herramientas                     |
+| ----------------- | ----------------------- | -------------------------------- |
+| **Mockup**        | Boceto visual           | Figma, Photoshop, Canva          |
+| **Prototipo**     | Interacciones simuladas | Figma (modo prototype), Adobe XD |
+| **Producto real** | Desarrollo funcional    | React, Flutter, HTML/CSS, etc.   |
 ## Gamma: IA para PPT's
+- Sirve para armar presentaciones en base a un prompt
+- 
