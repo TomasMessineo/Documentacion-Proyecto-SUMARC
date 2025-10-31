@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Futuras implementaciones/Mejora en.md",
+                "file": "Notas de reuniones/Notas - Charla sobre IA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Mejora en"
+              "title": "Notas - Charla sobre IA"
             }
           }
         ]
@@ -180,8 +180,9 @@
   },
   "active": "58bc6225bb8d74a6",
   "lastOpenFiles": [
-    "Notas de reuniones/TEST.md",
     "Futuras implementaciones/Mejora en.md",
+    "Notas de reuniones/Notas - Charla sobre IA.md",
+    "Notas de reuniones/TEST.md",
     "Notas de reuniones/Tareas a realizar.md",
     "Notas de reuniones/Reunión del día 25-09-2025.md",
     "Actualizaciones/texture/Arreglo de archivos dependientes (imágenes) en OJS 3.4.md",
@@ -206,7 +207,6 @@
     "Desarrollo de modulo para la Numeración de Referencias.md",
     "Untitled.md",
     "Untitled.base",
-    "Actualizaciones/docxConverter/OpenAlexEnrichment/Datos necesarios de OpenAlex para enriquecimiento de referencias en XML JATS.md",
     "Imágenes/Captura desde 2025-10-09 11-31-44.png",
     "Actualizaciones/docxConverter/OpenAlexEnrichment",
     "Imágenes/Captura desde 2025-09-29 13-23-45.png",
