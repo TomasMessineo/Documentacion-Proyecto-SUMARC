@@ -19,4 +19,9 @@
 - Se le pueden hacer preguntas y en base a lo que se le compartió y responde especificando el lugar de dónde lo sacó en base a las fuentes/archivos compartidas. Si hay que armar un proyecto de financiamiento, armar especificaciones de software, armar artículos, escribir tésis, resúmenes, etc. Se puede arrancar en base a esta herramienta y adjuntar toda la información (fuentes, archivos, etc).
 - En la opción de **"insertar nota"**, se le puede forzar cierto razonamiento. Se indican premisas o cosas que tienen que ser así.
 
-**Se podría intentar armar documentación del plugin citation-parser indicando a NotebookLM las fuentes, papers o presentaciones que haya r**
+**Se podría intentar armar documentación del plugin citation-parser indicando a NotebookLM las fuentes, papers o presentaciones que haya relacionadas a SUMARC.**
+
+## v0
+
+
+## Gamma: IA para PPT's
