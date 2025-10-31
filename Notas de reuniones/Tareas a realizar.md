@@ -67,3 +67,5 @@
 
 1) Terminar la integración de OpenAlex (eliminar error_logs, archivos de prueba, y migrarlo también a OJS 3.3). Testear la integración con OpenAlex 
    **Finalizado. Queda implementar integración con DOI**
+
+**Pequeña aclaración en general:** Las imágenes que se asocien como archivos dependientes a un archivo XML en OJS deben tener como nombre designado EXACTAMENTE el mismo nombre que tienen en el XML. Si en el XML el nombre de la imágen es imagen1.jpg y como archivo dependiente su nombre es imagen1.png, la misma NO aparecerá. Tienen que tener el mismo nombre SÍ O SÍ.
