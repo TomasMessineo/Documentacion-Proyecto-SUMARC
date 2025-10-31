@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notas de reuniones/Notas - Charla sobre IA.md",
+                "file": "Notas de reuniones/TEST.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notas - Charla sobre IA"
+              "title": "TEST"
             }
           }
         ]
@@ -180,8 +180,8 @@
   },
   "active": "58bc6225bb8d74a6",
   "lastOpenFiles": [
-    "Futuras implementaciones/Mejora en.md",
     "Notas de reuniones/Notas - Charla sobre IA.md",
+    "Futuras implementaciones/Mejora en.md",
     "Notas de reuniones/TEST.md",
     "Notas de reuniones/Tareas a realizar.md",
     "Notas de reuniones/Reunión del día 25-09-2025.md",
