@@ -3,7 +3,6 @@
 
 
 ## Cursor AI
-
 - $20 por cursor y $20 por Claude
 - Antes de comenzar, pedirle a la  que analice el contexto de un proyecto y que arme una propuesta de diseño en un archivo .md
 - Al seleccionar la opción "cloud" en Cursor IDE se copia codigo en la nube, se genera una rama y luego genera el PR.
@@ -36,6 +35,8 @@
 | **Mockup**        | Boceto visual           | Figma, Photoshop, Canva          |
 | **Prototipo**     | Interacciones simuladas | Figma (modo prototype), Adobe XD |
 | **Producto real** | Desarrollo funcional    | React, Flutter, HTML/CSS, etc.   |
+
+
 ## Gamma: IA para PPT's
 - Sirve para armar presentaciones en base a un prompt
 - 
