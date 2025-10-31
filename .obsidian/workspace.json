@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notas de reuniones/TEST.md",
+                "file": "Notas de reuniones/Tareas a realizar.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TEST"
+              "title": "Tareas a realizar"
             }
           }
         ]
@@ -180,9 +180,9 @@
   },
   "active": "58bc6225bb8d74a6",
   "lastOpenFiles": [
+    "Notas de reuniones/TEST.md",
     "Notas de reuniones/Notas - Charla sobre IA.md",
     "Futuras implementaciones/Mejora en.md",
-    "Notas de reuniones/TEST.md",
     "Notas de reuniones/Tareas a realizar.md",
     "Notas de reuniones/Reunión del día 25-09-2025.md",
     "Actualizaciones/texture/Arreglo de archivos dependientes (imágenes) en OJS 3.4.md",

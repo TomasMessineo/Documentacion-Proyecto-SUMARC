@@ -42,8 +42,6 @@
 
 3-> Modificación de fechas de envío y aceptación de forma manual (si alguna revista usa QuickSubmit
 
-1->  Terminar la integración de OpenAlex (eliminar error_logs, archivos de prueba, y migrarlo también a OJS 3.3). Testear la integración con OpenAlex
-
 -  Agregar soporte para convertir más elementos en docxConverter (como citas a bando y notas al final del documento, por ejemplo)
 
 - Evaluar si Texture borra datos del < body > o el < front > del artículo al guardar los cambios. Se podría evaluar qué datos están en el XML JATS al generar el XML mediante un DOCX, y comparar ese mismo XML pero luego de guardar los cambios en Texture. De esta forma podríamos ver si se pierden datos entre etapas.
@@ -65,3 +63,7 @@
 
 - En vez de guardar la configuración de las citas en la base de datos, evaluar la posibilidad de hacerlo en un XML
 
+# Tareas resueltas:
+
+1) Terminar la integración de OpenAlex (eliminar error_logs, archivos de prueba, y migrarlo también a OJS 3.3). Testear la integración con OpenAlex 
+   **Finalizado. Queda implementar integración con DOI**
