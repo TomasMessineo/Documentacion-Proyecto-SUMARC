@@ -8,4 +8,5 @@
 - Opción de configuración "Tools y MCP": Permite conectar servidores MCP como Playwright, Figma, atlassian, etc. 
 - Opción de configuración "Rules, memories, commands": Se definen ciertas reglas para seguir buenas prácticas a seguir a la hora de desarrollar. Además, se pueden agregar documentaciones .md de reglas a seguir sobre buenas prácticas que la IA seguirá a la hora de generar código.
 -  @ -> Permite elegir archivos
+- n8n sirve para generar un flujo donde hay entradas y salidas de datos y van conectandose nodos que pueden ser MCP
 - 
