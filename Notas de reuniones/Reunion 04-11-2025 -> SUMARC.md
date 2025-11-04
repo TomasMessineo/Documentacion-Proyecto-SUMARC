@@ -5,4 +5,7 @@
 
 - Actualizar documentación. En las documentaciones de instalación no están los cambios de branch para acomodar los plugins.
 
-- Tener un docker sandbox y montant
+- Tener un docker sandbox y montarlo para levantar un ojs andando (incluyendo los datos o plugins de sumarc) y la base de datos.
+  Revisar y chusmear: https://github.com/pkp/docker-ojs -> Quizá ya resuelva una gran parte de esto
+
+- 

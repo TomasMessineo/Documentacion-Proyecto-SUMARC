@@ -51,6 +51,7 @@
 - Definir esquema de git con respecto a qué pushear, que mergear, etc.
 
 5-> Ya que se va a trabajar bastante con el conversor de DOCX a XML JATS, quizá sea necesario añadir una forma genérica de testear lo que se viene haciendo. Una idea es integrar PHPUnit para realizar pruebas unitarias al implementar cada funcionalidad.
+
 4-> Referencias incompletas al generar el PDF (como rangos de página, etc)... - ¿Posible archivo .csl de la UNLP? **Ticket:** https://trac.prebi.unlp.edu.ar/issues/12610 
 
 - Identificar prioridades y pensar en Santiago para ordenarle el trabajo para que aprenda las tecnologías, todo, y empezar a hacer aportes pequeños para sentirse útil. Ver donde encaja Santi en todo esto. El martes tipo 10 hacemos una reunion para hablar mejor sobre el proyecto.
