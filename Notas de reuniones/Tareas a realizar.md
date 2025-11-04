@@ -31,6 +31,8 @@
 - Tener claro que propone PKP con respecto al manejo del XML y demás.
 
 - Soporte para nuevas referencias en docxConverter y mejorar el soporte para APA. Posibilidad: Meter referencias con errores al final del texto del body para mostrarlas en vez de que texture limite y las muestre SIEMPRE como referencias de tipo Journal a aquellas referencias que tengan errores. Además, soporte para otros tipos de estilos como AMA, IEEE, etc... pestaña de configuración para elegir el estilo de cita y aplicar Strategy para elegir como parsear.
+  También se pueden soportar otras versiones de estpabdar de citación, como APA 6 por ejemplo, que supondría no muchos cambios...
+  El docxConverter debería permitir elegir el 
 
 - Texture pisa las citas, y en el caso de que se pasen de DOCX a XML JATS, la tabla de citas debería seguir estando ya que sino no hay manera de volverlas a modificar si texture las pisó. 
 
@@ -38,7 +40,7 @@
 
 # Prioridades:
 
-2-> En el HTML de previsualización las imágenes no salen, esto hay que corregirlo. Lo tengo marcado como urgente -> Solucionado
+2-> En el HTML de previsualización las imágenes no salen, esto hay que corregirlo. Lo tengo marcado como urgente -> **Generarar salida HTML mediante base64 y de PDF con rutas** 
 
 3-> Modificación de fechas de envío y aceptación de forma manual (si alguna revista usa QuickSubmit
 
