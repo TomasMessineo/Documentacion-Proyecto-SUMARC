@@ -38,7 +38,7 @@
 
 # Prioridades:
 
-2-> En el HTML de previsualización las imágenes no salen, esto hay que corregirlo. Lo tengo marcado como urgente 
+2-> En el HTML de previsualización las imágenes no salen, esto hay que corregirlo. Lo tengo marcado como urgente -> Solucionado
 
 3-> Modificación de fechas de envío y aceptación de forma manual (si alguna revista usa QuickSubmit
 
