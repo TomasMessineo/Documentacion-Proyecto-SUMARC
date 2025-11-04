@@ -21,20 +21,12 @@ El HTML de previsualización será más pesado (las imágenes están embebidas).
 **Si en el futuro se desea optimizar cache/peso, se puede re-habilitar el uso del handler y ajustar su autorización para OJS 3.4.**
 
 ## Handler (opcional a futuro)
-Para volver a incorporar imágenes por URL (cacheables) en lugar de data URI, se recomienda que el handler:
-
+Para volver a incorporar imágenes por URL mediante el HANDLER en lugar de data URI, se recomienda que el handler:
 - Permita acceso público cuando el envío esté publicado.
-
 - Permita acceso a roles editoriales autenticados durante el workflow.
-
 - Verifique que el adjunto pertenezca al archivo JATS indicado (match estricto de `assocId` + `fileId`).
 
-  
-
-## 🧩 Sobre `JatsParserSettingsForm`
-
-  
-
+## Sobre `JatsParserSettingsForm`
 - Con el nuevo enfoque (imágenes en base64) la previsualización HTML ya no depende de configurar rutas/permisos para servir adjuntos.
 
 - Por lo tanto, `JatsParserSettingsForm` queda obsoleto para el manejo de imágenes en la vista previa.
