@@ -37,7 +37,6 @@ Para volver a incorporar imágenes por URL mediante el HANDLER en lugar de data 
 
 ## 🧪 Cómo verificar
 
-  
 
 1. Abrir la previsualización HTML del artículo (view) y confirmar que las imágenes se muestran.
 
