@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notas de reuniones/Tareas a realizar.md",
+                "file": "Actualizaciones/jatsParser/Arreglo de Imágenes al previsualizar HTML generado.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tareas a realizar"
+              "title": "Arreglo de Imágenes al previsualizar HTML generado"
             }
           }
         ]
@@ -180,8 +180,9 @@
   },
   "active": "58bc6225bb8d74a6",
   "lastOpenFiles": [
-    "Notas de reuniones/Reunión del día 25-09-2025.md",
+    "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
     "Notas de reuniones/Tareas a realizar.md",
+    "Notas de reuniones/Reunión del día 25-09-2025.md",
     "Notas de reuniones/TEST.md",
     "Notas de reuniones/Reunion 04-11-2025 -> SUMARC.md",
     "Notas de reuniones/Notas - Charla sobre IA.md",
@@ -200,7 +201,6 @@
     "Actualizaciones/docxConverter/Errores/Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias.md",
     "Actualizaciones/Actualizaciones.md",
     "Actualizaciones/jatsParser/Actualizaciones de jatsParser.md",
-    "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
     "Actualizaciones/jatsParser/Desarrollo de modulo para la Numeración de Referencias.md",
     "Actualizaciones/docxConverter/Actualizaciones de docxConverter.md",
     "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
