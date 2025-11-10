@@ -1,6 +1,6 @@
 #### Ultima actualización: 22/09/2025
 
-Se está implementando una nueva funcionalidad que permite enriquecer las referencias bibliográficas del XML JATS generado por este plugin utilizando la API de OpenAlex:[https://docs.openalex.org/how-to-use-the-api/api-overview]()
+Se está implementando una nueva funcionalidad que permite enriquecer las referencias bibliográficas del XML JATS generado por este plugin utilizando la API de OpenAlex: [https://docs.openalex.org/how-to-use-the-api/api-overview]()
 
 De esta manera, la generación automática de referencias no depende únicamente de las expresiones regulares desarrolladas, sino que puede complementarse y enriquecerse con la información obtenida a través de dicha API.  
 La respuesta de OpenAlex se recibe en formato **JSON**, el cual es procesado para realizar el enriquecimiento de los datos previamente extraídos.

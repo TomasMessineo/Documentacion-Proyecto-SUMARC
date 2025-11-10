@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1cedd1771ac2d3aa",
+        "id": "d4a0c7ee6606126d",
         "type": "tabs",
         "children": [
           {
-            "id": "58bc6225bb8d74a6",
+            "id": "79ddd12b800868f2",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -178,11 +178,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "58bc6225bb8d74a6",
+  "active": "79ddd12b800868f2",
   "lastOpenFiles": [
+    "Actualizaciones/docxConverter/OpenAlexEnrichment/Datos necesarios de OpenAlex para enriquecimiento de referencias en XML JATS.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
-    "Actualizaciones/docxConverter/OpenAlexEnrichment/Datos necesarios de OpenAlex para enriquecimiento de referencias en XML JATS.md",
+    "().md",
     "Futuras implementaciones/Texture - Manual de datos.md",
     "Actualizaciones/Actualizaciones.md",
     "Notas de reuniones/Reunión del día 25-09-2025.md",
@@ -205,7 +206,6 @@
     "Actualizaciones/jatsParser/Actualizaciones de jatsParser.md",
     "Actualizaciones/jatsParser/Desarrollo de modulo para la Numeración de Referencias.md",
     "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
-    "Documentación SUMARC para OJS 3_4.md",
     "Untitled.base",
     "Imágenes/Captura desde 2025-10-09 11-31-44.png",
     "Actualizaciones/docxConverter/OpenAlexEnrichment",
