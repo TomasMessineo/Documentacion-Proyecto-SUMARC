@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
+                "file": "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Enriquecimiento mediante API de OpenAlex"
+              "title": "Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex"
             }
           }
         ]
@@ -180,9 +180,9 @@
   },
   "active": "79ddd12b800868f2",
   "lastOpenFiles": [
+    "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Datos necesarios de OpenAlex para enriquecimiento de referencias en XML JATS.md",
-    "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
     "().md",
     "Futuras implementaciones/Texture - Manual de datos.md",
     "Actualizaciones/Actualizaciones.md",
