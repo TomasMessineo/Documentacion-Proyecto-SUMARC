@@ -32,38 +32,19 @@ Para volver a incorporar imágenes por URL mediante el HANDLER en lugar de data 
 - Por lo tanto, `JatsParserSettingsForm` queda obsoleto para el manejo de imágenes en la vista previa.
 
 - Si el formulario se utiliza para otras configuraciones del plugin (p. ej., estilos de citación, flags de conversión a PDF), puede seguir presente para esos fines.
-
-  
-
-## 🧪 Cómo verificar
-
+- 
+## Cómo verificar
 
 1. Abrir la previsualización HTML del artículo (view) y confirmar que las imágenes se muestran.
-
 2. Inspeccionar el HTML y verificar que los `src` comienzan con `data:image/*;base64,`.
-
 3. Generar el PDF y confirmar que las imágenes siguen apareciendo correctamente (flujo sin cambios en `editPublication`).
-
-  
-
-## 🗂 Archivos tocados
-
-  
+## Archivos tocados
 
 - `plugins/generic/jatsParser/JatsParserPlugin.inc.php`
-
 - `_setSupplImgPath(...)`: case `view` -> incrustación como data URI; fallback a handler.
-
 - (Opcional) `plugins/generic/jatsParser/FullTextArticleHandler.inc.php`
-
 - Puede mantenerse para compatibilidad/fallback, pero ya no es necesario para la previsualización HTML.
-
-  
-
-## ⚠️ Notas
-
-  
+## Notas
 
 - Si actualmente hay personalizaciones locales del handler, no se ven afectadas por este cambio en la previsualización.
-
 - Si se elige reactivar el handler para servir imágenes en preview, se deben ajustar las políticas de autorización a OJS 3.4.
