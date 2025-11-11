@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
+                "file": "Actualizaciones/jatsParser/Arreglo de Imágenes al previsualizar HTML generado.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Desarrollo de un módulo para la numeración de referencias."
+              "title": "Arreglo de Imágenes al previsualizar HTML generado"
             }
           }
         ]
@@ -180,6 +180,7 @@
   },
   "active": "79ddd12b800868f2",
   "lastOpenFiles": [
+    "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
     "Actualizaciones/texture/Arreglo de archivos dependientes (imágenes) en OJS 3.4.md",
     "Actualizaciones/texture/Actualizaciones de Texture.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
@@ -193,7 +194,6 @@
     "Notas de reuniones/Tareas a realizar.md",
     "Notas de reuniones/TEST.md",
     "Actualizaciones/jatsParser/Arreglo de Imágenes al previsualizar HTML generado.md",
-    "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
     "Notas de reuniones/Reunion 04-11-2025 -> SUMARC.md",
     "Notas de reuniones/Notas - Charla sobre IA.md",
     "Notas de reuniones/Notas - Probables errores al marcar.md",
