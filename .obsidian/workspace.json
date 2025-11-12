@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
+                "file": "Futuras implementaciones/Tareas futuras.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex"
+              "title": "Tareas futuras"
             }
           }
         ]
@@ -180,6 +180,7 @@
   },
   "active": "79ddd12b800868f2",
   "lastOpenFiles": [
+    "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Datos necesarios de OpenAlex para enriquecimiento de referencias en XML JATS.md",
     "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
@@ -190,7 +191,6 @@
     "Futuras implementaciones/Márgenes dinámicos.md",
     "Futuras implementaciones/Tareas futuras.md",
     "Actualizaciones/texture/Actualizaciones de Texture.md",
-    "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "().md",
     "Futuras implementaciones/Texture - Manual de datos.md",
     "Actualizaciones/Actualizaciones.md",
