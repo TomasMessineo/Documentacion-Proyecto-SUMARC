@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Actualizaciones/texture/Arreglo de archivos dependientes (imágenes) en OJS 3.4.md",
+                "file": "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Arreglo de archivos dependientes (imágenes) en OJS 3.4"
+              "title": "Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex"
             }
           }
         ]
@@ -180,13 +180,17 @@
   },
   "active": "79ddd12b800868f2",
   "lastOpenFiles": [
-    "Actualizaciones/jatsParser/Arreglo de Imágenes al previsualizar HTML generado.md",
-    "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
-    "Actualizaciones/texture/Arreglo de archivos dependientes (imágenes) en OJS 3.4.md",
-    "Actualizaciones/texture/Actualizaciones de Texture.md",
-    "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Datos necesarios de OpenAlex para enriquecimiento de referencias en XML JATS.md",
+    "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
+    "Actualizaciones/jatsParser/Arreglo de Imágenes al previsualizar HTML generado.md",
+    "Actualizaciones/jatsParser/Actualizaciones de jatsParser.md",
+    "Actualizaciones/texture/Arreglo de archivos dependientes (imágenes) en OJS 3.4.md",
+    "Futuras implementaciones/Elección de fuentes.md",
+    "Futuras implementaciones/Márgenes dinámicos.md",
+    "Futuras implementaciones/Tareas futuras.md",
+    "Actualizaciones/texture/Actualizaciones de Texture.md",
+    "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "().md",
     "Futuras implementaciones/Texture - Manual de datos.md",
     "Actualizaciones/Actualizaciones.md",
@@ -199,11 +203,7 @@
     "Notas de reuniones/Notas - Probables errores al marcar.md",
     "Notas de reuniones/Notas - Reunion BIREDIAL 2025.md",
     "Futuras implementaciones/Mejora en.md",
-    "Futuras implementaciones/Tareas futuras.md",
-    "Futuras implementaciones/Márgenes dinámicos.md",
-    "Futuras implementaciones/Elección de fuentes.md",
     "Actualizaciones/docxConverter/Errores/Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias.md",
-    "Actualizaciones/jatsParser/Actualizaciones de jatsParser.md",
     "Actualizaciones/jatsParser/Desarrollo de modulo para la Numeración de Referencias.md",
     "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
     "Untitled.base",
