@@ -25,12 +25,14 @@
             "id": "2dcd00ce169cbad4",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.10.3"
+                "file": "Notas de reuniones/Nota -> Posible solución a problema de referencias a tesis incompletas.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.10.3"
+              "icon": "lucide-file",
+              "title": "Nota -> Posible solución a problema de referencias a tesis incompletas"
             }
           }
         ],
@@ -193,6 +195,9 @@
   },
   "active": "2dcd00ce169cbad4",
   "lastOpenFiles": [
+    "Notas de reuniones/Reunion 18-11-2025 -> SUMARC.md",
+    "Notas de reuniones/Nota -> Posible solución a problema de referencias a tesis incompletas.md",
+    "Notas de reuniones/Tareas a realizar.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Datos necesarios de OpenAlex para enriquecimiento de referencias en XML JATS.md",
@@ -209,7 +214,6 @@
     "Actualizaciones/Actualizaciones.md",
     "Notas de reuniones/Reunión del día 25-09-2025.md",
     "Actualizaciones/docxConverter/Actualizaciones de docxConverter.md",
-    "Notas de reuniones/Tareas a realizar.md",
     "Notas de reuniones/TEST.md",
     "Notas de reuniones/Reunion 04-11-2025 -> SUMARC.md",
     "Notas de reuniones/Notas - Charla sobre IA.md",
@@ -217,8 +221,6 @@
     "Notas de reuniones/Notas - Reunion BIREDIAL 2025.md",
     "Futuras implementaciones/Mejora en.md",
     "Actualizaciones/docxConverter/Errores/Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias.md",
-    "Actualizaciones/jatsParser/Desarrollo de modulo para la Numeración de Referencias.md",
-    "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
     "Untitled.base",
     "Imágenes/Captura desde 2025-10-09 11-31-44.png",
     "Actualizaciones/docxConverter/OpenAlexEnrichment",

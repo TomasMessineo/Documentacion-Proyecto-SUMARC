@@ -1,0 +1,4 @@
+
+Como posible solución a la imposibilidad de indicar el tipo de tesis en una referencia a una tesis desde Texture, se me ocurrió que desde dicha herramienta se puede indicar en el campo "Publisher Location" tanto el tipo de tesis como la institución que brinda el título y además en el campo "Publisher Name" no se debe indicar nada (debe quedar vacío). Esto claramente generará un problema en la estructura del XML JATS correspondiente a la referencia de tesis, ya que el tag "publisher-loc" contendrá un dato compuesto: "Tesis de Doctorado, Universidad Nacional de La Plata" por ejemplo... cuando en realidad "Tesis de Doctorado" debería ir en otro tag, ya sea "thesis" o "comment". 
+Esto puede ser una solución (no muy buena claramente), pero sirve para que CiteProc genere la referencia a tesis incluyendo todo "Publisher Location" entre corchetes. 
+Algo que se puede pensar, es que ya que el XML que se está trabajando en el flujo de trabajo NO es el original.
