@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Tareas futuras"
             }
+          },
+          {
+            "id": "2dcd00ce169cbad4",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.3"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.10.3"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -178,7 +191,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "79ddd12b800868f2",
+  "active": "2dcd00ce169cbad4",
   "lastOpenFiles": [
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
