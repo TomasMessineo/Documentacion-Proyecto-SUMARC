@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notas de reuniones/Nota -> Posible solución a problema de referencias a tesis incompletas.md",
+                "file": "Notas de reuniones/Apuntes/Nota -> Cuadro comparativo sobre cambios en JATSParser.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Nota -> Posible solución a problema de referencias a tesis incompletas"
+              "title": "Nota -> Cuadro comparativo sobre cambios en JATSParser"
             }
           }
         ],
@@ -195,8 +195,11 @@
   },
   "active": "2dcd00ce169cbad4",
   "lastOpenFiles": [
+    "Notas de reuniones/Apuntes/Nota -> Posible solución a problema de referencias a tesis incompletas.md",
+    "().md",
+    "Notas de reuniones/Apuntes/Nota -> Cuadro comparativo sobre cambios en JATSParser.md",
+    "Notas de reuniones/Apuntes",
     "Notas de reuniones/Reunion 18-11-2025 -> SUMARC.md",
-    "Notas de reuniones/Nota -> Posible solución a problema de referencias a tesis incompletas.md",
     "Notas de reuniones/Tareas a realizar.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
@@ -209,7 +212,6 @@
     "Futuras implementaciones/Márgenes dinámicos.md",
     "Futuras implementaciones/Tareas futuras.md",
     "Actualizaciones/texture/Actualizaciones de Texture.md",
-    "().md",
     "Futuras implementaciones/Texture - Manual de datos.md",
     "Actualizaciones/Actualizaciones.md",
     "Notas de reuniones/Reunión del día 25-09-2025.md",
@@ -219,8 +221,6 @@
     "Notas de reuniones/Notas - Charla sobre IA.md",
     "Notas de reuniones/Notas - Probables errores al marcar.md",
     "Notas de reuniones/Notas - Reunion BIREDIAL 2025.md",
-    "Futuras implementaciones/Mejora en.md",
-    "Actualizaciones/docxConverter/Errores/Problemas con manejo de múltiples archivos XML JATS y eliminación de referencias.md",
     "Untitled.base",
     "Imágenes/Captura desde 2025-10-09 11-31-44.png",
     "Actualizaciones/docxConverter/OpenAlexEnrichment",
@@ -239,7 +239,6 @@
     "Actualizaciones/jatsParser",
     "Futuras implementaciones",
     "Notas de reuniones",
-    "Actualizaciones/docxConverter/Errores",
-    "Actualizaciones"
+    "Actualizaciones/docxConverter/Errores"
   ]
 }
