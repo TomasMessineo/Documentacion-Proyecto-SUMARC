@@ -14,3 +14,9 @@
 - Evaluar si en el PDF de salida se puede poner una marca de agua. Esto debería evaluarse, para ver si la versión de CSS que soporta mPDF puede integrar esto
 
 - Tener una plantilla de versión previa y una plantilla de versión final. 
+
+---
+
+**Políticas de uso de IA:**
+
+- 
