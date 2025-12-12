@@ -13,3 +13,4 @@ Tareas para vacaciones:
 - Crear documentación completa de SUMARC, a lo mejor se puede hacer con gitbooks
 - Mergear la branch de pps-leo en main o dev
 - Mergear los cambios de Santi en docxConverter a main o dev
+- Migrar nuevos plugins a OJS 3.3
