@@ -1,1 +1,5 @@
 
+Cuando se marca en scielo y se pasa por el procesador, se arma una carpeta que adentro tiene una estructura jerarquica de carpetas donde esta el xml, las imágenes y donde se agregan los pdf. Para depositar en Scielo se pide esto. 
+Esta la carpeta con el código de la revista (o el titulo, o siglas). Dentro de esto va una o varias carpetas con el año. Dentro del año va la carpeta con volúmen y numero, y dentro de la carpeta esta una que se llama markup. Dentro de esta hay 3: Markup source (donde van los html pero no es necesario), y en las otras estan los xml e imágenes, y en otras los pdf e imágenes (que van todas sueltas). Todo esto lleva una estructura de nombre. La imágen debe tener el nombre con el que figuran en el xml. Los xml deben llamarse ISSN, nombre de la revista, volumen y algo mas...
+
+Si se manda de a un artículo, esta estructura de carpetas es por c/u. Sino, es una carpeta donde dentro están los distintos años, volumenes, numeros, etc.
