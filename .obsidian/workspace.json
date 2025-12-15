@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Futuras implementaciones/Tareas futuras.md",
+                "file": "Futuras implementaciones/Márgenes dinámicos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tareas futuras"
+              "title": "Márgenes dinámicos"
             }
           }
         ]
@@ -178,11 +178,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9ae468cd21b27f2c",
+  "active": "9211cb0471b58934",
   "lastOpenFiles": [
+    "Futuras implementaciones/Tareas futuras.md",
     "Notas de reuniones/Tareas a realizar.md",
     "Notas de reuniones/12-12-2025 -> Reunion sobre Scielo.md",
-    "Futuras implementaciones/Tareas futuras.md",
     "Futuras implementaciones/Texture - Manual de datos.md",
     "Notas de reuniones/Apuntes/Nota -> Cuadro comparativo sobre cambios en JATSParser.md",
     "Notas de reuniones/Apuntes/Nota -> Posible solución a problema de referencias a tesis incompletas.md",
