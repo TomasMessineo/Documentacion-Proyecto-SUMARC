@@ -14,3 +14,6 @@ Tareas para vacaciones:
 - Mergear la branch de pps-leo en main o dev
 - Mergear los cambios de Santi en docxConverter a main o dev
 - Migrar nuevos plugins a OJS 3.3
+
+- Resolver tarea de CSL -> Prioritario
+- Meter mano en texture
