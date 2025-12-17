@@ -18,3 +18,9 @@ Tareas para vacaciones:
 - Resolver tarea de CSL -> Prioritario
 - Meter mano en texture
 - Documentar el plan de testing para la integración de OpenAlex en el submodul citation-parser del plugin docxConverter. A lo mejor se pueden programar agentes de IA que reciban como input el XML antes de pasar por OpenAlex, el JSON retornado por OpenAlex y el XML después de ser pasado por OpenAlex (ya enriquecido). 
+
+- Mixed citations en texture
+- Coordinador en texture
+- CiteProc en texture
+- En Texture si hay referencias que no se detectan (por ejemplo vienen con un error desde el conversor), se genera de forma predeterminada como Journal, y no se puede modificar. Esto debería poder modificarse.
+
