@@ -25,3 +25,5 @@ Tareas para vacaciones:
 - En Texture si hay referencias que no se detectan (por ejemplo vienen con un error desde el conversor), se genera de forma predeterminada como Journal, y no se puede modificar. Esto debería poder modificarse.
 
 - Para el nuevo botón hay un problema con los permisos... en el servidor de producción NO aparece el botón "Descargar". Así que esto es un problema de permisos. Además, al apretar "Descargar" el servidor de producción lleva a una página con un error 404 not found, que también quizá sea un tema de permisos. En Sumarctest anda todo perfecto, en el servidor de producción NO.
+  
+  Descargar también las imágenes cuando se toca "Descargar" en el plugin
