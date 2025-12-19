@@ -17,14 +17,9 @@
 
 - Proyecto como dato - Ecosistema de investigación.
   
+- Croissant y MCP -> Empaqueta datos y los deja listos para un posterior procesamiento/reconocimiento por una IA. Es un exportador de metadatos como OAI PMH
 
-
-
-
-
-
-
-
+- WorkflowHub
 
 
 
