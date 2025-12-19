@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "8ac9932da753b460",
+        "id": "70dd18700489eea1",
         "type": "tabs",
         "children": [
           {
-            "id": "9ae468cd21b27f2c",
+            "id": "9df65d71fc30519f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notas de reuniones/Reunion 18-11-2025 -> SUMARC.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Reunion 18-11-2025 -> SUMARC"
+              "title": "New tab"
             }
           }
         ]
@@ -178,11 +174,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9ae468cd21b27f2c",
+  "active": "9df65d71fc30519f",
   "lastOpenFiles": [
+    "Notas de reuniones/Reunion 18-11-2025 -> SUMARC.md",
     "Notas de reuniones/Reunión del día 25-09-2025.md",
     "Notas de reuniones/Tareas a realizar.md",
-    "Notas de reuniones/Reunion 18-11-2025 -> SUMARC.md",
     "Notas de reuniones/Reunion 04-11-2025 -> SUMARC.md",
     "Futuras implementaciones/Tareas futuras.md",
     "Futuras implementaciones/Elección de fuentes.md",
