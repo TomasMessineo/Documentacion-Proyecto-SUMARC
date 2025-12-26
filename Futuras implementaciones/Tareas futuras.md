@@ -29,4 +29,5 @@ Tareas para vacaciones:
 - Mejorar el CSL
 - Se puede usar el campo comment para poner el dato faltante de la tesis
 - Usar fecha de configuración de OJS para meterlo en el CSL
-- Falta campo degree en referencias de tipo tesis 
+- Falta campo degree, publication number y  en referencias de tipo tesis en texture
+  La estructura real sería: Sacar el publisher name del corchete, publisher name y publisher loc deberían estar fuera del corchete, dentro del corchete debería estar el publisher-awarder o algo así, el que otorga el título, y el grado (ej tesis de grado, maestría, etc.)
