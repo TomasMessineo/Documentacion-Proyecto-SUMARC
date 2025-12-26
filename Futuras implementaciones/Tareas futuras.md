@@ -27,3 +27,5 @@ Tareas para vacaciones:
 - Para el nuevo botón hay un problema con los permisos... en el servidor de producción NO aparece el botón "Descargar". Así que esto es un problema de permisos. Además, al apretar "Descargar" el servidor de producción lleva a una página con un error 404 not found, que también quizá sea un tema de permisos. En Sumarctest anda todo perfecto, en el servidor de producción NO.
 
 - Mejorar el CSL
+- Se puede usar el campo comment para poner el dato faltante de la tesis
+- Usar fecha de configuración de OJS para meterlo en el CSL
