@@ -31,3 +31,4 @@ Tareas para vacaciones:
 - Usar fecha de configuración de OJS para meterlo en el CSL
 - Falta campo degree, publication number y  en referencias de tipo tesis en texture
   La estructura real sería: Sacar el publisher name del corchete, publisher name y publisher loc deberían estar fuera del corchete, dentro del corchete debería estar el publisher-awarder o algo así, el que otorga el título, y el grado (ej tesis de grado, maestría, etc.)
+- Guia o programador o que tome la ia para saber donde meter mano para modificar referencias (modificar interfaz de texture para agregar el campo y luego el csl para tener una salida estándar)
