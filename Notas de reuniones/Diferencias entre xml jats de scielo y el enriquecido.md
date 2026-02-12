@@ -6,4 +6,6 @@
 - En el XML JATS enriquecido, dentro de cada tag "contrib" aparece el contrib-id, en el de scielo no. Lo mismo sucede con el tag "email"
 - En el XML enriquecido, los tags "aff" están dentro del contrib-group, en el de scielo no, están luego del contrib-group
 - En lo que sería el tag pub-date, hay un atributo en el de scielo que se llama pub-type, mientras que en el enriquecido parece llamarse date-type. Pub type está obsoleto según JATS
-- En el XML de scielo hay un tag llamado copyright-statement, en el xml enriquecido n
+- En el XML de scielo hay dos tags: copyright-statement y copyright-year que están sueltos luego del tag "número". En el enriquecido, estos tags aparecen luego de "history" dentro de un tag llamado "permissions". Además, en el mismo se añade otro tag "copyright-holder" y "license"
+- En el XML enriquecido, aparece el tag "history", en el de Scielo.
+- 
