@@ -9,3 +9,6 @@
 - En el XML de scielo hay dos tags: copyright-statement y copyright-year que están sueltos luego del tag "número". En el enriquecido, estos tags aparecen luego de "history" dentro de un tag llamado "permissions". Además, en el mismo se añade otro tag "copyright-holder" y "license"
 - En el XML enriquecido, aparece el tag "history", en el de Scielo.
 - El tag "count" lo preservamos si ya viene de antemano en el XML. Es opcional según el estándar y creemos que el error NO está acá.
+
+
+- Tener dos verisones de XML: Una con lo mínimo que se necesite SOLO con los datos que pide Scielo, y otro mas completo (agregando emails, etc).
