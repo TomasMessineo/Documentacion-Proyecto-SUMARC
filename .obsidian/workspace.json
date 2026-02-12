@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Futuras implementaciones/Tareas futuras.md",
+                "file": "Notas de reuniones/Diferencias entre xml jats de scielo y el enriquecido.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tareas futuras"
+              "title": "Diferencias entre xml jats de scielo y el enriquecido"
             }
           }
         ],
@@ -195,6 +195,9 @@
   },
   "active": "048ed679e4321d42",
   "lastOpenFiles": [
+    "Futuras implementaciones/Tareas futuras.md",
+    "Notas de reuniones/Diferencias entre xml jats de scielo y el enriquecido.md",
+    "Untitled.md",
     "Notas de reuniones/12-12-2025 -> Reunion sobre Scielo.md",
     "Notas de reuniones/CHARLA - PPS LEO - JATS PARSER 10-12-2025.md",
     "Notas de reuniones/Charla sobre datos - 19-12-2025.md",
@@ -204,10 +207,8 @@
     "Notas de reuniones/Reunion 18-11-2025 -> SUMARC.md",
     "Notas de reuniones/Reunión del día 25-09-2025.md",
     "Notas de reuniones/Reunion 04-11-2025 -> SUMARC.md",
-    "Futuras implementaciones/Tareas futuras.md",
     "Futuras implementaciones/Elección de fuentes.md",
     "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
-    "Untitled.md",
     "Notas de reuniones/Notas - Reunion BIREDIAL 2025.md",
     "Notas de reuniones/Notas - Probables errores al marcar.md",
     "Notas de reuniones/Notas - Charla sobre IA.md",
@@ -222,7 +223,6 @@
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Datos necesarios de OpenAlex para enriquecimiento de referencias en XML JATS.md",
-    "Actualizaciones/jatsParser/Desarrollo de un módulo para la numeración de referencias..md",
     "Untitled.base",
     "Imágenes/Captura desde 2025-10-09 11-31-44.png",
     "Actualizaciones/docxConverter/OpenAlexEnrichment",
