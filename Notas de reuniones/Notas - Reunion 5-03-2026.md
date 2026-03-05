@@ -13,4 +13,4 @@
 
 - Agregar partituras y obras de arte ya que son formatos físicos, todo lo que son redes sociales y demás, puede ir dentro de sitio web y se puede tener la posibilidad de un campo para identificar de qué tipo es (se corta el audio así que no sé que dijeron bien en esta parte)
 
-- 
+- En cuanto a la impresión de las fechas 
