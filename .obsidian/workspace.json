@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "Diferencias entre xml jats de scielo y el enriquecido"
             }
+          },
+          {
+            "id": "d17b32ddb9c8688f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notas de reuniones/Notas - Reunion 5-03-2026.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Notas - Reunion 5-03-2026"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -193,8 +207,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "048ed679e4321d42",
+  "active": "d17b32ddb9c8688f",
   "lastOpenFiles": [
+    "Notas de reuniones/Notas - Reunion 5-03-2026.md",
     "Futuras implementaciones/Tareas futuras.md",
     "Notas de reuniones/Diferencias entre xml jats de scielo y el enriquecido.md",
     "Untitled.md",
@@ -222,7 +237,6 @@
     "Notas de reuniones/Apuntes",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
-    "Actualizaciones/docxConverter/OpenAlexEnrichment/Datos necesarios de OpenAlex para enriquecimiento de referencias en XML JATS.md",
     "Untitled.base",
     "Imágenes/Captura desde 2025-10-09 11-31-44.png",
     "Actualizaciones/docxConverter/OpenAlexEnrichment",
