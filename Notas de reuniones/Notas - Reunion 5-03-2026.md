@@ -5,4 +5,4 @@
 
 - En Marcalyc se sube un HTML y el marcado se tiene que hacer TODO a mano. Hacer pruebas con Marcalyc. Hay que aprender como Marcalyc funciona para poder explotar todas sus funcionalidades y aprovecharlas.
 
-- 
+- Apa en español tiene modificaciones específicas que no aparecen en APA en inglés
