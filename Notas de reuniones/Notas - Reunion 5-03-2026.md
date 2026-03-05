@@ -9,4 +9,6 @@
 
 - No hay un estándar específico en APA para las referencias a "Leyes". 
 
+- Se podría armar una lista con todos los tags que existen para cada referencia, esto debería después agregarse a Texture. En casos específicos de información que no pueda especificarse en un tag específico, se agregarán tags `<comment>`.
+
 - 
