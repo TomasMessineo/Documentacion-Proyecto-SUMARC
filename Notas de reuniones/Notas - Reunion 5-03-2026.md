@@ -11,4 +11,6 @@
 
 - Se podría armar una lista con todos los tags que existen para cada referencia, esto debería después agregarse a Texture. En casos específicos de información que no pueda especificarse en un tag específico, se agregarán tags `<comment>`.
 
+- Agregar partituras y obras de arte ya que son formatos físicos, todo lo que son redes sociales y demás, puede ir dentro de sitio web y se puede tener la posibilidad de un campo para identificar de qué tipo es (se corta el audio así que no sé que dijeron bien en esta parte)
+
 - 
