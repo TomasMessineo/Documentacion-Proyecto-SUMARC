@@ -101,3 +101,7 @@ Por fuera, a los métodos los van a llamar otras clases. Por ende, al renombrar 
 **Ejercicio 1.3:**
 
 El código muestra un método largo que hace mucho y también la utilización de un for (podría usarse un stream)
+
+**Ejercicio 6:**
+
+En el move method, si elegimos sacar un método de una clase tenemos que evaluar si ese método no es llamado en otra clase, sino se rompe todo. En el caso de que no estemos seguros, entonces desde la clase misma que tiene los métodos llamamos a los de la otra clase.
