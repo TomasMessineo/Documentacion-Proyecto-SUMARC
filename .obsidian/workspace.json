@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notas de reuniones/Notas - Probables errores al marcar.md",
+                "file": "Notas - OO2 - Patrones de Diseño.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notas - Probables errores al marcar"
+              "title": "Notas - OO2 - Patrones de Diseño"
             }
           }
         ],
@@ -223,6 +223,8 @@
   },
   "active": "44aec92ee95cecfe",
   "lastOpenFiles": [
+    "Notas de reuniones/Notas - Probables errores al marcar.md",
+    "Notas - OO2 - Patrones de Diseño.md",
     "Notas de reuniones/Diferencias entre xml jats de scielo y el enriquecido.md",
     "Notas de reuniones/Notas - Reunion 5-03-2026.md",
     "Futuras implementaciones/Tareas futuras.md",
@@ -239,7 +241,6 @@
     "Futuras implementaciones/Elección de fuentes.md",
     "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
     "Notas de reuniones/Notas - Reunion BIREDIAL 2025.md",
-    "Notas de reuniones/Notas - Probables errores al marcar.md",
     "Notas de reuniones/Notas - Charla sobre IA.md",
     "Notas de reuniones/Apuntes/Nota -> Posible solución a problema de referencias a tesis incompletas.md",
     "Notas de reuniones/Apuntes/Nota -> Cuadro comparativo sobre cambios en JATSParser.md",
@@ -250,7 +251,6 @@
     "().md",
     "Notas de reuniones/Apuntes",
     "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
-    "Actualizaciones/docxConverter/OpenAlexEnrichment/Enriquecimiento mediante API de OpenAlex.md",
     "Untitled.base",
     "Imágenes/Captura desde 2025-10-09 11-31-44.png",
     "Actualizaciones/docxConverter/OpenAlexEnrichment",
