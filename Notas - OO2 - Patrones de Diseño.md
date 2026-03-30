@@ -42,7 +42,24 @@ Adapter permite que ciertas clases con interfaces incompatibles puedan trabajar 
 **Problema:** Debemos realizar una serie de pasos para dos formatos de salida: CSV y PDF por ejemplo. Y en el futuro se agregarán mas...
 Si tenemos código repetido, hay que repetir la serie de pasos en cada clase, teniendo así repetición de código y a medida que se agreguen "exporters" se hará un lío.
 
-El patrón que soluciona este problema es Template Method. Tendremos un esqueleto definiendo una serie de pasos.
+El patrón que soluciona este problema es Template Method. Tendremos un esqueleto definiendo una serie de pasos. Lo importante en estos problemas es detectar los pasos en común. Dichos pasos podrán ser extendidos atómicamente por las subclases.
 
-**Intención:** Definir el esqueleto de un algoritmo en un método, dirigiendo algunos pasos a las subclases. Template Method permite que las subclases redefinan ciertos pasos de un algoritmo sin cambiar la estructura del algoritmo.
+**Intención:** Definir el esqueleto de un algoritmo en un método, dirigiendo algunos pasos a las subclases. Template Method permite que las subclases redefinan ciertos pasos de un algoritmo sin cambiar la estructura del algoritmo. Este patrón es estático, lo que hacemos se resuelve en tiempo de compilación, no de ejecución.
+
+**Aplicabilidad:** 
+- Para implementar las partes invariantes de un algoritmo una vez y dejar que las subcalses implementen los aspectos que varían.
+- Para evitar duplicación de código entre subclases
+- Para controlar las extensiones que pueden hacer las subclases.
+
+**Participantes:**
+- AbstractClass: Implementa un método que tiene el esqueleto de un algoritmo (el template method). Este método llama a operaciones primtivas así como operaciones efinidas en AbstractClass.
+**Completar**
+
+**Colaboraciones:** 
+- ConcreteClass confía en que la superclase implemete las partes invariantes del algoritmo.
+
+**Consecuencias:**
+- Técnica fundamenteal de reuso de código
+- Lleva a tener inversión de control (la superclase llama a las operaciones de las subclases)
+**Completar**
 
