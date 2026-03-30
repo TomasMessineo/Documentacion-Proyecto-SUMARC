@@ -93,7 +93,7 @@ El patrón que soluciona este problema es Template Method. Tendremos un esquelet
 	2. Determinar cómo mejorarlo
 	3. Aplicar la mejora
 
-Ejercicio 1.1: 
+**Ejercicio 1.1:** 
 
 La clase cliente tiene un protocolo. Para mejorarlo aplicamos Rename Method.
 Por fuera, a los métodos los van a llamar otras clases. Por ende, al renombrar los métodos hay que tener en cuenta otras cosas, no solo cambiarlo y ya.
@@ -105,3 +105,9 @@ El código muestra un método largo que hace mucho y también la utilización de
 **Ejercicio 6:**
 
 En el move method, si elegimos sacar un método de una clase tenemos que evaluar si ese método no es llamado en otra clase, sino se rompe todo. En el caso de que no estemos seguros, entonces desde la clase misma que tiene los métodos llamamos a los de la otra clase.
+
+**Ejercicio 8:**
+
+El error del programa es que no se puede dividir por 0. Si el documento no tiene palabras, eso va a dar error por división por 0.
+
+, 
