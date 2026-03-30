@@ -85,3 +85,19 @@ El patrón que soluciona este problema es Template Method. Tendremos un esquelet
 
 ## Explicación práctica 30/3
 
+- En refactoring se ataca un problema a la vez
+- Refactorizar no es tirar el código y escribrlo de nuevo
+- Se debe preservar el comportamiento
+- Refactorizar es seguir un método para mejorarlo:
+	1. Identificar code smells
+	2. Determinar cómo mejorarlo
+	3. Aplicar la mejora
+
+Ejercicio 1.1: 
+
+La clase cliente tiene un protocolo. Para mejorarlo aplicamos Rename Method.
+Por fuera, a los métodos los van a llamar otras clases. Por ende, al renombrar los métodos hay que tener en cuenta otras cosas, no solo cambiarlo y ya.
+
+**Ejercicio 1.3:**
+
+El código muestra un método largo que hace mucho y también la utilización de un for (podría usarse un stream)
