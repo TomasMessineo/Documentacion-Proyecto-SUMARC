@@ -28,5 +28,9 @@ Adapter permite que ciertas clases con interfaces incompatibles puedan trabajar 
 
 **Colaboraciones (cómo se relacionan o colaboran los distintos roles):**
 - Los objetos Client llaman a las operaciones en la instancia del Adapter.
+- A su vez, el Adapter llama a las operaciones definidas en el Adaptee.
 
 **Consecuencias (no son todas positivas):**
+- Positiva: Una misma clase de Adapter puede usarse para muchos Adaptees (el Adaptee y todas sus subclases).
+- Positiva: El adapter puede agregar funcionalidad a los adaptados.
+- No tan positiva: Se generan más objetos intermediarios. Si hay muchos Adapters, el código puede volverse medio engorroso.
