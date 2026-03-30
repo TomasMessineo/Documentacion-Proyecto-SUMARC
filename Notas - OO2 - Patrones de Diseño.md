@@ -11,6 +11,8 @@ El refactoring no afecta funcionalidad de código, sino que la deja mas legible 
 Un patron es la relacion entre un problema recurrente y la solución a dicho problema. Los patrones no son inventados, sino que se descubren. 
 Un patrón es un par problema-solución. Los mismos tratan con problemas recurrentes y buenas soluciones (probadas) a esos problemas.
 
+## Patron de diseño 1: ADAPTER
+
 En los exámenes es importante utilizar el máximo posible de detalles en los diagramas UML. 
 Adapter: Intermediario que adapta el protocolo de actuador hacia el protocolo de telegramNotifier (en el ejemplo visto en la materia). La idea es agregar una clase intermedia que contenga dentro el objeto, y en dicho adapter se llama al método del objeto, retornando el resultado. Haciendo una subclase de actuador solucionamos el problema de tipos. El adapter es un pasamanos que recibe un sensor, con ese sensor arma un mensaje y le manda un mensaje "notify" al objeto TelegramNotifier. Se soluciona el problema de tipos y la adaptación de protocolos sin modificar telegramNotifier y sin modificar el comportamiento ya establecido en Actuador. Telegram adapter no podría existir o sería malo que no tenga asociado un telegramNotifier, por ende necesita tener una composición. Al mismo tiempo, hay herencia para hacer que telegramAdapter sea un Actuador (subclase).
 
@@ -34,3 +36,13 @@ Adapter permite que ciertas clases con interfaces incompatibles puedan trabajar 
 - Positiva: Una misma clase de Adapter puede usarse para muchos Adaptees (el Adaptee y todas sus subclases).
 - Positiva: El adapter puede agregar funcionalidad a los adaptados.
 - No tan positiva: Se generan más objetos intermediarios. Si hay muchos Adapters, el código puede volverse medio engorroso.
+
+## Patron de diseño 2:
+
+**Problema:** Debemos realizar una serie de pasos para dos formatos de salida: CSV y PDF por ejemplo. Y en el futuro se agregarán mas...
+Si tenemos código repetido, hay que repetir la serie de pasos en cada clase, teniendo así repetición de código y a medida que se agreguen "exporters" se hará un lío.
+
+El patrón que soluciona este problema es Template Method. Tendremos un esqueleto definiendo una serie de pasos.
+
+**Intención:** Definir el esqueleto de un algoritmo en un método, dirigiendo algunos pasos a las subclases. Template Method permite que las subclases redefinan ciertos pasos de un algoritmo sin cambiar la estructura del algoritmo.
+
