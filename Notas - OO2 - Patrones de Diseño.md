@@ -63,3 +63,25 @@ El patrón que soluciona este problema es Template Method. Tendremos un esquelet
 - Lleva a tener inversión de control (la superclase llama a las operaciones de las subclases)
 **Completar**
 
+---
+
+**Cada patrón tiene:** 
+- Nombre
+- Intención (prestar atención a esto al estudiar)
+- Motivación (prestar atención a esto al estudiar)
+- Aplicabilidad
+- Estructura
+- Participantes
+- Colaboraciones
+- Consecuencias (prestar atención a esto al estudiar. En un final se puede preguntar cuáles son las consecuencias de haber aplicado un patrón específico)
+- Implementación
+- Código (C++)
+- Usos conocidos
+- Patrones relacionados
+
+---
+---
+---
+
+## Explicación práctica 30/3
+
