@@ -62,9 +62,21 @@
               "icon": "lucide-file",
               "title": "Notas - OO2 - Patrones de Diseño"
             }
+          },
+          {
+            "id": "64342142915a2a5f",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Registro de cambios 1.12.7"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -221,7 +233,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "44aec92ee95cecfe",
+  "active": "64342142915a2a5f",
   "lastOpenFiles": [
     "Notas - OO2 - Patrones de Diseño.md",
     "Notas de reuniones/Notas - Probables errores al marcar.md",
