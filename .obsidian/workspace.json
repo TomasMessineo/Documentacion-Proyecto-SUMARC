@@ -67,12 +67,14 @@
             "id": "64342142915a2a5f",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.12.7"
+                "file": "Notas - Consulta OO2.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Registro de cambios 1.12.7"
+              "icon": "lucide-file",
+              "title": "Notas - Consulta OO2"
             }
           }
         ],
@@ -235,6 +237,7 @@
   },
   "active": "64342142915a2a5f",
   "lastOpenFiles": [
+    "Notas - Consulta OO2.md",
     "Notas - OO2 - Patrones de Diseño.md",
     "Notas de reuniones/Notas - Probables errores al marcar.md",
     "Notas de reuniones/Diferencias entre xml jats de scielo y el enriquecido.md",
@@ -262,7 +265,6 @@
     "Documentación SUMARC para OJS 3_4.md",
     "().md",
     "Notas de reuniones/Apuntes",
-    "Actualizaciones/docxConverter/OpenAlexEnrichment/Estrategia utilizada para el procesamiento y validación de autores en referencias bibliográficas mediante OpenAlex.md",
     "Untitled.base",
     "Imágenes/Captura desde 2025-10-09 11-31-44.png",
     "Actualizaciones/docxConverter/OpenAlexEnrichment",
