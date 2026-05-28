@@ -1,0 +1,6 @@
+- Que la HU de iniciar sesión diga: "redirigir a mis clases". 
+- Falta poner ejemplos en la HU de iniciar sesión. No entendí acá a qué se refererían... pero lo escuché y lo anoto. Entiendo que es actualizar los datos ingresados de la HU a los ejemplos que hardcodeamos en la BD.
+- Tener otra compu con el Taiga abierto.
+- Anotar el orden en el que vamos a mostrar en la DEMO. Que no se turnen uno a uno, sino que una parte cada uno. Por ejemplo: Iniciar sesión, ver mis clases, anotarme, etc. Cuando llegue el turno de pagar, si Seba por ejemplo tiene que pagar, por un momento se puede desviar ese "bloque" para que Seba explique el pago y luego vuelva el flujo a Massi.
+- Revisar escenario 5 de pago con tarjeta: Falta decir que la tarjeta hace algo, no sé... era este escenario pero no escuché bien qué. Cambiar también el escenario de pago por tarjeta vencida diciendo "Pago fallido por tarjeta vencida". El error está mal expresado también en el error que muestra el frontend. Revisar el dado de todos los escenarios de pagar con tarjeta
+- NO mostrar la inscripción 
