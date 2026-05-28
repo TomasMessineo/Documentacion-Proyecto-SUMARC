@@ -12,4 +12,13 @@ Crear clase:
 - Al dado del escenario fallido por cupo excedido habría que modificarlo.  Dado quew para el martes a las trece el cupo total de todas las clases registradas es 3 y que la clase funcional con cupo 15 supere el máximo... (algo así escuché decir a tadeo). 
 - Evaluar poner cupo negativo para el crear clase. Hacer un escenario nuevo. El cupo no debe ser negativo.
 - Al crear una clase, para todo el mes deben crearse también. Revisar que las clases creadas se repitan todas las semanas. Tienen un período de 2 meses.
-- 
+
+Consultas generales:
+- En crear clase tiene que estar el profesor. Así que eso está perfecto.
+- Se pueden tener distintas pestañas, pero no excederse.
+- Escenario en el fallo del pago genérico de los inscribirse. El inscribirse debe tener un escenario nuevo que en realidad sería exactamente lo mismo que el de pago... es como si se combinaran básicamente. Creo que se referían a eso.
+- En el administrador tengo que tener una lista de usuarios que fueron eliminados.
+- No se puede eliminar un alumno que está inscripto a una clase. Hacer HU recuperar alumno para el segundo sprint.
+- Mostrar que el pago por mercado pago sirve realmente. Que uno intente pagar realmente para ver que funciona. Agregar el error de conexión con el servidor de pago. Sacar simulación de pago exitoso.
+- En el escenario exitoso del iniciar sesión, que diga "redirige al lugar correspondiente dependiendo del rol del usuario"
+- Si el profesor tiene una clase asignada, podría eliminarlo? NO. 
