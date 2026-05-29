@@ -177,4 +177,132 @@ Aplico el refactoring move method, moviendo el método añosDesdeFechaAlta() hac
 ```
 
 **Paso 3:**
-Prosiguiendo con el punto 4, para solucionar el bad smell "long method" (que en realidad es el bad smell principal de este método getCostoTotal) aplico un extract method en las líneas 28 a 33 creando un método "calcularExtra", y luego un replace temp with query para reemplazar la variable temporal utilizada, llevando todo al return directamente.
+Prosiguiendo con el punto 4, para solucionar el bad smell "long method" (que en realidad es el bad smell principal de este método getCostoTotal) aplico un extract method en las líneas 28 a 33 creando un método privado "calcularCostoExtra()" el cual recibe 2 parámetros, y luego un replace temp with query para reemplazar la variable temporal utilizada, llevando todo al return directamente.
+
+```java
+01: public class Pedido {  
+02:  private Cliente cliente;  
+03:  private List<Producto> productos;  
+04:  private String formaPago;  
+05:  public Pedido(Cliente cliente, List<Producto> productos, String formaPago) {  
+06:     if (!"efectivo".equals(formaPago)  
+07:        && !"6 cuotas".equals(formaPago)  
+08:        && !"12 cuotas".equals(formaPago)) {  
+09:          throw new Error("Forma de pago incorrecta");  
+10:    }  
+11:    this.cliente = cliente;  
+12:    this.productos = productos;  
+13:    this.formaPago = formaPago;  
+14:   }  
+15:   public double getCostoTotal() {  
+16:     double costoProductos = 0;  
+17:     for (Producto producto : this.productos) {  
+18:       costoProductos += producto.getPrecio();  
+19:     }  
+20:     double extraFormaPago = 0;  
+21:     if ("efectivo".equals(this.formaPago)) {  
+22:       extraFormaPago = 0;  
+23:     } else if ("6 cuotas".equals(this.formaPago)) {  
+24:       extraFormaPago = costoProductos * 0.2;  
+25:     } else if ("12 cuotas".equals(this.formaPago)) {  
+26:       extraFormaPago = costoProductos * 0.5;  
+27:     }  
+
+		return this.calcularDescuentoPorAntiguedad(costoProductos, extraFormaPago);
+34:   }
+
+		private calcularDescuentoPorAntiguedad(
+			double costoProductos,
+			double extraFormaPago
+		){
+			int añosDesdeFechaAlta = this.cliente.añosDesdeFechaAlta();
+		    if (añosDesdeFechaAlta > 5) {  
+		      return (costoProductos + extraFormaPago) * 0.9;  
+		    }  
+		    return costoProductos + extraFormaPago;  
+		}
+35: }  
+
+
+
+
+
+
+36: public class Cliente {  
+37:   private LocalDate fechaAlta;  
+38:   public LocalDate getFechaAlta() {  
+39:     return this.fechaAlta;  
+40:   }
+
+		public añosDesdeFechaAlta() {
+			return Period.between(this.cliente.getFechaAlta(), LocalDate.now()).getYears();
+		}
+```
+
+Luego de hacer esto, me doy cuenta que puedo volver a hacer otro extract method pero esta vez en calcularDescuentoPorAntiguedad()... así también como otro replace temp with query, eliminadno la variable correspondiente a la fecha¿esto está bien hacerlo 2 veces seguidas, o está mal?
+
+```java
+01: public class Pedido {  
+02:  private Cliente cliente;  
+03:  private List<Producto> productos;  
+04:  private String formaPago;  
+05:  public Pedido(Cliente cliente, List<Producto> productos, String formaPago) {  
+06:     if (!"efectivo".equals(formaPago)  
+07:        && !"6 cuotas".equals(formaPago)  
+08:        && !"12 cuotas".equals(formaPago)) {  
+09:          throw new Error("Forma de pago incorrecta");  
+10:    }  
+11:    this.cliente = cliente;  
+12:    this.productos = productos;  
+13:    this.formaPago = formaPago;  
+14:   }  
+15:   public double getCostoTotal() {  
+16:     double costoProductos = 0;  
+17:     for (Producto producto : this.productos) {  
+18:       costoProductos += producto.getPrecio();  
+19:     }  
+20:     double extraFormaPago = 0;  
+21:     if ("efectivo".equals(this.formaPago)) {  
+22:       extraFormaPago = 0;  
+23:     } else if ("6 cuotas".equals(this.formaPago)) {  
+24:       extraFormaPago = costoProductos * 0.2;  
+25:     } else if ("12 cuotas".equals(this.formaPago)) {  
+26:       extraFormaPago = costoProductos * 0.5;  
+27:     }  
+
+		return this.calcularDescuentoPorAntiguedad(costoProductos, extraFormaPago);
+34:   }
+
+		private double calcularDescuentoPorAntiguedad(
+			double costoProductos,
+			double extraFormaPago
+		){
+			int añosDesdeFechaAlta = this.cliente.añosDesdeFechaAlta();
+		    if (this.mayorQueCinco(años)) {  
+		      return (costoProductos + extraFormaPago) * 0.9;  
+		    }  
+		    return costoProductos + extraFormaPago;  
+		}
+		
+		private double calcularTotal() {
+		
+		}
+		
+		private boolean mayorQueCinco(int num) {
+			return num > 5;
+		}
+35: }  
+
+
+
+
+36: public class Cliente {  
+37:   private LocalDate fechaAlta;  
+38:   public LocalDate getFechaAlta() {  
+39:     return this.fechaAlta;  
+40:   }
+
+		public añosDesdeFechaAlta() {
+			return Period.between(this.cliente.getFechaAlta(), LocalDate.now()).getYears();
+		}
+```
