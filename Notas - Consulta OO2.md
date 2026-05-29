@@ -23,5 +23,55 @@ Cuando hay un bad smell de switch statement y hay un setter, existen indicios de
 
 | 1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br> 23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br> | abstract class Etiqueta {<br>    protected String nombreProducto;<br>    protected double precio;<br><br>    public Etiqueta(String nombre, double precio) {<br>        this.nombreProducto = nombre;<br>        this.precio = precio;<br>    }<br>} <br><br>class EtiquetaSimple extends Etiqueta {<br>    public EtiquetaSimple(String nombre, double precio) {<br>        super(nombre, precio);<br>    }<br><br>    public void generar() {<br>        this.imprimirEncabezado();<br>        this.imprimirNombreProducto();<br>        this.imprimirPrecio();<br>        this.imprimirLineaDeFin();<br>    }<br><br>	public String imprimirEncabezado(){<br>	     System.out.println("--- ETIQUETA BÁSICA ---");<br>	}<br><br>    public String imprimirPrecio() {<br>	    System.out.println("Precio: $" + precio);<br>	}<br><br>	public String imprimirNombreProducto() {<br>        System.out.println("Producto: " + nombreProducto);<br>	}<br><br>	public String imprimirLineaDeFin(){<br>        System.out.println("-----------------------");<br>	}<br>}<br><br>class EtiquetaDetalle extends Etiqueta {<br><br>    public EtiquetaDetalle(String nombre, double precio) {<br>        super(nombre, precio);<br>    }<br><br>     public void generar() {<br>        this.imprimirEncabezado();<br>        this.imprimirNombreProducto();<br>        this.imprimirPrecio();<br>        this.imprimirLineaDeFin();<br>    }<br><br>	public String imprimirEncabezado(){<br>	     System.out.println("--- ETIQUETA DETALLE ---");<br>	}<br><br>    public String imprimirPrecio() {<br>    	System.out.println("Precio sin imp.: $" + (precio * 0.79));<br>	    System.out.println("Precio: $" + precio);<br>	}<br><br>	public String imprimirNombreProducto() {<br>        System.out.println("Producto: " + nombreProducto);<br>	}<br><br>	public String imprimirLineaDeFin(){<br>        System.out.println("-----------------------");<br>	}<br>} |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-Luego aplico un pull up method sobre todo lo que sea idéntico en ambas clases: generar(), imprimirNombreProducto() e imprimirLineaFIn(). A su vez, también declaro como abstractos los métodos imprimirPrecio e imprimirEncabezado en "Etiqueta", ya que cada subclase hace algo particular y diferente en este paso del Template Method, y esto sirve para definir los "Hooks" o ganchos que Fowler define en el libro.
-Luego de hacer esto, ya habré aplicado el Form Template Method.
+Luego aplico un pull up method sobre todo lo que sea idéntico en ambas clases: generar(), imprimirNombreProducto() e imprimirLineaFIn(). A su vez, también declaro como abstractos y protegidos los métodos imprimirPrecio e imprimirEncabezado en "Etiqueta", ya que cada subclase hace algo particular y diferente en este paso del Template Method, y esto sirve para definir los "Hooks" o ganchos que Fowler define en el libro.
+Luego de hacer esto, ya se habrá aplicado el Form Template Method.
+
+| 1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br> 23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br> | abstract class Etiqueta {<br>    protected String nombreProducto;<br>    protected double precio;<br><br>    public Etiqueta(String nombre, double precio) {<br>        this.nombreProducto = nombre;<br>        this.precio = precio;<br>    }<br><br>	public void generar() {<br>        this.imprimirEncabezado();<br>        this.imprimirNombreProducto();<br>        this.imprimirPrecio();<br>        this.imprimirLineaDeFin();<br>    }<br><br>    public String imprimirNombreProducto() {<br>        System.out.println("Producto: " + nombreProducto);<br>	}<br><br>	public String imprimirLineaDeFin(){<br>        System.out.println("-----------------------");<br>	}<br>    <br>    protected abstract String imprimirEncabezado();<br>    protected abstract String imprimirPrecio();<br>} <br><br>class EtiquetaSimple extends Etiqueta {<br>    public EtiquetaSimple(String nombre, double precio) {<br>        super(nombre, precio);<br>    }<br><br>	public String imprimirEncabezado(){<br>	     System.out.println("--- ETIQUETA BÁSICA ---");<br>	}<br><br>    public String imprimirPrecio() {<br>	    System.out.println("Precio: $" + precio);<br>	}<br>}<br><br>class EtiquetaDetalle extends Etiqueta {<br><br>    public EtiquetaDetalle(String nombre, double precio) {<br>        super(nombre, precio);<br>    }<br><br>	public String imprimirEncabezado(){<br>	     System.out.println("--- ETIQUETA DETALLE ---");<br>	}<br><br>    public String imprimirPrecio() {<br>    	System.out.println("Precio sin imp.: $" + (precio * 0.79));<br>	    System.out.println("Precio: $" + precio);<br>	}<br>} |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+
+**Ejercicio 9:**
+
+```java
+01: public class Pedido {  
+02:  private Cliente cliente;  
+03:  private List<Producto> productos;  
+04:  private String formaPago;  
+05:  public Pedido(Cliente cliente, List<Producto> productos, String formaPago) {  
+06:     if (!"efectivo".equals(formaPago)  
+07:        && !"6 cuotas".equals(formaPago)  
+08:        && !"12 cuotas".equals(formaPago)) {  
+09:          throw new Error("Forma de pago incorrecta");  
+10:    }  
+11:    this.cliente = cliente;  
+12:    this.productos = productos;  
+13:    this.formaPago = formaPago;  
+14:   }  
+15:   public double getCostoTotal() {  
+16:     double costoProductos = 0;  
+17:     for (Producto producto : this.productos) {  
+18:       costoProductos += producto.getPrecio();  
+19:     }  
+20:     double extraFormaPago = 0;  
+21:     if ("efectivo".equals(this.formaPago)) {  
+22:       extraFormaPago = 0;  
+23:     } else if ("6 cuotas".equals(this.formaPago)) {  
+24:       extraFormaPago = costoProductos * 0.2;  
+25:     } else if ("12 cuotas".equals(this.formaPago)) {  
+26:       extraFormaPago = costoProductos * 0.5;  
+27:     }  
+28:     int añosDesdeFechaAlta = Period.between(this.cliente.getFechaAlta(), LocalDate.now()).getYears();  
+29:     // Aplicar descuento del 10% si el cliente tiene más de 5 años de antiguedad  
+30:     if (añosDesdeFechaAlta > 5) {  
+31:       return (costoProductos + extraFormaPago) * 0.9;  
+32:     }  
+33:     return costoProductos + extraFormaPago;  
+34:   }  
+35: }  
+36: public class Cliente {  
+37:   private LocalDate fechaAlta;  
+38:   public LocalDate getFechaAlta() {  
+39:     return this.fechaAlta;  
+40:   }
+```
+
+1) 
