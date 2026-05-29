@@ -5,7 +5,7 @@ Cuando hay un bad smell de switch statement y hay un setter, existen indicios de
 
 ### Refactoring
 
-**Ejercicio 7:**  
+# **Ejercicio 7:**  
 
 |                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -29,7 +29,7 @@ Luego de hacer esto, ya se habrá aplicado el Form Template Method.
 | 1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br> 23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br> | abstract class Etiqueta {<br>    protected String nombreProducto;<br>    protected double precio;<br><br>    public Etiqueta(String nombre, double precio) {<br>        this.nombreProducto = nombre;<br>        this.precio = precio;<br>    }<br><br>	public void generar() {<br>        this.imprimirEncabezado();<br>        this.imprimirNombreProducto();<br>        this.imprimirPrecio();<br>        this.imprimirLineaDeFin();<br>    }<br><br>    public String imprimirNombreProducto() {<br>        System.out.println("Producto: " + nombreProducto);<br>	}<br><br>	public String imprimirLineaDeFin(){<br>        System.out.println("-----------------------");<br>	}<br>    <br>    protected abstract String imprimirEncabezado();<br>    protected abstract String imprimirPrecio();<br>} <br><br>class EtiquetaSimple extends Etiqueta {<br>    public EtiquetaSimple(String nombre, double precio) {<br>        super(nombre, precio);<br>    }<br><br>	public String imprimirEncabezado(){<br>	     System.out.println("--- ETIQUETA BÁSICA ---");<br>	}<br><br>    public String imprimirPrecio() {<br>	    System.out.println("Precio: $" + precio);<br>	}<br>}<br><br>class EtiquetaDetalle extends Etiqueta {<br><br>    public EtiquetaDetalle(String nombre, double precio) {<br>        super(nombre, precio);<br>    }<br><br>	public String imprimirEncabezado(){<br>	     System.out.println("--- ETIQUETA DETALLE ---");<br>	}<br><br>    public String imprimirPrecio() {<br>    	System.out.println("Precio sin imp.: $" + (precio * 0.79));<br>	    System.out.println("Precio: $" + precio);<br>	}<br>} |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-**Ejercicio 9:**
+# **Ejercicio 9:**
 
 ```java
 01: public class Pedido {  
@@ -239,13 +239,14 @@ Prosiguiendo con el punto 4, para solucionar el bad smell "long method" (que en 
 		}
 ```
 
-Luego de hacer esto, me doy cuenta que puedo volver a hacer otro extract method pero esta vez en calcularDescuentoPorAntiguedad()... así también como otro replace temp with query, eliminadno la variable correspondiente a la fecha¿esto está bien hacerlo 2 veces seguidas, o está mal?
+Luego de hacer esto, me doy cuenta que puedo volver a hacer otro extract method para solucionar duplicate code, pero esta vez en calcularDescuentoPorAntiguedad()... así también como otro replace temp with query, eliminando la variable correspondiente a los años y agregandola en la condición IF... **¿está bien si vuelvo a aplicar otra vez el mismo refactoring? Tengo que aplicar solo los que me dice, o en caso de que surja otro refactoring que no entra dentro de los mencionados en el enunciado NO puedo aplicarlo?**
 
 ```java
 01: public class Pedido {  
 02:  private Cliente cliente;  
 03:  private List<Producto> productos;  
 04:  private String formaPago;  
+
 05:  public Pedido(Cliente cliente, List<Producto> productos, String formaPago) {  
 06:     if (!"efectivo".equals(formaPago)  
 07:        && !"6 cuotas".equals(formaPago)  
@@ -273,23 +274,15 @@ Luego de hacer esto, me doy cuenta que puedo volver a hacer otro extract method 
 		return this.calcularDescuentoPorAntiguedad(costoProductos, extraFormaPago);
 34:   }
 
-		private double calcularDescuentoPorAntiguedad(
-			double costoProductos,
-			double extraFormaPago
-		){
-			int añosDesdeFechaAlta = this.cliente.añosDesdeFechaAlta();
-		    if (this.mayorQueCinco(años)) {  
-		      return (costoProductos + extraFormaPago) * 0.9;  
+		private double calcularDescuentoPorAntiguedad( double costoProductos, double extraFormaPago){
+		    if (this.cliente.añosDesdeFechaAlta() > 5) {   // Otros refactorings como la creación de constantes por magic numbers NO podría aplicarlos porque el enunciado no lo indica, ¿o sí?
+		      return this.calcularTotal() * 0.9;  
 		    }  
-		    return costoProductos + extraFormaPago;  
+		    return this.calcularTotal();
 		}
 		
-		private double calcularTotal() {
-		
-		}
-		
-		private boolean mayorQueCinco(int num) {
-			return num > 5;
+		private double calcularTotal(double costoProductos, double extraFormaPago) {
+			return costoProductos + extraFormaPago;
 		}
 35: }  
 
@@ -306,3 +299,69 @@ Luego de hacer esto, me doy cuenta que puedo volver a hacer otro extract method 
 			return Period.between(this.cliente.getFechaAlta(), LocalDate.now()).getYears();
 		}
 ```
+
+**Paso 3:**
+
+Aplico un refactoring replace loop with pipeline en la línea 17-19, debido a un bad smell relacionado con el uso de un foreach, cuando realmente deberían usarse los streams de java.
+
+```java
+01: public class Pedido {  
+02:  private Cliente cliente;  
+03:  private List<Producto> productos;  
+04:  private String formaPago;  
+
+05:  public Pedido(Cliente cliente, List<Producto> productos, String formaPago) {  
+06:     if (!"efectivo".equals(formaPago)  
+07:        && !"6 cuotas".equals(formaPago)  
+08:        && !"12 cuotas".equals(formaPago)) {  
+09:          throw new Error("Forma de pago incorrecta");  
+10:    }  
+11:    this.cliente = cliente;  
+12:    this.productos = productos;  
+13:    this.formaPago = formaPago;  
+14:   }  
+15:   public double getCostoTotal() {  
+16:     double costoProductos = this.productos.stream()
+								  .mapToDouble(p -> p.getPrecio())
+								  .sum();  
+		
+20:     double extraFormaPago = 0;  
+21:     if ("efectivo".equals(this.formaPago)) {  
+22:       extraFormaPago = 0;  
+23:     } else if ("6 cuotas".equals(this.formaPago)) {  
+24:       extraFormaPago = costoProductos * 0.2;  
+25:     } else if ("12 cuotas".equals(this.formaPago)) {  
+26:       extraFormaPago = costoProductos * 0.5;  
+27:     }  
+
+		return this.calcularDescuentoPorAntiguedad(costoProductos, extraFormaPago);
+34:   }
+
+		private double calcularDescuentoPorAntiguedad( double costoProductos, double extraFormaPago){
+		    if (this.cliente.añosDesdeFechaAlta() > 5) {   // Otros refactorings como la creación de constantes por magic numbers NO podría aplicarlos porque el enunciado no lo indica, ¿o sí?
+		      return this.calcularTotal() * 0.9;  
+		    }  
+		    return this.calcularTotal();
+		}
+		
+		private double calcularTotal(double costoProductos, double extraFormaPago) {
+			return costoProductos + extraFormaPago;
+		}
+35: }  
+
+
+
+
+36: public class Cliente {  
+37:   private LocalDate fechaAlta;  
+38:   public LocalDate getFechaAlta() {  
+39:     return this.fechaAlta;  
+40:   }
+
+		public añosDesdeFechaAlta() {
+			return Period.between(this.cliente.getFechaAlta(), LocalDate.now()).getYears();
+		}
+```
+
+**Paso 4: **
+Por último, soluciono el bad smell de "If statements"
