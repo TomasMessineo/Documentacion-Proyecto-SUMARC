@@ -75,3 +75,106 @@ Luego de hacer esto, ya se habrá aplicado el Form Template Method.
 ```
 
 1) 
+   
+**PASO 1:**
+Aplico primero el extract method y luego un move method de la linea 28 para resolver el bad smell feature envy. Primero, aplico extract method extrayendo/desacoplando la lógica almacenada en la variable añosDesdeeFechaAlta en un método separado.
+
+```java
+01: public class Pedido {  
+02:  private Cliente cliente;  
+03:  private List<Producto> productos;  
+04:  private String formaPago;  
+05:  public Pedido(Cliente cliente, List<Producto> productos, String formaPago) {  
+06:     if (!"efectivo".equals(formaPago)  
+07:        && !"6 cuotas".equals(formaPago)  
+08:        && !"12 cuotas".equals(formaPago)) {  
+09:          throw new Error("Forma de pago incorrecta");  
+10:    }  
+11:    this.cliente = cliente;  
+12:    this.productos = productos;  
+13:    this.formaPago = formaPago;  
+14:   }  
+15:   public double getCostoTotal() {  
+16:     double costoProductos = 0;  
+17:     for (Producto producto : this.productos) {  
+18:       costoProductos += producto.getPrecio();  
+19:     }  
+20:     double extraFormaPago = 0;  
+21:     if ("efectivo".equals(this.formaPago)) {  
+22:       extraFormaPago = 0;  
+23:     } else if ("6 cuotas".equals(this.formaPago)) {  
+24:       extraFormaPago = costoProductos * 0.2;  
+25:     } else if ("12 cuotas".equals(this.formaPago)) {  
+26:       extraFormaPago = costoProductos * 0.5;  
+27:     }  
+28:     int añosDesdeFechaAlta = this.añosDesdeFechaAlta();
+29:     // Aplicar descuento del 10% si el cliente tiene más de 5 años de antiguedad  
+30:     if (añosDesdeFechaAlta > 5) {  
+31:       return (costoProductos + extraFormaPago) * 0.9;  
+32:     }  
+33:     return costoProductos + extraFormaPago;  
+34:   }  
+
+		public añosDesdeFechaAlta() {
+			return Period.between(this.cliente.getFechaAlta(), LocalDate.now()).getYears();
+		}
+35: }  
+36: public class Cliente {  
+37:   private LocalDate fechaAlta;  
+38:   public LocalDate getFechaAlta() {  
+39:     return this.fechaAlta;  
+40:   }
+```
+
+Aplico el refactoring move method, moviendo el método añosDesdeFechaAlta() hacia la clase "Cliente", y modificando el envío de mensaje a dicho método en la clase this por la referencia a la variable de instancia interna "cliente".
+
+```java
+01: public class Pedido {  
+02:  private Cliente cliente;  
+03:  private List<Producto> productos;  
+04:  private String formaPago;  
+05:  public Pedido(Cliente cliente, List<Producto> productos, String formaPago) {  
+06:     if (!"efectivo".equals(formaPago)  
+07:        && !"6 cuotas".equals(formaPago)  
+08:        && !"12 cuotas".equals(formaPago)) {  
+09:          throw new Error("Forma de pago incorrecta");  
+10:    }  
+11:    this.cliente = cliente;  
+12:    this.productos = productos;  
+13:    this.formaPago = formaPago;  
+14:   }  
+15:   public double getCostoTotal() {  
+16:     double costoProductos = 0;  
+17:     for (Producto producto : this.productos) {  
+18:       costoProductos += producto.getPrecio();  
+19:     }  
+20:     double extraFormaPago = 0;  
+21:     if ("efectivo".equals(this.formaPago)) {  
+22:       extraFormaPago = 0;  
+23:     } else if ("6 cuotas".equals(this.formaPago)) {  
+24:       extraFormaPago = costoProductos * 0.2;  
+25:     } else if ("12 cuotas".equals(this.formaPago)) {  
+26:       extraFormaPago = costoProductos * 0.5;  
+27:     }  
+28:     int añosDesdeFechaAlta = this.cliente.añosDesdeFechaAlta();
+29:     // Aplicar descuento del 10% si el cliente tiene más de 5 años de antiguedad  
+30:     if (añosDesdeFechaAlta > 5) {  
+31:       return (costoProductos + extraFormaPago) * 0.9;  
+32:     }  
+33:     return costoProductos + extraFormaPago;  
+34:   }  
+35: }  
+
+36: public class Cliente {  
+37:   private LocalDate fechaAlta;  
+38:   public LocalDate getFechaAlta() {  
+39:     return this.fechaAlta;  
+40:   }
+
+		public añosDesdeFechaAlta() {
+			return Period.between(this.cliente.getFechaAlta(), LocalDate.now()).getYears();
+		}
+```
+
+**Paso 3:**
+Prosiguiendo con el punto 4, para solucionar el bad smell "long method" (que en realidad es el bad smell principal de este método getCostoTotal) aplico un extract method en las líneas 28 a 33 creando un método "calcularExtra", y luego un replace temp with query para reemplazar la variable temporal utilizada, llevando todo al return directamente.
