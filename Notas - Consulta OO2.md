@@ -573,7 +573,7 @@ Puedo aplicar también un refactoring replace temp with query, ya que ahora el c
 
 ```java
 public boolean agregarNumeroTelefono(String str) {
-	if (guia.contiene(str)) 
+	if (!guia.contiene(str)) 
 		guia.agregar(str);
 		return true;
 	}
@@ -584,5 +584,7 @@ public boolean agregarNumeroTelefono(String str) {
 ---
 
 Feature Envy en el método registrarLlamada, el agregado a las llamadas de origen debería ser a través de un método. Además, se está accediendo directamente a una variable pública, lo cual es un bad smell "Public Field".
-Para solucionar esto, aplico un refactoring Encapsulate field
+Para solucionar esto, primero aplico un refactoring Encapsulate Field en la clase Cliente, haciendo que la variable "llamadas" sea privada, lo cual supone crear un getter en la clase Cliente y modificar las referencias directas a esa variable "llamadas" en todas las clases que lo requieran. Esto soluciona el bad smell Public Field.
+
+Luego de hacer esto, soluciono el feature envy aplicando un move method, moviendo la lógica de agregar la llamada a la clase "Cliente", creando un método agregarLlamada();
 
