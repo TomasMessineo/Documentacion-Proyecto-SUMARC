@@ -583,4 +583,6 @@ public boolean agregarNumeroTelefono(String str) {
 
 ---
 
-Feature envy en el método registrarLlamada, el agregado a las llamadas debería ser a través de un método. Además, se está accediendo directamente a un método 
+Feature Envy en el método registrarLlamada, el agregado a las llamadas de origen debería ser a través de un método. Además, se está accediendo directamente a una variable pública, lo cual es un bad smell "Public Field".
+Para solucionar esto, aplico un refactoring Encapsulate field
+
