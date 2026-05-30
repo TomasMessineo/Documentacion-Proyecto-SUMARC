@@ -496,10 +496,77 @@ Tareas:
 Bad smell Public Fields en la clase Empresa, líneas 11 y 12.
 Para solucionarlo, aplico el refactoring "Encapsulate Field" de las constantes.
 
+---
+
 **Paso 2:**
 Bad smell Uncommunicative Name en las líneas 11 y 12 de "Empresa". El nombre de las constantes no es claro.
 Para corregirlo aplico el refactoring "Rename Variable"
 
+---
+
 **Paso 3:**
-Duplicate Code en las líneas 32 a 45 de la clase "Empresa".
+Duplicate Code en las líneas 32 a 45 de la clase "Empresa":
+
+```java
+public Cliente registrarUsuario(String data, String nombre, String tipo) {
+	Cliente var = new Cliente();
+	if (tipo.equals("fisica")) {
+		var.setNombre(nombre);
+		String tel = this.obtenerNumeroLibre();
+		var.setTipo(tipo);
+		var.setNumeroTelefono(tel);
+		var.setDNI(data);
+	}
+	else if (tipo.equals("juridica")) {
+		String tel = this.obtenerNumeroLibre();
+		var.setNombre(nombre);
+		var.setTipo(tipo);
+		var.setNumeroTelefono(tel);
+		var.setCuit(data);
+	}
+	clientes.add(var);
+	return var;
+}
+```
+
 Para solucionar esto aplico move method extrayendo la lógica común de ambos ifs en un nuevo método "crearCliente()"
+
+---
+
+**Paso 4:**
+
+Feature Envy en el método agregarNumeroTelefono de "Empresa", en 
+
+```java
+public boolean agregarNumeroTelefono(String str) {
+	boolean encontre = guia.getLineas().contains(str);
+	if (!encontre) 
+		guia.getLineas().add(str);
+		encontre= true;
+		return encontre;
+	}
+	else {
+		encontre= false;
+		return encontre;
+	}
+}
+```
+
+Para solucionar esto aplico move method para mover esa lógica que no debe estar en Empresa hacia GestorNumerosDisponibles, y luego modificando los llamados de referencia en agregarNumeroTelefono().
+
+```java
+public boolean agregarNumeroTelefono(String str) {
+	boolean encontre = guia.contiene(str);
+	if (!encontre) 
+		guia.agregar(str);
+		encontre= true;
+		return encontre;
+	}
+	else {
+		encontre= false;
+		return encontre;
+	}
+}
+```
+
+Puedo aplicar también un refactoring replace temp with query, ya que ahora 
