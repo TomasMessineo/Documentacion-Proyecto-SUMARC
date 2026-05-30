@@ -660,4 +660,39 @@ public double calcularMontoTotalLlamadas(double descuentoFisica, double descuent
 }
 ```
 
-Tambi
+También puedo mover las constantes descuentoJuridica y descuentoFisica de la clase Empresa a la clase Cliente, ya que no tiene sentido que estén en Empresa si solo el cliente las utiliza. Además así ya no debería pasarse por parámetro a calcularMontoTotalLlamadas del Cliente
+
+---
+
+**Paso 7:**
+
+Identifico otro feature envy luego del paso anterior, esta vez tiene que ver con el cómo se calcula el precio de la llamada dependiendo de si es nacional o internacional... esto debería hacerlo la llamada, no el cliente. Aplico un extract method, sacando a un método "calcularPrecio" a Cliente, y luego moviendolo a Llamada mediante un Move Method:
+
+```java
+
+// En cliente:
+public double calcularMontoTotalLlamadas(double descuentoFisica, double descuentoJuridica) {
+	double c = 0;
+	for (Llamada l: this.llamadas) {
+		double auxc = 0;
+		if (l.getTipoDeLlamada() == "nacional") {
+			// el precio es de 3 pesos por segundo más IVA sin adicional por establecer la llamada
+			auxc += l.getDuracion() * 3 + (l.getDuracion() * 3 * 0.21);
+		} else if (l.getTipoDeLlamada() == "internacional") {
+			// el precio es de 150 pesos por segundo más IVA más 50 pesos por establecer la llamada
+			auxc += l.getDuracion() * 150 + (l.getDuracion() * 150 * 0.21) + 50;
+		}
+		  
+		if (this.tipo == "fisica") {
+			auxc -= auxc*descuentoFisica;
+		} else if(this.tipo == "juridica") {
+			auxc -= auxc*descuentoJuridica;
+		}
+	}
+	return c;
+}
+
+// En llamada
+
+
+```
