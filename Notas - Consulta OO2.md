@@ -490,4 +490,14 @@ Tareas:
 2. Documente la secuencia de refactorings aplicados, como se indica previamente. 
 3. Describa la solución final con un diagrama de clases UML.
 
+---
 
+**Paso 1:**
+Bad smell Public Fields en la clase Empresa, líneas 11 y 12.
+Para solucionarlo, aplico el refactoring "Encapsulate Field" de las constantes.
+
+**Paso 2:**
+Bad smell Uncommunicative Name en las líneas 11 y 12 de "Empresa". El nombre de las constantes no es claro.
+Para corregirlo aplico el refactoring "Rename Variable"
+
+**Paso 3:**
