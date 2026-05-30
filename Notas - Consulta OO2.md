@@ -603,5 +603,3 @@ public Llamada registrarLlamada(Cliente origen, Cliente destino, String t, int d
 
 **Paso 6:**
 
-Bad smell Imperative Loops en el método calcularMontoTotalLlamadas.
-Para solucionarlo aplico el refactoring Replace Loop with Pipeline, aprovechando los streams de java. 
