@@ -503,6 +503,5 @@ Para corregirlo aplico el refactoring "Rename Variable"
 **Paso 3:**
 If statement en las líneas 32 a 45 de la clase "Empresa".
 Para solucionar esto, tengo que aplicar el refactoring "Replace Statements with Polimorphysm". Para ello, tengo que aplicar una secuencia de pasos específicos:
-- Hacer que la clase "Cliente" se vuelva abstracta
-- Creo dos subclases que extiendan de cliente: ClienteJuridica y ClienteFisica
-- Creo el método "registrarUsuario()" en ambas subclases creadas haciendo que reciban
+- Hacer que la clase "Cliente" se vuelva abstracta y creo dos subclases que extiendan de cliente: ClienteJuridica y ClienteFisica (creo que este refactor se llamaba Replace Type Code with Subclasses... ¿es necesario acordarmelo?)
+- Viendo la lógica dentro de los IFs, en este paso, debería 
