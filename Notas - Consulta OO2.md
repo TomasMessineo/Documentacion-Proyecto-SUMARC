@@ -603,3 +603,61 @@ public Llamada registrarLlamada(Cliente origen, Cliente destino, String t, int d
 
 **Paso 6:**
 
+Feature Envy en el método calcularMontoTotalLlamadas de Empresa.
+
+```java
+public double calcularMontoTotalLlamadas(Cliente cliente) {
+	double c = 0;
+	for (Llamada l : cliente.getLlamadas()) {
+		double auxc = 0;
+		if (l.getTipoDeLlamada() == "nacional") {
+			// el precio es de 3 pesos por segundo más IVA sin adicional por establecer la llamada
+			auxc += l.getDuracion() * 3 + (l.getDuracion() * 3 * 0.21);
+		} else if (l.getTipoDeLlamada() == "internacional") {
+			// el precio es de 150 pesos por segundo más IVA más 50 pesos por establecer la llamada
+			auxc += l.getDuracion() * 150 + (l.getDuracion() * 150 * 0.21) + 50;
+		}
+		if (cliente.getTipo() == "fisica") {
+			auxc -= auxc*descuentoFisica;
+		} else if(cliente.getTipo() == "juridica") {
+			auxc -= auxc*descuentoJuridica;
+		}
+		c += auxc;
+	}
+	return c;
+}
+```
+
+Para solucionarlo, muevo el método a la clase Cliente, ya que es algo que debería hacer el cliente y no la Empresa. Aplico Move Method de dicho método a la clase Cliente, y hago que empresa lo delegue a cliente. Envío descuentoFisica y descuentoJuridica por parámetro
+
+```java
+// En empresa:
+public double calcularMontoTotalLlamadas(Cliente cliente) {
+	return cliente.calcularMontoTotalLlamadas(descuentoFisica, descuentoJuridica);
+}
+
+// En cliente:
+
+public double calcularMontoTotalLlamadas(double descuentoFisica, double descuentoJuridica) {
+	double c = 0;
+	for (Llamada l: this.llamadas) {
+		double auxc = 0;
+		if (l.getTipoDeLlamada() == "nacional") {
+			// el precio es de 3 pesos por segundo más IVA sin adicional por establecer la llamada
+			auxc += l.getDuracion() * 3 + (l.getDuracion() * 3 * 0.21);
+		} else if (l.getTipoDeLlamada() == "internacional") {
+			// el precio es de 150 pesos por segundo más IVA más 50 pesos por establecer la llamada
+			auxc += l.getDuracion() * 150 + (l.getDuracion() * 150 * 0.21) + 50;
+		}
+		  
+		if (this.tipo == "fisica") {
+			auxc -= auxc*descuentoFisica;
+		} else if(this.tipo == "juridica") {
+			auxc -= auxc*descuentoJuridica;
+		}
+	}
+	return c;
+}
+```
+
+Tambi
