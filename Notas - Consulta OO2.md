@@ -726,6 +726,19 @@ public double calcularPrecio() {
 En la clase Cliente ahora identifico los bad smells: Primitive Obsession (tiene una variable "tipo", que representa al tipo)... esto puede generar if statements, que de hecho también existe en el método calcularMontoTotalLlamadas, solo que por el momento hay 2 ifs, pero podría haber mas si esto escala.
 
 ```java
+// En Empresa
+public Cliente registrarUsuario(String data, String nombre, String tipo) {
+	Cliente var = this.crearCliente(nombre, tipo);
+	if (tipo.equals("fisica")) {
+		var.setDNI(data);
+	}
+		else if (tipo.equals("juridica")) {
+		var.setCuit(data);
+	}
+	clientes.add(var);
+	return var;
+}
+
 // En cliente
 public double calcularMontoTotalLlamadas() {
 	double c = 0;
@@ -742,20 +755,129 @@ public double calcularMontoTotalLlamadas() {
 }
 ```
 
-Para solucionar esto puedo aplicar el refactoring "Replace Conditional with Polymorphism", donde debería crear dos subclases que extiendan de Cliente: ClienteFisica y ClienteJuridica. La clase Cliente definiría un método abstracto para calcular el descuento, y las subclases se encargarían de realizar el cálculo de forma polimórfica dependiendo de cuál sea la instancia a la que se envíe el mensaje. Además, la clase Cliente debería tener un constructor que defina los atributos en común de las clases ClienteFisica y ClienteJurídica, y las subclases tendrán atributos propios que diferencien a una de la otra (Cuit y DNI). La variable "Tipo" ya no va a existir ya que se resolverá polimórficamente.
+Para solucionar esto puedo aplicar el refactoring "Replace Conditional with Polymorphism", donde debería crear dos subclases que extiendan de Cliente: ClienteFisica y ClienteJuridica. La clase Cliente definiría un método abstracto para obtener el descuento de forma polimórfica dependiendo de cuál sea la instancia a la que se envíe el mensaje (sea ClienteJ. Además, la clase Cliente debería tener un constructor que defina los atributos en común de las clases ClienteFisica y ClienteJurídica, y las subclases tendrán atributos propios que diferencien a una de la otra (Cuit y DNI). La variable "Tipo" ya no va a existir ya que se resolverá polimórficamente. También aplico un Move Field de los valores de las constantes de descuentos correspondientes a cada una de las subclases según corresponda.
 También debería acomodar el método registrarUsuario de la clase Empresa, para instanciar un Cliente u otro dependiendo de qué tipo sea:
 
 ```java
 // En Empresa
+
+// Este método crearCliente ya NO es necesario, así que tengo que eliminarlo.
+private Cliente crearCliente(String nombre, String tipo) {
+	Cliente var = new Cliente();
+	var.setNombre(nombre);
+	var.setTipo(tipo);
+	var.setNumeroTelefono(this.obtenerNumeroLibre());
+	return var;
+}
+
 public Cliente registrarUsuario(String data, String nombre, String tipo) {
-	Cliente var = this.crearCliente(nombre, tipo);
+	Cliente var;
 	if (tipo.equals("fisica")) {
-		var.setDNI(data);
+		var = new ClienteFisica(data, nombre, this.obtenerNumeroLibre());
 	}
-		else if (tipo.equals("juridica")) {
-		var.setCuit(data);
+	else if (tipo.equals("juridica")) {
+		var = new ClienteFisica(data, nombre, this.obtenerNumeroLibre());
 	}
 	clientes.add(var);
 	return var;
 }
+
+// En ClienteJuridica
+public ClienteJuridica {
+	private String cuit;
+	private static double descuentoJuridica = 0.15;
+	
+	public ClienteJuridica(String cuit, String nombre, String numeroTelefono) {
+		super(nombre, numeroTelefono);
+		this.cuit = cuit;
+	}
+	
+	public double getDescuento() {
+		return this.descuentoJuridica;
+	}
+}
+
+// En ClienteFisica
+public ClienteFisica {
+	private String dni;
+	private static double descuentoFisica = 0;
+
+	private String ClienteFisica(String cuit, String nombre, String numeroTelefono) {
+		super(nombre, numeroTelefono);
+		this.dni = dni;
+	}
+	
+	public double getDescuento() {
+		return this.descuentoFisica;
+	}
+}
+
+// En Cliente
+public class Cliente {
+	private List<Llamada> llamadas = new ArrayList<Llamada>();
+	private String nombre;
+	private String numeroTelefono;
+	
+	public Cliente(String nombre, String numeroTelefono) {
+		this.nombre = nombre;
+		this.numeroTelefono = numeroTelefono;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getNumeroTelefono() {
+		return numeroTelefono;
+	}
+	public void setNumeroTelefono(String numeroTelefono) {
+		this.numeroTelefono = numeroTelefono;
+	}
+	public String getCuit() {
+		return cuit;
+	}
+	public void setCuit(String cuit) {
+		this.cuit = cuit;
+	}
+	public String getDNI() {
+		return dni;
+	}
+	public void setDNI(String dni) {
+		this.dni = dni;
+	}
+	
+	public List<Llamada> getLlamadas() {
+		return this.llamadas;
+	}
+	
+	public void agregarLlamada(Llamada llamada) {
+		this.llamadas.add(llamada);
+	}
+	
+	public double calcularMontoTotalLlamadas() {
+		double c = 0;
+		for (Llamada l : this.llamadas) {
+			double auxc = l.calcularPrecio();
+
+			if (this.tipo == "fisica") {
+				auxc -= auxc*descuentoFisica;
+			} else if(this.tipo == "juridica") {
+				auxc -= auxc*descuentoJuridica;
+			}
+			c += auxc;
+		}
+		return c;
+	}
+	
+	
+}
+
 ```
