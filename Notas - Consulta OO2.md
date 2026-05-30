@@ -370,21 +370,16 @@ Por último, soluciono el bad smell de "If statement" aplicando el refactoring "
 - Crear 3 clases más que implementen dicha interfaz: "DoceCuotas", "SeisCuotas" y "Efectivo".
 - En cada una de las clases que implementan la interfaz "FormaPago", implemento el método "calcularExtra(double costoProductos)".
 - Cambio el tipo de dato de la variable instancia "formaPago" de la clase Pedido por el tipo de la interfaz "FormaPago".
-- Elimino el bloque de código que genera el bad smell "if statement".
-- **Elimino también las líneas 06 a 10, ya que ahora no tiene sentido tener eso debido a que "formaPago" ya no es un string, sino una interfaz, y en tiempo de ejecución se definirá que subclase que implementa la interfaz va a ejecutar el método de forma polimórfica.**
+- Elimino el bloque de código que genera el bad smell "if statement", dejando solo la variable temporal "extraFormaPago" que retornará el resultado de enviar el mensaje "calcularExtra" a la interfaz FormaPago.
+- **Elimino también las líneas 06 a 10, ya que ahora no tiene sentido tener eso debido a que "formaPago" ya no es un string, sino una interfaz, y en tiempo de ejecución se definirá que subclase que implementa la interfaz va a ejecutar el método de forma polimórfica. Es más, ahora directamente tiraría error el compilador de Java si se quiere instanciar una clase que no esté definida y que implemente la interfaz "FormaPago"** 
 
 ```java
 01: public class Pedido {  
 02:  private Cliente cliente;  
 03:  private List<Producto> productos;  
-04:  private String formaPago;  
+04:  private FormaPago formaPago;  
 
-05:  public Pedido(Cliente cliente, List<Producto> productos, String formaPago) {  
-06:     if (!"efectivo".equals(formaPago)  
-07:        && !"6 cuotas".equals(formaPago)  
-08:        && !"12 cuotas".equals(formaPago)) {  
-09:          throw new Error("Forma de pago incorrecta");  
-10:    }  
+05:  public Pedido(Cliente cliente, List<Producto> productos, FormaPago formaPago) {  
 11:    this.cliente = cliente;  
 12:    this.productos = productos;  
 13:    this.formaPago = formaPago;  
@@ -393,16 +388,7 @@ Por último, soluciono el bad smell de "If statement" aplicando el refactoring "
 16:     double costoProductos = this.productos.stream()
 								  .mapToDouble(p -> p.getPrecio())
 								  .sum();  
-		
-20:     double extraFormaPago = 0;  
-21:     if ("efectivo".equals(this.formaPago)) {  
-22:       extraFormaPago = 0;  
-23:     } else if ("6 cuotas".equals(this.formaPago)) {  
-24:       extraFormaPago = costoProductos * 0.2;  
-25:     } else if ("12 cuotas".equals(this.formaPago)) {  
-26:       extraFormaPago = costoProductos * 0.5;  
-27:     }  
-
+20:     double extraFormaPago = this.formaPago.calcularExtra(costoProductos);
 		return this.calcularDescuentoPorAntiguedad(costoProductos, extraFormaPago);
 34:   }
 
@@ -457,4 +443,35 @@ Por último, soluciono el bad smell de "If statement" aplicando el refactoring "
 
 **Con esto terminaría de aplicar los pasos.**
 
-DUDA: VEO QUE TAMBIÉN TENGO BAD SMELLS COMO MAGIC NUMBERS, PERO PUEDO APLICAR UN REFACTORING PARA ELLO LUEGO DE HABER APLICADO LO QUE EL EJERCICIO ME SOLICITABA, O NO ES NECESARIO? O A LO MEJOR PUEDO ANOTARLO COMO OBSERVACIÓN EXTRA (teniendo en cuenta una situación así en el parcial)
+**DUDA: VEO QUE TAMBIÉN TENGO BAD SMELLS COMO MAGIC NUMBERS, PERO PUEDO APLICAR UN REFACTORING PARA ELLO LUEGO DE HABER APLICADO LO QUE EL EJERCICIO ME SOLICITABA, O NO ES NECESARIO? O A LO MEJOR PUEDO ANOTARLO COMO OBSERVACIÓN EXTRA (teniendo en cuenta una situación así en el parcial)**
+
+**También podría seguir refactorizando... como por ejemplo aplicar otro replace temp with query para eliminar las 2 variables temporales que me quedaron en getCostoTotal()... para ello llevaría el stream de productos a otro método privado que retorne un double, y enviar el mensaje calcularExtra a la interfaz dentro del llamado al método calcularDescuento, para tener todo en una línea de código... 
+Haciendo esto, el método getCostoTotal() me quedaría algo así:**
+
+```java
+	// ANTES
+	public double getCostoTotal() {  
+	    double costoProductos = this.productos.stream()
+									  .mapToDouble(p -> p.getPrecio())
+									  .sum();  
+	    double extraFormaPago = this.formaPago.calcularExtra(costoProductos);
+		return this.calcularDescuentoPorAntiguedad(costoProductos, extraFormaPago);
+	}
+		
+	//DESPUÉS
+	public double getCostoTotal() {
+		return this.calcularDescuentoPorAntiguedad(
+					this.calcularCostoProductos,
+					this.formaPago.calcularExtra(this.calcularCostoProductos) // Se puede hacer algo así en el parcial? Es decir, aplicar un paso extra que no se indicó o algo así.
+		);
+	}
+	
+	private double calcularCostoProductos() {
+		return this.productos.stream()
+				  .mapToDouble(p -> p.getPrecio())
+				  .sum();  
+	}
+```
+
+# Ejercicio 10
+
