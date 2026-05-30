@@ -660,7 +660,7 @@ public double calcularMontoTotalLlamadas(double descuentoFisica, double descuent
 }
 ```
 
-También puedo mover las constantes descuentoJuridica y descuentoFisica de la clase Empresa a la clase Cliente, ya que no tiene sentido que estén en Empresa si solo el cliente las utiliza. Además así ya no debería pasarse por parámetro a calcularMontoTotalLlamadas del Cliente
+También puedo mover las constantes descuentoJuridica y descuentoFisica de la clase Empresa a la clase Cliente, ya que no tiene sentido que estén en Empresa si solo el cliente las utiliza. Para ello utilizo un refactoring Move Field. Además así ya no debería pasarse por parámetro a calcularMontoTotalLlamadas del Cliente, por ende aplico un refactoring Change Method Signature
 
 ---
 
@@ -674,14 +674,7 @@ Identifico otro feature envy luego del paso anterior, esta vez tiene que ver con
 public double calcularMontoTotalLlamadas(double descuentoFisica, double descuentoJuridica) {
 	double c = 0;
 	for (Llamada l: this.llamadas) {
-		double auxc = 0;
-		if (l.getTipoDeLlamada() == "nacional") {
-			// el precio es de 3 pesos por segundo más IVA sin adicional por establecer la llamada
-			auxc += l.getDuracion() * 3 + (l.getDuracion() * 3 * 0.21);
-		} else if (l.getTipoDeLlamada() == "internacional") {
-			// el precio es de 150 pesos por segundo más IVA más 50 pesos por establecer la llamada
-			auxc += l.getDuracion() * 150 + (l.getDuracion() * 150 * 0.21) + 50;
-		}
+		double auxc = l.calcularPrecio();
 		  
 		if (this.tipo == "fisica") {
 			auxc -= auxc*descuentoFisica;
@@ -693,6 +686,36 @@ public double calcularMontoTotalLlamadas(double descuentoFisica, double descuent
 }
 
 // En llamada
-
+public double calcularPrecio() {
+		int auxc = 0;
+		if (this.tipoDeLlamada == "nacional") {
+			// el precio es de 3 pesos por segundo más IVA sin adicional por establecer la llamada
+			auxc += this.duracion * 3 + (this.duracion * 3 * 0.21);
+		} else if (this.tipoDeLlamada == "internacional") {
+			// el precio es de 150 pesos por segundo más IVA más 50 pesos por establecer la llamada
+			auxc += this.duracion * 150 + (this.duracion * 150 * 0.21) + 50;
+		}
+		
+		return auxc;
+}
 
 ```
+
+Aplico un refactoring replace temp with query para solucionar el bad smell temporary variable de calcularPrecio en Llamada:
+
+```java
+// En llamada
+public double calcularPrecio() {
+		if (this.tipoDeLlamada == "nacional") {
+			// el precio es de 3 pesos por segundo más IVA sin adicional por establecer la llamada
+			return this.duracion * 3 + (this.duracion * 3 * 0.21);
+		} else if (this.tipoDeLlamada == "internacional") {
+			// el precio es de 150 pesos por segundo más IVA más 50 pesos por establecer la llamada
+			return this.duracion * 150 + (this.duracion * 150 * 0.21) + 50;
+		}
+		
+		return 0;
+}
+
+```
+
