@@ -475,3 +475,19 @@ Haciendo esto, el método getCostoTotal() me quedaría algo así:**
 
 # Ejercicio 10
 
+En el material adicional encontrará una aplicación que registra y factura llamadas telefónicas. Para lograr tal objetivo, la aplicación permite administrar números telefónicos, como así también clientes asociados a un número. Los clientes pueden ser personas físicas o jurídicas. Además, el sistema permite registrar las llamadas realizadas, las cuales pueden ser nacionales o internacionales. Luego, a partir de las llamadas, la aplicación realiza la facturación, es decir, calcula el monto que debe abonar cada cliente.
+
+Importe el [material adicional](https://drive.google.com/file/d/1pYLNrobyZdUW2cwwK0AuEkH5tLdbrRC8/view?usp=sharing) provisto por la cátedra y analícelo para identificar y corregir los malos olores que presenta. En forma iterativa, realice los siguientes pasos: 
+
+(i) indique el mal olor, 
+(ii) indique el refactoring que lo corrige, 
+(iii) aplique el refactoring (modifique el código). 
+(iv) asegúrese de que los tests provistos corran exitosamente.
+Si vuelve a encontrar un mal olor, retorne al paso (i).
+
+Tareas:
+1. Describa la solución inicial con un diagrama de clases UML.
+2. Documente la secuencia de refactorings aplicados, como se indica previamente. 
+3. Describa la solución final con un diagrama de clases UML.
+
+
