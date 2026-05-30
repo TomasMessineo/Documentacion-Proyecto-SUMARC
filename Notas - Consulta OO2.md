@@ -671,7 +671,7 @@ Identifico otro feature envy luego del paso anterior, esta vez tiene que ver con
 ```java
 
 // En cliente:
-public double calcularMontoTotalLlamadas(double descuentoFisica, double descuentoJuridica) {
+public double calcularMontoTotalLlamadas() {
 	double c = 0;
 	for (Llamada l: this.llamadas) {
 		double auxc = l.calcularPrecio();
@@ -695,7 +695,7 @@ public double calcularPrecio() {
 			// el precio es de 150 pesos por segundo más IVA más 50 pesos por establecer la llamada
 			auxc += this.duracion * 150 + (this.duracion * 150 * 0.21) + 50;
 		}
-		
+		z
 		return auxc;
 }
 
@@ -719,3 +719,43 @@ public double calcularPrecio() {
 
 ```
 
+---
+
+**Paso 7:**
+
+En la clase Cliente ahora identifico los bad smells: Primitive Obsession (tiene una variable "tipo", que representa al tipo)... esto puede generar if statements, que de hecho también existe en el método calcularMontoTotalLlamadas, solo que por el momento hay 2 ifs, pero podría haber mas si esto escala.
+
+```java
+// En cliente
+public double calcularMontoTotalLlamadas() {
+	double c = 0;
+	for (Llamada l : this.llamadas) {
+		double auxc = l.calcularPrecio();
+		if (this.tipo == "fisica") {
+			auxc -= auxc*descuentoFisica;
+		} else if(this.tipo == "juridica") {
+			auxc -= auxc*descuentoJuridica;
+		}
+		c += auxc;
+	}
+	return c;
+}
+```
+
+Para solucionar esto puedo aplicar el refactoring "Replace Conditional with Polymorphism", donde debería crear dos subclases que extiendan de Cliente: ClienteFisica y ClienteJuridica. La clase Cliente definiría un método abstracto para calcular el descuento, y las subclases se encargarían de realizar el cálculo de forma polimórfica dependiendo de cuál sea la instancia a la que se envíe el mensaje. Además, la clase Cliente debería tener un constructor que defina los atributos en común de las clases ClienteFisica y ClienteJurídica, y las subclases tendrán atributos propios que diferencien a una de la otra (Cuit y DNI). La variable "Tipo" ya no va a existir ya que se resolverá polimórficamente.
+También debería acomodar el método registrarUsuario de la clase Empresa, para instanciar un Cliente u otro dependiendo de qué tipo sea:
+
+```java
+// En Empresa
+public Cliente registrarUsuario(String data, String nombre, String tipo) {
+	Cliente var = this.crearCliente(nombre, tipo);
+	if (tipo.equals("fisica")) {
+		var.setDNI(data);
+	}
+		else if (tipo.equals("juridica")) {
+		var.setCuit(data);
+	}
+	clientes.add(var);
+	return var;
+}
+```
