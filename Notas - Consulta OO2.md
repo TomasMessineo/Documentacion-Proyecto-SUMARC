@@ -569,4 +569,18 @@ public boolean agregarNumeroTelefono(String str) {
 }
 ```
 
-Puedo aplicar también un refactoring replace temp with query, ya que ahora 
+Puedo aplicar también un refactoring replace temp with query, ya que ahora el código tiene la variable temporal encontre que no son necesarias y dificultan la legibilidad. Agrego el llamado a guia.contiene() dentro del if. Modifico también los retornos de forma específica por true si encontré y false si no lo hice.
+
+```java
+public boolean agregarNumeroTelefono(String str) {
+	if (guia.contiene(str)) 
+		guia.agregar(str);
+		return true;
+	}
+	return false;
+}
+```
+
+---
+
+Feature envy en el método registrarLlamada, el agregado a las llamadas debería ser a través de un método. Además, se está accediendo directamente a un método 
