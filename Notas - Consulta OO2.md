@@ -583,8 +583,25 @@ public boolean agregarNumeroTelefono(String str) {
 
 ---
 
-Feature Envy en el método registrarLlamada, el agregado a las llamadas de origen debería ser a través de un método. Además, se está accediendo directamente a una variable pública, lo cual es un bad smell "Public Field".
+**Paso 5:**
+
+Feature Envy en el método registrarLlamada en la clase Empresa, el agregado a las llamadas de origen debería ser a través de un método. Además, se está accediendo directamente a una variable pública, lo cual es un bad smell "Public Field".
 Para solucionar esto, primero aplico un refactoring Encapsulate Field en la clase Cliente, haciendo que la variable "llamadas" sea privada, lo cual supone crear un getter en la clase Cliente y modificar las referencias directas a esa variable "llamadas" en todas las clases que lo requieran. Esto soluciona el bad smell Public Field.
 
 Luego de hacer esto, soluciono el feature envy aplicando un move method, moviendo la lógica de agregar la llamada a la clase "Cliente", creando un método agregarLlamada();
 
+```java
+public Llamada registrarLlamada(Cliente origen, Cliente destino, String t, int duracion) {
+	Llamada llamada = new Llamada(t, origen.getNumeroTelefono(), destino.getNumeroTelefono(), duracion);
+	llamadas.add(llamada);
+	origen.agregarLlamada(llamada);
+	return llamada;
+}
+```
+
+---
+
+**Paso 6:**
+
+Bad smell Imperative Loops en el método calcularMontoTotalLlamadas.
+Para solucionarlo aplico el refactoring Replace Loop with Pipeline, aprovechando los streams de java. 
