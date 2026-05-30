@@ -363,5 +363,98 @@ Aplico un refactoring replace loop with pipeline en la línea 17-19, debido a un
 		}
 ```
 
-**Paso 4: **
-Por último, soluciono el bad smell de "If statements"
+**Paso 4:**
+Por último, soluciono el bad smell de "If statement" aplicando el refactoring "replace conditional with polimorphism" en las líneas 21 a 27. Para ello voy a realizar los siguientes pasos:
+
+- Crear una interfaz llamada "FormaPago", la cual definirá el método "calcularExtra(double costoProductos)"
+- Crear 3 clases más que implementen dicha interfaz: "DoceCuotas", "SeisCuotas" y "Efectivo".
+- En cada una de las clases que implementan la interfaz "FormaPago", implemento el método "calcularExtra(double costoProductos)".
+- Cambio el tipo de dato de la variable instancia "formaPago" de la clase Pedido por el tipo de la interfaz "FormaPago".
+- Elimino el bloque de código que genera el bad smell "if statement".
+- **Elimino también las líneas 06 a 10, ya que ahora no tiene sentido tener eso debido a que "formaPago" ya no es un string, sino una interfaz, y en tiempo de ejecución se definirá que subclase que implementa la interfaz va a ejecutar el método de forma polimórfica.**
+
+```java
+01: public class Pedido {  
+02:  private Cliente cliente;  
+03:  private List<Producto> productos;  
+04:  private String formaPago;  
+
+05:  public Pedido(Cliente cliente, List<Producto> productos, String formaPago) {  
+06:     if (!"efectivo".equals(formaPago)  
+07:        && !"6 cuotas".equals(formaPago)  
+08:        && !"12 cuotas".equals(formaPago)) {  
+09:          throw new Error("Forma de pago incorrecta");  
+10:    }  
+11:    this.cliente = cliente;  
+12:    this.productos = productos;  
+13:    this.formaPago = formaPago;  
+14:   }  
+15:   public double getCostoTotal() {  
+16:     double costoProductos = this.productos.stream()
+								  .mapToDouble(p -> p.getPrecio())
+								  .sum();  
+		
+20:     double extraFormaPago = 0;  
+21:     if ("efectivo".equals(this.formaPago)) {  
+22:       extraFormaPago = 0;  
+23:     } else if ("6 cuotas".equals(this.formaPago)) {  
+24:       extraFormaPago = costoProductos * 0.2;  
+25:     } else if ("12 cuotas".equals(this.formaPago)) {  
+26:       extraFormaPago = costoProductos * 0.5;  
+27:     }  
+
+		return this.calcularDescuentoPorAntiguedad(costoProductos, extraFormaPago);
+34:   }
+
+		private double calcularDescuentoPorAntiguedad( double costoProductos, double extraFormaPago){
+		    if (this.cliente.añosDesdeFechaAlta() > 5) {   // Otros refactorings como la creación de constantes por magic numbers NO podría aplicarlos porque el enunciado no lo indica, ¿o sí?
+		      return this.calcularTotal() * 0.9;  
+		    }  
+		    return this.calcularTotal();
+		}
+		
+		private double calcularTotal(double costoProductos, double extraFormaPago) {
+			return costoProductos + extraFormaPago;
+		}
+35: }  
+
+
+36: public class Cliente {  
+37:   private LocalDate fechaAlta;  
+38:   public LocalDate getFechaAlta() {  
+39:     return this.fechaAlta;  
+40:   }
+
+		public añosDesdeFechaAlta() {
+			return Period.between(this.cliente.getFechaAlta(), LocalDate.now()).getYears();
+		}
+	}
+	
+	
+	interface FormaPago {
+		public double calcularExtra(double costo);
+	}
+	
+	
+	public class DoceCuotas implements FormaPago {
+		public double calcularExtra(double costo) {
+			return costo * 0.5;
+		}
+	}
+	
+	public class SeisCuotas implements FormaPago {
+		public double calcularExtra(double costo) {
+			return costo * 0.2;
+		}
+	}
+	
+	public class Efectivo implements FormaPago{
+		public double calcularExtra(double costo) {
+			return 0;	
+		}
+	}
+```
+
+**Con esto terminaría de aplicar los pasos.**
+
+DUDA: VEO QUE TAMBIÉN TENGO BAD SMELLS COMO MAGIC NUMBERS, PERO PUEDO APLICAR UN REFACTORING PARA ELLO LUEGO DE HABER APLICADO LO QUE EL EJERCICIO ME SOLICITABA, O NO ES NECESARIO? O A LO MEJOR PUEDO ANOTARLO COMO OBSERVACIÓN EXTRA (teniendo en cuenta una situación así en el parcial)
