@@ -1117,3 +1117,57 @@ public class LlamadaNacional extends Llamada {
 	}
 }
 ```
+
+**Paso 10:**
+
+En la clase GestorNumerosDisponibles identifico los bad smells "Primitive obsession" y "Switch Statements".
+Para solucionar el bad smell Switch Statements aplico el refactoring "Replace Conditional with Strategy", y a su vez, de la mano solucionaría el bad smell "Primitive Obsession" modificando el tipo de dato de la variable de instancia "tipoGenerador" por la estrategia abstracta o interfaz.
+
+```java
+public class GestorNumerosDisponibles {
+	private SortedSet<String> lineas = new TreeSet<String>();
+	private String tipoGenerador = "ultimo";
+
+	public SortedSet<String> getLineas() {
+		return lineas;
+	}
+
+	public String obtenerNumeroLibre() {
+		String linea;
+		switch (tipoGenerador) {
+			case "ultimo":
+				linea = lineas.last();
+				lineas.remove(linea);
+				return linea;
+			case "primero":
+				linea = lineas.first();
+				lineas.remove(linea);
+				return linea;
+			case "random":
+				linea = new ArrayList<String>(lineas)
+						.get(new Random().nextInt(lineas.size()));
+				lineas.remove(linea);
+				return linea;
+		}
+		return null;
+	}
+
+	public void cambiarTipoGenerador(String valor) {
+		this.tipoGenerador = valor;
+	}
+	
+	public boolean contiene(String str) {
+		return this.getLineas().contains(str);
+	}
+	
+	public void agregar(String str) {
+		this.lineas.add(str);
+	}
+}
+```
+
+Primero aplico el refactoring Replace Conditional with Strategy, para esto hago lo siguiente:
+- Creo una nueva clase abstracta "Linea" y 3 subclases que extenderán a esta misma: "UltimaLinea", "PrimerLinea" y "LineaRandom".
+- Delego la lógica del método obtenerNumeroLibre de GestorNumerosDisponibles a la clase "Linea", la cuál ahora pasará a tener este método (aplico extract method y luego un move method), así también como los métodos "contiene" y "agregar" que ahora delegarán la tarea a "Linea". También muevo la colección "lineas" (TreeSet) mediante un Move Field.  
+- Aprovecho para solucionar el bad smell Primitive Obsession, cambiando el tipo de dato de tipoGenerador de GestorNumerosDisponibles por "Linea", así también como su asignación, que ahora debería ser un objeto "UltimaLinea".
+-  La clase Línea debería tener 
