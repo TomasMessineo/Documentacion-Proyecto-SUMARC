@@ -1379,10 +1379,36 @@ abstract class Linea {
 21  }
 ```
 
-| Bad smell                              | # Línea(s) | Justificación                                                                                                                                                                                                                                                              | Refactoring                                                            |
-| -------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-|                                        |            |                                                                                                                                                                                                                                                                            |                                                                        |
-| Uncommunicative Name                   | #2, #3     | Las variables de instancia con nombres "a" y "b" no  representan exactamente lo que corresponde su valor. "a" es la altura y "b" la base, pero son nombres poco comunicativos, y por ende hay que cambiarlos para que se entienda mejor qué es lo que quieren representar. | Rename Field, es decir, renombramiento de los nombres de las varibles. |
-| Variable local temporal innecesaria??? | #18        | No es necesario tener una variable temporal "area" dentro del método calcularArea() ya que esta operación puede retornarse directamente.                                                                                                                                   | Inline Temp                                                            |
-| Parámetro Innecesario                  | #17        | El parámetro "base" recibido en el método calcularArea es innecesario, ya que internamente el método                                                                                                                                                                       | Remove Parameter                                                       |
-*También noto que se encuentran otros bad smells, como:* Comments, Magic Numbers (el 2) (?
+| Bad smell                              | # Línea(s) | Justificación                                                                                                                                                                                                                                                                                                                                                                                                                                     | Refactoring                                                            |
+| -------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+|                                        |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                        |
+| Uncommunicative Name                   | #2, #3     | Las variables de instancia con nombres "a" y "b" no  representan exactamente lo que corresponde su valor. "a" es la altura y "b" la base, pero son nombres poco comunicativos, y por ende hay que cambiarlos para que se entienda mejor qué es lo que quieren representar.                                                                                                                                                                        | Rename Field, es decir, renombramiento de los nombres de las varibles. |
+| Variable local temporal innecesaria??? | #18        | No es necesario tener una variable temporal "area" dentro del método calcularArea() ya que esta operación puede retornarse directamente.                                                                                                                                                                                                                                                                                                          | Inline Temp                                                            |
+| Parámetro Innecesario                  | #17        | El parámetro "base" recibido en el método calcularArea es innecesario, ya que internamente el método calcularArea utiliza  la variable de instancia "b" como base, y no utiliza en ningún momento el parámetro "base" recibido. Este parámetro puede borrarse directamente. Otra solución sería no guardar la base internamente, sino que solo almacenar la altura, entonces este método ahí si utilizaría el parámetro para realizar el cálculo. | Remove Parameter                                                       |
+|                                        |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                        |
+*También noto que se encuentran otros bad smells, como:* Comments, Magic Numbers (el 2) (? o así también como un rename parameter en el constructor, para que los parámetros se llamen altura y base.
+
+**Después de aplicar refactoring:**
+
+```java
+1   public class TrianguloRectangulo {
+2       private int base;
+3       private int altura;
+4
+5       public TrianguloRectangulo(int valorB, int valorA) {
+6           this.base = valorB;
+7           this.altura = valorA;
+8       }
+9
+10      public int getBase() {
+11          return this.base;
+12      }
+13      public int getAltura() {
+14          return this.altura;
+15      }
+16
+17      public double calcularArea() {
+19          return this.altura * this.base / 2;
+20      }
+21  }
+```
