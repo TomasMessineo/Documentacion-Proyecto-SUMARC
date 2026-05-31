@@ -1052,7 +1052,7 @@ public class Llamada {
 ```
 
 Para solucionarlo, aplico lo mismo que en el paso anterior: El refactoring Replace Conditional with Polymorphism junto con un inline temp para devolver todo en un return de forma limpia y legible. 
-Para ello, hago que la clase Llamada sea abstracta, y crear dos subclases de la misma: LlamadaNacional y LlamadaInternacional. La clase Llamada definirá un método abstracto, "", el cual será implementado por las dos subclases para poder resolver esta tarea de forma polimórfica.
+Para ello, hago que la clase Llamada sea abstracta, y crear dos subclases de la misma: LlamadaNacional y LlamadaInternacional. La clase Llamada definirá un método abstracto, "calcularPrecio", el cual será implementado por las dos subclases para poder resolver esta tarea de forma polimórfica. El método calcularPrecio de Llamada no tiene sentido tenerlo, ya que delegará la tarea a cada subclase
 También las subclases tendrán su propio constructor, pasando todos los datos a "Llamada" con super().
 A su vez, también tengo que modificar el método registrarLlamada de Empresa, para evaluar qué tipo se utiliza y en base a eso saber qué tipo de llamada instanciar.
 
@@ -1094,27 +1094,26 @@ abstract class Llamada {
 		return origen;
 	}
 	
-	public double calcularPrecio() {
-		if (this.tipoDeLlamada == "nacional") {
-			// el precio es de 3 pesos por segundo más IVA sin adicional por establecer la llamada
-			return this.duracion * 3 + (this.duracion * 3 * 0.21);
-		} else if (this.tipoDeLlamada == "internacional") {
-			// el precio es de 150 pesos por segundo más IVA más 50 pesos por establecer la llamada
-			return this.duracion * 150 + (this.duracion * 150 * 0.21) + 50;
-		}
-		return 0;
-	}
+	public abstract double calcularPrecio();
 }
 
 public class LlamadaInternacional extends Llamada {
 	public LlamadaInternacional(String origen, String destino, int duracion) {
 		super(origen, destino, duracion)
 	}
+	
+	public double calcularPrecio() {
+		return this.getDuracion() * 3 + (this.duracion * 3 * 0.21);
+	}
 }
 
 public class LlamadaNacional extends Llamada {
 	public LlamadaInternacional(String origen, String destino, int duracion) {
 		super(origen, destino, duracion)
+	}
+	
+	public double calcularPrecio() {
+		return this.duracion * 150 + (this.duracion * 150 * 0.21) + 50;
 	}
 }
 ```
