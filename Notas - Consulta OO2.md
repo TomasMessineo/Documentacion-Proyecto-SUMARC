@@ -993,3 +993,120 @@ Por último, puedo aplicar un Inline Temp para solucionar el bad smell Temporary
 ```
 ---
 
+**Paso 9:**
+
+Bad smell Primitive Obsession en la clase Llamada, en el método calcularPrecio. Esto a futuro puede ocasionar un bad smell Switch Statement.
+
+```java
+// En Empresa:
+public Llamada registrarLlamada(Cliente origen, Cliente destino, String t, int duracion) {
+	Llamada llamada = new Llamada(t, origen.getNumeroTelefono(), destino.getNumeroTelefono(), duracion);
+	llamadas.add(llamada);
+	origen.agregarLlamada(llamada);
+	return llamada;
+}
+
+// En Llamada:
+public class Llamada {
+	
+	private String tipoDeLlamada;
+	private String origen;
+	private String destino;
+	private int duracion;
+
+	public Llamada(String tipoLlamada, String origen, String destino, int duracion) {
+		this.tipoDeLlamada = tipoLlamada;
+		this.origen= origen;
+		this.destino= destino;
+		this.duracion = duracion;
+	}
+
+	public String getTipoDeLlamada() {
+		return tipoDeLlamada;
+	}
+
+	public String getRemitente() {
+		return destino;
+	}
+	
+	public int getDuracion() {
+		return this.duracion;
+	}
+	
+	public String getOrigen() {
+		return origen;
+	}
+	
+	public double calcularPrecio() {
+		if (this.tipoDeLlamada == "nacional") {
+			// el precio es de 3 pesos por segundo más IVA sin adicional por establecer la llamada
+			return this.duracion * 3 + (this.duracion * 3 * 0.21);
+		} else if (this.tipoDeLlamada == "internacional") {
+			// el precio es de 150 pesos por segundo más IVA más 50 pesos por establecer la llamada
+			return this.duracion * 150 + (this.duracion * 150 * 0.21) + 50;
+		}
+		return 0;
+	}
+
+}
+```
+
+Para solucionarlo, aplico lo mismo que en el paso anterior: El refactoring Replace Conditional with Polymorphism. 
+Para ello, hago que la clase Llamada sea abstracta, y crear dos subclases de la misma: LlamadaNacional y LlamadaInternacional. La clase Llamada definirá un método abstracto, "calcularPrecio", el cual será implementado por las dos subclases para poder resolver esta tarea de forma polimórfica.
+También las subclases tendrán su propio constructor, pasando todos los datos a "Llamada" con super().
+A su vez, también tengo que modificar el método registrarLlamada de Empresa, para evaluar qué tipo se utiliza y en base a eso saber qué tipo de llamada instanciar...
+
+```java
+// En Empresa:
+public Llamada registrarLlamada(Cliente origen, Cliente destino, String t, int duracion) {
+	Llamada llamada = new Llamada(t, origen.getNumeroTelefono(), destino.getNumeroTelefono(), duracion);
+	llamadas.add(llamada);
+	origen.agregarLlamada(llamada);
+	return llamada;
+	
+	if (t.equals)
+}
+
+// En Llamada:
+public class Llamada {
+	private String tipoDeLlamada;
+	private String origen;
+	private String destino;
+	private int duracion;
+
+	public Llamada(String tipoLlamada, String origen, String destino, int duracion) {
+		this.tipoDeLlamada = tipoLlamada;
+		this.origen= origen;
+		this.destino= destino;
+		this.duracion = duracion;
+	}
+
+	public String getTipoDeLlamada() {
+		return tipoDeLlamada;
+	}
+
+	public String getRemitente() {
+		return destino;
+	}
+	
+	public int getDuracion() {
+		return this.duracion;
+	}
+	
+	public String getOrigen() {
+		return origen;
+	}
+	
+	public double calcularPrecio() {
+		if (this.tipoDeLlamada == "nacional") {
+			// el precio es de 3 pesos por segundo más IVA sin adicional por establecer la llamada
+			return this.duracion * 3 + (this.duracion * 3 * 0.21);
+		} else if (this.tipoDeLlamada == "internacional") {
+			// el precio es de 150 pesos por segundo más IVA más 50 pesos por establecer la llamada
+			return this.duracion * 150 + (this.duracion * 150 * 0.21) + 50;
+		}
+		return 0;
+	}
+
+}
+```
