@@ -1168,11 +1168,9 @@ public class GestorNumerosDisponibles {
 
 Primero aplico el refactoring Replace Conditional with Strategy, para esto hago lo siguiente:
 - Creo una nueva clase abstracta "Linea" y 3 subclases que extenderán a esta misma: "UltimaLinea", "PrimerLinea" y "LineaRandom".
-- Delego la lógica del método obtenerNumeroLibre de GestorNumerosDisponibles a la clase "Linea", la cuál ahora pasará a tener este método (aplico extract method y luego un move method), así también como los métodos "contiene" y "agregar" que ahora delegarán la tarea a "Linea". También muevo la colección "lineas" (TreeSet) mediante un Move Field.  
+- Delego la lógica del método obtenerNumeroLibre de GestorNumerosDisponibles a la clase "Linea", la cuál ahora pasará a tener esta misma firma de método pero como abstracto para que sus subclases lo implementen, y hacer un hook o gancho... así también como los métodos "contiene()", "getLineas()" y "agregar()" que ahora delegarán la tarea a "Linea". También muevo la colección "lineas" (TreeSet) mediante un Move Field. 
 - Aprovecho para solucionar el bad smell Primitive Obsession, cambiando el tipo de dato de tipoGenerador de GestorNumerosDisponibles por "Linea", así también como su asignación, que ahora debería ser un objeto "UltimaLinea".
--  La clase Línea debería tener en este punto todos los case del switch en su método obtenerNumeroLibre... lo que debo hacer ahora es aplicar extract method y luego un move method para delegar cada funcionalidad separada mediante cada "case" a las subclases de línea dependiendo de lo que cada una realice. 
-- Aplico un Rename Method S
-- Por último, creo un getter protegido para obtener la colección TreeSet "lineas" de la clase Linea, ya que así de esta forma las subclases podrán accederla.
+- Modifico cambiarTipoGenerador() de GestorNumerosDisponibles para que reciba una instancia que comparta herencia con Linea. 
 
 ```java
 public class UltimaLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
@@ -1187,8 +1185,8 @@ public class UltimaLinea extends Linea { // Esta clase sería el rol "ConcreteSt
 public class PrimerLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
 	public obtenerNumeroLibre() {
 		String linea;
-		linea = lineas.first();
-		lineas.remove(linea);
+		linea = this.getLineas().first();
+		this.getLineas().remove(linea);
 		return linea;
 	}
 }
@@ -1196,9 +1194,9 @@ public class PrimerLinea extends Linea { // Esta clase sería el rol "ConcreteSt
 public class LineaRandom extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
 	public obtenerNumeroLibre() {
 		String linea;
-		linea = new ArrayList<String>(lineas)
-				.get(new random().nextInt(lineas.size()))
-		lineas.remove(linea);
+		linea = new ArrayList<String>(this.getLineas())
+				.get(new random().nextInt(this.getLineas().size()))
+		this.getLineas().remove(linea);
 		return linea;
 	}
 }
@@ -1206,11 +1204,9 @@ public class LineaRandom extends Linea { // Esta clase sería el rol "ConcreteSt
 abstract class Linea { // Esta clase sería el rol "Strategy" en el patrón Strategy
 	private SortedSet<String> lineas = new TreeSet<String>();
 
-	public String obtenerNumeroLibre() {
-		return this.
-	}
+	public abstract String obtenerNumeroLibre();
 	
-	protected SortedSet<String> getLineas() {
+	public SortedSet<String> getLineas() {
 		return this.lineas;
 	}
 	
