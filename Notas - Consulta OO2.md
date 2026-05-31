@@ -1243,3 +1243,6 @@ public class GestorNumerosDisponibles { // Esta clase sería el rol "Context" en
 	}
 }
 ```
+
+*COMO OBSERVACIÓN*: Los tests fallan si cambio el tipo de parámetro de cambiarTipoGenerador por otro, como Linea en este caso para cambiar la estrategia...
+Para que los tests no se rompan, opté por dejar el bad smell switch statement pero en esta clase para saber qué setear como estrategia.
