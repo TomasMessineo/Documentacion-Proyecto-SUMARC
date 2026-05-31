@@ -177,7 +177,7 @@ Aplico el refactoring move method, moviendo el método añosDesdeFechaAlta() hac
 ```
 
 **Paso 3:**
-Prosiguiendo con el punto 4, para solucionar el bad smell "long method" (que en realidad es el bad smell principal de este método getCostoTotal) aplico un extract method en las líneas 28 a 33 creando un método privado "calcularCostoExtra()" el cual recibe 2 parámetros, y luego un replace temp with query para reemplazar la variable temporal utilizada, llevando todo al return directamente.
+Prosiguiendo con el punto 4, para solucionar el bad smell "long method" (que en realidad es el bad smell principal de este método getCostoTotal) aplico un extract method en las líneas 28 a 33 creando un método privado "calcularCostoExtra()" el cual recibe 2 parámetros, y luego un refactoring Inline Temp para reemplazar la variable temporal utilizada, llevando todo al return directamente.
 
 ```java
 01: public class Pedido {  
@@ -721,7 +721,7 @@ public double calcularPrecio() {
 
 ---
 
-**Paso 7:**
+**Paso 8**
 
 En la clase Cliente ahora identifico los bad smells: Primitive Obsession (tiene una variable "tipo", que representa al tipo)... esto puede generar if statements, que de hecho también existe en el método calcularMontoTotalLlamadas, solo que por el momento hay 2 ifs, pero podría haber mas si esto escala.
 
@@ -802,7 +802,7 @@ public ClienteFisica {
 	private String dni;
 	private static double descuentoFisica = 0;
 
-	private String ClienteFisica(String cuit, String nombre, String numeroTelefono) {
+	private ClienteFisica(String cuit, String nombre, String numeroTelefono) {
 		super(nombre, numeroTelefono);
 		this.dni = dni;
 	}
@@ -866,7 +866,8 @@ public class Cliente {
 		double c = 0;
 		for (Llamada l : this.llamadas) {
 			double auxc = l.calcularPrecio();
-			c += auxc * this.getDescuento();
+			auxc -= auxc * this.getDescuento;
+			c += auxc;
 		}
 		return c;
 	}
@@ -958,7 +959,8 @@ public class Cliente {
 		double c = 0;
 		for (Llamada l : this.llamadas) {
 			double auxc = l.calcularPrecio();
-			c += auxc * this.getDescuento();
+			auxc -= auxc * this.getDescuento;
+			c += auxc;
 		}
 		return c;
 	}
@@ -970,18 +972,24 @@ public class Cliente {
 Luego aplico un refactoring Replace loop with Pipeline para solucionar el bad smell "Imperative Loops" del método calcularMontoTotalLlamadas, en Cliente.
 
 ```java
+	// En cliente
 	public double calcularMontoTotalLlamadas() {
-		double c = 0;
-		for (Llamada l : this.llamadas) {
-			double auxc = l.calcularPrecio();
-			c += auxc * this.getDescuento();
-		}
 		double c = this.llamadas.stream()
-					.
+					.mapToDouble(l -> l.calcularPrecio() - (l.calcularPrecio() * this.getDescuento()))
+					.sum();
 		return c;
 	}
-	
 ```
 
+Por último, puedo aplicar un Inline Temp para solucionar el bad smell Temporary Variable:
+
+```java
+	// En cliente
+	public double calcularMontoTotalLlamadas() {
+		return this.llamadas.stream()
+					.mapToDouble(l -> l.calcularPrecio() - (l.calcularPrecio() * this.getDescuento()))
+					.sum();;
+	}
+```
 ---
 
