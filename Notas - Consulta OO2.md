@@ -1212,13 +1212,9 @@ public class GestorNumerosDisponibles { // Esta clase sería el rol "Context" en
 		return this.lineas;
 	}
 
-  
-
 	public String obtenerNumeroLibre() {
 		return this.tipoGenerador.obtenerNumeroLibre(lineas);
-	}
-
-  
+	}  
 	public void cambiarTipoGenerador(String tipoGenerador) {
 		switch (tipoGenerador) {
 			case "ultimo":
@@ -1236,9 +1232,123 @@ public class GestorNumerosDisponibles { // Esta clase sería el rol "Context" en
 	
 	public boolean contiene(String str) {
 		return this.getLineas().contains(str);
-		}
 	}
 ```
 
 *COMO OBSERVACIÓN*: Los tests fallan si cambio el tipo de parámetro de cambiarTipoGenerador por otro, como Linea en este caso para cambiar la estrategia...
 Para que los tests no se rompan, opté por dejar el bad smell switch statement pero en esta clase para saber qué setear como estrategia.
+
+---
+
+Luego de esto, encuentro otro bad smell: Duplicate Code en los métodos obtenerNumeroLibre() de LineaRandom, UltimaLinea y PrimerLinea.
+
+```java
+public class UltimaLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
+	public String obtenerNumeroLibre(SortedSet<String> lineas) {
+		String linea;
+		linea = lineas.last();
+		lineas.remove(linea);
+		return linea;
+		}
+	}
+
+public class PrimerLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
+	public String obtenerNumeroLibre(SortedSet<String> lineas) {
+		String linea;
+		linea = lineas.first();
+		lineas.remove(linea);
+		return linea;
+	}
+}
+
+public class LineaRandom extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
+	public String obtenerNumeroLibre(SortedSet<String> lineas) {
+		String linea;
+		linea = new ArrayList<String>(lineas)
+		.get(new Random().nextInt(lineas.size()));
+		lineas.remove(linea);
+		return linea;
+	}
+}
+
+abstract class Linea {
+	public abstract String obtenerNumeroLibre(SortedSet<String> lineas);
+}
+```
+
+Para solucionar este bad smell, tengo que aplicar un Pull Up Method, llevando de esta forma el comportamiento común a la superclase Linea. Antes de esto, tengo que aplicar Extract Method en cada una de las subclases para extraer esa lógica que es idéntica y que irá luego a la superclase:
+
+```java
+public class UltimaLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
+	public String obtenerNumeroLibre(SortedSet<String> lineas) {
+		String linea;
+		linea = lineas.last();
+		this.eliminarLinea(lineas, linea);
+		return linea;
+		}
+	}
+
+public class PrimerLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
+	public String obtenerNumeroLibre(SortedSet<String> lineas) {
+		String linea;
+		linea = lineas.first();
+		this.eliminarLinea(lineas, linea);
+		return linea;
+	}
+}
+
+public class LineaRandom extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
+	public String obtenerNumeroLibre(SortedSet<String> lineas) {
+		String linea;
+		linea = new ArrayList<String>(lineas)
+		.get(new Random().nextInt(lineas.size()));
+		this.eliminarLinea(lineas, linea);
+		return linea;
+	}
+}
+
+abstract class Linea {
+	public abstract String obtenerNumeroLibre(SortedSet<String> lineas);
+	
+	public void eliminarLinea(SortedSet<String> lineas, String lineas) {
+		lineas.remove(linea);
+	}
+}
+```
+
+Aplico ahora un pequeño refactoring inline temp para no tener variables temporales:
+
+```java
+public class UltimaLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
+	public String obtenerNumeroLibre(SortedSet<String> lineas) {
+		String linea = lineas.last();
+		this.eliminarLinea(lineas, linea);
+		return linea;
+		}
+	}
+
+public class PrimerLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
+	public String obtenerNumeroLibre(SortedSet<String> lineas) {
+		String linea = lineas.first();
+		this.eliminarLinea(lineas, linea);
+		return linea;
+	}
+}
+
+public class LineaRandom extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
+	public String obtenerNumeroLibre(SortedSet<String> lineas) {
+		String linea = new ArrayList<String>(lineas)
+						.get(new Random().nextInt(lineas.size()));
+		this.eliminarLinea(lineas, linea);
+		return linea;
+	}
+}
+
+abstract class Linea {
+	public abstract String obtenerNumeroLibre(SortedSet<String> lineas);
+	
+	public void eliminarLinea(SortedSet<String> lineas, String lineas) {
+		lineas.remove(linea);
+	}
+}
+```
