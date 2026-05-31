@@ -1352,3 +1352,36 @@ abstract class Linea {
 	}
 }
 ```
+
+![[Captura desde 2026-05-31 17-54-21.png]]
+
+```java
+1   public class TrianguloRectangulo {
+2       private int b; // Base
+3       private int a; // Altura
+4
+5       public TrianguloRectangulo(int valorB, int valorA) {
+6           this.b = valorB;
+7           this.a = valorA;
+8       }
+9
+10      public int getBase() {
+11          return this.b;
+12      }
+13      public int getAltura() {
+14          return this.a;
+15      }
+16
+17      public double calcularArea(double base) {
+18          double area = this.a * this.b / 2;
+19          return area;
+20      }
+21  }
+```
+
+| Bad smell            | # Línea(s) | Justificación                                                                                                                                                                                                                                                              | Refactoring        |
+| -------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+|                      |            |                                                                                                                                                                                                                                                                            |                    |
+| Uncommunicative Name | #2, #3     | Las variables de instancia con nombres "a" y "b" no  representan exactamente lo que corresponde su valor. "a" es la altura y "b" la base, pero son nombres poco comunicativos, y por ende hay que cambiarlos para que se entienda mejor qué es lo que quieren representar. | Rename Field, o ta |
+|                      | #18        |                                                                                                                                                                                                                                                                            |                    |
+|                      |            |                                                                                                                                                                                                                                                                            | Remove Parameter   |
