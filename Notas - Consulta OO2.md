@@ -1170,4 +1170,80 @@ Primero aplico el refactoring Replace Conditional with Strategy, para esto hago 
 - Creo una nueva clase abstracta "Linea" y 3 subclases que extenderán a esta misma: "UltimaLinea", "PrimerLinea" y "LineaRandom".
 - Delego la lógica del método obtenerNumeroLibre de GestorNumerosDisponibles a la clase "Linea", la cuál ahora pasará a tener este método (aplico extract method y luego un move method), así también como los métodos "contiene" y "agregar" que ahora delegarán la tarea a "Linea". También muevo la colección "lineas" (TreeSet) mediante un Move Field.  
 - Aprovecho para solucionar el bad smell Primitive Obsession, cambiando el tipo de dato de tipoGenerador de GestorNumerosDisponibles por "Linea", así también como su asignación, que ahora debería ser un objeto "UltimaLinea".
--  La clase Línea debería tener 
+-  La clase Línea debería tener en este punto todos los case del switch en su método obtenerNumeroLibre... lo que debo hacer ahora es aplicar extract method y luego un move method para delegar cada funcionalidad separada mediante cada "case" a las subclases de línea dependiendo de lo que cada una realice. 
+- Aplico un Rename Method S
+- Por último, creo un getter protegido para obtener la colección TreeSet "lineas" de la clase Linea, ya que así de esta forma las subclases podrán accederla.
+
+```java
+public class UltimaLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
+	public obtenerNumeroLibre() {
+		String linea;
+		linea = this.getLineas().last();
+		this.getLineas().remove(linea);
+		return linea;
+	}
+}
+
+public class PrimerLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
+	public obtenerNumeroLibre() {
+		String linea;
+		linea = lineas.first();
+		lineas.remove(linea);
+		return linea;
+	}
+}
+
+public class LineaRandom extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
+	public obtenerNumeroLibre() {
+		String linea;
+		linea = new ArrayList<String>(lineas)
+				.get(new random().nextInt(lineas.size()))
+		lineas.remove(linea);
+		return linea;
+	}
+}
+
+abstract class Linea { // Esta clase sería el rol "Strategy" en el patrón Strategy
+	private SortedSet<String> lineas = new TreeSet<String>();
+
+	public String obtenerNumeroLibre() {
+		return this.
+	}
+	
+	protected SortedSet<String> getLineas() {
+		return this.lineas;
+	}
+	
+	public boolean contiene(String str) {
+		return this.getLineas().contains(str);
+	}
+	
+	public void agregar(String str) {
+		this.lineas.add(str);
+	}
+}
+
+public class GestorNumerosDisponibles { // Esta clase sería el rol "Context" en el patrón Strategy.
+	private Linea tipoGenerador = new UltimaLinea();
+
+	public SortedSet<String> getLineas() {
+		return lineas;
+	}
+
+	public String obtenerNumeroLibre() {
+		return this.tipoGenerador.obtenerNumeroLibre();
+	}
+
+	public void cambiarTipoGenerador(String valor) {
+		this.tipoGenerador = valor;
+	}
+	
+	public boolean contiene(String str) {
+		return this.tipoGenerador.contiene(str);
+	}
+	
+	public void agregar(String str) {
+		return.tipoGenerador.agregar(str);
+	}
+}
+```
