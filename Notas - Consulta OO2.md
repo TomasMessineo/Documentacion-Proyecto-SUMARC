@@ -1168,80 +1168,76 @@ public class GestorNumerosDisponibles {
 
 Primero aplico el refactoring Replace Conditional with Strategy, para esto hago lo siguiente:
 - Creo una nueva clase abstracta "Linea" y 3 subclases que extenderán a esta misma: "UltimaLinea", "PrimerLinea" y "LineaRandom".
-- Delego la lógica del método obtenerNumeroLibre de GestorNumerosDisponibles a la clase "Linea", la cuál ahora pasará a tener esta misma firma de método pero como abstracto para que sus subclases lo implementen, y hacer un hook o gancho... así también como los métodos "contiene()", "getLineas()" y "agregar()" que ahora delegarán la tarea a "Linea". También muevo la colección "lineas" (TreeSet) mediante un Move Field. 
+- Delego la lógica del método obtenerNumeroLibre de GestorNumerosDisponibles a la clase "Linea", la cuál ahora pasará a tener esta misma firma de método pero como abstracto para que sus subclases lo implementen, y hacer un hook o gancho... 
 - Aprovecho para solucionar el bad smell Primitive Obsession, cambiando el tipo de dato de tipoGenerador de GestorNumerosDisponibles por "Linea", así también como su asignación, que ahora debería ser un objeto "UltimaLinea".
-- Modifico cambiarTipoGenerador() de GestorNumerosDisponibles para que reciba una instancia que comparta herencia con Linea. 
 
 ```java
 public class UltimaLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
-	public obtenerNumeroLibre() {
+	public String obtenerNumeroLibre(SortedSet<String> lineas) {
 		String linea;
-		linea = this.getLineas().last();
-		this.getLineas().remove(linea);
+		linea = lineas.last();
+		lineas.remove(linea);
 		return linea;
+		}
 	}
-}
 
 public class PrimerLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
-	public obtenerNumeroLibre() {
+	public String obtenerNumeroLibre(SortedSet<String> lineas) {
 		String linea;
-		linea = this.getLineas().first();
-		this.getLineas().remove(linea);
+		linea = lineas.first();
+		lineas.remove(linea);
 		return linea;
 	}
 }
 
 public class LineaRandom extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
-	public obtenerNumeroLibre() {
+	public String obtenerNumeroLibre(SortedSet<String> lineas) {
 		String linea;
-		linea = new ArrayList<String>(this.getLineas())
-				.get(new random().nextInt(this.getLineas().size()))
-		this.getLineas().remove(linea);
+		linea = new ArrayList<String>(lineas)
+		.get(new Random().nextInt(lineas.size()));
+		lineas.remove(linea);
 		return linea;
 	}
 }
 
-abstract class Linea { // Esta clase sería el rol "Strategy" en el patrón Strategy
-	private SortedSet<String> lineas = new TreeSet<String>();
+abstract class Linea {
+	public abstract String obtenerNumeroLibre(SortedSet<String> lineas);
+}
 
-	public abstract String obtenerNumeroLibre();
-	
+public class GestorNumerosDisponibles { // Esta clase sería el rol "Context" en el patrón Strategy.
+	private SortedSet<String> lineas = new TreeSet<String>();
+	private Linea tipoGenerador = new UltimaLinea();
+
 	public SortedSet<String> getLineas() {
 		return this.lineas;
 	}
-	
-	public boolean contiene(String str) {
-		return this.getLineas().contains(str);
+
+  
+
+	public String obtenerNumeroLibre() {
+		return this.tipoGenerador.obtenerNumeroLibre(lineas);
+	}
+
+  
+	public void cambiarTipoGenerador(String tipoGenerador) {
+		switch (tipoGenerador) {
+			case "ultimo":
+				this.tipoGenerador = new UltimaLinea();
+			case "primero":
+				this.tipoGenerador = new PrimerLinea();
+			case "random":
+				this.tipoGenerador = new LineaRandom();
+		}
 	}
 	
 	public void agregar(String str) {
 		this.lineas.add(str);
 	}
-}
-
-public class GestorNumerosDisponibles { // Esta clase sería el rol "Context" en el patrón Strategy.
-	private Linea tipoGenerador = new UltimaLinea();
-
-	public SortedSet<String> getLineas() {
-		return lineas;
-	}
-
-	public String obtenerNumeroLibre() {
-		return this.tipoGenerador.obtenerNumeroLibre();
-	}
-
-	public void cambiarTipoGenerador(String valor) {
-		this.tipoGenerador = valor;
-	}
 	
 	public boolean contiene(String str) {
-		return this.tipoGenerador.contiene(str);
+		return this.getLineas().contains(str);
+		}
 	}
-	
-	public void agregar(String str) {
-		return.tipoGenerador.agregar(str);
-	}
-}
 ```
 
 *COMO OBSERVACIÓN*: Los tests fallan si cambio el tipo de parámetro de cambiarTipoGenerador por otro, como Linea en este caso para cambiar la estrategia...
