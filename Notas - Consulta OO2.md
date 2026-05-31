@@ -880,7 +880,7 @@ Al hacer esto, veo que tengo el bad smell dead code en algunos métodos como set
 
 ```java
 // En ClienteJuridica
-public ClienteJuridica {
+public ClienteJuridica extends Cliente {
 	private String cuit;
 	private static double descuentoJuridica = 0.15;
 	
@@ -902,7 +902,7 @@ public ClienteJuridica {
 }
 
 // En ClienteFisica
-public ClienteFisica {
+public ClienteFisica extends Cliente {
 	private String dni;
 	private static double descuentoFisica = 0;
 
@@ -924,7 +924,7 @@ public ClienteFisica {
 }
 
 // En Cliente
-public class Cliente {
+abstract class Cliente {
 	private List<Llamada> llamadas = new ArrayList<Llamada>();
 	private String nombre;
 	private String numeroTelefono;
@@ -1051,38 +1051,35 @@ public class Llamada {
 }
 ```
 
-Para solucionarlo, aplico lo mismo que en el paso anterior: El refactoring Replace Conditional with Polymorphism. 
-Para ello, hago que la clase Llamada sea abstracta, y crear dos subclases de la misma: LlamadaNacional y LlamadaInternacional. La clase Llamada definirá un método abstracto, "calcularPrecio", el cual será implementado por las dos subclases para poder resolver esta tarea de forma polimórfica.
+Para solucionarlo, aplico lo mismo que en el paso anterior: El refactoring Replace Conditional with Polymorphism junto con un inline temp para devolver todo en un return de forma limpia y legible. 
+Para ello, hago que la clase Llamada sea abstracta, y crear dos subclases de la misma: LlamadaNacional y LlamadaInternacional. La clase Llamada definirá un método abstracto, "", el cual será implementado por las dos subclases para poder resolver esta tarea de forma polimórfica.
 También las subclases tendrán su propio constructor, pasando todos los datos a "Llamada" con super().
-A su vez, también tengo que modificar el método registrarLlamada de Empresa, para evaluar qué tipo se utiliza y en base a eso saber qué tipo de llamada instanciar...
+A su vez, también tengo que modificar el método registrarLlamada de Empresa, para evaluar qué tipo se utiliza y en base a eso saber qué tipo de llamada instanciar.
 
 ```java
 // En Empresa:
 public Llamada registrarLlamada(Cliente origen, Cliente destino, String t, int duracion) {
-	Llamada llamada = new Llamada(t, origen.getNumeroTelefono(), destino.getNumeroTelefono(), duracion);
-	llamadas.add(llamada);
+	Llamada llamada = null;
+	if (t.equals("nacional")) {
+		llamada = new LlamadaNacional(origen.getNumeroTelefono(), destino.getNumeroTelefono(), duracion)
+	}
+	else if (t.equals("internacional")) {
+		llamada = new LlamadaInternacional(origen.getNumeroTelefono(), destino.getNumeroTelefono(), duracion)
+	}
 	origen.agregarLlamada(llamada);
 	return llamada;
-	
-	if (t.equals)
 }
 
 // En Llamada:
-public class Llamada {
-	private String tipoDeLlamada;
+abstract class Llamada {
 	private String origen;
 	private String destino;
 	private int duracion;
 
-	public Llamada(String tipoLlamada, String origen, String destino, int duracion) {
-		this.tipoDeLlamada = tipoLlamada;
+	public Llamada(String origen, String destino, int duracion) {
 		this.origen= origen;
 		this.destino= destino;
 		this.duracion = duracion;
-	}
-
-	public String getTipoDeLlamada() {
-		return tipoDeLlamada;
 	}
 
 	public String getRemitente() {
@@ -1107,6 +1104,17 @@ public class Llamada {
 		}
 		return 0;
 	}
+}
 
+public class LlamadaInternacional extends Llamada {
+	public LlamadaInternacional(String origen, String destino, int duracion) {
+		super(origen, destino, duracion)
+	}
+}
+
+public class LlamadaNacional extends Llamada {
+	public LlamadaInternacional(String origen, String destino, int duracion) {
+		super(origen, destino, duracion)
+	}
 }
 ```
