@@ -1325,6 +1325,9 @@ public class UltimaLinea extends Linea { // Esta clase sería el rol "ConcreteSt
 		this.eliminarLinea(lineas, linea);
 		return linea;
 		}
+		protected String obtenerLinea() {
+			return lineas.last();
+		}
 	}
 
 public class PrimerLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
@@ -1332,6 +1335,10 @@ public class PrimerLinea extends Linea { // Esta clase sería el rol "ConcreteSt
 		String linea = lineas.first();
 		this.eliminarLinea(lineas, linea);
 		return linea;
+	}
+	
+	protected String obtenerLinea() {
+		return lineas.first();
 	}
 }
 
@@ -1342,11 +1349,18 @@ public class LineaRandom extends Linea { // Esta clase sería el rol "ConcreteSt
 		this.eliminarLinea(lineas, linea);
 		return linea;
 	}
+	
+	protected String obtenerLinea() {
+		return new ArrayList<String>(lineas)
+						.get(new Random().nextInt(lineas.size()));
+	}
 }
 
 abstract class Linea {
 	public abstract String obtenerNumeroLibre(SortedSet<String> lineas);
-	
+
+	protected abstract String obtenerLinea(); // hook 
+		
 	public void eliminarLinea(SortedSet<String> lineas, String lineas) {
 		lineas.remove(linea);
 	}
