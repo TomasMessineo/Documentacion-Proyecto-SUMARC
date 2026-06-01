@@ -1320,22 +1320,13 @@ Aplico ahora un pequeño refactoring inline temp para no tener variables tempora
 
 ```java
 public class UltimaLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
-	public String obtenerNumeroLibre(SortedSet<String> lineas) {
-		String linea = lineas.last();
-		this.eliminarLinea(lineas, linea);
-		return linea;
-		}
-		protected String obtenerLinea() {
+	
+	protected String obtenerLinea() {
 			return lineas.last();
-		}
 	}
+}
 
 public class PrimerLinea extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
-	public String obtenerNumeroLibre(SortedSet<String> lineas) {
-		String linea = lineas.first();
-		this.eliminarLinea(lineas, linea);
-		return linea;
-	}
 	
 	protected String obtenerLinea() {
 		return lineas.first();
@@ -1343,12 +1334,6 @@ public class PrimerLinea extends Linea { // Esta clase sería el rol "ConcreteSt
 }
 
 public class LineaRandom extends Linea { // Esta clase sería el rol "ConcreteStrategy" en el patrón Strategy
-	public String obtenerNumeroLibre(SortedSet<String> lineas) {
-		String linea = new ArrayList<String>(lineas)
-						.get(new Random().nextInt(lineas.size()));
-		this.eliminarLinea(lineas, linea);
-		return linea;
-	}
 	
 	protected String obtenerLinea() {
 		return new ArrayList<String>(lineas)
@@ -1357,13 +1342,14 @@ public class LineaRandom extends Linea { // Esta clase sería el rol "ConcreteSt
 }
 
 abstract class Linea {
-	public abstract String obtenerNumeroLibre(SortedSet<String> lineas);
+	
+	public String obtenerNumeroLibre(SortedSet<String> lineas) {
+		String linea = this.obtenerLinea();
+		lineas.remove(linea);
+		return linea;
+	}
 
 	protected abstract String obtenerLinea(); // hook 
-		
-	public void eliminarLinea(SortedSet<String> lineas, String lineas) {
-		lineas.remove(linea);
-	}
 }
 ```
 
