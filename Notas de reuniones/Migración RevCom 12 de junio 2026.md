@@ -15,9 +15,14 @@ Puede surgir un problema con las estadísticas a migrar. Van a existir limitacio
 
 **¿Cómo nos organizamos para migrar?**
 
-*Paso 1:*
-- "Preparar el campo". Hablar con Manu y Eze para crear 
+Para poder estimar el costo de trabajo y saber cómo se hace algo (como migrar usuarios, artículos, números) probando de forma local, para entender y ver cuánto cuesta hacer algo.
 
+*Etapa 1:*
+- "Preparar el campo". Hablar con Manu y Eze para preparar el OJS, cargando metadatos, copiando la bd, etc.
 
+*Etapa 2:*
+- Exportar, importar (?
 
-Reunión miercoles 17 después de las 11 hasta las 13, o jueves 25 ídem. Hablar sobre el roadmap de SUMARC y sobre lo que estamos planificando sobre la migración de 
+Reunión miercoles 17 después de las 11 hasta las 13, o jueves 25 ídem. Hablar sobre el roadmap de SUMARC y sobre lo que estamos planificando sobre la migración de perio.
+Para fines de la semana que viene (o la otra, para que la próxima sea exclusiva para montar la infra), ordenar las tareas de forma interna para el proceso de migración, teniendo en claro todo lo que hay que hacer para empezar la migración real de perio al portal de OJS nuestro. Al principio hacer pruebas locales para entender qué hay que hacer luego en la migración real. 
+Anotar también, ¿Qué pasa si me equivoqué? Básicamente sería qué hacer en caso de cometer un erro, para evitar futuras consultas.
