@@ -9,3 +9,15 @@
 Documentar el proceso. Probar, por ejemplo, con 2 números detallando y explicando el proceso, para que al terminar se le pueda enviar el proceso a Periodismo para que ellos puedan seguir con el proceso de migración. Primero arrancamos nosotros, y luego delegamos esa tarea a los de periodismo.
 Coordinar con Eze y Manu para que creen un lugar para alojar el portal de periodismo. 
 
+Puede surgir un problema con las estadísticas a migrar. Van a existir limitaciones, debemos conocer los problemas y saber cuáles tienen solución automática, cuáles soluciones manuales y cuáles NO tienen solución.
+
+---
+
+**¿Cómo nos organizamos para migrar?**
+
+*Paso 1:*
+- "Preparar el campo". Hablar con Manu y Eze para crear 
+
+
+
+Reunión miercoles 17 después de las 11 hasta las 13, o jueves 25 ídem. Hablar sobre el roadmap de SUMARC y sobre lo que estamos planificando sobre la migración de 
