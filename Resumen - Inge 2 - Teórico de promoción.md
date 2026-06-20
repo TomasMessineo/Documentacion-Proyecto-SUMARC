@@ -152,3 +152,114 @@
     1. _Esquivarlo (Evitar):_ Cambiás la ruta para no cruzarte con el problema.
     2. _Achicarlo (Minimizar):_ Hacés cosas para que sea muy difícil que el problema te alcance.
     3. _Tener un Plan B (Contingencia):_ Aceptás que el problema te va a chocar sí o sí, pero ya tenés lista la ambulancia y los curitas para que el daño sea mínimo.
+
+---
+---
+---
+
+# CLASE 4: PLANIFICACIÓN TEMPORAL Y DISEÑO DE SOFTWARE
+
+1. Planificación Temporal y Calendarización
+
+- **Definición Exacta:** La calendarización del proyecto de software es una acción que distribuye el esfuerzo estimado a través de la duración planificada del proyecto, asignando el esfuerzo a tareas específicas. Está compuesta por:
+    - **Tarea:** Secuencia de acciones a realizar en un plazo determinado.
+    - **Tarea Crítica:** Es aquella cuyo retraso genera un retraso en todo el proyecto.
+    - **Hito (Milestone):** Es "algo" que se espera que esté hecho para alguna fecha. Un logro fácil de evaluar y notable (ej. un módulo terminado).
+- **En pocas palabras:** Es armar el cronograma del proyecto. Definís qué tareas hay que hacer, cuáles son intocables porque si se atrasan arruinan toda la fecha de entrega (tareas críticas), y ponés "banderitas" en el calendario (hitos) para celebrar que terminaste una parte importante.
+
+2. Herramientas: PERT, CPM, Margen Total y Camino Crítico
+
+- **Definición Exacta:**
+    - **PERT:** Técnica para analizar las estimaciones cuando las duraciones de las tareas son inciertas o probabilísticas.
+    - **CPM (Método del Camino Crítico):** Identifica la secuencia de actividades que determinan el tiempo mínimo de finalización, centrándose en tareas con duraciones conocidas y determinísticas.
+    - **Margen Total:** Representa el tiempo total que se puede retrasar una tarea sin afectar el proyecto. Si el Margen Total es 0, la tarea es crítica.
+    - **Camino Crítico:** Es el camino formado por la sucesión de tareas críticas (tareas con margen cero).
+- **En pocas palabras:** PERT y CPM son mapas de red para organizar tareas. Te sirven para calcular el "Margen Total", que es tu colchón de tiempo. Si una tarea tiene margen de 6 días, podés relajarte un poco. Si su margen es 0, es una "Tarea Crítica"; un solo día de atraso ahí y se atrasa todo el sistema. El hilo que une a todas estas tareas sin margen se llama "Camino Crítico".
+
+3. Criterios Técnicos para un Buen Diseño
+
+- **Definición Exacta:** Un buen diseño debe cumplir con ciertas pautas:
+    1. Debe presentar una estructura arquitectónica creada mediante patrones reconocibles y componentes con buen diseño.
+    2. Deberá ser modular.
+    3. Deberá contener distintas representaciones de datos, arquitectura, interfaces y componentes.
+    4. Deberá conducir a estructuras de datos adecuadas.
+    5. Deberá conducir a componentes que presenten independencia funcional.
+    6. Deberá conducir a interfaces que reduzcan la complejidad de las conexiones.
+- **En pocas palabras:** Un sistema bien diseñado está partido en pedazos (módulos) que son fáciles de entender, que no están enredados de forma caótica entre sí, que ocultan sus datos y que siguen modelos ya probados (patrones) para no reinventar la rueda.
+
+4. Los 8 Conceptos Clave del Diseño
+
+- **Definición Exacta:** Sin importar el tipo de diseño, es necesario aplicar este conjunto de conceptos básicos:
+    1. **Abstracción:** Permite concentrarse en un problema a un nivel de generalización sin tener en cuenta los detalles de bajo nivel.
+    2. **Arquitectura:** Es la estructura general del software y las formas en que proporciona integridad conceptual.
+    3. **Patrones:** Describen una estructura de diseño que resuelve un problema particular dentro de un contexto específico.
+    4. **Modularidad:** El software se divide en componentes nombrados y abordados por separado (módulos).
+    5. **Ocultamiento de Información:** La información que está dentro de un módulo es inaccesible a otros que no la necesiten.
+    6. **Independencia Funcional:** Se logra mediante módulos con "alta cohesión" y "bajo acoplamiento" (resultado de unir Modularidad + Abstracción + Ocultamiento).
+    7. **Refinamiento:** Ayuda a revelar los detalles de grado menor de manera sucesiva (es el complemento de la abstracción).
+    8. **Refabricación (Refactoring):** Técnica de reorganización que simplifica el diseño de un componente sin cambiar su función o comportamiento externo.
+- **En pocas palabras:** Cuando diseñás, primero mirás el problema desde lejos sin enredarte en el código (Abstracción). Vas bajando al detalle de a poco (Refinamiento). Partís el sistema en partes (Modularidad) y le ponés un candado a los datos de cada parte para que no cualquiera los toque (Ocultamiento). Si a futuro el código queda feo pero funciona, lo limpiás por dentro sin que el cliente se dé cuenta (Refactoring).
+
+5. Cohesión y Acoplamiento (TEMA CLAVE)
+
+- **Definición Exacta:**
+    - **Cohesión:** Medida de fuerza o relación funcional existente entre las sentencias o grupos de sentencias de un mismo módulo. Va de lo peor a lo mejor: _Coincidental, Lógica, Temporal, Procedimental, Comunicacional, Funcional_ (la mejor, donde todo el módulo hace una única función específica).
+    - **Acoplamiento:** Medida de interconexión (dependencia) entre los módulos. Va de lo peor a lo mejor: _De contenido, Común, Control, Marca, Datos_ (el mejor, donde solo se pasan parámetros).
+    - **Regla de Oro:** Se debe buscar siempre **ALTA COHESIÓN** y **BAJO ACOPLAMIENTO**.
+- **En pocas palabras:**
+    - **Cohesión (lo de adentro):** Es qué tan enfocadas están las líneas de código de un módulo. Si un módulo hace 20 cosas distintas que no tienen nada que ver, tiene cohesión coincidental (basura). Si hace 1 sola cosa perfecta, tiene cohesión funcional (excelente).
+    - **Acoplamiento (lo de afuera):** Es qué tan pegoteado está un módulo con otro. Si un módulo necesita leer las variables internas de otro para funcionar, tienen un acoplamiento alto (malísimo, si tocás uno, rompés el otro). Tienen que ser lo más independientes posibles.
+
+---
+---
+---
+
+# CLASE 5: DISEÑO DE INTERFAZ DE USUARIO (UI / UX)
+
+1. Diferencia entre UI y UX (y la metáfora del Iceberg)
+
+- **Definición Exacta:**
+    - **UI (User Interface / Interfaz de Usuario):** Es la categoría de diseño que crea un medio de comunicación físico o lógico entre el hombre y la máquina. Se centra en la apariencia visual, la estética y la interacción inmediata con los elementos en pantalla.
+    - **UX (User Experience / Experiencia de Usuario):** Es un proceso multidisciplinar mucho más amplio. Se enfoca en la satisfacción total del usuario al interactuar con el producto. Incluye la investigación del usuario, la arquitectura de la información y el flujo de navegación. En la metáfora del "Iceberg", la UI es solo la punta visible (la web final), mientras que la UX es toda la enorme masa sumergida (necesidades, estructuras, contexto cultural).
+- **En pocas palabras:** La UI es "la chapa y pintura" (qué colores usamos, dónde está el botón, la tipografía). La UX es "cómo se siente manejar el auto" (si fue fácil llegar a donde querías, si te frustraste en el camino o si el sistema resolvió tu problema de forma intuitiva). La UI es lo visual, la UX es todo el cerebro que hay por detrás.
+
+2. Las 3 Reglas Doradas (o básicas) de Theo Mandel
+
+- **Definición Exacta:** El diseño de interfaz debe regirse por tres principios fundamentales para adaptarse a los humanos:
+    1. **Dar el control al usuario:** Proporcionar una interacción flexible, incluir opciones de interrumpir y "deshacer" acciones, y permitir interacción directa.
+    2. **Reducir la carga de memoria del usuario:** Minimizar el esfuerzo de recordar, definiendo valores por defecto con sentido, creando accesos directos intuitivos y desglosando la información progresivamente.
+    3. **Hacer la interfaz consistente:** Mantener una estructura y comportamiento uniforme en toda la familia de aplicaciones. El usuario debe saber de dónde viene y hacia dónde puede ir.
+- **En pocas palabras:** 1) _Que el usuario mande_ (si toca algo sin querer, tiene que poder darle a "deshacer" (Ctrl+Z) y cancelar procesos). 2) _No lo hagas pensar demasiado_ (dáselo servido, ponele valores por defecto para que escriba menos). 3) _Mantené la coherencia_ (si el botón de "Guardar" siempre fue verde y estuvo abajo a la derecha, no se lo cambies de color y lugar en la siguiente pantalla).
+
+3. Principios de Usabilidad de Nielsen
+
+- **Definición Exacta:** Reglas heurísticas de Jakob Nielsen para evaluar la usabilidad del sistema:
+    - **Diálogo simple y natural / Lenguaje del usuario:** Evitar jerga técnica, hablar en el idioma del usuario.
+    - **Consistencia:** Mantener uniformidad visual y terminológica.
+    - **Feedback (Retroalimentación):** El sistema debe mantener al usuario informado de lo que está sucediendo y el estado de sus procesos en tiempo real.
+    - **Salidas evidentes (Exit):** El usuario debe tener siempre a su alcance, de forma identificable, una opción de salida, cancelación o "deshacer".
+    - **Ayudas:** Brindar asistencia contextual, manuales y soporte en línea.
+- **En pocas palabras:** Háblale fácil al usuario, no le tires códigos que solo un programador entiende. Si el sistema está cargando algo pesado, ponele una barrita de porcentaje o un cartel de "Cargando..." (Feedback) para que no piense que se tildó todo. Y siempre, pero siempre, ponele un botón de "Cancelar" o "Salir" a la vista.
+
+4. Prevención de Errores y Mensajes de Error (¡Tema Fijo!)
+
+- **Definición Exacta:**
+    - **Prevención de Errores:** Es el principio fundamental que busca evitar que el usuario llegue a una instancia de error. Se logra brindando rangos de entradas posibles mediante selectores (para que no tenga que tipear), mostrando ejemplos o valores por defecto, y aplicando mecanismos de corrección automática.
+    - **Mensajes de Error:** Cuando el error es inevitable, el mensaje debe brindar información clara de lo ocurrido, explicar el error y dar alternativas para solucionarlo. **Nunca** deben utilizarse mensajes de error intimidatorios (ej. mostrar una traza de la base de datos).
+- **En pocas palabras:** La mejor manera de atajar un error es _no dejar que el usuario lo cometa_. En vez de darle un campo vacío para que escriba "Buenos Aires" (y capaz lo escribe con V corta o sin mayúsculas), dale una lista desplegable con las provincias. Y si se manda una macana, no le tires un cartel rojo gigante que diga "FATAL ERROR SQL 0x009"; ponele un cartel amable que diga: "Ups, parece que faltan datos. Por favor revisá el campo del DNI".
+
+5. Estilos de Interfaces
+
+- **Definición Exacta:** Son las diferentes formas en las que un humano puede interactuar con el sistema:
+    1. **Interfaz de Comandos:** Basada solo en texto (línea de comandos). Es muy poderosa y rápida para expertos, pero con una curva de aprendizaje alta (difícil de aprender).
+    2. **Selección de Menú:** Se elige entre opciones presentadas. Evita errores, pero es lenta para usuarios avanzados.
+    3. **Relleno de Formularios:** Introducción de datos sencilla en campos. Es fácil de aprender pero ocupa mucho espacio de pantalla.
+    4. **GUI (Interfaz Gráfica de Usuario):** Utiliza elementos gráficos y ventanas. Es intuitiva y muy fácil de usar.
+    5. **Manipulación Directa:** Interacción táctil directa con los objetos en pantalla (ej. celulares modernos).
+    6. **Reconocimiento de Voz:** Interfaz controlada por comandos hablados (ej. Siri, Alexa).
+- **En pocas palabras:** Es cómo interactuás. La consola negra con letras blancas de Windows (Comandos) es potente pero tenés que saber los códigos de memoria. Los Formularios o Menús son fáciles para tu tía, pero aburren a un experto. La gráfica (con ratón y ventanas) es la clásica de la PC, la de Manipulación Directa es la del celular táctil (tocás lo que querés mover), y la de Voz es cuando le hablás a la máquina.
+
+---
+---
+---
+
