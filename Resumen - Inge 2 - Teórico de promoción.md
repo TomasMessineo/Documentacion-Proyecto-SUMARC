@@ -263,3 +263,296 @@
 ---
 ---
 
+# CLASE 6: DISEÑO ARQUITECTÓNICO
+
+1. Diseño Arquitectónico (Concepto General)
+
+- **Definición Exacta:** Es el proceso de identificar los subsistemas dentro del sistema y establecer el marco de control y comunicación entre ellos. Define la relación entre los elementos estructurales para lograr los requisitos del sistema. La arquitectura afecta directamente a los requerimientos no funcionales más críticos, como el rendimiento, la protección, la seguridad, la disponibilidad y la mantenibilidad.
+- **En pocas palabras:** Es armar el plano del edificio antes de poner los ladrillos. Acá decidís cuáles van a ser los bloques principales del sistema y cómo van a hablar entre ellos. Es clave porque si le pifiás acá, tu sistema va a ser lento, inseguro o imposible de actualizar en el futuro.
+
+2. Organización del Sistema (Los Patrones Arquitectónicos)
+
+Es la estrategia básica usada para estructurar el sistema. Existen varios estilos o patrones:
+
+A. Patrón de Repositorio
+
+- **Definición Exacta:** Todos los datos compartidos se almacenan en una base de datos central (repositorio). Los datos son generados por un subsistema y utilizados por otros.
+    - _Ventajas:_ Forma eficiente de compartir grandes cantidades de datos sin tener que transmitirlos de un subsistema a otro. Las actividades de backup y seguridad están centralizadas.
+    - _Desventajas:_ Los subsistemas deben estar acordes y acoplados al modelo de datos del repositorio. Es difícil distribuir el repositorio en varias máquinas (problemas de redundancia).
+- **En pocas palabras:** Es como una biblioteca central gigante. Todos los programas (módulos) van y sacan los libros (datos) del mismo lugar. Es genial porque hacés una sola copia de seguridad de todo, pero es peligroso porque si se cae la base de datos central, se cae todo el sistema.
+
+B. Patrón Cliente-Servidor
+
+- **Definición Exacta:** Modelo donde el sistema se organiza como un conjunto de servicios y servidores asociados, más unos clientes que utilizan los servicios a través de una red. Los clientes conocen el nombre del servidor y el servicio que brinda, pero el servidor no necesita conocer al cliente.
+- **En pocas palabras:** Como ir a un restaurante. Vos sos el cliente, pedís un plato (petición), y el mozo/cocinero (servidor) te lo trae. El servidor atiende a un montón de clientes pero no necesita saber quiénes son íntimamente.
+
+C. Patrón de Arquitectura en Capas
+
+- **Definición Exacta:** El sistema se organiza en capas, donde cada una de ellas presenta un conjunto de servicios _solo_ a sus capas adyacentes.
+    - _Ventajas:_ Soporta el desarrollo incremental y es muy portable. Una capa puede ser reemplazada siempre que se mantenga su interfaz.
+    - _Desventajas:_ Es difícil de estructurar. Los servicios requeridos por el usuario pueden tener que atravesar varias capas adyacentes, lo que implica que la solicitud debe ser interpretada varias veces, penalizando el rendimiento.
+- **En pocas palabras:** Es el modelo "cebolla". Tenés la capa visual (lo que ve el usuario), la capa lógica (las reglas del negocio) y la capa de datos. Para que la pantalla guarde un dato, tiene que pasar sí o sí por las capas del medio. Si el día de mañana cambiás la base de datos (capa más profunda), a la pantalla no le importa porque ni se entera, lo que lo hace súper fácil de mantener.
+
+3. Descomposición Modular
+
+Una vez organizado el sistema en subsistemas, a estos se los divide en componentes más pequeños (módulos).
+
+- **Definición Exacta:**
+    - **Descomposición orientada a flujo de funciones:** Los datos fluyen de una función a otra y se transforman a medida que pasan por una secuencia de funciones hasta llegar a la salida (como una tubería).
+    - **Descomposición orientada a objetos:** Estructura al sistema en un conjunto de objetos débilmente acoplados y con interfaces bien definidas.
+- **En pocas palabras:** ¿Cómo partimos el problema chico? O lo hacemos como una línea de ensamblaje de fábrica donde el dato entra, cada máquina le hace algo y sale (Flujo), o creamos "entidades" independientes que charlan entre sí pasándose mensajes (Objetos).
+
+4. Modelos de Control (Centralizado vs Eventos)
+
+Define cómo se coordinan y ejecutan los subsistemas para que los servicios se entreguen en el momento preciso.
+
+A. Control Centralizado
+
+- **Definición Exacta:** Un subsistema se diseña como "controlador" y asume la responsabilidad de gestionar la ejecución de los otros subsistemas.
+    - _Modelo de Llamada y Retorno:_ Subrutinas descendentes, aplicable a modelos secuenciales.
+    - _Modelo de Gestor:_ Un gestor controla el inicio y parada coordinado con el resto de los procesos. Aplicable a modelos concurrentes.
+- **En pocas palabras:** Hay un "jefe" claro. En _Llamada y Retorno_, el programa principal llama a una función, espera a que termine, recibe el resultado y sigue. En el _Modelo Gestor_, el jefe coordina a varios empleados (procesos) que están trabajando todos al mismo tiempo.
+
+B. Control Basado en Eventos
+
+- **Definición Exacta:** Se rigen por eventos generados externamente al proceso (una señal, un clic, un comando).
+    - _Modelos de Transmisión (Broadcast):_ Un evento se transmite a todos los subsistemas; cualquier subsistema programado para manejar ese evento lo atenderá.
+    - _Modelo dirigido por interrupciones:_ Usado en sistemas de tiempo real. Las interrupciones externas son detectadas por un manejador y derivadas a un componente para su procesamiento.
+- **En pocas palabras:** No hay una secuencia fija. El sistema está "escuchando". Si es _Broadcast_, alguien grita "¡Hicieron clic en Guardar!" y el módulo encargado de guardar salta y dice "¡Yo me ocupo!". Si es por _Interrupciones_ (ej. los frenos ABS de un auto), es algo recontra urgente que frena todo el sistema para ser atendido al instante.
+
+5. Arquitectura de Sistemas Distribuidos
+
+- **Definición Exacta:** Es un sistema en el que el procesamiento de información se distribuye sobre varias computadoras. Tienen la particularidad de la impredecibilidad, ya que el tiempo de respuesta varía según la carga de la red.
+    - _Multinivel / Dos Niveles:_ Cliente ligero (el servidor hace todo el procesamiento) o Cliente pesado (el cliente procesa la lógica y el servidor solo guarda datos).
+    - _Objetos Distribuidos (Middleware):_ No hay distinción tajante entre cliente y servidor. Los componentes se distribuyen en varias máquinas y usan un software intermedio (Middleware, como DCOM de Microsoft) para poder comunicarse entre sí sin importar la infraestructura.
+    - _Peer-to-Peer (P2P):_ Sistemas descentralizados donde el cálculo puede llevarse a cabo en cualquier nodo de la red.
+    - _Orientada a Servicios (SOA):_ Un proveedor publica un servicio en un registro, y un solicitante lo busca y lo enlaza a su aplicación.
+- **En pocas palabras:** El sistema no corre en una sola PC, está desparramado. Puede ser _Cliente pesado_ (tu compu hace todo el cálculo y solo pide datos), _P2P_ (como descargar por Torrent, todos somos clientes y servidores al mismo tiempo), o por _Servicios/SOA_ (como cuando una app de delivery usa el mapa de Google; la app "consume" un servicio que Google ofrece en la nube).
+
+---
+---
+---
+
+# CLASE 7: GESTIÓN DE PROYECTOS (MÉTRICAS Y ESTIMACIONES)
+
+1. Métricas de Software (Concepto y Tipos)
+
+- **Definición Exacta:** Las métricas son fundamentales para gestionar y mejorar procesos o sistemas de software. Se apoyan en cuatro objetivos principales: _Entender, Controlar, Mejorar y Evaluar_. Se dividen en tres grandes grupos:
+    - **Métricas del Proyecto:** Cumplen propósitos tácticos (ej. ajustar el calendario, evitar demoras, rastrear riesgos).
+    - **Métricas del Proceso:** Cumplen propósitos estratégicos a largo plazo a través de múltiples proyectos para mejorar el proceso global. (Regla: no se deben usar para evaluar a las personas, sino al proceso).
+    - **Métricas del Producto:** Evalúan el software en sí. Pueden ser _Dinámicas_ (programa en ejecución, miden eficiencia y fiabilidad) o _Estáticas_ (representaciones del sistema o código, miden complejidad y mantenibilidad, ej. Líneas de Código -LDC- o Puntos de Función -PF-).
+- **En pocas palabras:** Medir es saber dónde estamos parados. Podés medir cómo va el proyecto hoy para no atrasarte (Proyecto), cómo trabaja la empresa en general a lo largo de los años para mejorar (Proceso), o medir el código puro y duro para ver si está bien escrito o si tiene muchos errores (Producto).
+
+2. Método GQM (Goal, Question, Metric) - _¡Tema Fijo!_
+
+- **Definición Exacta:** Desarrollado por Victor Basili, es un marco estructurado orientado a lograr una métrica que “mida” un objetivo específico para mejorar la calidad del proyecto. Su estructura es estrictamente descendente:
+    1. **Objetivo (Goal):** Define el objetivo central o propósito organizacional a mejorar (ej. evaluar la asignación de roles).
+    2. **Preguntas (Question):** Interrogantes formulados para verificar el cumplimiento del objetivo (ej. ¿Hay un responsable asignado?).
+    3. **Métricas (Metric):** Medidas cuantitativas diseñadas exclusivamente para responder a esas preguntas (ej. un valor binario: Verdadero/Falso, o cantidad de horas).
+- **En pocas palabras:** No hay que inventar fórmulas matemáticas por inventar. El GQM te dice: primero pensá **qué querés lograr** (Objetivo). Después, pensá **qué preguntas te harías** para saber si lo lograste. Y por último, inventá un **número o cálculo** (Métrica) que te responda esa pregunta. Todo tiene que tener un sentido.
+
+3. Estimaciones de Software
+
+- **Definición Exacta:** La estimación de software es el proceso de predecir la cantidad más realista de esfuerzo (expresado comúnmente en horas-persona), tiempo y costo monetario requeridos para desarrollar o mantener un software. Mientras las métricas miden el pasado/presente, las estimaciones miran hacia el futuro.
+- **En pocas palabras:** Es tratar de adivinar (usando la ciencia y la experiencia) cuánta plata, cuántas personas y cuántos meses nos va a llevar hacer el sistema antes de escribir la primera línea de código.
+
+4. Técnicas de Estimación - _¡Tema Fijo!_
+
+- **Definición Exacta:** Son los métodos utilizados para predecir el esfuerzo. Las principales son:
+    - **Juicio Experto:** Consulta a individuos o grupos con gran experiencia en el dominio del negocio o tecnología. Estiman, comparan y discuten. Se usa en las primeras etapas cuando la información es limitada o el alcance es vago.
+    - **Técnica Delphi:** Método de consenso grupal (panel de expertos). Se caracteriza por ser iterativo (múltiples rondas) y **anónimo**. El anonimato reduce la influencia de personalidades dominantes (jefes) y permite retroalimentación controlada hasta llegar a un acuerdo.
+    - **División de Trabajo (Top-Down):** Consiste en descomponer jerárquicamente un proyecto grande en componentes o actividades progresivamente más pequeñas y fáciles de estimar.
+    - **Planning Poker:** Técnica colaborativa y basada en consenso muy usada en _desarrollo ágil_ (Scrum). Participan todos los involucrados iterativamente usando cartas con la secuencia de Fibonacci para puntuar historias de usuario.
+    - **Modelos Empíricos (COCOMO II):** Fórmulas matemáticas basadas en métricas de proyectos anteriores. Incluye modelos como "Composición de aplicación" (basado en puntos de aplicación/pantallas), "Diseño temprano", "Reutilización" y "Post-arquitectura".
+- **En pocas palabras:** Hay varias formas de estimar:
+    - _Juicio experto:_ Le preguntás a los que más saben (los gurús de la empresa) para que tiren un número en base a su experiencia.
+    - _Delphi:_ Le preguntás a los gurús, pero en _secreto_ (por escrito y anónimo). Así evitás que el que grita más fuerte imponga su idea. Lo hacen varias veces hasta que todos coinciden.
+    - _Top-Down:_ Agarrás el problema gigante, lo partís en pedacitos chiquitos, estimás cuánto tarda cada pedacito y después sumás todo.
+    - _Planning Poker:_ Es el juego de cartas de las metodologías ágiles. Todo el equipo debate una tarea y tiran cartas con números (Fibonacci) al mismo tiempo. Si no coinciden, discuten por qué y vuelven a tirar hasta ponerse de acuerdo.
+    - _COCOMO:_ Usar matemáticas y estadísticas de sistemas viejos para calcular el costo del nuevo.
+
+---
+---
+---
+
+# CLASE 8: PRUEBAS DEL SOFTWARE (CAJA NEGRA Y CAJA BLANCA)
+
+1. El Objetivo de las Pruebas y los Tipos de Defectos
+
+- **Definición Exacta:** El primer objetivo de la prueba es diseñar casos que saquen a la luz diferentes clases de errores, haciéndolo en la menor cantidad de tiempo y esfuerzo. Una prueba **solo tiene éxito si descubre errores**. Los defectos principales se dividen en:
+    - _Defecto por omisión:_ Falta algún aspecto clave del código (ej. no inicializar una variable).
+    - _Defecto de cometido:_ Algún aspecto es incorrecto (ej. variable inicializada con un valor erróneo).
+    - _Principio de Pareto aplicado:_ El 80% de los errores de un software es generado por un 20% del código de dicho software.
+- **En pocas palabras:** Probar un sistema NO es tratar de demostrar que funciona bien, ¡es tratar de destruirlo! Si haces una prueba y todo sale perfecto, la prueba fracasó porque no encontró el error. Además, acordate de Pareto: casi todos los dolores de cabeza (80%) siempre están escondidos en un pedacito muy chico (20%) del código.
+
+2. Pruebas de Caja Negra (Prueba de Comportamiento)
+
+- **Definición Exacta:** También denominadas pruebas de comportamiento. Se centran exclusivamente en los requisitos funcionales del software. Se evalúa la interfaz del programa inyectando entradas y analizando las salidas, ignorando por completo la estructura lógica interna (el código fuente). Buscan errores como: funciones incorrectas, errores de interfaz, problemas de rendimiento y errores de inicialización.
+- **En pocas palabras:** Imaginate el sistema como una caja cerrada y oscura. No tenés idea de cómo está programado por dentro (no mirás el código Java o Python). Simplemente te sentás como un usuario normal, metés datos (entradas) y te fijás si el resultado que te tira la pantalla (salidas) es el correcto.
+
+3. Técnicas de Caja Negra: Partición Equivalente y Valores Límite
+
+- **Definición Exacta:**
+    - **Partición Equivalente:** Divide el dominio de entrada del programa en "clases de equivalencia" (agrupaciones de datos) de donde se derivan los casos de prueba. Por cada condición, se define una _clase válida_ y clases _inválidas_.
+    - **Análisis de Valores Límite (AVL):** Complementa la partición equivalente. Como los errores tienden a darse más en los límites del campo de entrada que en el «centro», el AVL selecciona los casos de prueba apuntando exactamente a los "extremos" o bordes de las clases (ej. para un rango de A a B, se prueba A, B, menores a A y  mayores a B).
+- **En pocas palabras:**
+    - _Partición Equivalente:_ Si un campo acepta edades de 1 a 100, no vas a probar los 100 números porque no terminás más. Creás un grupo de datos "válidos" (ej. probar con el 25) y grupos "inválidos" (probar con letras, o números negativos).
+    - _Valores Límite (AVL):_ Los programadores siempre le pifian en el signo menor o en el menor igual. Por eso, los errores están en las "fronteras". Si la edad es de 1 a 100, la técnica AVL te dice que pruebes exactamente con 0, 1, 100 y 101.
+
+4. Pruebas de Caja Blanca (Prueba de Cristal/Estructural)
+
+- **Definición Exacta:** Deriva casos de prueba a partir de un escrutinio profundo de la estructura de control interna y los detalles procedimentales del código. Garantiza que se ejercite por lo menos una vez cada camino independiente del módulo, obligando a ejecutar todas las decisiones lógicas y todos los bucles (while/for) en sus límites.
+- **En pocas palabras:** Al revés de la caja negra, acá la caja es de cristal: ves todo el código. Diseñás pruebas para asegurarte de que el flujo de ejecución pase por absolutamente cada renglón de código, cada "IF" (por el lado del verdadero y del falso) y cada bucle que el programador haya escrito.
+
+5. Prueba del Camino Básico y Complejidad Ciclomática (TEMA FIJO)
+
+- **Definición Exacta:** Es una técnica propuesta por Tom McCabe que utiliza un "grafo de flujo" (con Nodos, Aristas y Regiones) para obtener una medida cuantitativa de la complejidad lógica del código. Esta métrica se llama **Complejidad Ciclomática (V(g))** y define el número máximo de caminos independientes de un programa. Existen tres fórmulas para calcularla:
+    1. V(g) = Cantidad de regiones del grafo (incluyendo el exterior).
+    2. V(g) = Aristas - Nodos + 2.
+    3. V(g) = Nodos Predicado + 1 _(Un nodo predicado es aquel del que salen dos o más flechas, como un IF)_.
+- **En pocas palabras:** Es agarrar el código y dibujarlo como un mapa de flechas y circulitos (grafo). La _Complejidad Ciclomática_ es una cuentita matemática muy simple que hacés mirando ese dibujo. El resultado de esa cuenta te dice exactamente: _"Tu código tiene X caminos distintos"_. Entonces, el equipo de pruebas ya sabe que tiene que inventar exactamente X casos de prueba para cubrir todo el código sin dejar nada afuera.
+
+---
+---
+---
+
+# CLASE 9: ESTRATEGIAS DE PRUEBA Y DEPURACIÓN
+
+1. Enfoque Estratégico, Verificación y Validación
+
+- **Definición Exacta:** Una estrategia de pruebas proporciona una guía que describe los pasos a seguir, cuándo se planean, y cuánto esfuerzo, tiempo y recursos se requerirán. En esta etapa se diferencian dos conceptos clave:
+    - **Verificación:** Responde a _¿Estamos construyendo el producto correctamente?_ (se enfoca en que los componentes funcionen bien desde lo técnico).
+    - **Validación:** Responde a _¿Estamos construyendo el producto correcto?_ (asegura que el software satisface las expectativas y necesidades reales del cliente).
+- **En pocas palabras:** La estrategia es tu mapa de ruta para no probar a ciegas. La **verificación** es chequear que el código no tenga _bugs_ (hacerlo bien). La **validación** es chequear que no construiste algo que el cliente nunca te pidió (hacer lo correcto).
+
+2. Pruebas de Unidad y su Entorno (Conductores y Resguardos)
+
+- **Definición Exacta:** Es el primer nivel de prueba, donde el foco es un componente individual (el módulo o clase). Se prueban su interfaz, estructuras de datos locales, condiciones límite y caminos independientes. Para probar un módulo de forma aislada, se necesita crear un entorno de prueba compuesto por:
+    - **Controlador (Driver / Conductor):** Un programa principal temporal que acepta los datos de prueba y "llama" al módulo a probar.
+    - **Resguardo (Stub):** Un subprograma "ficticio" que reemplaza a los módulos subordinados que el módulo principal necesita llamar, pero que aún no han sido desarrollados.
+- **En pocas palabras:** Es agarrar un solo engranaje del sistema y probarlo suelto. Como el engranaje no funciona solo, le armamos un programa falso que lo ponga en marcha (_Driver_) y pedacitos de código de mentira que devuelvan resultados básicos (_Stubs_) para fingir que el sistema está completo.
+
+3. Pruebas de Integración (Descendente vs. Ascendente)
+
+- **Definición Exacta:** Se toman los componentes que pasaron las pruebas de unidad y se los combina según la arquitectura para verificar que trabajen juntos correctamente. Existen dos enfoques principales:
+    - **Integración Descendente (Top-Down):** Inicia por el programa principal y va bajando por la jerarquía. Su principal desventaja es que requiere programar muchos **resguardos** (stubs) para simular los módulos inferiores faltantes.
+    - **Integración Ascendente (Bottom-Up):** Empieza por las "hojas" (los módulos de más bajo nivel). En este caso, se eliminan los resguardos, pero se requiere programar **conductores** (drivers) para coordinar las pruebas. La desventaja es que el programa como entidad global "no existe" hasta que se agrega el último módulo superior.
+- **En pocas palabras:** Ya probaste las piezas sueltas, ahora hay que armar el rompecabezas.
+    - _Top-Down_ es armar la casa desde el techo hacia el piso (tenés que poner "columnas de cartón" o _stubs_ para simular el piso que todavía no hiciste).
+    - _Bottom-Up_ es armarla desde el piso hacia el techo (no usás cartón, pero no vas a ver la casa completa hasta el mismísimo final).
+
+4. Pruebas de Regresión
+
+- **Definición Exacta:** Consiste en volver a ejecutar un subconjunto de todas las pruebas anteriores cuando se agrega un nuevo módulo o se corrige un error. Su objetivo es asegurar que los cambios en el software no hayan introducido efectos colaterales no deseados ni roto funciones que antes andaban bien.
+- **En pocas palabras:** Si tenías una aplicación andando perfecto y hoy le agregaste el "Botón de Pagar", tenés que hacer _pruebas de regresión_ para asegurarte de que al agregar ese botón no rompiste sin querer el "Botón de Iniciar Sesión". Es probar lo viejo para protegerlo de lo nuevo.
+
+5. Pruebas de Validación: Alfa y Beta (¡TEMA FIJO!)
+
+- **Definición Exacta:** Demuestran la conformidad del software con los requisitos del cliente (pruebas de aceptación).
+    - **Pruebas ALFA:** Las llevan a cabo los clientes en un entorno estrictamente controlado, **en el lugar de desarrollo**, con el desarrollador presente como observador anotando los errores.
+    - **Pruebas BETA:** Las realiza un grupo selecto de usuarios finales en su propio entorno de trabajo real (el mercado). **Los desarrolladores NO se encuentran presentes**.
+- **En pocas palabras:**
+    - _ALFA:_ Invitás al cliente a tu oficina, le das un café, lo sentás en la compu y lo mirás fijamente mientras usa el sistema para ver dónde se traba.
+    - _BETA:_ Le tirás el sistema por internet a miles de usuarios reales (como el programa Beta Tester de Google) y que lo usen en sus casas. Vos no podés ayudarlos; si explota, te mandan un reporte automático.
+
+6. Depuración (Debugging)
+
+- **Definición Exacta:** Es el proceso de identificar la causa de un error y corregirlo. **La depuración no es una prueba**, sino la consecuencia directa de una prueba que tuvo éxito (encontró un error). Si no se encuentra la causa fácilmente, el depurador debe plantear hipótesis y diseñar pruebas adicionales para arrinconar el fallo de forma iterativa.
+- **En pocas palabras:** La prueba es el policía que encuentra el problema. El _debugging_ (depuración) es el cirujano que se mete a revisar el código línea por línea para entender por qué falló y operarlo hasta arreglarlo. ¡No son lo mismo!
+
+---
+---
+---
+
+# CLASE 10: MANTENIMIENTO Y REJUVENECIMIENTO DEL SOFTWARE
+
+1. El Mantenimiento de Software y los Sistemas Heredados
+
+- **Definición Exacta:** El mantenimiento de software es el proceso de modificar, actualizar y cambiar el software para satisfacer las necesidades del cliente (fase llamada "Evolución del Sistema"). Comienza casi de inmediato tras liberar el software a los usuarios,. Involucra entre un 40% a 70% del costo total de desarrollo. Es frecuente lidiar con _sistemas heredados_, los cuales son viejos, carecen de metodología, documentación o modularidad.
+- **En pocas palabras:** El trabajo no termina cuando entregás el sistema; de hecho, ahí empieza el gasto más grande. El mantenimiento es todo lo que le hacés al sistema una vez que ya está usándose. Suele ser un trabajo poco atractivo porque te toca leer código viejo, desordenado y sin manuales que hizo otra persona hace años.
+
+2. Dinámica de Evolución y las "Leyes de Lehman"
+
+- **Definición Exacta:** Manny Lehman desarrolló teorías sobre la evolución de los programas. Las más destacadas son:
+    - _Cambio continuado:_ Un programa en un entorno real necesariamente debe cambiar o se volverá menos útil,.
+    - _Complejidad creciente:_ A medida que cambia, su estructura tiende a ser cada vez más compleja,.
+    - **Barrera de mantenimiento:** Llega un punto donde cada modificación aumenta tanto la complejidad que mantener el sistema resulta lento, costoso y difícil. En ese momento, es necesario rediseñar o reemplazar el software.
+- **En pocas palabras:** Lehman dijo algo muy simple: un software vivo tiene que actualizarse sí o sí. Pero cada vez que le metés un "parche", el código se enreda más. Llega un punto crítico (la barrera) donde el código es un plato de espagueti tan inmanejable que te sale más barato tirarlo a la basura y hacerlo de nuevo que intentar arreglarlo.
+
+3. Tipos de Mantenimiento (¡TEMA FIJO A DESARROLLAR!)
+
+- **Definición Exacta:** El mantenimiento se divide estrictamente en 4 categorías:
+    1. **Correctivo:** Acción reactiva para diagnosticar y corregir errores o fallos detectados en producción,,.
+    2. **Adaptativo:** Modificación del software para interaccionar correctamente con un entorno cambiante (ej. cambios en el sistema operativo, hardware, nube o políticas fiscales),,.
+    3. **Perfectivo:** Mejoras al sistema en respuesta a peticiones de los usuarios para mejorar la eficiencia, el rendimiento o agregar nuevas funcionalidades,,.
+    4. **Preventivo:** Se efectúa antes de que haya una petición o fallo, para facilitar el futuro mantenimiento y prevenir problemas (ej. refactorizaciones, instalar antimalware, backups),.
+- **En pocas palabras:**
+    - _Correctivo:_ Saltó un bug y el cliente no puede facturar. Hay que arreglarlo ¡ya!
+    - _Adaptativo:_ Salió Windows 11 o cambió una ley de la AFIP. El sistema andaba bien, pero tenés que tocarlo para que se adapte al nuevo entorno.
+    - _Perfectivo:_ El sistema anda perfecto, pero el cliente quiere que le agregues un botón nuevo para sacar reportes en Excel.
+    - _Preventivo:_ Actualizás el antivirus y limpiás el código hoy para que no explote mañana.
+
+4. Rejuvenecimiento del Software (¡TEMA FIJO A DESARROLLAR!)
+
+- **Definición Exacta:** Es el proceso que intenta aumentar la calidad global de un sistema "heredado" existente, contemplando sus partes retrospectivamente,. Se divide en 4 tipos:
+    1. **Re-estructuración:** Simplifica la estructura del código y elimina código muerto para hacerlo más fácil de entender y cambiar, _sin alterar la funcionalidad_ del sistema,.
+    2. **Re-documentación:** Realiza un análisis estático del código vivo para generar la documentación faltante del sistema (ej. obtener diccionarios de datos, jerarquías de clases o diagramas),,.
+    3. **Ingeniería Inversa:** Proceso de analizar el código binario o fuente de un sistema para extraer y recuperar su diseño y especificación original perdida (se pueden usar herramientas como _Ghidra_),.
+    4. **Re-ingeniería:** Produce un _nuevo_ código fuente. Involucra hacer ingeniería inversa para entender el sistema viejo, modificar y actualizar el diseño, y luego hacer ingeniería progresiva regenerando un sistema completamente nuevo,,.
+- **En pocas palabras:** Cuando el sistema heredado está al borde del colapso, le hacemos un tratamiento de belleza:
+    - _Re-estructurar:_ Ordenar y limpiar el código por dentro para que se lea mejor (el usuario ni se entera).
+    - _Re-documentar:_ Como no hay manuales, usamos programas que lean el código y nos dibujen los planos automáticamente.
+    - _Ingeniería Inversa:_ Es agarrar el auto, desarmarlo pieza por pieza para entender cómo lo fabricaron en su momento porque nadie se acuerda.
+    - _Re-ingeniería:_ Es el "borrón y cuenta nueva". Analizás el sistema viejo para entender qué hacía, y lo volvés a programar entero desde cero con lenguajes y arquitecturas modernas.
+
+---
+---
+---
+
+# CLASE 11: AUDITORÍA INFORMÁTICA
+
+1. ¿Qué es la Auditoría Informática?
+
+- **Definición Exacta:** Es un examen crítico que se realiza con el objeto de evaluar la eficiencia y la eficacia de una sección o de un organismo, y determinar cursos alternativos de acción para mejorar la organización y lograr los objetivos propuestos. Es una función desarrollada para asegurar la salvaguarda de los activos de los sistemas, mantener la integridad de los datos y lograr eficacia y eficiencia (según Ron Weber). Es una actividad **preventiva** (permite prevenir delitos y problemas legales) y no es una actividad meramente mecánica. El auditor sugiere estrategias.
+- **En pocas palabras:** Es como hacerle un chequeo médico completo a los sistemas de una empresa. No vas a arreglar el código, vas a revisar si la empresa está protegiendo bien sus datos, si no es vulnerable a hackeos o si están perdiendo plata por tener malos sistemas. Mirás, anotás los problemas y decís: "Acá tienen que mejorar esto para que no ocurra un desastre".
+
+2. Tipos de Auditoría y Roles (Consultor vs. Auditor)
+
+- **Definición Exacta:**
+    - _Auditoría Interna / Externa:_ La interna usa los propios recursos de la organización y puede disolverse por decisión de la misma. La externa es realizada por terceros independientes.
+    - _Consultor Informático:_ Tiene un enfoque estratégico, organizativo y amplio.
+    - _Auditor Informático:_ Tiene un enfoque más técnico y específico; se centra en identificar riesgos, vulnerabilidades y evaluar controles perimetrales.
+- **En pocas palabras:**
+    - _Interna/Externa:_ O contratás a tus propios empleados para que te auditen (interna), o le pagás a una consultora de afuera para que sea más imparcial (externa).
+    - _Consultor vs Auditor:_ El consultor te ayuda a pensar en grande ("Deberíamos migrar a la nube para vender más"). El auditor va al detalle técnico y te marca los errores ("Tenés un agujero de seguridad en el puerto 80 del servidor").
+
+3. Las Etapas de la Auditoría Informática
+
+- **Definición Exacta:** El proceso de auditoría no es improvisado; consta de 4 etapas formales:
+    1. **Planeación:** Definir qué se va a auditar y cómo.
+    2. **Ejecución:** Llevar a cabo el análisis y recopilar información.
+    3. **Análisis de los datos recabados:** Evaluar las condiciones observadas frente a las ideales.
+    4. **Elaboración de un informe escrito:** Emisión de la opinión formal del auditor.
+- **En pocas palabras:** 1) Planificás qué vas a revisar. 2) Vas y te metés en los sistemas (ejecutás). 3) Pensás en todo lo que encontraste. 4) Escribís el informe final para dárselo a la gerencia.
+
+4. Los Principios del Auditor (¡Temas fijos de Choice!)
+
+- **Definición Exacta:** El auditor debe regirse por un código ético muy estricto. Los más evaluados son:
+    - **Principio de Independencia:** Obliga al auditor a mantener autonomía absoluta en su trabajo y juicio, incluso si tiene una relación laboral de dependencia con la empresa auditada.
+    - **Principio de Discreción (Secreto Profesional):** Exige al auditor evitar divulgar cualquier dato obtenido durante la auditoría, incluso si este parece inofensivo.
+    - _Otros principios:_ Beneficio del auditado, economía, precisión, información suficiente, comportamiento profesional.
+- **En pocas palabras:** Si sos auditor, tenés que ser un juez imparcial (**Independencia**): si tu jefe hizo un desastre en la base de datos, lo tenés que reportar igual, sin dejarte influenciar. Y además, tenés que tener la boca cerrada (**Discreción**); no podés andar contándole a nadie lo que viste en los servidores de la empresa.
+
+5. Metodologías de Auditoría: OCTAVE y MAGERIT
+
+- **Definición Exacta:**
+    - **OCTAVE:** (_Operationally Critical Threat, Asset, and Vulnerability Evaluation_). Es un enfoque estructurado para evaluar riesgos de seguridad. Sus pasos ineludibles son: 1) Identificar activos, 2) Analizar amenazas, 3) Determinar vulnerabilidades.
+    - **MAGERIT:** Es otra metodología formal de análisis de riesgos. Su orden de etapas comienza estrictamente con la _Planificación_, seguida por el _Análisis_, luego la _Evaluación_ (de controles) y finaliza con las _Recomendaciones_.
+- **En pocas palabras:** Son las "recetas" que usa el auditor para no hacer las cosas a lo loco. _OCTAVE_ te dice: primero buscá qué cosas de valor tiene la empresa (activos), fijate quién los quiere atacar (amenazas) y por dónde podrían entrar (vulnerabilidades). _MAGERIT_ te marca un paso a paso ordenado: primero planificás, después analizás, luego evaluás qué tan bien se defienden, y por último les das recomendaciones.
+
+6. El Reporte de Hallazgos
+
+- **Definición Exacta:** Es el componente clave y final de la auditoría informática. En esta etapa se documentan de manera clara y concisa los problemas, debilidades o riesgos identificados. Clasifican los problemas asignándoles un **Nivel de Riesgo** (ej. Alto, Medio, Bajo) y proponen recomendaciones específicas para solucionarlos.
+- **En pocas palabras:** Es el boletín de calificaciones que le entregás al cliente al final. Es una tabla donde le decís directamente: _"Hallazgo: Los usuarios comparten la misma contraseña. Nivel de riesgo: ALTO."_ Y abajo le explicás cómo solucionarlo.
+
+---
