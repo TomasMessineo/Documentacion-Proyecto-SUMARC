@@ -7,4 +7,4 @@
 
 - **Solucionar este problema:** @article-type [[?]](https://scielo.readthedocs.io/projects/scielo-publishing-schema/pt_BR/latest//search.html?q=@article-type&check_keywords=yes&area=default)|[ERROR] [E1]|Asegúrese de que los elementos @article-type (research-article) y subject (Artículos) se identificaron correctamente. Maybe research-article is not a valid value for @article-type. Suggested values: artículo.|
 
-- 
+- Poner s.f en la fecha hace que haya un fatal error
