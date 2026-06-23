@@ -1,0 +1,4 @@
+
+- Que scieloAdapter evalúe si existe el ext-link en el mixed-citation para tipos de referencia a Webpage, si no coincide, hacer lo mismo que source: Agregarlo al final de la referencia. Esto que se aplique si viene un mixed citation ya o hay que construir uno. Evaluar también si la validación de source para agregar en el mixed citation se hace siempre sin importar si existe o no mixed citation, o si solo se hace cuando el mixed NO existe.
+
+- Cuando hay un link en las footnotes, hay que agregar el atributo: `_xlink:href_` en cada uno de los ext-link para que no haya errores de estructura. ESTO PUEDE SER UN ERROR DE MARCADO, ya que algunas footnotes no tienen el atributo en ext-link y otras no
