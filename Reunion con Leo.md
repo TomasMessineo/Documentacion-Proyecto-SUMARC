@@ -8,4 +8,5 @@
 - Si el catálogo tiene un error de sintáxis o algo así, no se especifica DONDE es el error, sino que al generar el PDF el front tira un error y no dice por qué. No es una limitación de SUMARC, sino de la tecnología misma.
 - Los saltos de página pueden ser una complicación: Existen 2 tipos de saltos de página.
 - Existe un validador de catálogo.
-- TCPDF tenía limitaciones que mPDF solucionaba. Estas limitaciones lo documentó Leo. TCPDF estaba abandonada y basada en fPDF (que también estaba abandonada), mPDF NO está abandonada y está basada a su vez en TCPDF
+- TCPDF tenía limitaciones que mPDF solucionaba. Estas limitaciones lo documentó Leo. TCPDF estaba abandonada y basada en fPDF (que también estaba abandonada), mPDF NO está abandonada y está basada a su vez en TCPDF.
+- 
