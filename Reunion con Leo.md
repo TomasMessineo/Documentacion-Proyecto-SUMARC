@@ -9,4 +9,3 @@
 - Los saltos de página pueden ser una complicación: Existen 2 tipos de saltos de página.
 - Existe un validador de catálogo.
 - TCPDF tenía limitaciones que mPDF solucionaba. Estas limitaciones lo documentó Leo. TCPDF estaba abandonada y basada en fPDF (que también estaba abandonada), mPDF NO está abandonada y está basada a su vez en TCPDF.
-- 
