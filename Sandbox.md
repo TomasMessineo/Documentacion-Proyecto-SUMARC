@@ -46,48 +46,48 @@ Datos para el login de los usuarios en el taller SUMARC:
 - **Contraseña:** editor9+123@
 
 **Editor10:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor10
+- **Contraseña:** editor10+123@
 
 **Editor11:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor11
+- **Contraseña:** editor11+123@
 
 **Editor12:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor12
+- **Contraseña:** editor12+123@
 
 **Editor13:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor13
+- **Contraseña:** editor13+123@
 
 **Editor14:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor14
+- **Contraseña:** editor14+123@
 
 **Editor15:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor15
+- **Contraseña:** editor15+123@
 
 **Editor16:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor16
+- **Contraseña:** editor16+123@
 
 **Editor17:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor17
+- **Contraseña:** editor17+123@
 
 **Editor18:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor18
+- **Contraseña:** editor18+123@
 
 **Editor19:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor19
+- **Contraseña:** editor19+123@
 
 **Editor20:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor20
+- **Contraseña:** editor20+123@
 
 **Editor21:**
 - **Nombre de usuario:**
