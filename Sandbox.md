@@ -90,41 +90,41 @@ Datos para el login de los usuarios en el taller SUMARC:
 - **Contraseña:** editor20+123@
 
 **Editor21:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor21
+- **Contraseña:** editor21+123@
 
 **Editor22:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor22
+- **Contraseña:** editor22+123@
 
 **Editor23:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor23
+- **Contraseña:** editor23+123@
 
 **Editor24:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor24
+- **Contraseña:** editor24+123@
 
 **Editor25:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor25
+- **Contraseña:** editor25+123@
 
 **Editor26:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor26
+- **Contraseña:** editor26+123@
 
 **Editor27:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor27
+- **Contraseña:** editor27+123@
 
 **Editor28:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor28
+- **Contraseña:** editor28+123@
 
 **Editor29:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor29
+- **Contraseña:** editor29+123@
 
 **Editor30:**
-- **Nombre de usuario:**
-- **Contraseña:**
+- **Nombre de usuario:** editor30
+- **Contraseña:** editor30+123@
