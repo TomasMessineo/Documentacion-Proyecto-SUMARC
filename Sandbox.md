@@ -181,6 +181,10 @@ homelab, microcomputers, servers
 
 ---
 
+https://orcid.org/0000-0002-3602-8211
+https://creativecommons.org/licenses/by/4.0/
+
+
 Analysis of Global Investment Portfolios Evaluated Against ESG Criteria and Their Comparative Financial Performance
 
 The study conducts an empirical, quantitative assessment of the financial performance of global investment portfolios incorporating Environmental, Social, and Governance (ESG) metrics versus traditional local mutual funds. Employing Markowitz’s minimum-variance theory and Fama-French multifactor econometric analysis, it compares the risk-adjusted return (Sharpe Ratio) and structural volatility of global equity assets—such as the MSCI ACWI ESG Leaders index—against traditional benchmarks. Additionally, the study analyzes the impact of compliance with international standards (ISSB and Scope 1, 2, and 3 carbon disclosures) on the corporate cost of capital, demonstrating that operational sustainability serves as a predictive filter for corporate solvency and long-term macroeconomic resilience.
@@ -189,6 +193,10 @@ investments, finance, market
 
 ---
 
+https://orcid.org/0000-0002-3602-8211
+https://creativecommons.org/licenses/by/4.0/
+
+
 Refactoring Monolithic Software Architectures into Microservices Using Object-Oriented Design Patterns
 
 This article documents the process of systematically refactoring legacy academic systems—characterized by high levels of tight coupling—into decentralized, microservices-based architectures, guided by Clean Architecture principles and object-oriented patterns. It addresses challenges related to software entropy and the disaggregation of shared databases by applying the Saga pattern to coordinate local transactions and ensure eventual consistency in polyglot persistence environments. Additionally, API governance is modeled using API Gateways and Semantic Versioning strategies. Finally, the article describes an automated deployment and resilience-validation environment based on Docker Compose and Fedora Linux, modeling fault-tolerance policies to handle network latency.
@@ -196,8 +204,22 @@ This article documents the process of systematically refactoring legacy academic
 refactoring, design patterns, microservices
 
 ---
+https://orcid.org/0000-0002-3602-8211
+https://creativecommons.org/licenses/by/4.0/
+
 
 Automation of Digital Preservation Pipelines and JATS XML Schema Validation in OJS 3.4 Institutional Repositories
 
 This research examines the transition toward the automation of the scientific editorial workflow and long-term digital preservation using semantically structured metadata within the Open Journal Systems (OJS 3.4) platform. It analyzes the architecture and hierarchical sequence of the SUMARC tool suite, detailing the performance of the docxConverter and JatsParser modules, as well as the SciELO plugin, when processing scientific manuscripts. Through pilot tests conducted on PREBI-SEDICI servers, the study compares processing times based on document complexity and evaluates the syntactic rigidity of the SciELO Publishing Schema (SPS v1.5), Crossref, and NISO Z39.96 guidelines. The study concludes that there is a critical need to standardize native authoring templates to minimize the need for manual corrections during the institutional production phase.
 
+automation, ecosystem, frameworks
+
+---
+https://orcid.org/0000-0002-3602-8211
+https://creativecommons.org/licenses/by/4.0/
+
+Optimization of Local Language Models via Quantization and Semantic Embeddings in Resource-Constrained Hardware Environments
+
+This work addresses VRAM limitations associated with the local deployment of Large Language Models (LLMs)—such as Llama-3 and Qwen-2—within isolated academic infrastructures. It evaluates 4-bit and 8-bit post-training quantization (PTQ) techniques designed to reduce the numerical precision of weight tensors, measuring both processing throughput (tokens per second) and the associated perplexity degradation. To mitigate the loss of coherence in technical domains, the study introduces a compensatory strategy involving topological alignment in latent space, utilizing stable external semantic representation models for Spanish (BETO and SciBERT). The results demonstrate linear inference acceleration with only marginal loss in semantic retrieval, thereby ensuring data privacy in hardware-constrained environments.
+
+language model, VRAM, data
