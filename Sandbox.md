@@ -164,3 +164,40 @@ El estudio realiza una evaluación empírica y cuantitativa del desempeño finan
 Este trabajo describe el diseño e implementación de un nodo de pruebas descentralizado denominado rpi-homelab, basado en microcomputadoras Raspberry Pi con arquitectura ARM, optimizado para la simulación fiel de servicios editoriales institucionales críticos (OJS 3.4). Se detalla la orquestación de contenedores virtualizados (PHP-FPM, servidores de bases de datos relacionales y proxies inversos con compresión gzip) orientados a soportar auditorías de rendimiento y pruebas de carga HTTP concurrentes sin comprometer la red troncal universitaria. En términos de seguridad y mitigación de riesgos operacionales, se documenta el aislamiento perimetral mediante Docker Bridges, HTTPS estricto con certificados SSL locales y la implementación de un servidor SMTP simulado para la contención lógica de notificaciones de correo electrónico experimentales en PREBI-SEDICI.
    
    homelab, microcomputadoras, servidores
+
+
+
+
+
+---
+https://orcid.org/0000-0002-3602-8211
+https://creativecommons.org/licenses/by/4.0/
+
+Implementation of Homelab Nodes Based on Raspberry Pi Microcomputers for the Simulation of Critical Publishing Services
+
+This paper describes the design and implementation of a decentralized test node named rpi-homelab, based on ARM-architecture Raspberry Pi microcomputers and optimized for the high-fidelity simulation of critical institutional publishing services (OJS 3.4). It details the orchestration of virtualized containers (PHP-FPM, relational database servers, and reverse proxies with gzip compression) designed to support performance audits and concurrent HTTP load testing without compromising the university backbone network. Regarding security and operational risk mitigation, the study documents perimeter isolation via Docker Bridges, strict HTTPS using local SSL certificates, and the implementation of a simulated SMTP server to logically contain experimental email notifications within PREBI-SEDICI.
+
+homelab, microcomputers, servers
+
+---
+
+Analysis of Global Investment Portfolios Evaluated Against ESG Criteria and Their Comparative Financial Performance
+
+The study conducts an empirical, quantitative assessment of the financial performance of global investment portfolios incorporating Environmental, Social, and Governance (ESG) metrics versus traditional local mutual funds. Employing Markowitz’s minimum-variance theory and Fama-French multifactor econometric analysis, it compares the risk-adjusted return (Sharpe Ratio) and structural volatility of global equity assets—such as the MSCI ACWI ESG Leaders index—against traditional benchmarks. Additionally, the study analyzes the impact of compliance with international standards (ISSB and Scope 1, 2, and 3 carbon disclosures) on the corporate cost of capital, demonstrating that operational sustainability serves as a predictive filter for corporate solvency and long-term macroeconomic resilience.
+
+investments, finance, market
+
+---
+
+Refactoring Monolithic Software Architectures into Microservices Using Object-Oriented Design Patterns
+
+This article documents the process of systematically refactoring legacy academic systems—characterized by high levels of tight coupling—into decentralized, microservices-based architectures, guided by Clean Architecture principles and object-oriented patterns. It addresses challenges related to software entropy and the disaggregation of shared databases by applying the Saga pattern to coordinate local transactions and ensure eventual consistency in polyglot persistence environments. Additionally, API governance is modeled using API Gateways and Semantic Versioning strategies. Finally, the article describes an automated deployment and resilience-validation environment based on Docker Compose and Fedora Linux, modeling fault-tolerance policies to handle network latency.
+
+refactoring, design patterns, microservices
+
+---
+
+Automation of Digital Preservation Pipelines and JATS XML Schema Validation in OJS 3.4 Institutional Repositories
+
+This research examines the transition toward the automation of the scientific editorial workflow and long-term digital preservation using semantically structured metadata within the Open Journal Systems (OJS 3.4) platform. It analyzes the architecture and hierarchical sequence of the SUMARC tool suite, detailing the performance of the docxConverter and JatsParser modules, as well as the SciELO plugin, when processing scientific manuscripts. Through pilot tests conducted on PREBI-SEDICI servers, the study compares processing times based on document complexity and evaluates the syntactic rigidity of the SciELO Publishing Schema (SPS v1.5), Crossref, and NISO Z39.96 guidelines. The study concludes that there is a critical need to standardize native authoring templates to minimize the need for manual corrections during the institutional production phase.
+

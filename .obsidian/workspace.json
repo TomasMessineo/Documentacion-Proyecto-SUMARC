@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "234a4733be689d96",
+        "id": "76c9e33f6885916f",
         "type": "tabs",
         "children": [
           {
-            "id": "450711e58af292ae",
+            "id": "efcc903a8f52d7b6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -177,10 +177,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "450711e58af292ae",
+  "active": "efcc903a8f52d7b6",
   "lastOpenFiles": [
-    "Reunion con Leo.md",
     "Sandbox.md",
+    "Reunion con Leo.md",
     "Notas de reuniones/Reuniones 2026/Reunion 12-07-06.md",
     "Notas de reuniones/Reuniones 2026/Reunión 12-06-26.md",
     "Notas de reuniones/Reuniones 2026/Reunión 17-06-26.md",
