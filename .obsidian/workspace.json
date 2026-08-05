@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Notas sobre prueba con OpenAlex"
             }
+          },
+          {
+            "id": "d47a98f2327feec6",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.13.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Registro de cambios 1.13.4"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -41,7 +54,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Explorador de archivos"
@@ -177,7 +192,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "efcc903a8f52d7b6",
+  "active": "d47a98f2327feec6",
   "lastOpenFiles": [
     "Resumen - Inge 2 - Teórico de promoción.md",
     "Notas sobre prueba con OpenAlex.md",
