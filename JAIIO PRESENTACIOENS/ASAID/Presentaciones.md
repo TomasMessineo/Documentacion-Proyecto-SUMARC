@@ -50,3 +50,50 @@ Dependiendo del caso de uso, se ve si se prioriza un modelo u otro dependiendo d
 # Keynote conjunto con ASSE: Automatizando migraciones de código
 
 Lovelytics es una empresa consultora de datos e inteligencia artificial. Ayuda a empresas a definir sus estrategias de datos.
+El 83% de las migraciones fracasan (segun el speaker jeje)
+
+1. El problema real - ¿y donde está la lógica? Algunas definicioens
+
+Una migración de un sistema delegado, la lógica no está en solo un lugar. Atnes se usaban herramientas visuales para analizar la lógica y datos del sistema, como IBM DataStage, InformaticaPowerCenter, entre otros. 
+La lógica no está en el archivo, está repartida por casi todos lados, es decir, no está centralizada en un solo lugar. Cada lógica está distribuida en diferentes lugares.
+
+**Definiciones:**
+
+¿Migración o reingeniería? Nunca es una sola cosa.
+- **Lift and Shift:** Lo que tenía en el sistema viejo me lo llevo al sistema nuevo. En datos nunca es 100% lift and shift. Cambiar el motor de ejecución fuerza reingeniería quieras o no.
+- **Modernización/Reingeniería:** Rebuild completo, modelo de datos, ETL, ML y consumidores downstream.
+- **Persist:** Se queda en el legado por ahora, impacto del negocio demasiado crítico. Lo que no se usa lo matamos y no perdemos tiempo en cosas que no tiene sentido atacar.
+- **Deprecate:** No se migra. Ya no se usa, o fue reemplazado por algo mas nuevo.
+
+No hay nada mas definitivo que lo temporal.
+El refactor del futuro no va a llegar. 
+
+Migrar no es traducir código.
+
+--------------------
+
+2. Cuatro generaciones - Y los aprendizaques que nos fueron dejando
+
+Generación 0: A mano.
+Tengo que ver por dónde arranco o cuál es el principio. Arrancamos con una ingeniería inversa. Esto lleva mucho tiempo hacerlo manual. Si podemos sobrevivir a eso, sigue la varianza entre las personas. La implementación del código original y entender cómo es, es una varianza, que genera deuda técnica ya que se está migrando sin definir estándares. Una obviedad también es que hacer esto a mano genera agotamiento. Esto tiene una sobrecarga operativa grande. Es un trabajo repetitivo de alta precisión.
+
+Generación 1 - Prompt engineering, traducir con parseo:
+Se usaba GPT 4, eran modelos que no razonaban y no existían herramientas maduras. Se intentó reducir la carga laboral de los empleados al realizar la migración.
+Luego se empezó a pensar en la utilización de RAG's en vez de Prompt Engineering, para llegar por último a los Sistemas Inteligentes, que pueden decidir, ejecutar acciones y comunicarse entre sí.
+Acá se empezó a hablar de agentes. El agente toma feedback basandose en el entorno para generar una respuesta.
+
+Generación 2 - Agentes 1.0:
+
+1. Conversión: Traduce de (casi) cualquier cosa a Databricks
+2. Validación: Ejecuta el código traducido en un entorno de test
+3. Corrección
+4. Optimización
+
+Generación 3 - :
+
+**DUDA:**
+- ¿Cómo funciona DataBricks?
+- ¿Qué es Source Hadoop Spark (Scala) y Target Spark (PySpark)
+- Se puede leer el artículo "The Shift from Models to Compound AI Systems"
+
+3. Migration Factory - Cómo lo encaramos hoy
