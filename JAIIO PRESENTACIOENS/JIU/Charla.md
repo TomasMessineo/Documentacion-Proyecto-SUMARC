@@ -24,8 +24,33 @@ Algo que también está pasando es que se están yendo los investigadores y el p
 
 ****
 
-- 
-
+- Sistema SOS del Conicet.
 ---
 
 Noto que la universidad tiene una visión mas orientada en la capacitación y acompañamiento de los alumnos a lo largo de su trayecto como estudiantes, brindandole cursos y bootcamps para que una vez que quieran ir a buscar trabajo, puedan conseguirlo y tengan un fundamento sólido en diferentes aspectos (la chica que habla menciona bootcamps de ciberseguridad).
+
+# Programa PROINNOVA en Paraguay -> Aprender sobre políticas públicas en países hermanos.
+
+El CONACYT depende de la presidencia de la república. Tiene un consejo conformado por 15 instituciones: Ministerios, universidades públicas y privadas, la union industrial del paraguay, federación de la producción, la industria y el comercio, entre otras. Son 15. Entre todas forman el consejo, y entre ellas se eleva una terna donde se elige el presidente del CONACYT. 
+Cuenta con dos secretarías ejecutivas.
+
+En el plan estratégico 2030 se definieron las líneas para enfatizar los esfuerzos en ciencia y tecnología, principalmente el tema de Agua y Energía. 
+Cuentan con un sistema nacional de investigadores: SINSI. Allí cada uno hace su vida, si uno está en una institución puede pertenecer a una industria o empresa (según lo que comentó Benjamín).
+
+Proinnova es un programa de 10 millones de dólares que arrancó por el 2017 antes de la pandemia.
+Emprendedores, MIPYMES, universidades, entre otros.
+
+Primero se hacen convocatorias para que Startups muestren sus propuestas, luego hay expertos que siguen de cerca el proyecto para garantizar la calidad de las mismas para su posterior evaluación.
+
+**Fundamento del programa:**
+- Financiamiento estratégico
+- Proyectos en etapa de desarrollo
+- Alto grado de incertidumbre
+- Desarrollo de software especializado
+
+**Proyectos implementados:**
+- **Cafetto S.A:** Pago electrónico via celular en maquinarias expendedoras automáticas..
+- **Grupo Oxades S.A:** Software con IA enfocado en acelerar la detección de accidentes cerebrovasculares. Mediante el análisis de imágenes médicas: utiliza redes neuronales complejas para procesar de forma automatizada tomografías computarizadas (CT) y resonancias magnéticas.
+- Biosyntech S.A: Se ocupa de la creación y producción de vacunas recombinante compuesta por antígenos virulentos de la familia Pasteurellaceae para ganado porcino. 
+
+**Valor agregado del programa:** Inició una serie de capacitaciones para servidores públicos y financió la implementación de proyectos enfocados en la innovación pública.

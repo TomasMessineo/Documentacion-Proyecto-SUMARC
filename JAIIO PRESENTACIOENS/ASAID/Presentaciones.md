@@ -131,3 +131,10 @@ Al haber mas interacciones, la cosa se complica un poco y no alcanza con que el 
 Se plantea que se estuvo trabajando en un modelo que surge a partir de un modelo de ¿Polya?
 
 No hay que perder de vista el modelo que está atras del algoritmo, ya que nos puede brindar una visión mas amplia de como funciona ese algoritmo.
+
+---
+
+# CHARLA FINAL
+
+La evolución de los productos no es continua. 
+Aproximadamente hay un aumento en la demanda de proyectos a
