@@ -125,3 +125,9 @@ No hay que validar una vez que se migró todo.
 # On the Structural Limits of Machine Learning Decision Systems - An information - Theoretic, interaction based, and stochastic dynamical perspective
 
 - Drifts y KPIs nec
+
+Los modelos clásicos estaban basados en ecuaciones diferenciales, donde conociendo el presente se puede conocer el futuro (como los modelos de difusión)
+Al haber mas interacciones, la cosa se complica un poco y no alcanza con que el modelo sea de Markov, sino que aparecen modelos de memoria (de largo plazo) o distribuciones de cola pesada.
+Se plantea que se estuvo trabajando en un modelo que surge a partir de un modelo de ¿Polya?
+
+No hay que perder de vista el modelo que está atras del algoritmo, ya que nos puede brindar una visión mas amplia de como funciona ese algoritmo.
