@@ -65,21 +65,55 @@ CAPTA:
 
 # Integración de modelos de IA para la identificación de Información de Identificación Personal (PII) en el marco de las Regulaciones vigentes de la República Argentina
 
-Es cualquier dato que se puede usar para identificar, localizar o contactar a una persona, ya sea solo o junto con otros datos. Las empresas deben protegerla para evitar robos de identidad. [[1](https://www.malwarebytes.com/es/cybersecurity/basics/pii), [2](https://caseguard.com/es/articles/proteccion-de-la-intimidad-en-el-sanitario-pii-phi-y-pci/), [3](https://www.youtube.com/watch?v=h1Q5Ze37njk), [4](https://www.youtube.com/watch?v=N1qdvQVke0s)]
+PII: Es cualquier dato que se puede usar para identificar, localizar o contactar a una persona, ya sea solo o junto con otros datos. Las empresas deben protegerla para evitar robos de identidad. [[1](https://www.malwarebytes.com/es/cybersecurity/basics/pii), [2](https://caseguard.com/es/articles/proteccion-de-la-intimidad-en-el-sanitario-pii-phi-y-pci/), [3](https://www.youtube.com/watch?v=h1Q5Ze37njk), [4](https://www.youtube.com/watch?v=N1qdvQVke0s)]
 
 Una vez que se detecta la PII, se usa el Anonymizer para aplicar la operación más adecuada según el tipo de entidad y el contexto de uso.
 
 **Modelo SpaCy: Modelo entrenado en idioma español**
 
+---
 
+# Criptografía programable para la preservación de privacidad en protocolos blockchain
 
+Privacidad en protocolos de verificación blockchain: Toda la inforamción solicitada (por lo general, excede lo que realmente se necesita o se piden datos de mas) queda guardada en una base de datos. Muchas empresas empiezan a aprovechar esto para tener otro accionar sobre la información de sus clientes. Toda esta información está centralizada en una empresa, lo cual es un atractivo principal para un ciberdelincuente, teniendo acceso a información sensible. 
+En una blockchain todo es publico e inmutable, y por ende hay cosas sensibles. 
 
+### **Objetivo: Blockchain con privacidad.**
 
+¿Existe alguna herramienta para resolver este problema? Sí, la criptografía programable. 
 
+ZK Proofs permiten demostrar algo sin revelarlo. Por ejemplo, si quiero sacar un préstamo, el banco pedirá muchísimas cosas, entre otras cosas, el sueldo que cobro. Yo no quiero que otra persona sepa cuanto cobro, entonces yo puedo mostrar legibilidad para ese préstamo pero sin decir cuanto cobro, donde vivo, etc.
+En este tipo de protocolos suele existir un probador, una prueba (succinct) y un verificador (responde con si/no sobre esa prueba).
 
+Las pruebas que se utilizaron fueron ZK - S N AR K.
+Zk: Cero conocimiento
+S: Sucinto
+N: No interactivo
+Ar: Argumento
+K: Conocimiento
 
+Estas pruebas tienen una ventaja: Son chicas y no interactivas. 
 
+**Se menciona la propiedad de la simulabilidad**
 
+Se plantea usar la criptografía programable para solucionar la privacidad en protocolos de verificación Blockchain.
+3 elementos clave:
+- EligibleIMT: Smart contract que representa un arbol incremental. 
+- Circuito Noir: Lenguaje de programación.
+- LocalVerifier: Otro smart contract que ve todo lo que se hace y es por local.
 
+Poseidon2 es un algoritmo que funciona muy bien con este tipo de protocolos.
+Con las pruebas se va a querer demostrar que estoy en el arbol, pero no vas a saber quién soy, por sí o por no.
 
+Existen 3 actores:
+- Operador: Encargado de administrar el contrarto ElligibleIT
+- Beneficiario: Persona elegible para un beneficio
+- Verificador: Contrato independiente por cada punto de verificación.
+
+Hay un problema, el doble gasto controlado: se usa nullifier, que hace un mapeo interno para verificar que un dato ya fue consultado, o algo así, sin necesidad de conocer a la persona.
+
+**Beneficios:**
+- El beneficiario tiene control sobre su historial
+- Para el operador, se elimina la responsabilid de custodiar datos personales sensibles
+- Para el verificador, simplifica el cumplimiento normativo (RGPD): No acumula lo que no necesita.
 
