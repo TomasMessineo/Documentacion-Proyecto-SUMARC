@@ -20,10 +20,29 @@ En Chile la relación academia industria depende mucho de la parte del gobierno 
 
 Estar viviendo en el día de la marmota -> Referencia de Gustavo Rossi. Es como escuchar una charla de la cual hemos escuchado mucho los últimos 40 años. 
 
-**Pregunta disparadora:** 
+**Pregunta disparadora:** Como ven el impacto de la IA cualquiera particularmente de la generativa particularmente en el trabajo de los que damos clase e investigamos? Lo que se ve es que es preocupante si no nos ubicamos razonablemente.
 
+La programación se le hace mucho mas dificil a alguien que está aprendiendo. La ingeniería de software requiere saber programar, y ha tomado mucho valor en los últimos años. 
+A los formadores de RRHH les resulta mas económico tirarle a una IA un prompt claro y llevar a cabo esa solución, que darselo a un becario. Se ha puesto mucho mas jodido para el que está empezando. Esto se ve en las curvas de contrataciones a nivel mundial. Subío la contratación de seniors y bajó mucho la de juniors. Esto es porque los juniors no entienden, porque generan PRs con bugs. Es mejor darle todos los tokens a un Senior. El joven no es productivo, es improductivo, pero tampoco el Senior quiere formarlo al Senior ya que existe la IA. El jóven que está empeazndo no la ve porque no ve todo el stack que le va a llevar años aprender. Como educadores, estan ante un desafío raro, la parte interesante es que empieza a haber datos real en la productividad que dan las empresas. Estamos en un momento donde el rol del educador se ultra valoriza.
 
+Dagma Monet habla sobre la IA degenerativa. Todos estos modelos que aparecen hoy en día que son de fácil disponibilidad y permiten obtener un codigo para desarrollar lo que sea en un solo click y que faiclita la corrección de código, en realidad esconden un elemento venenoso que es el hecho de que hay una presunción de que uno sabe lo que eso significa, y lo que es un problema con los juniors es que generar una especie de caja mágica que yo le pido en español o lenguaje natural que no es un lenguaje formal y que por ende pierde muchas capacidades para las cosas, generar una religión donde si yo pido de forma adecuada usando el castellano o ingles, voy a poder resolver una tarea de pensamiento abstracto. El problema es el refinamiento de las consultas, y el senior sabe que esta buscando, que cosas son las lógicas que uno puede encontrar, y el junior juega un juego a ciegas vendado de poner prompts y hacer copy paste fijandose si eso funciona sin saber si lo que pegó sirve o para qué se hizo de esa forma. Un filósofo eric sadan que escribió un libro "El desierto de nosotros mismos" donde menciona la palabra "necrosado" (buscar que es). Menciona una frase de un poeta frances Paul Valery, donde define que crear es poder elegir. Yo elijo qué adjetivo uso cuando quiero expresar un atardecer, y la elección depende del criterio del poeta. Esa idea de crear es poder elegir es lo que falta en lo educativo: Cuando uno hace un prompt, la IA sugiere mejoras para refinar el prompt, pero no me permite a mí ser creativo, generando una ilusión de que yo estoy eligiendo. En realidad el Junior no puede elegir nada, simplemente elige caminos en un grafo que ya estan predeterminados por la misma máquina degenerativa.
 
-Pregunta disparadora:
+La IA se pierde ingeniería de software a lo loco. El que sabe hacer ingeniería sabrá orquestar a la gente y consturir productos aprovechando la IA para construir productos mejores que los anteriores. Los senior van a seguir estando bien. Para transmitirle ese conocimiento a alguien en 2 o 3 años se complica mucho.
+En cuanto a la investigación, la IA pateó el tablero. La cantidad de papers hechos con IA aumentó significativamente, y se pasó de recibir 300-400 papers a recibir 1500. Eso es todo IA. Ahora, ¿Cómo revisan esa cantidad de papers tan pocas personas? -> **Esta duda la habíamos charlado en el trabajo anteriormente cuando Gonza fue a Alemania, si no me equivoco.**
+
+Los revisores o evaluadores re proyectos estan empezando a evaluar papers con IA. Hay encuestas donde se pregunta qué herramienta se usó para revisar el paper. Lo horroroso es que alguien que tiene que evaluar ese paper use IA, no el que lo escribió. 
+
+**Pregunta disparadora:** Nos vamos a quedar sin trabajo?
+
+Ni ahí. El desarrollo de software va a ser cada vez mas difícil. Los software chicos hechos con IA estan recontra mega mal. Se va a poenr mas divertido. Vamos a dejar de producir devs que codeaban sin saber como y vamos a producir ingenieros copados. Va a cambiar un montón la profesión para bien. El CONICET es lider en implementar IA bien en procesos correctamente. Esto queire decir que no lo está usando toscamente donde se le tira un proyecto y listo, sino que es cuidado donde se generan métricas, diagnósticos, etc.
+
+Sí, nos vamos a quedar sin trabajo, y no. En realidad, depende de nuestra capacidad de reinventarnos. El que no se reinventa sí se queda sin trabajo, y el que sí puede hacerlo y puede adaptarse, va a tener trabajo mucho tiempo. La IA generativa está cambiando el paradigma. Lo que es seguro es que vamos a cambiar, el cambio va a ser casi permanente. Si tenemos la capacidad de ir adaptandonos a distintas areas, vamos a persistir en el mercado. Hay que aceptar que el mundo va a ser mas dinámico, simplemente hay que saber adaptarse.
 
 - **¿La creación de burbujas?**
+
+**Notas sobre preguntas finales de asistentes:**
+
+- La encíclica papal primereó a muchos gobiernos del primer mundo. Leer la encíclica papal.
+
+- Palantis, empresa, tiene casi como único cliente a EEUU. 
+- Tecno-feudalismo, por ejemplo, si soy amigo de Mark Zuckerberg el puede hacer que mi nombre esté en el perfil de todas las personas que usan facebook, y ese botón está en poder de una sola empresa privada. Instagram puede controlar la priva
