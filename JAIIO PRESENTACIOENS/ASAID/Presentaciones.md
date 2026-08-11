@@ -137,4 +137,11 @@ No hay que perder de vista el modelo que está atras del algoritmo, ya que nos p
 # CHARLA FINAL
 
 La evolución de los productos no es continua. 
-Aproximadamente hay un aumento en la demanda de proyectos a
+Aproximadamente hay un aumento en la demanda de proyectos a medida. Un 22,5% de crecimiento.
+Hay mucho miedo con respecto a "la informática o computación no sirve mas", pero según el gráfico planteado, siempre habrá proyectos, y para el 2028 se prevee una explosión de los mismos, y habrá que saber hacerles frente adaptándonos a las tecnologías de ese entonces.
+
+**¿Cómo evolucionan los productos?** 
+
+
+Duda:
+- ¿Qué es Greenfield? Producto que se comienza a desarrollar desde cero. También existen los productos Brownfield (sistemas heredados) y Bluefield (mezcla entre brownfield y greenfield para migrar solo lo que sea útil).
