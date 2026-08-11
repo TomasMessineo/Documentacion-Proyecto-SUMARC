@@ -42,7 +42,9 @@ Sí, nos vamos a quedar sin trabajo, y no. En realidad, depende de nuestra capac
 
 **Notas sobre preguntas finales de asistentes:**
 
-- La encíclica papal primereó a muchos gobiernos del primer mundo. Leer la encíclica papal.
+- La encíclica papal primereó a muchos gobiernos del primer mundo. Leer la encíclica papal, aborda bien muchos puntos charlados.
 
 - Palantis, empresa, tiene casi como único cliente a EEUU. 
-- Tecno-feudalismo, por ejemplo, si soy amigo de Mark Zuckerberg el puede hacer que mi nombre esté en el perfil de todas las personas que usan facebook, y ese botón está en poder de una sola empresa privada. Instagram puede controlar la priva
+
+- Tecno-feudalismo, por ejemplo, si soy amigo de Mark Zuckerberg el puede hacer que mi nombre esté en el perfil de todas las personas que usan facebook, y ese botón está en poder de una sola empresa privada. Instagram puede controlar la privacidad y recomendaciones de una persona basandose en un algoritmo.
+
