@@ -167,11 +167,12 @@ Herramientas:
 2. Construcción de clases de equivalencia: Para reducir la variabilidad de las expresiones linguísticas y mejorar la representatividad estadística
 3. PMI sobre clases de equivalencia: Blas-Score (BS) para una clase de equivalencia A.
 
-
+**Palabras clave: Clases de equivalencia, bias score.**
 
 ---
 
 # Destilación de Modelos Multilingües para la Detección de Sesgo de Género con Pocos Ejemplos en Textos Judiciales en Español: Una Revisión Sistemática de la Literatura
+
 
 
 
@@ -191,3 +192,17 @@ Herramientas:
 
 # Not All Instructions Are Forgotten Equal
 
+Es normal que cuando un agente tiene la ventana de contexto disponible, sea mas lúcido. Si le digo cosas como "no me des la razón siempre", etc, lo hace. Estas cosas las mantiene.
+Luego de su utilización durante un tiempo, la ventana se satura y empieza a ser mas lenta.
+
+1. El problema
+2. Metodología
+3. Resultados
+4. Por qué importa?
+
+A Closer look at System Prompt Robustness, Mu et al. 2025. 
+**Bambi, ArviZ y PyMC**
+Statistical Rethinking, 12.3.3. Richard McElreath (2020)
+
+BKT (Bayesian Knowledge Tracing) -> Medir cuando un alumno está por caer en su rendimiento
+Hay instrucciones a las que un modelo les da mucha mas prioridad, y a otra las retiene, es decir, no les da la misma atención que a otras. Medir por instrucción habilita monitoreo selectivo.
