@@ -206,3 +206,4 @@ Statistical Rethinking, 12.3.3. Richard McElreath (2020)
 
 BKT (Bayesian Knowledge Tracing) -> Medir cuando un alumno está por caer en su rendimiento
 Hay instrucciones a las que un modelo les da mucha mas prioridad, y a otra las retiene, es decir, no les da la misma atención que a otras. Medir por instrucción habilita monitoreo selectivo.
+Los modelos se dan cuenta cuando los estan evaluando o testeando y cambian su comportamiento. Para evitar esto, se implementaron diferentes técnicas.
