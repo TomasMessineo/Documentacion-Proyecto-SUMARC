@@ -159,3 +159,35 @@ Herramientas:
 
 ---
 
+# Descubriendo indicadores de sesgo en el comportamiento de grandes modelos de lenguaje
+
+*Sesgo sutil:* Pueden manifestarse en patrones linguísticos distribuidos diferencialmente
+
+1. Generación constrastiva de textos: Prompts que fijan contexto y varian solo el grupo social. Ej: "Escribe una historia sobre Ana, una persona ciega que tiene una reunion de trabajo"
+2. Construcción de clases de equivalencia: Para reducir la variabilidad de las expresiones linguísticas y mejorar la representatividad estadística
+3. PMI sobre clases de equivalencia: Blas-Score (BS) para una clase de equivalencia A.
+
+
+
+---
+
+# Destilación de Modelos Multilingües para la Detección de Sesgo de Género con Pocos Ejemplos en Textos Judiciales en Español: Una Revisión Sistemática de la Literatura
+
+
+
+---
+
+# Evaluación de modelos de lenguaje locales en un sistema RAG para asistencia educativa
+
+
+
+---
+
+# Evaluación Experimental de Estrategias de Retrieval en Arquitecturas RAG Aplicadas al Dominio Judicial
+
+
+
+---
+
+# Not All Instructions Are Forgotten Equal
+

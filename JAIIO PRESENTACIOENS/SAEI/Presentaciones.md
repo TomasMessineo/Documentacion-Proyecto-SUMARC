@@ -62,4 +62,28 @@ Estudiante -> Reglas pedagócias -> Tutor de IA -> Retroalimentación.
 Está implementado en GTP 4o mini.
 Está integrado Whisper-1 para entrada de mensajes de voz para reducir de fricción en la escritura.
 
-El modelo de datos del alumno, los ejercicios por nivel creados (si se agotan se aregan ejercicios online con la IA, para consumir menos tokens) hecho en postreSQL. Esto está integrado con google analytics para tener en cuenta métricas.
+El modelo de datos del alumno, los ejercicios por nivel creados (si se agotan se aregan ejercicios online con la IA, para consumir menos tokens) hecho en postreSQL. Esto está integrado con google analytics para tener en cuenta métricas. Hay un modo entrevista que es un exámen, donde el tutor se comporta distinto y no te responde mucho.
+
+Se generaron reglas para usar pseudocódigo que luego será directamente transformado para compilarse en C 
+
+Se utilizó en 2 comisiones, con 51 alumnos con una tasa de 65% de ejerciciso terminados, con un aproximado de 17 minutos para terminarse los ejercicios.
+Esto se plantea para que un alumno pueda tener feedback sin estar cara a cara con el profesor.
+
+Aportes:
+- IA como tutor 
+- Metodología estructurada
+- IA + entorno de programación
+- Validacion inmediata: C y pseudocódigo pueden ejecutarse dentro del entorno
+
+Proximos pasos:
+- Avanzar sobre metricas y estudios longitudinales de la adopción y del aprendizaje, para ver si realmente esto mejora el aprendizaje
+- Métricas de aprendizaje específicas
+- Evaluación de percepción estuidantil
+- Amplición de la experiencia a nuevos grupos
+
+codexiapp.com
+
+---
+
+# Desarrollo de habilidades en programación para estudiantes de ciencias agropecuarias de la Universidad Nacional de Córdoba
+
