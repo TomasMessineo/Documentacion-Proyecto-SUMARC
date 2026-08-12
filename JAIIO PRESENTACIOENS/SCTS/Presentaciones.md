@@ -23,14 +23,15 @@ Los próximos pasos:
 
 La inteligencia no está solamente en el modelo, sino también en los datos + conocimiento del dominio + ingeniería + expertos
 
+Hubo generación de datos sintéticos, generandolos con una función o herramientas. Las interferencias reales utilizadas fueron reales, pero generadas por ellos de forma voluntaria y manual. En sí no es un dato sintético, las interferencias fueron generadas por ellos. 
+
 **Algoritmos o reglas usadas:**
 - Isolation Forest
 - XGBoost
 - PCA
 - Distancia de Mahalanobis
 
-**Protocolo MQTT - HiveMQ**
-
-La forma de representar los patrones de diseño de los espectros  que se buscan (FM o SMA) está tenido en cuenta dentro del código? -> 
+**Dudas:**
+- **Protocolo MQTT - HiveMQ**
 
 ---
