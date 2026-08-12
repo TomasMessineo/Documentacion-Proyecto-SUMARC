@@ -145,3 +145,17 @@ Hay mucho miedo con respecto a "la informática o computación no sirve mas", pe
 
 Duda:
 - ¿Qué es Greenfield? Producto que se comienza a desarrollar desde cero. También existen los productos Brownfield (sistemas heredados) y Bluefield (mezcla entre brownfield y greenfield para migrar solo lo que sea útil).
+
+---
+
+**Miércoles 12 de agosto**
+
+# Clasificación de sedimentos urinarios mediante modelos de aprendizaje profundo
+
+**Metodología CRISP-DM usada en minería de datos**
+
+Herramientas:
+- Kaggle
+
+---
+
