@@ -2,9 +2,9 @@
 ### Lunes 10/8
 # DistLearn: Entrenamiento de orden cero descentralizado por capas mediante descenso de coordenadas por bloques, basado en teoría de juegos.
 
-- **Resumen:** Es una forma de entrenar redes neuronales sin calcular el gradiente tradicional (que suele ser pesado) usando **teoría de juegos** (cada capa de la red actúa como un "jugador" intentando optimizar su parte).z
+- **Resumen:** Es una forma de entrenar redes neuronales sin calcular el gradiente tradicional (que suele ser pesado) usando **teoría de juegos** (cada capa de la red actúa como un "jugador" intentando optimizar su parte).
 - **Lo importante:** Si una capa mejora un poquito, mejora toda la red de forma coordinada. Sufre de "maldición de la dimensionalidad" (demasiados parámetros), pero lo bueno es que el problema se limita a los parámetros de esa capa y no a la profundidad de la red. Sirve para redes no tan gigantes.
-
+    
 - **Términos desconocidos:**
     - **Equilibrio de Nash:** Estado de la teoría de juegos donde ningún jugador gana nada cambiando su estrategia unilateralmente (en la red: ninguna capa puede mejorar más si las otras no cambian).
     - **ADAM:** El optimizador más popular en PyTorch/TensorFlow (Python) para ajustar pesos en redes neuronales.
