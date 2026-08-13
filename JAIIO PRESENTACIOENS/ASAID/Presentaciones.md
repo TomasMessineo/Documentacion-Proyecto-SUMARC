@@ -42,13 +42,13 @@ Dependiendo del caso de uso, se ve si se prioriza un modelo u otro dependiendo d
 ---
 # Keynote conjunto con ASSE: Automatizando migraciones de código
 
-Lovelytics es una empresa consultora de datos e inteligencia artificial. Ayuda a empresas a definir sus estrategias de datos.
-El 83% de las migraciones fracasan (segun el speaker jeje)
-
-1. El problema real - ¿y donde está la lógica? Algunas definicioens
-
-Una migración de un sistema delegado, la lógica no está en solo un lugar. Atnes se usaban herramientas visuales para analizar la lógica y datos del sistema, como IBM DataStage, InformaticaPowerCenter, entre otros. 
-La lógica no está en el archivo, está repartida por casi todos lados, es decir, no está centralizada en un solo lugar. Cada lógica está distribuida en diferentes lugares.
+- **Idea central:** "Migrar no es traducir código". Intentar traducir un sistema viejo (legacy) línea por línea a mano genera agotamiento y deuda técnica.
+    
+- **Evolución de las generaciones de migración:**
+    - _Gen 0:_ Manual / Ingeniería inversa. Sobrecarga operativa.
+    -  _Gen 1:_ Prompts simples a GPT-4. Los modelos no razonaban bien.    
+    - _Gen 2 (Agentes 1.0):_ Agentes en loop para traducir, validar y corregir. Sufrían de **sobreespecificación** (darle instrucciones ultra detalladas al modelo empeoraba el resultado).        
+    - _Gen 3 (Actual):_ **Sistemas Compuestos de IA**. Usan modelos con capacidad de razonamiento, **MCP** para que el agente examine bases de datos y repositorios en vivo, y **Skills/Progressive Disclosure** (el modelo decide qué herramientas usar a medida que las necesita).
 
 **Definiciones:**
 
