@@ -52,4 +52,6 @@ Etc.
 # Estrategias Pedagógicas para la Alfabetización en Datos: Un Enfoque Integrador entre la Universidad y la Escuela Secundaria
 
 La idea es incluir contenidos de ciencia de datos en escuelas secundarias. Una escuela puede tener ciertos recursos y otra otros, por ende, la idea sería pensar en una estrategia dependiendo de los recursos de las mismas.
-La idea es que los estudiantes generen el conocimiento de lo que estamos tratando de implementar en el aula con respecto a analisis de datos, con respecto a las actividades, haciendo que ellos analicen y piensen, sin estudiar de memoria
+La idea es que los estudiantes generen el conocimiento de lo que estamos tratando de implementar en el aula con respecto a analisis de datos, con respecto a las actividades, haciendo que ellos analicen y piensen sobre un modelo o conjunto de datos, sin estudiar de memoria.
+Cuando quiero contar un resultado, se explica cómo mostrar lo que quiero mostrar, mediante gráficos, mapas, artículos, informes, etc.
+La taxonomía utilizada es la de Bloom. 
