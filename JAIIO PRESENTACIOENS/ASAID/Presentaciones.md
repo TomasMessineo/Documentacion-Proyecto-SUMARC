@@ -45,10 +45,17 @@ Dependiendo del caso de uso, se ve si se prioriza un modelo u otro dependiendo d
 - **Idea central:** "Migrar no es traducir código". Intentar traducir un sistema viejo (legacy) línea por línea a mano genera agotamiento y deuda técnica.
     
 - **Evolución de las generaciones de migración:**
+    
     - _Gen 0:_ Manual / Ingeniería inversa. Sobrecarga operativa.
-    -  _Gen 1:_ Prompts simples a GPT-4. Los modelos no razonaban bien.    
+     _Gen 1:_ Prompts simples a GPT-4. Los modelos no razonaban bien.    
     - _Gen 2 (Agentes 1.0):_ Agentes en loop para traducir, validar y corregir. Sufrían de **sobreespecificación** (darle instrucciones ultra detalladas al modelo empeoraba el resultado).        
     - _Gen 3 (Actual):_ **Sistemas Compuestos de IA**. Usan modelos con capacidad de razonamiento, **MCP** para que el agente examine bases de datos y repositorios en vivo, y **Skills/Progressive Disclosure** (el modelo decide qué herramientas usar a medida que las necesita).
+
+**Cómo se encara hoy:**
+Primero se trata de entender como funciona el sistema de origen, sacando métricas de uso. Se tiene que entender qué vamos a migrar.
+Luego viene el linaje. Traducir todo el proceso a un documento que pueda ser leido por los agentes.
+Hay que ver cómo validamos también. Cada vez que hay un problema en la validación, se puede buscar el problema raíz y resolverlo.
+Por último se explica la modernización - Rediseñar.
 
 **Definiciones:**
 
@@ -63,46 +70,6 @@ El refactor del futuro no va a llegar.
 
 Migrar no es traducir código.
 
---------------------
-
-2. Cuatro generaciones - Y los aprendizaques que nos fueron dejando
-
-Generación 0: A mano.
-Tengo que ver por dónde arranco o cuál es el principio. Arrancamos con una ingeniería inversa. Esto lleva mucho tiempo hacerlo manual. Si podemos sobrevivir a eso, sigue la varianza entre las personas. La implementación del código original y entender cómo es, es una varianza, que genera deuda técnica ya que se está migrando sin definir estándares. Una obviedad también es que hacer esto a mano genera agotamiento. Esto tiene una sobrecarga operativa grande. Es un trabajo repetitivo de alta precisión.
-
-Generación 1 - Prompt engineering, traducir con parseo:
-Se usaba GPT 4, eran modelos que no razonaban y no existían herramientas maduras. Se intentó reducir la carga laboral de los empleados al realizar la migración.
-Luego se empezó a pensar en la utilización de RAG's en vez de Prompt Engineering, para llegar por último a los Sistemas Inteligentes, que pueden decidir, ejecutar acciones y comunicarse entre sí.
-Acá se empezó a hablar de agentes. El agente toma feedback basandose en el entorno para generar una respuesta.
-
-Generación 2 - Agentes 1.0:
-
-Empezaron a utilizarse agentes para los siguientes puntos:
-
-1. Conversión: Traduce de (casi) cualquier cosa a Databricks
-2. Validación: Ejecuta el código traducido en un entorno de test
-3. Corrección
-4. Optimización
-
-En ese momento los modelos no razonaban, no existía MCP, los agentes eran torpes en el loop y existía la sobreespecificación. En cuanto a la sobreespecificación. 
-
-Se empezó a pensar cómo solucionar la sobreespecificación, donde cuanto mas se especifica, peor es el resultado. Hay que enfocarse mas en el objetivo y el "cómo" dejarselo al modelo, que ya tendrá esa capacidad.
-
-Generación 3 - Hoy: Qué cambió, en tres cosas:
-1. Modelos que razonan: Frente a un mapping ambiguo, exploran, leen las dependencias, corren query, revisan el test, deciden.
-2. MCP: El agente ya no razona sobre un archivo, se conecta al repositorio, al catálogo, a la base, al orquestador. Puede descubrir.
-3. Skills, no orquestación: Carpetas con isntrucciones, scripts y recursos cargadas por progressive disclosure. Determinismo donde funciona, modelo donde hace falta juicio.
-
-Al principio se hablaba de construir un wrapper al rededor del LLM (no llegué a anotar lo siguiente, pero era algo de que seguía una arquitectura donde se enviaba un mensaje por medio del cliente y se retornaba una respuesta procesada por el LLM)
-
-**Cómo se encara hoy:**
-Primero se trata de entender como funciona el sistema de origen, sacando métricas de uso. Se tiene que entender qué vamos a migrar.
-Luego viene el linaje. Traducir todo el proceso a un documento que pueda ser leido por los agentes.
-Hay que ver cómo validamos también. Cada vez que hay un problema en la validación, se puede buscar el problema raíz y resolverlo.
-Por último se explica la modernización - Rediseñar.
-
-No hay que validar una vez que se migró todo.
-
 **DUDA:**
 - ¿Cómo funciona DataBricks?
 - ¿Qué es Source Hadoop Spark (Scala) y Target Spark (PySpark)
@@ -112,18 +79,18 @@ No hay que validar una vez que se migró todo.
 - ¿Qué es progressive disclosure?
 - ¿Qué es ingeniería de contextos?
 
-3. Migration Factory - Cómo lo encaramos hoy
-
 ---
 # On the Structural Limits of Machine Learning Decision Systems - An information - Theoretic, interaction based, and stochastic dynamical perspective
 
-- Drifts y KPIs nec
-
-Los modelos clásicos estaban basados en ecuaciones diferenciales, donde conociendo el presente se puede conocer el futuro (como los modelos de difusión)
-Al haber mas interacciones, la cosa se complica un poco y no alcanza con que el modelo sea de Markov, sino que aparecen modelos de memoria (de largo plazo) o distribuciones de cola pesada.
-Se plantea que se estuvo trabajando en un modelo que surge a partir de un modelo de ¿Polya?
-
-No hay que perder de vista el modelo que está atras del algoritmo, ya que nos puede brindar una visión mas amplia de como funciona ese algoritmo.
+- **El cambio de paradigma:** Los modelos matemáticos clásicos eran deterministas (basados en ecuaciones diferenciales): si conocías el estado presente, podías predecir el futuro exacto.
+    
+- **El problema de la interacción masiva:** Cuando metés decisiones tomadas por agentes, usuarios e interacciones en tiempo real, el sistema pierde la propiedad de Markov (donde el futuro _solo_ depende del presente). Emergen **sistemas con memoria de largo plazo** y **distribuciones de cola pesada** (_heavy-tailed distributions_), donde eventos extremos o raros ocurren mucho más seguido de lo que predice una distribución normal.
+    
+- **El modelo de Polya (Urna de Pólya):** Es un proceso estocástico clásico de refuerzo positivo (un efecto _"el rico se hace más rico"_ o "realimentación"). Si sacás una bola roja de una urna, la devolvés y encima agregás otra roja, la probabilidad de sacar rojas en el futuro aumenta. Se usa para modelar cómo decisiones pasadas sesgan o condicionan el comportamiento futuro del sistema.
+    
+- **Drifts y KPIs:** Un sistema de Machine Learning en producción sufre **Concept/Data Drift** (el mundo real cambia y el modelo pierde precisión). Para detectar esto, se necesitan KPIs dinámicos de monitoreo.
+    
+- **Conclusión central:** _No hay que mirar solo el algoritmo como una caja negra; hay que entender el modelo matemático y probabilístico que hay detrás para conocer sus límites reales._
 
 ---
 
