@@ -96,15 +96,16 @@ Migrar no es traducir código.
 
 # CHARLA FINAL
 
-La evolución de los productos no es continua. 
-Aproximadamente hay un aumento en la demanda de proyectos a medida. Un 22,5% de crecimiento.
-Hay mucho miedo con respecto a "la informática o computación no sirve mas", pero según el gráfico planteado, siempre habrá proyectos, y para el 2028 se prevee una explosión de los mismos, y habrá que saber hacerles frente adaptándonos a las tecnologías de ese entonces.
+- **Evolución discontinua:** Los productos de software no evolucionan en línea recta suave, sino por saltos/disrupciones tecnológicas.
 
-**¿Cómo evolucionan los productos?** 
-
-
-Duda:
-- ¿Qué es Greenfield? Producto que se comienza a desarrollar desde cero. También existen los productos Brownfield (sistemas heredados) y Bluefield (mezcla entre brownfield y greenfield para migrar solo lo que sea útil).
+- **Crecimiento de proyectos a medida (+22.5%):** A pesar del auge de herramientas "no-code" o generadores automáticos, la demanda de soluciones personalizadas y complejas para empresas e instituciones está subiendo fuertemente.
+    
+- **El mito de "La informática se termina":** Frente al pánico de que la IA va a reemplazar a los desarrolladores, la proyección muestra todo lo contrario: hacia **2028** se prevé una explosión de proyectos. El rol no desaparece, sino que muta; el desafío será saber **adaptarse a las nuevas arquitecturas y orquestaciones**.
+    
+- **Estrategias de desarrollo (Greenfield vs. Brownfield vs. Bluefield):**    
+    - **Greenfield:** Arrancar un sistema desde cero en hoja en blanco.
+    - **Brownfield:** Mantener o evolucionar un sistema heredado (_legacy_) existente con toda su deuda técnica.
+    - **Bluefield:** La estrategia mixta moderna. En lugar de tirar todo el legacy o seguir emparchándolo, aislás las partes útiles del sistema viejo, rediseñás la arquitectura y migrás selectivamente lo que aporta valor.
 
 ---
 
