@@ -1,7 +1,7 @@
 
 # QoCode: Evaluación automática de calidad de código en tareas de programación
 
-**Tontexto y neceesidades detectadas:** Los tests automáticos verifican si el código funciona, aunque estos no dicen nada sobre calidad o diseño del código.
+**Contexto y necesidades detectadas:** Los tests automáticos verifican si el código funciona, aunque estos no dicen nada sobre calidad o diseño del código.
 Antecedentes relevantes: Messer et. al, Edulint
 
 Se definieron caracteristicas en cuanto a la legibilidad:
@@ -42,7 +42,6 @@ Próximamente se quiere aplicar como pate de los cursos. Además, se quiere gene
 **Para probarlo hay que escribirle a los autores: didactica@dc.uba.ar**
 
 ---
-
 
 # Codexi: An AI-Based Adaptive Tutor for Guided Learning of Algorithms
 
@@ -85,21 +84,22 @@ codexiapp.com
 
 ---
 
-# Literature Review of STEM in Central America
+# Estilos de aprendizaje y preferencias de los estudiantes
+
+**Modelo de felder y silverman:**
+Clasifica al estudiante según cuatro dimensiones dicotómicas que describen cómo recibe y procesa la información: 
+- Percepción 
+- Entrada 
+- Procesamiento 
+- Comprensión
+
+---
+# Project-Based Learning with Arduino for Addressing Sustainable Development Goals in Higher Education
 
 - Aprendizaje basado en proyectos
 - ODS
 - Educación STEAM
 
-
-
----
-
-# Estilos de aprendizaje y preferencias de los estudiantes
-
-
-
----
-
-# Project-Based Learning with Arduino for Addressing Sustainable Development Goals in Higher Education
-
+Proyectos desarrollados:
+- Respira+: Herramienta desarrollada para prevenir intoxicación doméstica
+- Ecomusic: Teclado musical educativo
