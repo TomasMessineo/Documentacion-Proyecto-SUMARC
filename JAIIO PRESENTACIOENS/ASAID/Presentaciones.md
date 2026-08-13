@@ -111,6 +111,30 @@ Migrar no es traducir código.
 
 **Miércoles 12 de agosto**
 
+# Not All Instructions Are Forgotten Equal
+
+### ¿Cuál es el problema?
+
+Cuando empezás a hablar con un agente o un LLM, la ventana de contexto está limpia y la IA sigue todas las reglas al pie de la letra (ej: "sé crítico", "no me des la razón siempre", "respondeme en JSON").
+Sin embargo, a medida que la conversación se vuelve más larga:
+- La ventana de contexto se llena/satura.
+- El sistema se vuelve más lento.
+- La IA empieza a olvidar e ignorar instrucciones.
+
+### El hallazgo clave
+
+- **El olvido no es parejo:** La IA no olvida todo de golpe ni al azar. Le da más prioridad y retiene por más tiempo ciertas reglas (como la personalidad o el tono), mientras que las restricciones de formato, reglas secundarias o guardrails "se le borran" primero.    
+- **Procesos estadísticos y bayesianos:** Usaron herramientas probabilísticas (PyMC, Bambi, ArviZ) y técnicas como BKT (Bayesian Knowledge Tracing) para medir exactamente en qué momento la IA empieza a ignorar cada instrucción individualmente.
+- **Efecto Evaluador:** Los modelos detectan cuando los están evaluando o testeando y cambian su comportamiento, por lo que tuvieron que evaluarlos de forma "ciega".
+
+### ¿Por qué importa y cuál es la lección?
+
+No podés confiar en meter 20 reglas juntas en un texto gigante (System Prompt). Como la IA las olvida de forma selectiva a medida que la charla avanza, medir la degradación instrucción por instrucción permite saber cuándo reinyectarle dinámicamente las reglas críticas antes de que falle.
+
+---
+---
+---
+
 # Clasificación de sedimentos urinarios mediante modelos de aprendizaje profundo
 
 **Metodología CRISP-DM usada en minería de datos**
@@ -131,40 +155,3 @@ Herramientas:
 **Palabras clave: Clases de equivalencia, bias score.**
 
 ---
-
-# Destilación de Modelos Multilingües para la Detección de Sesgo de Género con Pocos Ejemplos en Textos Judiciales en Español: Una Revisión Sistemática de la Literatura
-
-
-
-
----
-
-# Evaluación de modelos de lenguaje locales en un sistema RAG para asistencia educativa
-
-
-
----
-
-# Evaluación Experimental de Estrategias de Retrieval en Arquitecturas RAG Aplicadas al Dominio Judicial
-
-
-
----
-
-# Not All Instructions Are Forgotten Equal
-
-Es normal que cuando un agente tiene la ventana de contexto disponible, sea mas lúcido. Si le digo cosas como "no me des la razón siempre", etc, lo hace. Estas cosas las mantiene.
-Luego de su utilización durante un tiempo, la ventana se satura y empieza a ser mas lenta.
-
-1. El problema
-2. Metodología
-3. Resultados
-4. Por qué importa?
-
-A Closer look at System Prompt Robustness, Mu et al. 2025. 
-**Bambi, ArviZ y PyMC**
-Statistical Rethinking, 12.3.3. Richard McElreath (2020)
-
-BKT (Bayesian Knowledge Tracing) -> Medir cuando un alumno está por caer en su rendimiento
-Hay instrucciones a las que un modelo les da mucha mas prioridad, y a otra las retiene, es decir, no les da la misma atención que a otras. Medir por instrucción habilita monitoreo selectivo.
-Los modelos se dan cuenta cuando los estan evaluando o testeando y cambian su comportamiento. Para evitar esto, se implementaron diferentes técnicas.
