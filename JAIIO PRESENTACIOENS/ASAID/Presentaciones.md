@@ -2,20 +2,13 @@
 ### Lunes 10/8
 # DistLearn: Entrenamiento de orden cero descentralizado por capas mediante descenso de coordenadas por bloques, basado en teoría de juegos.
 
-Filtrado de partículas y teoría de juegos -> fundamento para el algoritmo.
-Cada capa es una función o un jugador. Asociado al mismo está el espacio donde viven sus coeficientes. 
-Si tengo 2 partículas o dos configuraciones para una capa y miro la diferencia encontrada de verosimilitud, la diferencia que veo en la red completa es la misma que veo en las capas. Una mejora que produce una capa, es una mejora que se va a reflejar completamente en toda la red. Esto me permite ir por turnos mejorando cada capa. 
-Se adotpa una distribución Cauchy como función de verosimilitud. DistLearn no estima el gradiente, pero se puede planear.
+- **Resumen:** Es una forma de entrenar redes neuronales sin calcular el gradiente tradicional (que suele ser pesado) usando **teoría de juegos** (cada capa de la red actúa como un "jugador" intentando optimizar su parte).z
+- **Lo importante:** Si una capa mejora un poquito, mejora toda la red de forma coordinada. Sufre de "maldición de la dimensionalidad" (demasiados parámetros), pero lo bueno es que el problema se limita a los parámetros de esa capa y no a la profundidad de la red. Sirve para redes no tan gigantes.
 
-DistLearn sufre de la explosión de la dimensionalidad, pero esta explosión es independiente de la profundidad de la red. Está limitada a la cantidad de parámetros de cada etapa.
-La cantidad de partículas ayuda a la convergencia.
-
-La idea del algoritmo es su utilización para redes neuronales no tan grandes (o eso entendí yo al menos).
-
-**Términos desconocidos:**
-- Equilibrio de Nash.
-- ADAM (en python)
-- Distribución Cauchy
+- **Términos desconocidos:**
+    - **Equilibrio de Nash:** Estado de la teoría de juegos donde ningún jugador gana nada cambiando su estrategia unilateralmente (en la red: ninguna capa puede mejorar más si las otras no cambian).
+    - **ADAM:** El optimizador más popular en PyTorch/TensorFlow (Python) para ajustar pesos en redes neuronales.
+    - **Distribución Cauchy:** Una función de probabilidad con "colas pesadas" (eventos extremos son más probables que en una normal/Gaussiana).
 
 ---
 # Enterprise AI: Del experimento a la plataforma. La evolución arquitectónica de la Inteligencia Artificial en la Empresa (DE RED HAT).
