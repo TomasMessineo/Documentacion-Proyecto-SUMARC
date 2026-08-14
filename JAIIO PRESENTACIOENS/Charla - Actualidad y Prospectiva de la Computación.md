@@ -1,50 +1,62 @@
+### Pregunta 1: ¿De acá a 30 años pasará algo que nos movilice, o lo único será la inteligencia artificial?
 
-**Pregunta disparadora:** ¿De acá a 30 años pasará algo que nos movilice, o lo único sera la inteligencia artificial?
+- **Evolución del IoT:** Presenta desafíos enormes y un campo de posibilidades que antes no tenía, posicionándolo como un área central a futuro.
 
-Los desafíos son enormes. El IOT aplicado en numerosos campos donde ese IOT tiene posibilidades que hace un tiempo no tenía. El IOT va a ser un campo importante.
-Una cuestión que se ve como relevante es la transversalidad de la computación en distintas areas de conocimiento. Hay muchas areas que no comprenden el aporte que la computación puede brindar. Queda un terreno por explorar, y muchos enfoques que involucran aspectos de medicina, arquitectura, y otras disciplinas que convergen en la computación.
+- **Incertidumbre y redefinición:** Es imposible predecir dónde estará el foco en 40 años, pero la IA estará aplicada con seguridad. Lo que viene después es difícil de anticipar; surgirán problemas inevitables que hoy no vemos.
+    
+- **Mutación en Ingeniería de Software:** La estimación de esfuerzo y las metodologías están mutando constantemente por la IA. Como la IA "pateó el tablero", obligará a resolver nuevos problemas derivados de su impacto, exigiendo una reinvención continua.
 
-Las aplicaciones integradas desde lo que es visualización de grandes volumenes de datos o IOT, cada ves hace mas falta un trabajo interdisciplinario, lo cual llevará a repensar lo que hará falta de acá a 20 años. Algoritmos que estudian el comportamiento humano. 
+### Pregunta 2: ¿Cómo ven lo que está pasando y lo que va a pasar en Argentina y en Chile respecto a la investigación en la industria? ¿Se está produciendo información como en el resto del mundo?
 
-Todavía no se puede adivinar donde estará el foco en 40 años, pero la IA estará aplicada seguro.
-Lo que viene después del impacto de la IA es muy difícil de predecir. Los problemas que vamos a tener que resolver aún no los vemos, pero van a aparecer inevitablemente. En ingeniería de software, la estimación del esfuerzo, metodologías u otros temas relacionados están mutando constantemente debido a la aparición de la IA. 
-Tenemos que reinventarnos en lo que tenga que resultar. La IA pateó el tablero y va a haber un montón de problemas que estamos resolviendo, y vamos a tener que resolver otros debido al impacto que genera la IA.
+- **Asociación Universidad - Empresa en Argentina:** Las PyMEs y empresas medianas empiezan a asociarse con universidades o el CONICET, pero ven los papers como algo costoso y poco viable a largo plazo. Existen brechas de comunicación (se han dictado cursos para que investigadores sepan comunicarse con empresarios).
+    
+- **Diferencia de tiempos, economía y alcance:** La universidad no compite con la empresa; aporta el tiempo para generar ideas innovadoras que las empresas no tienen por sus urgencias. Cuando las empresas buscan integrar IA, se acercan a la universidad con dudas prácticas sobre plataformas (ej. cuál pagar o si conviene cambiarla). Se han desarrollado proyectos locales e internacionales con entes como Banco Nación y PyMEs.
+    
+- **Situación en Chile (y similitudes con Argentina):** La relación depende del gobierno de turno, los tiempos políticos y las urgencias de otras áreas. Ganar fondos públicos exige muchísimo esfuerzo/suerte y la academia no tiene recursos para trabajar gratis.
+    
+- **La importancia de la confianza:** La vinculación universidad-empresa termina dependiendo de contactos personales y de la confianza entre personas que ya han trabajado juntas con éxito. Si no existe esa confianza, el proyecto no se encarará.
+    
+- **"El día de la marmota" (Gustavo Rossi):** Sensación de estar escuchando el mismo debate sobre la relación academia-industria desde hace 40 años.
+    
 
-**Pregunta disparadora:** Hace 20 años que en la industria de software se hace mucha investigación. Antes en los 90 eran pocas compañías de software como ibm, o microsoft donde se producia investiación de calidad académica de alto impacto, pero desde google para acá, eso se multiplicó enormemente, existen decenas de industrias que producen productos de calidad que se producían en la academia. ¿Cómo ven lo que está pasando y lo que va a pasar en argentina y en chile respecto a ese fenómeno? ¿Se está produciendo información como se está produciendo en el resto del mundo, o eso va a ocurrir en el futuro?
+### Pregunta 3: ¿Cómo ven el impacto de la IA (particularmente la generativa) en el trabajo de los que damos clase e investigamos?
 
-En las empresas medianas empieza a haber una asociacion con universidades o conicet. Las empresas ven los papers que les llaman la atención como algo muy costoso, y terminan por no apoyarlo debido a que a largo plazo no es algo de conveniencia para ellos, o no lo ven viable. Los investigadores y los empresarios no suelen comunicarse muy bien, hasta se han hecho cursos para que los investigadores puedan comunicarse correctamente con los empresarios.
+- **La crisis del programador Junior:** Se ha vuelto más difícil aprender a programar. A los formadores de RRHH les resulta más económico usar un prompt claro en una IA que formar a un becario. A nivel mundial subió la contratación de seniors y bajó la de juniors (porque generan PRs con bugs y no entienden todo el stack). Se prefieren "dar los tokens a un Senior" antes que formar a un Junior.
+    
+- **Ultra valorización del educador:** Los formadores enfrentan un desafío raro, pero donde su rol se revaloriza profundamente ante los datos reales de productividad de las empresas.
+    
+- **"IA Degenerativa" y pérdida de pensamiento abstracto (Damián Monett):**
+    
+    - Las herramientas de un solo clic asumen falsamente que el usuario comprende el código generado o corregido.
+        
+    - Se genera una "caja mágica" y una "religión del prompt" en lenguaje natural, donde el Junior juega a ciegas haciendo copy-paste sin entender la lógica subyacente.
+        
+    - **"Crear es poder elegir" (Paul Valéry / Eric Sadin - _El desierto de nosotros mismos_):** Crear implica la libertad del criterio propio (como el poeta eligiendo un adjetivo). La IA sugiere refinamientos pero no permite ser creativo; el Junior no elige realmente, solo recorre caminos predeterminados en un grafo generado por la máquina degenerativa (concepto de estar "necrosado").
+        
+- **Ingeniería de Software y transmisión de conocimiento:** La IA pierde mucha ingeniería de software. Quien sabe hacer ingeniería sabrá orquestar personas e IA para construir mejores productos (los seniors seguirán bien). El problema es la dificultad para transmitir ese conocimiento a alguien en solo 2 o 3 años.
+    
+- **Saturación en Investigación y Evaluaciones Éticas:**
+    
+    - La cantidad de papers explotó por la IA (de 300-400 a 1500), desbordando a los revisores humanos.
+        
+    - **Uso de IA por evaluadores:** Los revisores están usando IA para evaluar proyectos/papers. Se califica como "horroroso" que quien deba evaluar el trabajo recurra a la IA.
+        
 
-Se empezó a trabajar con empresas tanto a nivel local (incluso contactando partners que están en EEUU) y se desarrollaron proyecos con entidades como banco nacion y empresas pymes mas pequeñas. Tanto en las empresas como las academias hay economía, tiempos, alcance diferentes. La universidad no viene a competir con las empresas, sino que tenemos el tiempo para generar ideas nuevas e innovadoras que las empresas NO tienen tiempo de hacer. En las empresas que quieren integrar aspectos de IA una preguntra que hacen siempre es si están pagando la plataforma tal, esa es la mejor que hay? Conviene pagar otra? Ese tipo de preguntas hacen las empresas cuando llegan a la universidad. 
+### Pregunta 4: ¿Nos vamos a quedar sin trabajo?
 
-En Chile la relación academia industria depende mucho de la parte del gobierno de turno. Lo que ha ocurrido en los ultimos años es que las urgencias que tienen otras areas, los itempos politicos lo que hacen es donde vamos a reportar ciencia y tecnología, ciencia... si uno quiere ganarse un proyecto de investigación, debe tener suerte. Hay que transpirar muchísimo, hay pocos fondos y eso hace que al fin y al cabo lo que ocurre en Chile es que la relación industria y empresa pasa por los vinculos personales, dos persoans que trabajaron juntos que han tenido mucho exito, siguen adelante y triunfan, pero los que no conocen gente así, tienen que esforzarse muchísimo. Muchas veces la industria viene y pide resolver un problema, pero la academia no suele tener plata, no tiene los recursos, y demás, y obviamente no es algo que se vaya a hacer gratis. La confianza es fundamental para llevar adelante un proyecto, y si una persona confía en otra y no puede realizar ese proyecto con la misma, entonces el proyecto generalmente no es encarado por desconfianza. En Chile es similar a lo que pasa en argentina.
+- **Perspectiva de continuidad y evolución:** "Ni ahí". El desarrollo se volverá más difícil y "divertido", ya que el software chico hecho a las apuradas con IA está muy mal construido. Se dejará de producir "devs que codeaban sin saber cómo" para formar verdaderos ingenieros de software.
+    
+- **Ejemplo de buen uso (CONICET):** Es líder en implementar IA de forma cuidada y con métricas/diagnósticos, no usándola toscamente tirándole un proyecto y listo.
+    
+- **Perspectiva de adaptación e incertidumbre:** "Sí y no". Depende de la capacidad de reinventarse. Quien no se adapta se queda sin trabajo; quien se adapta y diversifica tendrá trabajo por mucho tiempo. El cambio de paradigma será permanente y dinámico.
+    
+- **Mención flotante:** ¿La creación de burbujas?
+    
 
-Estar viviendo en el día de la marmota -> Referencia de Gustavo Rossi. Es como escuchar una charla de la cual hemos escuchado mucho los últimos 40 años. 
+### Preguntas finales y conceptos clave de los asistentes
 
-**Pregunta disparadora:** Como ven el impacto de la IA cualquiera particularmente de la generativa particularmente en el trabajo de los que damos clase e investigamos? Lo que se ve es que es preocupante si no nos ubicamos razonablemente.
-
-La programación se le hace mucho mas dificil a alguien que está aprendiendo. La ingeniería de software requiere saber programar, y ha tomado mucho valor en los últimos años. 
-A los formadores de RRHH les resulta mas económico tirarle a una IA un prompt claro y llevar a cabo esa solución, que darselo a un becario. Se ha puesto mucho mas jodido para el que está empezando. Esto se ve en las curvas de contrataciones a nivel mundial. Subío la contratación de seniors y bajó mucho la de juniors. Esto es porque los juniors no entienden, porque generan PRs con bugs. Es mejor darle todos los tokens a un Senior. El joven no es productivo, es improductivo, pero tampoco el Senior quiere formarlo al Senior ya que existe la IA. El jóven que está empeazndo no la ve porque no ve todo el stack que le va a llevar años aprender. Como educadores, estan ante un desafío raro, la parte interesante es que empieza a haber datos real en la productividad que dan las empresas. Estamos en un momento donde el rol del educador se ultra valoriza.
-
-Dagma Monet habla sobre la IA degenerativa. Todos estos modelos que aparecen hoy en día que son de fácil disponibilidad y permiten obtener un codigo para desarrollar lo que sea en un solo click y que faiclita la corrección de código, en realidad esconden un elemento venenoso que es el hecho de que hay una presunción de que uno sabe lo que eso significa, y lo que es un problema con los juniors es que generar una especie de caja mágica que yo le pido en español o lenguaje natural que no es un lenguaje formal y que por ende pierde muchas capacidades para las cosas, generar una religión donde si yo pido de forma adecuada usando el castellano o ingles, voy a poder resolver una tarea de pensamiento abstracto. El problema es el refinamiento de las consultas, y el senior sabe que esta buscando, que cosas son las lógicas que uno puede encontrar, y el junior juega un juego a ciegas vendado de poner prompts y hacer copy paste fijandose si eso funciona sin saber si lo que pegó sirve o para qué se hizo de esa forma. Un filósofo eric sadan que escribió un libro "El desierto de nosotros mismos" donde menciona la palabra "necrosado" (buscar que es). Menciona una frase de un poeta frances Paul Valery, donde define que crear es poder elegir. Yo elijo qué adjetivo uso cuando quiero expresar un atardecer, y la elección depende del criterio del poeta. Esa idea de crear es poder elegir es lo que falta en lo educativo: Cuando uno hace un prompt, la IA sugiere mejoras para refinar el prompt, pero no me permite a mí ser creativo, generando una ilusión de que yo estoy eligiendo. En realidad el Junior no puede elegir nada, simplemente elige caminos en un grafo que ya estan predeterminados por la misma máquina degenerativa.
-
-La IA se pierde ingeniería de software a lo loco. El que sabe hacer ingeniería sabrá orquestar a la gente y consturir productos aprovechando la IA para construir productos mejores que los anteriores. Los senior van a seguir estando bien. Para transmitirle ese conocimiento a alguien en 2 o 3 años se complica mucho.
-En cuanto a la investigación, la IA pateó el tablero. La cantidad de papers hechos con IA aumentó significativamente, y se pasó de recibir 300-400 papers a recibir 1500. Eso es todo IA. Ahora, ¿Cómo revisan esa cantidad de papers tan pocas personas? -> **Esta duda la habíamos charlado en el trabajo anteriormente cuando Gonza fue a Alemania, si no me equivoco.**
-
-Los revisores o evaluadores re proyectos estan empezando a evaluar papers con IA. Hay encuestas donde se pregunta qué herramienta se usó para revisar el paper. Lo horroroso es que alguien que tiene que evaluar ese paper use IA, no el que lo escribió. 
-
-**Pregunta disparadora:** Nos vamos a quedar sin trabajo?
-
-Ni ahí. El desarrollo de software va a ser cada vez mas difícil. Los software chicos hechos con IA estan recontra mega mal. Se va a poenr mas divertido. Vamos a dejar de producir devs que codeaban sin saber como y vamos a producir ingenieros copados. Va a cambiar un montón la profesión para bien. El CONICET es lider en implementar IA bien en procesos correctamente. Esto queire decir que no lo está usando toscamente donde se le tira un proyecto y listo, sino que es cuidado donde se generan métricas, diagnósticos, etc.
-
-Sí, nos vamos a quedar sin trabajo, y no. En realidad, depende de nuestra capacidad de reinventarnos. El que no se reinventa sí se queda sin trabajo, y el que sí puede hacerlo y puede adaptarse, va a tener trabajo mucho tiempo. La IA generativa está cambiando el paradigma. Lo que es seguro es que vamos a cambiar, el cambio va a ser casi permanente. Si tenemos la capacidad de ir adaptandonos a distintas areas, vamos a persistir en el mercado. Hay que aceptar que el mundo va a ser mas dinámico, simplemente hay que saber adaptarse.
-
-- **¿La creación de burbujas?**
-
-**Notas sobre preguntas finales de asistentes:**
-
-- La encíclica papal primereó a muchos gobiernos del primer mundo. Leer la encíclica papal, aborda bien muchos puntos charlados.
-
-- Palantis, empresa, tiene casi como único cliente a EEUU. 
-
-- Tecno-feudalismo, por ejemplo, si soy amigo de Mark Zuckerberg el puede hacer que mi nombre esté en el perfil de todas las personas que usan facebook, y ese botón está en poder de una sola empresa privada. Instagram puede controlar la privacidad y recomendaciones de una persona basandose en un algoritmo.
-
+- **Encíclica Papal:** Se destacó que abordó con lucidez los puntos éticos centrales de la IA antes que muchos gobiernos del primer mundo.
+    
+- **Palantir:** Empresa cuyo cliente es casi exclusivamente el gobierno de EE. UU.
+    
+- **Tecno-feudalismo:** Concentración extrema de poder en empresas privadas (ej. Mark Zuckerberg / Meta, Instagram) que pueden controlar algoritmos, privacidad, recomendaciones y la presencia digital de las personas a nivel global.
