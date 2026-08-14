@@ -3,7 +3,7 @@
 - **Evolución del IoT:** Presenta desafíos enormes y un campo de posibilidades que antes no tenía, posicionándolo como un área central a futuro.
 
 - **Incertidumbre y redefinición:** Es imposible predecir dónde estará el foco en 40 años, pero la IA estará aplicada con seguridad. Lo que viene después es difícil de anticipar; surgirán problemas inevitables que hoy no vemos.
-    
+
 - **Mutación en Ingeniería de Software:** La estimación de esfuerzo y las metodologías están mutando constantemente por la IA. Como la IA "pateó el tablero", obligará a resolver nuevos problemas derivados de su impacto, exigiendo una reinvención continua.
 
 ### Pregunta 2: ¿Cómo ven lo que está pasando y lo que va a pasar en Argentina y en Chile respecto a la investigación en la industria? ¿Se está produciendo información como en el resto del mundo?
@@ -41,7 +41,6 @@
 - **Ingeniería de Software y transmisión de conocimiento:** La IA pierde mucha ingeniería de software. Quien sabe hacer ingeniería sabrá orquestar personas e IA para construir mejores productos (los seniors seguirán bien). El problema es la dificultad para transmitir ese conocimiento a alguien en solo 2 o 3 años.
     
 - **Saturación en Investigación y Evaluaciones Éticas:**
-    
     - La cantidad de papers explotó por la IA (de 300-400 a 1500), desbordando a los revisores humanos.
     - **Uso de IA por evaluadores:** Los revisores están usando IA para evaluar proyectos/papers. Se califica como "horroroso" que quien deba evaluar el trabajo recurra a la IA.
 

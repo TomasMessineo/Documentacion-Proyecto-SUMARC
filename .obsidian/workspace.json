@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JAIIO PRESENTACIOENS/SAEI/Presentaciones.md",
+                "file": "JAIIO PRESENTACIOENS/Charla - Actualidad y Prospectiva de la Computación.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Presentaciones"
+              "title": "Charla - Actualidad y Prospectiva de la Computación"
             }
           }
         ],
@@ -210,8 +210,8 @@
   },
   "active": "43729f4a49c488bd",
   "lastOpenFiles": [
-    "JAIIO PRESENTACIOENS/SIIIO/Presentaciones.md",
     "JAIIO PRESENTACIOENS/SAEI/Presentaciones.md",
+    "JAIIO PRESENTACIOENS/SIIIO/Presentaciones.md",
     "JAIIO PRESENTACIOENS/SACS/Notas sobre charlas.md",
     "JAIIO PRESENTACIOENS/JIU/Charla.md",
     "JAIIO PRESENTACIOENS/ASAID/Presentaciones.md",
