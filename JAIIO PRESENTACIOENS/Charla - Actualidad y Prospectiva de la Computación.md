@@ -5,7 +5,7 @@
 - **Incertidumbre y redefinición:** Es imposible predecir dónde estará el foco en 40 años, pero la IA estará aplicada con seguridad. Lo que viene después es difícil de anticipar; surgirán problemas inevitables que hoy no vemos.
 
 - **Mutación en Ingeniería de Software:** La estimación de esfuerzo y las metodologías están mutando constantemente por la IA. Como la IA "pateó el tablero", obligará a resolver nuevos problemas derivados de su impacto, exigiendo una reinvención continua.
-.0000000000000
+
 ### Pregunta 2: ¿Cómo ven lo que está pasando y lo que va a pasar en Argentina y en Chile respecto a la investigación en la industria? ¿Se está produciendo información como en el resto del mundo?
 
 - **Asociación Universidad - Empresa en Argentina:** Las PyMEs y empresas medianas empiezan a asociarse con universidades o el CONICET, pero ven los papers como algo costoso y poco viable a largo plazo. Existen brechas de comunicación (se han dictado cursos para que investigadores sepan comunicarse con empresarios).

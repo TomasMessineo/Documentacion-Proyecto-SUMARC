@@ -1,4 +1,4 @@
-### 1. Visión de Empresarios / CEOs
+### Visión de Empresarios / CEOs
 
 - **Incertidumbre en los empresarios:** Preocupación sobre qué hacer o cómo encarar el futuro cuando ya no trabajen.
  
