@@ -18,7 +18,6 @@
     
 - **"El día de la marmota" (Gustavo Rossi):** Sensación de estar escuchando el mismo debate sobre la relación academia-industria desde hace 40 años.
     
-
 ### Pregunta 3: ¿Cómo ven el impacto de la IA (particularmente la generativa) en el trabajo de los que damos clase e investigamos?
 
 - **La crisis del programador Junior:** Se ha vuelto más difícil aprender a programar. A los formadores de RRHH les resulta más económico usar un prompt claro en una IA que formar a un becario. A nivel mundial subió la contratación de seniors y bajó la de juniors (porque generan PRs con bugs y no entienden todo el stack). Se prefieren "dar los tokens a un Senior" antes que formar a un Junior.
@@ -26,11 +25,8 @@
 - **Ultra valorización del educador:** Los formadores enfrentan un desafío raro, pero donde su rol se revaloriza profundamente ante los datos reales de productividad de las empresas.
     
 - **"IA Degenerativa" y pérdida de pensamiento abstracto (Damián Monett):**
-    
     - Las herramientas de un solo clic asumen falsamente que el usuario comprende el código generado o corregido.
-        
     - Se genera una "caja mágica" y una "religión del prompt" en lenguaje natural, donde el Junior juega a ciegas haciendo copy-paste sin entender la lógica subyacente.
-        
     - **"Crear es poder elegir" (Paul Valéry / Eric Sadin - _El desierto de nosotros mismos_):** Crear implica la libertad del criterio propio (como el poeta eligiendo un adjetivo). La IA sugiere refinamientos pero no permite ser creativo; el Junior no elige realmente, solo recorre caminos predeterminados en un grafo generado por la máquina degenerativa (concepto de estar "necrosado").
         
 - **Ingeniería de Software y transmisión de conocimiento:** La IA pierde mucha ingeniería de software. Quien sabe hacer ingeniería sabrá orquestar personas e IA para construir mejores productos (los seniors seguirán bien). El problema es la dificultad para transmitir ese conocimiento a alguien en solo 2 o 3 años.
@@ -38,9 +34,7 @@
 - **Saturación en Investigación y Evaluaciones Éticas:**
     
     - La cantidad de papers explotó por la IA (de 300-400 a 1500), desbordando a los revisores humanos.
-        
     - **Uso de IA por evaluadores:** Los revisores están usando IA para evaluar proyectos/papers. Se califica como "horroroso" que quien deba evaluar el trabajo recurra a la IA.
-        
 
 ### Pregunta 4: ¿Nos vamos a quedar sin trabajo?
 
