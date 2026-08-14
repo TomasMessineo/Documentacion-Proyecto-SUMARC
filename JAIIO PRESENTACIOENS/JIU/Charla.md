@@ -1,10 +1,20 @@
+### 1. Visión de Empresarios / CEOs
 
-**Visión de empresarios / CEO:**
-Los empresarios están "preocupados" por qué hacer cuando ya no trabajen.
-Luego de la pandemia, casi la primer opción que tomaban los chicos que terminaban la secundaria, era informática, porque da trabajo siempre y paga bien. En este momento está el cambio ocasionado por la IA.
-La evolución de la IA en el ultimo año y medio sería equivalente al cambio en el uso de tarjetas perforadas al internet. 
-Lo caro no es contratar a un junior en una empresa, sino pagarle al senior que le explica y lo capacita.
-Falta desarrollo en el mercado interno.
+- **Incertidumbre en los empresarios:** Preocupación sobre qué hacer o cómo encarar el futuro cuando ya no trabajen.
+ 
+- **El cambio en el interés estudiantil:** Tras la pandemia, informática era la primera opción para quienes salían de la secundaria por ser un rubro con salida laboral constante y buenas remuneraciones. Hoy se atraviesa un gran cambio ocasionado por la IA.
+
+- **Magnitud del impacto:** Se plantea que la evolución de la IA en el último año y medio equivale al salto histórico del uso de tarjetas perforadas a la llegada de Internet.
+
+- **El costo real de la capacitación:** En una empresa, lo caro no es la contratación del junior en sí, sino el costo de pagarle al senior que debe capacitarlo y explicarle las tareas.
+
+- **Mercado interno:** Se señala una falta de desarrollo en el mercado interno.
+
+#### Explicación de la analogía sobre la continuidad
+
+> _"¿Mi empresa quién la va a continuar? ¿La chica de campo a la que la maestra le dice 'chinita' o mi hijo al que nunca le faltó nada?"_
+> 
+> **Explicación:** El empresario contrapone dos perfiles para graficar la **cultura del esfuerzo y la necesidad frente al confort**. Se cuestiona si su empresa la heredará/continuará alguien que creció sin carencias (su hijo, que quizás no tiene la misma motivación o empuje) o alguien que proviene de un entorno humilde/vulnerable pero tiene una necesidad real, hambre de progreso y resiliencia para salir adelante. Es una reflexión sobre de dónde saldrá el verdadero talento y liderazgo del futuro.
 
 ¿Mi empresa quién la va a continuar? La chica de campo a la que la maestra le dice "chinita" o mi hijo al que nunca le faltó nada? -> NO entendí esta analogía sinceramente.
 
