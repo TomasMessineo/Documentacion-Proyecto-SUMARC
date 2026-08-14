@@ -26,8 +26,17 @@
     
 - **"IA Degenerativa" y pérdida de pensamiento abstracto (Damián Monett):**
     - Las herramientas de un solo clic asumen falsamente que el usuario comprende el código generado o corregido.
+
     - Se genera una "caja mágica" y una "religión del prompt" en lenguaje natural, donde el Junior juega a ciegas haciendo copy-paste sin entender la lógica subyacente.
-    - **"Crear es poder elegir" (Paul Valéry / Eric Sadin - _El desierto de nosotros mismos_):** Crear implica la libertad del criterio propio (como el poeta eligiendo un adjetivo). La IA sugiere refinamientos pero no permite ser creativo; el Junior no elige realmente, solo recorre caminos predeterminados en un grafo generado por la máquina degenerativa (concepto de estar "necrosado").
+    
+	- **"Crear es poder elegir" (Paul Valéry / Eric Sadin - _El desierto de nosotros mismos_):** 
+      Acá Damián Monett cita a un poeta (Paul Valéry) y a un filósofo (Éric Sadin) para explicar **qué es realmente la creatividad humana**:
+      
+      Un poeta, cuando escribe sobre un atardecer, piensa: _"¿Uso la palabra 'rojo', 'carmesí' o 'sangriento'?"_. Elige con **criterio propio**, basado en lo que quiere transmitir. **Crear es tener la libertad de elegir entre miles de caminos.**
+      
+      Cuando un Junior le pide a la IA que le arme una solución, la IA le tira un par de sugerencias. El Junior siente que "está eligiendo", pero en realidad **solo está eligiendo entre las opciones que la máquina ya decidió mostrarle**.
+      
+      No hay creatividad real ni pensamiento abstracto: el Junior solo sigue las pistas de un camino que la IA ya dibujó por él. A esto le llaman estar **"necrosado"**: la capacidad de pensar de forma abstracta y crítica se empieza a "morir" por falta de uso, porque le dejamos todo el trabajo mental a la máquina.
         
 - **Ingeniería de Software y transmisión de conocimiento:** La IA pierde mucha ingeniería de software. Quien sabe hacer ingeniería sabrá orquestar personas e IA para construir mejores productos (los seniors seguirán bien). El problema es la dificultad para transmitir ese conocimiento a alguien en solo 2 o 3 años.
     
