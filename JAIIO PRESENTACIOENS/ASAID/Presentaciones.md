@@ -110,7 +110,6 @@ Migrar no es traducir código.
 ---
 
 **Miércoles 12 de agosto**
-
 # Not All Instructions Are Forgotten Equal
 
 ### ¿Cuál es el problema?
