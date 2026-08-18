@@ -3,3 +3,6 @@
 - Terminar la conversión de JATSParser con OpenAlex y documentar todo el proceso. Hacer ticket de implementación con OpenAlex.
 - Leer https://docs.google.com/document/d/17z_SG4w4_7M8KlZTnZ3NnkcbhDX-ItZKIC1_D9qwPhA/edit?tab=t.0
 - **Prioridad por contrato:** Desarrollar la generación de ePUB con JATSParser.
+
+**Fuentes relevantes investigadas:**
+- 
