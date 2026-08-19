@@ -99,10 +99,23 @@ Es un modelo de 5 capas:
 
 Por simplicidad algunos autores hablan de 4 capas, agrupando a la capa de enlace y capa física en una sola capa que llaman capa de acceso a la red.
 
-### Comparación: OSI vs. TCP/IP
+### Encapsulamiento
 
+Cada capa define su PDU: Protocol Data Unit. Cuando un equipo quiere comunicarse con otro, se comunica con un componente de la misma capa, pero tiene que pasar por el modelo de capas para que el mensaje llegue del otro lado, y volver a correr el modelo de capas para llegar a la misma capa a la cual le estaba hablando el emisor.
+Cada capa tendrá el PDU, el componente o mensaje que va a manejar cada una de las capas. En el protocolo HTTP se habla de mensaje HTTP, cuando la app le manda un mensaje a otra app, a nivel HTTP se entenderán, pero para que el mismo llegue del otro lado, la capa de aplicación le mandará el mensaje a la capa de transporte solicitandole los servicios. Entonces, ese mensaje se va a enviar a la capa inferior y la capa inferior lo meterá en un paquete, agregandole información adicional. Cada capa le agregará información para que se sepa qué hacer ocn ese mensaje. Por ejemplo, en la capa de aplicación se envía Get, luego la capa de transporte le agregará información adicional, como el puerto de la web por ejemplo. La capa de transporte, lo que agrega lo entenderá tanto la del emisor como la del receptor. Luego, la capa de red recibirá la información y lo agrupará todo añadiendole la dirección IP. Cuando el mensaje llega al destino, se empieza a desempaquetar para saber a qué aplicación entregarselo. Llega al destino por la dirección ip, que ayuda a la red para atravesar los routers y llegar al dispositivo que corresponde. La capa de transporte me permite a qué aplicación entregarselo. 
 
-| TCP/IP             | Modelo OSI         |
-| ------------------ | ------------------ |
-| Capa de aplicación | Capa de aplicacion |
-|                    |                    |
+En el libro: Encaminadores = Routers
+
+### Clasificación de Redes:
+
+Diferentes clasificaciones de acuerdo a diferentes aspectos
+Se pueden clasificar por:
+- Cobertuda, distancia, alcance
+- no llegué.
+
+LAN (Loca): Red de cobertura local. Ethernet, Wi-FI
+MAN: Red de cobertura metropolitana, dentro de una ciudad. MetroEthernet, MPLS, Wi-Max
+WAN: Red de cobertura de área amplia. Geográficamente distribuida. PPP, Frame-Relay, MPLS, HDLC, SONET/SDH
+SAN: Red de almacenamiento, ISCSI, Fibre Channel, ESCON
+PAN: Red de cobertura personal. Red con alcance de escasos metros para conectar dispositivos cercanos a un individuo. Bluetooth, IrDA, USB
+Otros términos: CAN, NAN
