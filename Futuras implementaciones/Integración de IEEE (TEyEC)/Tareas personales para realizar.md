@@ -5,7 +5,8 @@
 	- Evaluar la integración de la conversión de Latex a XML JATS (si es que en TEyEC lo usan) 
 	- Conversión automática de referencias en docxConverter utilizando Regex con reglas para IEEE
 	- Desarrollo de una nueva plantilla a doble columna (la utilizada por TEyEC) utilizando el módulo de plantillas personalizadas implementado por Leo 
-	- Compatibilidad con ecuaciones matemáticas y otros elementos (a evaluar). -> 
+	- Compatibilidad con ecuaciones matemáticas y otros elementos (a evaluar)
+	- Para trabajar con ellos sugerirles un nuevo documento de WORD estructurado como nosotros lo pensamos, mas que nada porque eso le quita mucha carga al autor. De la manera en la que nosotros pensamos la estructuración del DOCX, el autor no tendría que estructurar un docx complejo (con titulo, resumen, a doble columna, etc), sino que simplemente debería especificar en el mismo el cuerpo del artículo completo, y todo lo demás será cargado como metadato, hasta llegar al PDF final que contenga todo lo mencionado. 
 
 - Terminar la conversión de JATSParser con OpenAlex y documentar todo el proceso. Hacer ticket de implementación con OpenAlex.
 - Leer https://docs.google.com/document/d/17z_SG4w4_7M8KlZTnZ3NnkcbhDX-ItZKIC1_D9qwPhA/edit?tab=t.0
@@ -15,6 +16,6 @@
 - Estructuración de citas y referencias en formato IEEE: https://docs.google.com/document/d/e/2PACX-1vSBoV_hTIURPZKtQkxI6bAONJtjyDLxQIUvCHi-XPzD8NKLcxRfZrpvQLFrjWZ3M6FFR_Obau3R-t63/pub -> Sacado de https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-journal-article/create-the-text-of-your-article/ieee-editorial-style-manual/
 
 **Preguntar a Gonza:**
-- Mañana en la reunion estaría bien si les comento a los de TEyEC que mi PPS estará basada en compatibilizar IEEE completamente con SUMARC? Además, estaría bien decir que parte de mi PPS es que TEyEC pueda tener su plantilla PDF personalizada en SUMARC?
+- Mañana en la reunion estaría bien si les comento a los de TEyEC que mi PPS estará basada en compatibilizar IEEE con SUMARC? Además, estaría bien decir que parte de mi PPS es que TEyEC pueda tener su plantilla PDF personalizada en SUMARC?
 
 Explicar de donde viene el error del formato de fecha y la solución. Por ahora en producción habría que hardcodear la solución. En realidad ya está solucionado, solo que dicha solución no está en producción y por ende la idea sería hardcodear el formato de fecha a "d de F de Y " hasta que la solución sea llevada a producción.
