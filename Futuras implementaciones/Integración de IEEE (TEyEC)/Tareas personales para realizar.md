@@ -1,5 +1,12 @@
 
-- Armar un prototipo de plan por etapas sobre mi PPS, explicando y documentando las cosas que voy a hacer en distintos niveles. Entre ellas, asegurar la compatibilidad de SUMARC con IEEE (aprovechando el taller que se dará en informática) en cada uno de los plugins, evaluar la integración de la conversión de Latex a XML JATS, conversión automática de referencias en docxConverter utilizando Regex con reglas para IEEE, desarrollo de una nueva plantilla a doble columna (la utilizada por TEyEC) utilizando el módulo de plantillas personalizadas (implementado por Leo), la compatibilidad con ecuaciones matemáticas y otros elementos (a evaluar). -> Preguntar a Gonza bien por este tema, mas que nada para saber si ya de a poco voy encarando esto y documentando y escupiendo todo lo que voy haciendo en un documento de google docs, 
+**Preguntar a Gonza bien por este tema, mas que nada para saber si ya de a poco voy encarando esto y documentando y escupiendo todo lo que voy haciendo en un documento de google docs** 
+- Armar un prototipo de plan por etapas sobre mi PPS, explicando y documentando las cosas que voy a hacer en distintos niveles. Entre ellas: 
+	- Compatibilizar IEEE con SUMARC (aprovechando el taller que se dará en informática) en cada uno de los plugins
+	- Evaluar la integración de la conversión de Latex a XML JATS (si es que en TEyEC lo usan) 
+	- Conversión automática de referencias en docxConverter utilizando Regex con reglas para IEEE
+	- Desarrollo de una nueva plantilla a doble columna (la utilizada por TEyEC) utilizando el módulo de plantillas personalizadas implementado por Leo 
+	- Compatibilidad con ecuaciones matemáticas y otros elementos (a evaluar). -> 
+
 - Terminar la conversión de JATSParser con OpenAlex y documentar todo el proceso. Hacer ticket de implementación con OpenAlex.
 - Leer https://docs.google.com/document/d/17z_SG4w4_7M8KlZTnZ3NnkcbhDX-ItZKIC1_D9qwPhA/edit?tab=t.0
 - **Prioridad por contrato:** Desarrollar la generación de ePUB con JATSParser.
@@ -9,3 +16,5 @@
 
 **Preguntar a Gonza:**
 - Mañana en la reunion estaría bien si les comento a los de TEyEC que mi PPS estará basada en compatibilizar IEEE completamente con SUMARC? Además, estaría bien decir que parte de mi PPS es que TEyEC pueda tener su plantilla PDF personalizada en SUMARC?
+
+Explicar de donde viene el error del formato de fecha y la solución. Por ahora en producción habría que hardcodear la solución. En realidad ya está solucionado, solo que dicha solución no está en producción y por ende la idea sería hardcodear el formato de fecha a "d de F de Y " hasta que la solución sea llevada a producción.
