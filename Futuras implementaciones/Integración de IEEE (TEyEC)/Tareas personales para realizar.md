@@ -18,4 +18,4 @@
 **Preguntar a Gonza:**
 - Mañana en la reunion estaría bien si les comento a los de TEyEC que mi PPS estará basada en compatibilizar IEEE con SUMARC? Además, estaría bien decir que parte de mi PPS es que TEyEC pueda tener su plantilla PDF personalizada en SUMARC?
 
-Explicar de donde viene el error del formato de fecha y la solución. Por ahora en producción habría que hardcodear la solución. En realidad ya está solucionado, solo que dicha solución no está en producción y por ende la idea sería hardcodear el formato de fecha a "d de F de Y " hasta que la solución sea llevada a producción.
+- Sale un punto después del número de edición en las referencias. Ese punto NO tiene que ir.
