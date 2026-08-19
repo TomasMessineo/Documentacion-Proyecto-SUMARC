@@ -54,5 +54,21 @@ Cuando un servidor recibe un mensaje que dice "TCP connect", debe saber qué res
 
 ### Protocolos de Redes Propietarios
 
-A principios de los 80', empezó la necesidad de interconectar redes que eran propietarios. Esto surgió en el ámbito académico de EEUU. Una universidad implementaba su propia red, donde los dispositivos de su propia red 
+A principios de los 80', las empresas o compañías comenzaron a implementar redes propias (privadas y cerradas) empezó la necesidad de interconectar redes que eran propietarios. Esto surgió en el ámbito académico de EEUU. Una universidad implementaba su propia red, donde los dispositivos de su propia red podían comunicarse. Luego esto se amplió y debía comunicarse con otras universidades, dando origen al protocolo de mail. Los problemas surgieron porque cada red tenía sus propios protocolos (especificaciones propias). Ej: La universidad X implementó el protocolo de motorola, pero cuando alguien que no usaba motorola quería usar la red, esta funcionaba mal. Los resultados fueron incompatibilidad. LA comunicación entre redes era muy difícil, evolución más lenta, carencia de estándares. 
+
+### Combinación de protocolos
+
+Una red va a tener muchísimos protocolos, por ende se complejizó el diseño de las redes, y se empezaron a organizar las redes como un componente de modelo en capas. 
+Modelo en Capas: Layering, divide la complejidad en componentes reusables. Esas capas en las que se divide el modelo, ocultan la forma de la cual está implementado, como si fueran una especie de API. En este modelo de capas, las capas superiores van a usar servicios de capas inferiores, sabiendo qué servicios brinda pero sin saber cómo los implementa. En lugar de tener un solo protocolo grande y dificil de mantener, tengo un sistema de comunicación compuesto por varios componentes, y estos van a poder evolucionar más rápido y de forma independiente. Estos cambios que hayan en cada una de las capas no deberían afectar a las capas superiores. El modelo de capas también simplifica la implementación de protocolos en sistemas.
+
+### Modelo OSI (Open System Interconnection)
+
+Modelo abierto y estándar, dividido en 7 capas. Es un Modelo de Referencia.
+Este modelo permite entender cómo funcionan las redes y cómo se implementan los protocolos. Permite su estudio de una manera mas ordenada.
+En la materia se usara el modelo TCPIP, pero es un modelo parecido a OSI.
+Las capas inferiores permiten interconectar los dispositivos donde en general se brinda el contenido de la red. Para poder hacer esto, necesitamos de la implementación de protocolos de las capas inferiores.
+En este modelo de capas, cada capa inferior le brinda servicios a la capa superior. Ej: La capa de sesión va a usar servicios de la capa de transporte. La comunicación va a ser peer to peer. C
+
+Las capas de Host (Host Layers) proveen envío de datos de forma confiable.
+Las capas de Medio (Media Layers) controlan el envío físico de los mensajes sobre la red.
 
