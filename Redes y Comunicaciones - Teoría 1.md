@@ -70,5 +70,39 @@ Las capas inferiores permiten interconectar los dispositivos donde en general se
 En este modelo de capas, cada capa inferior le brinda servicios a la capa superior. Ej: La capa de sesión va a usar servicios de la capa de transporte. La comunicación va a ser peer to peer. C
 
 Las capas de Host (Host Layers) proveen envío de datos de forma confiable.
-Las capas de Medio (Media Layers) controlan el envío físico de los mensajes sobre la red.
+Las capas de Medio o inferiores (Media Layers) controlan el envío físico de los mensajes sobre la red. 
 
+Si tengo dos computadoras conectadas a una misma red, resolver el envío del mensaje de una computadora a la otra va a ser más facil que resolver la comunicación con otra computadora que está en otra red, donde en el medio el mensaje pasará por la capa de red para llegar al destino.
+
+**Capa de aplicación (7):** Servicios de red a los usuarios y a procesos, aplicaciones
+**Capa de representación/presentación (6)**: Formato de los datos
+**Capa Sesión (5):** Mantener track de sesiones de la aplicación.
+**Capa de Transporte (4):** Establecer y mantener canal "seguro" end-to-end (applic-to-applic)
+**Capa de Red (3):** Se ocupará de hacer que el mensaje que sale de un equipo vaya a otro. Direcciona y rutea los mensajes host-to-host. Sirve para comunicar varias redes. Esto a través de la famosa dirección IP.
+**Capa de Enlace de datos (2)**: Comunicación entre entes directamente conectados. Comunicar una misma red. Acceso al Medio. 
+**Capa Física (1):** Transportar la información como señal por el medio físico. Características físicas. Información binaria, digital.
+
+### Modelo TCP/IP
+
+Modelo que se convirtió en estándar. Todo dispositivo conectado a la red tiene este modelo TCP/IP. 
+
+¿Qué protocolos se encuentran en internet?
+- Modelo abierto con varios protocolos de nivel de enlace: Ethernet, 802.3, PPP, HDLC, Frame-Relay, entre otras cosas...
+- PRotocolos propios de internet y transporte (núcleo): ARP, IP, ICMP; entre otras cosas.
+
+Es un modelo de 5 capas:
+- Capa de aplicación (Process/Application): FTP, HTTP. SMTP, DNS conectados a TCP, DNS, TFTP conectados a UPD
+- Capa de transporte o Host-to-host: TCP, UPD conectados a IP
+- Capa de internet o internetworking: IP
+- Capa de enlace (Link Layer)
+- Capa Física
+
+Por simplicidad algunos autores hablan de 4 capas, agrupando a la capa de enlace y capa física en una sola capa que llaman capa de acceso a la red.
+
+### Comparación: OSI vs. TCP/IP
+
+
+| TCP/IP             | Modelo OSI         |
+| ------------------ | ------------------ |
+| Capa de aplicación | Capa de aplicacion |
+|                    |                    |
