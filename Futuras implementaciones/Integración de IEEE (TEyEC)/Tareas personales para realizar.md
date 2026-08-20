@@ -16,7 +16,6 @@
 - Estructuración de citas y referencias en formato IEEE: https://docs.google.com/document/d/e/2PACX-1vSBoV_hTIURPZKtQkxI6bAONJtjyDLxQIUvCHi-XPzD8NKLcxRfZrpvQLFrjWZ3M6FFR_Obau3R-t63/pub -> Sacado de https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-journal-article/create-the-text-of-your-article/ieee-editorial-style-manual/
 
 **Preguntar a Gonza:**
-- Mañana en la reunion estaría bien si les comento a los de TEyEC que mi PPS estará basada en compatibilizar IEEE con SUMARC? Además, estaría bien decir que parte de mi PPS es que TEyEC pueda tener su plantilla PDF personalizada en SUMARC?
 
 - Sale un punto después del número de edición en las referencias. Ese punto NO tiene que ir.
   
