@@ -113,9 +113,27 @@ Se pueden clasificar por:
 - Cobertuda, distancia, alcance
 - no llegué.
 
-LAN (Loca): Red de cobertura local. Ethernet, Wi-FI
-MAN: Red de cobertura metropolitana, dentro de una ciudad. MetroEthernet, MPLS, Wi-Max
-WAN: Red de cobertura de área amplia. Geográficamente distribuida. PPP, Frame-Relay, MPLS, HDLC, SONET/SDH
-SAN: Red de almacenamiento, ISCSI, Fibre Channel, ESCON
-PAN: Red de cobertura personal. Red con alcance de escasos metros para conectar dispositivos cercanos a un individuo. Bluetooth, IrDA, USB
-Otros términos: CAN, NAN
+- **LAN (Local Area Network):** Red de cobertura local. Ethernet, Wi-FI
+- **MAN (Metropolitan Area Network):** Red de cobertura metropolitana, dentro de una ciudad. MetroEthernet, MPLS, Wi-Max
+- **WAN (Wide Area Network):** Red de cobertura de área amplia. Geográficamente distribuida. PPP, Frame-Relay, MPLS, HDLC, SONET/SDH
+- **SAN (Storage Area Network):** Red de almacenamiento, son como servidores pero de disco, donde hay que implementar una red para conectar los equipos de cómputo con los que no son de cómputo, ISCSI, Fibre Channel, ESCON
+- **PAN:** Red de cobertura personal. Red con alcance de escasos metros para conectar dispositivos cercanos a un individuo. Bluetooth, IrDA, USB
+- **Otros términos:** CAN (Controller Area Network o CAmpus Area Network), NAN (Near-me AN, NFC)
+
+
+
+### Clasificación Públicas y Privadas
+
+- **Internet:** Red pública global, tecnología TCP/IP
+- **Intranet:** REd privada que utiliza la tecnología de internet.
+- **Extranet:** Red privada virtualizada sobre enlaces WAN: Internet. Intratnet con acceso de usuarios remotos. VPN (Virtual Private Network), IPSEC, PPTP, SSL
+
+### ¿Qué es internet?
+
+Es una red de redes de computadoras, descentralizada, pública, que ejecutan el conjunto abierto de protocolos (suite) TCP/IP. Integra diferentes protocolos deu n nivel mas bajo: **INTERNETWORKING**. 
+
+Internet se originó principalmente por diferentes motivos en la guerra fría. 
+Internet funciona porque hay estándares. Estos estándares los hace el IETF.
+RFC (Request fot Comments)
+
+Los proveedores intercambian información (tráfico de red) con otros proveedores mediante "alianzas". Si yo me conecto a internet, la nube de internet se podría decir que está dividida en diferentes proveedores que me permiten comunicarme con la red de destino. 
