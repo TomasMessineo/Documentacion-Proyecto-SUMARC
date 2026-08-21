@@ -18,9 +18,9 @@
 **Preguntar a Gonza:**
 
 - Sale un punto después del número de edición en las referencias. Ese punto NO tiene que ir.
-  
+
 - Del 17 al 28 es la presentación en el BIREDIAL . Para la semana del 9 al 13 de noviembre hacer una presentación de SUMARC mas global y federal, un taller mas acotado, para 12 o 15 revistas.
 
 - Tener anotado en un documento, en el directorio de SUMARC hacer una carpeta que sea PPS TOMI y anotar un documento que tenga objetivo (no formal, para nosotros), que es adaptar SUMARC para revistas de informática, como el caso TEyET, pero es mas amplio. Este es el objetivo general. Luego como cosas concretas, trabajar en procesamiento de normas en IEEE para generar el XML (docxConverter), verificar que la exportación al PDF y HTML salga en IEEE. Construir una plantilla que siga los lineamientos de diseño de TEyET. Proponer una plantilla DOCX para que la gente de teyec cambie en su flujo actual para que los autores no les pidan mas las plantillas formateadas, sino que ahora lo voy a hacer yo. Estos son los objetivos de base, y opcionalmente estaba la posibilidad de mejorar la visualización de formulas en PDF y HTML,. Todo esto será un cambio real sobre la revista y habrá una instancia de capacitación. También voy a hacer una capacitación y les voy a dejar el power point para que a ellos les quede de respaldo y no tengan que volver a consultarme. Otro punto es el enlace entre citas y referencias en IEEE, pero eso lo tengo que evaluar.
-  
+
   Lo siguiente es un plan de tareas o plan de trabajo, que tenga el orden de las tareas, lo primero que voy a hacer es trabajar el CSL para jatsparser, o el parser de docxconverter a IEEE, etc. 
