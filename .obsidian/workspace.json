@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "4c350e3ae4051abd",
+        "id": "753c6efc9ab3dfe2",
         "type": "tabs",
         "children": [
           {
-            "id": "6c659d4c5975e6b4",
+            "id": "fec8cbbe9c8a71ce",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Futuras implementaciones/Integración de IEEE (TEyEC)/Tareas personales para realizar.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Tareas personales para realizar"
+              "title": "Nueva pestaña"
             }
           }
         ]
@@ -179,12 +175,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6c659d4c5975e6b4",
+  "active": "fec8cbbe9c8a71ce",
   "lastOpenFiles": [
+    "Futuras implementaciones/Integración de IEEE (TEyEC)/Tareas personales para realizar.md",
     "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
     "Redes y Comunicaciones - Teoría 1.md",
     "Contacto TEyET.md",
-    "Futuras implementaciones/Integración de IEEE (TEyEC)/Tareas personales para realizar.md",
     "JAIIO PRESENTACIONES/SIIIO/Presentaciones.md",
     "Futuras implementaciones/Propuesta de Integración de CSL para la tabla de citas.md",
     "Futuras implementaciones/Integración de IEEE (TEyEC)",
