@@ -8,6 +8,6 @@
 
 - Evaluar si en una primera versión, se va a mostrar la caratula (que incluye todos los metadatos, aprovechando la misma configuración y estilos que se usa para las plantillas PDF) o sino simplemente dejar el cuerpo del artículo, sin carátula, 
   
-- Evaluar si se inyecta algún CSS al HTML que se manda a la librería. Podrían ser los mismos que se usan para el PDF o un CSS independiente para evitar este acoplamiento de estilos, ya que el PDF e ePUB son salidas diferentes). Para agregar un CSS al ePUB se puede usar la función addCSS() brindada por la librería.
+- Evaluar si se inyecta algún CSS al HTML que se manda a la librería. Podrían ser los mismos que se usan para el PDF o un CSS independiente para evitar este acoplamiento de estilos, ya que el PDF e ePUB son salidas diferentes). Para agregar un CSS al ePUB se puede usar la función addCSSFile() brindada por la librería.
  
 - Procesar el HTML para obtener sus imágenes. Luego usar la función addFile() que brinda la librería PHPePUB para agregar dichas imágenes a la instancia de la clase Epub.
