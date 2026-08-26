@@ -11,4 +11,16 @@ La primera versión del software es la especificación de requerimientos.
 El software es intangible. Eso quiere decir que es distinto a cualquier otro producto, eso lo hace único. El software es modificable y no se desgasta. También se puede modificar, no sé si facilmente, pero se puede modificar. El software posee un alto contenido intelectualdel analista, del ingeniero, de la ingeniería de software, del dominio donde se resuelve el problema. 
 
 En resumen, el software es **conocimiento empaquetado**. Empaqueta, reune conocimiento.
-Hacer Software no es una tarea fácil. Siempre hay que capacitarse, si fuera fácil estaría el futuro asegurado, y no es tan facil. Todo problema es complejo hasta que se demuestra lo contrario. 
+Hacer Software no es una tarea fácil. Siempre hay que capacitarse, si fuera fácil estaría el futuro asegurado, y no es tan facil. Todo problema es complejo hasta que se demuestra lo contrario. Hacer software, es una actividad compleja.  La experiencia hace que un concepto se aceite y pueda definirlo más fácil
+
+# Introducción al desarrollo de Apps
+
+Con el crecimiento de la tecnología cada vez hay mas personas que tienen dispositivos móviles.
+
+**Evolución de los dispositivos**
+Primeros celulares: Los famosos ladrillos. Eran grandes y pesados.
+Luego se pasó a teléfonos plegables
+Y así con los demás, fueron evolucionando.
+
+En el celular uso lo que necesito rápido, si algo es medio complejo de hacer en celular, voy a preferir hacerlo por la compu. 
+La compu 
