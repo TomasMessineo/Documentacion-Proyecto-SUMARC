@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notas EPUB 3.md",
+                "file": "Futuras implementaciones/Integración de IEEE (TEyEC)/Integración de PHPePUB en JatsParsre.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notas EPUB 3"
+              "title": "Integración de PHPePUB en JatsParsre"
             }
           }
         ]
@@ -182,7 +182,7 @@
   "active": "fec8cbbe9c8a71ce",
   "lastOpenFiles": [
     "Futuras implementaciones/Integración de IEEE (TEyEC)/Tareas personales para realizar.md",
-    "Notas EPUB 3.md",
+    "Futuras implementaciones/Integración de IEEE (TEyEC)/Integración de PHPePUB en JatsParsre.md",
     "Redes y Comunicaciones - Teoría 1.md",
     "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
     "Contacto TEyET.md",
