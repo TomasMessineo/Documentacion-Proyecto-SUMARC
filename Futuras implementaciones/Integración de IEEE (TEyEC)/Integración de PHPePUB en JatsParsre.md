@@ -11,3 +11,5 @@
 - Evaluar si se inyecta algún CSS al HTML que se manda a la librería. Podrían ser los mismos que se usan para el PDF o un CSS independiente para evitar este acoplamiento de estilos, ya que el PDF e ePUB son salidas diferentes). Para agregar un CSS al ePUB se puede usar la función addCSSFile() brindada por la librería.
  
 - Procesar el HTML para obtener sus imágenes. Luego usar la función addFile() que brinda la librería PHPePUB para agregar dichas imágenes a la instancia de la clase Epub.
+
+- Plugin PubReader para visualizar artículos XML JATS
