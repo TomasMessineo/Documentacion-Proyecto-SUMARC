@@ -38,6 +38,10 @@ Sino puedo desarrollar apps en cada plataforma.
 - Nativo: Para una plataforma, sea android o iOS
 - Multiplataforma (para cualquier plataforma):
   - PWA
-  - apps híbridas
+  - apps híbridas (solo tengo un proyecto, y si hago un cambio no voy a cada versión).
   - apps interpretadas
-  - apps generadas por compi
+  - apps generadas por compilación cruzada
+
+# Emuladores
+
+Los emuladores son claves para un desarrollo o testeo de una app.
