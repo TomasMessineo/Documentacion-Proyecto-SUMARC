@@ -25,4 +25,5 @@ h1. Errores o problemas/trabas pendientes para solucionar
 7. https://discord.com/channels/707986471834877994/1280517594960629792/1496849346132578445 -> Error del directorio caché de smarty que ya fue solucionado (creo)
 8. https://discord.com/channels/707986471834877994/1280517594960629792/1503441651492982914 -> Ya parcheado en producción, pero no está en rama stable
 9. https://discord.com/channels/707986471834877994/1280517594960629792/1503403134268080199 -> solución: https://discord.com/channels/707986471834877994/1280517594960629792/1503448298248470638
-10. 
+10. https://discord.com/channels/707986471834877994/1280517594960629792/1503753515183640637 -> Esto lo hicimos, sería el sandbox para el taller (y faltaría hacer el que solo tiene SUMARC instalado sin ningún usuario creado)
+11. 
