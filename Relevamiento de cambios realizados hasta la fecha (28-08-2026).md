@@ -14,9 +14,15 @@ Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14552) 
 *Corrección de cursivas en referencias de tipo Sitio Web (webpage)*:
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14534) ya fue solucionado y está subido a GitHub, pero aún no está desplegada en producción, por ende se optó por realizar el cambio a mano en el servidor de producción. 
 
-h1. Errores pendientes de solucionar
+h1. Errores o problemas/trabas pendientes para solucionar
 
 1. https://discord.com/channels/707986471834877994/1280517594960629792/1498286569780416584
 2. https://discord.com/channels/707986471834877994/1280517594960629792/1497303022328484113
 3. https://discord.com/channels/707986471834877994/1280517594960629792/1497297342058205205
-4. 
+4. https://discord.com/channels/707986471834877994/1280517594960629792/1496994058264908027
+5. https://discord.com/channels/707986471834877994/1280517594960629792/1496952531304054926
+6. https://discord.com/channels/707986471834877994/1280517594960629792/1496900357685510175
+7. https://discord.com/channels/707986471834877994/1280517594960629792/1496849346132578445 -> Error del directorio caché de smarty que ya fue solucionado (creo)
+8. https://discord.com/channels/707986471834877994/1280517594960629792/1503441651492982914 -> Ya parcheado en producción, pero no está en rama stable
+9. https://discord.com/channels/707986471834877994/1280517594960629792/1503403134268080199 -> solución: https://discord.com/channels/707986471834877994/1280517594960629792/1503448298248470638
+10. 
