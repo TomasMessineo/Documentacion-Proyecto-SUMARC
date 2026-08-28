@@ -8,4 +8,4 @@
 - Del 17 al 28 es la presentación en el BIREDIAL . Para la semana del 9 al 13 de noviembre hacer una presentación de SUMARC mas global y federal, un taller mas acotado, para 12 o 15 revistas.
   Dar la opción a elegir a los editores para usar el HTML de visualización generado por sumarc, es decir, se tiene que poder decidir si usar el HTML generado por sumarc o no, y además, dar la opción para eliminarlo.
 
-  Lo siguiente es un plan de tareas o plan de trabajo, que tenga el orden de las tareas, donde especificaré lo primero que voy a encarar en la PPS, ya sea el CSL para jatsparser, o el parser de docxconverter a IEEE, la plantilla personalizada para TEyET, etc.
+- Buscar librería de EPUB mas nueva, si no la conseguimos, evaluar cómo sostener esta. Otra idea (si no hay otra librería mas nueva) es migrar la librería para que sea compatible con una versión mas nueva de PHP (por ejemplo 8.3) y luego hacer un pull request al repo original. 
