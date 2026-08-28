@@ -1,0 +1,3 @@
+
+En este ticket se mencionaran todos los cambios realizados hasta el día de la fecha: 28 de agosto de 2026. 
+Esto servirá para poder explicar detalladamente cada cambio realizado el día que lancemos una nueva release de SUMARC, además de que nos permitirá saber cuáles son todos los cambios y mejoras que están parcheados hatsa el momnento en el servidor de producción de revistas, pero que todavía no están en 
