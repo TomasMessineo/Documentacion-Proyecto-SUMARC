@@ -1,3 +1,4 @@
 
 Buscar librería de EPUB mas nueva, si no la conseguimos, evaluar cómo sostener esta. Otra idea (si no hay otra librería mas nueva) es migrar la librería para que sea compatible con una versión mas nueva de PHP (por ejemplo 8.3) y luego hacer un pull request al repo original. 
 Mantener la compatibilidad de SUMARC con las versiones de PHP que cada versión de OJS requiera. 
+Pensar en incluir a Lola y Marti en un proceso de prueba, una nueva etapa de testing.. Una vez que tenemos paquetes de cosas agregadas, decirles lo que tenemos y que ellas lo prueben. Tener un entorno de prueba con las mismas verisones de PHP y OJS, y también las de SUMARC. También se podrían usar agentes. Antes de llegar a Lola y Marti, tenemos que mejorar las pruebas que hacemos en desarrollo, para evitar que se nos pasen cosas a nosotros. Hay que diseñar bien nuestros planes de prueba 
