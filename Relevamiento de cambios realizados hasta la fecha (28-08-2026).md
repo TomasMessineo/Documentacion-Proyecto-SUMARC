@@ -11,10 +11,20 @@ La solución definitiva a este problema (sin necesidad de ningún parche) se ver
 *Error solucionado: Error al generar las referencias por caracter especial "&amp;"*:
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14552) ya fue arreglado, se debía a autores institucionales que tenían un ampersand en su nombre, los cuales ocasionaban que las referencias no. Este arreglo ya está subida a GitHub pero aún no está desplegada en producción, por ende se optó por realizar el cambio a mano en el servidor de producción. La solución a este problema está detallada en el ticket https://trac.prebi.unlp.edu.ar/issues/14556.
 
+*Impresión de &amp; literal en vez de & en las referencias:*
+Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14496) fue solucionado y pusheado al repositorio de JatsParser. Esta solución aún no está en las ramas estables, pero aún así fue parcheado en el servidor de producción. 
+
 *Corrección de cursivas en referencias de tipo Sitio Web (webpage)*:
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14534) ya fue solucionado y está subido a GitHub, pero aún no está desplegada en producción, por ende se optó por realizar el cambio a mano en el servidor de producción. 
 
+*Corrección de Navegación Bidireccional en Referencias y Notas al pie (HTML y PDF):*
+Se corrigieron dos errores relacionados con la navegación bidireccional citas->referencias y viceversa (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14495), los cuales tienen que ver con la ausencia de flechas de retorno en las notas al pie del HTML para publicar y las flechas duplicadas en la sección de referencias y notas al pie del PDF. Este error está pusheado en una rama del repositorio JatsParser pero aún NO está en producción, ni tampoco parcheado en el servidor.
+
+
+
 h1. Errores o problemas/trabas pendientes para solucionar
+
+En discord:*
 
 1. https://discord.com/channels/707986471834877994/1280517594960629792/1498286569780416584
 2. https://discord.com/channels/707986471834877994/1280517594960629792/1497303022328484113
@@ -29,4 +39,8 @@ h1. Errores o problemas/trabas pendientes para solucionar
 11. https://discord.com/channels/707986471834877994/1280517594960629792/1524488990831677610
 12. https://discord.com/channels/707986471834877994/1280517594960629792/1535308597502943414
 13. **Idea para OpenAlex:** https://discord.com/channels/707986471834877994/1280517594960629792/1534582585198645269
-14. 
+14.  Había un mensaje donde Lola mencionaba lo de sacar el punto cuando se menciona el número de la edición o algo así, osea en vez de ser "1.° ed." que sea 1° ed o algo así era. Le podemos consultar a Lola esto.
+
+**En Trac:**
+- https://trac.prebi.unlp.edu.ar/issues/14622
+- https://trac.prebi.unlp.edu.ar/issues/14492
