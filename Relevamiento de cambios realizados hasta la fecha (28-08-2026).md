@@ -11,6 +11,17 @@ La solución definitiva a este problema (sin necesidad de ningún parche) se ver
 *Error solucionado: Error al generar las referencias por caracter especial "&amp;"*:
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14552) ya fue arreglado, se debía a autores institucionales que tenían un ampersand en su nombre, los cuales ocasionaban que las referencias no. Este arreglo ya está subida a GitHub pero aún no está desplegada en producción, por ende se optó por realizar el cambio a mano en el servidor de producción. La solución a este problema está detallada en el ticket https://trac.prebi.unlp.edu.ar/issues/14556.
 
+*Traducción de "Palavras chave* a "Palavras-chave" en el PDF:
+Este error no está explicado en ningún ticket, pero ya está solucionado y pusheado al repositorio de JatsParser, aunque no está en ninguna de las ramas estables. Lo que se hizo fue simplemente cambiar la traducción para el título de las palabras clave en portugués de "Palavras chave" a "Palavras-chave".
+Este cambio está parcheado también en el servidor de producción.
+
+*Punto innecesario en la palabra "et al" en la Tabla de Citas:*
+Este error no está explicado en ningún ticket, pero ya está solucionado y pusheado al repositorio de JatsParser, aunque no está en ninguna de las ramas estables. Lo que se hizo fue agregar un punto a la palabra "et al" que aparece en la tabla de citaciones cuando se está citando a una referencia con 3 o más autores. En vez de 
+
+*Impresión de palabra "Article" hardcodeada en referencias de tipo "Webpage":*
+Este error no está explicado en ningún ticket, pero ya se solucionó y se pusheó al repositorio de JatsParser, aunque todavía no está subido a las ramas estables.. Lo que se hizo fue hacer un pequeño cambio en el archivo csl de APA que utilizamos en SUMARC, para eliminar la aparición de esta palabra hardcodeada antes del e-location ID (aparecía algo como por ejemplo: "Article e123" y solo debe ser "e123").
+Esto ya está parcheado en el servidor de producción, donde se modificó a mano una línea de código.
+
 *Impresión de &amp; literal en vez de & en las referencias:*
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14496) fue solucionado y pusheado al repositorio de JatsParser. Esta solución aún no está en las ramas estables, pero aún así fue parcheado en el servidor de producción. 
 
@@ -27,7 +38,7 @@ Este error fue solucionado y pusheado en una rama del repositorio de JatsParser,
 *Falta el metadato "prefijo" en el PDF generado:*
 Se corrigió un error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14173) que tenía que ver con la no aparición del prefijo (metadato que se carga en OJS) en el PDF.
 Esto ocurría porque en el frontpage.tpl de la plantilla PDF no se especificaba su recuperación en la estructura definida.
-La solución a este problema está pusheada en el repositorio de JatsParser, 
+La solución a este problema está pusheada en el repositorio de JatsParser, pero aún no está en las ramas estables. Está parcheado en el servidor de producción (se hizo el cambio en el archivo frontpage.tpl de la plantilla).
 
 h1. Errores o problemas/trabas pendientes para solucionar
 
@@ -47,8 +58,9 @@ h1. Errores o problemas/trabas pendientes para solucionar
 12. https://discord.com/channels/707986471834877994/1280517594960629792/1535308597502943414
 13. **Idea para OpenAlex:** https://discord.com/channels/707986471834877994/1280517594960629792/1534582585198645269
 14.  Había un mensaje donde Lola mencionaba lo de sacar el punto cuando se menciona el número de la edición o algo así, osea en vez de ser "1.° ed." que sea 1° ed o algo así era. Le podemos consultar a Lola esto.
+15. https://discord.com/channels/707986471834877994/1280517594960629792/1542595782572507228
+16. https://discord.com/channels/707986471834877994/1280517594960629792/1542533950612971611 -> Solo el punto 3, el de los links que no son clickables.
 
 *En Trac:*
 - https://trac.prebi.unlp.edu.ar/issues/14622
 - https://trac.prebi.unlp.edu.ar/issues/14492
-- 
