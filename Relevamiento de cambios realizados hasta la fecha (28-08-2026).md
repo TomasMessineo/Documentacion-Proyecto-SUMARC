@@ -26,4 +26,7 @@ h1. Errores o problemas/trabas pendientes para solucionar
 8. https://discord.com/channels/707986471834877994/1280517594960629792/1503441651492982914 -> Ya parcheado en producción, pero no está en rama stable
 9. https://discord.com/channels/707986471834877994/1280517594960629792/1503403134268080199 -> solución: https://discord.com/channels/707986471834877994/1280517594960629792/1503448298248470638
 10. https://discord.com/channels/707986471834877994/1280517594960629792/1503753515183640637 -> Esto lo hicimos, sería el sandbox para el taller (y faltaría hacer el que solo tiene SUMARC instalado sin ningún usuario creado)
-11. 
+11. https://discord.com/channels/707986471834877994/1280517594960629792/1524488990831677610
+12. https://discord.com/channels/707986471834877994/1280517594960629792/1535308597502943414
+13. **Idea para OpenAlex:** https://discord.com/channels/707986471834877994/1280517594960629792/1534582585198645269
+14. 
