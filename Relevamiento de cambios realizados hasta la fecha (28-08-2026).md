@@ -54,6 +54,14 @@ Esto no está parcheado ni subido al servidor de producción.
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14142) ya fue solucionado y pusheado a una rama del repositorio de JatsParser en GitHub (commit https://github.com/sedici/JATSParser/commit/6af400419ff531d1bb311eceb5f2ba0df9bfbf64), pero todavía no está en ninguna rama estable.
 Esto no está parcheado ni subido al servidor de producción.
 
+*PHP Warning: "Undefined array key 1 / 2" al formatear la fecha de publicación en JatsParserPlugin.inc.php*
+https://trac.prebi.unlp.edu.ar/issues/14139
+https://github.com/sedici/JATSParserPlugin/commit/92f69a1849f27dd4d411f83c4d2ab36e4117f202
+
+*PHP Warning: "Trying to access array offset on null" al renderizar subtítulo en frontpage.tpl*:
+https://trac.prebi.unlp.edu.ar/issues/14140
+https://github.com/sedici/JATSParserPlugin/commit/fbc2345ac72861a35bda59b892bd12bcea012fe0
+
 h1. Errores o problemas/trabas pendientes para solucionar
 
 *En discord:*
