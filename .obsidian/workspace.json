@@ -11,10 +11,14 @@
             "id": "81051e6fde6a8207",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Redes y Comunicaciones - Teoría 1.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "Redes y Comunicaciones - Teoría 1"
             }
           }
         ]
@@ -177,6 +181,7 @@
   },
   "active": "81051e6fde6a8207",
   "lastOpenFiles": [
+    "Futuras implementaciones/Integración de IEEE (TEyEC)/Integración de PHPePUB en JatsParsre.md",
     "Futuras implementaciones/Integración de IEEE (TEyEC)/Tareas personales para realizar.md",
     "Futuras implementaciones/Márgenes dinámicos.md",
     "Futuras implementaciones/Notas sobre prueba con OpenAlex.md",
@@ -187,7 +192,6 @@
     "Redes y Comunicaciones - Teoría 1.md",
     "Relevamiento de cambios realizados hasta la fecha (28-08-2026).md",
     "Sin título.md",
-    "Futuras implementaciones/Integración de IEEE (TEyEC)/Integración de PHPePUB en JatsParsre.md",
     "SUMARC (Sistema UNLP para el Marcado de Revistas Científicas).md",
     "JAIIO PRESENTACIONES/SIIIO/Presentaciones.md",
     "Futuras implementaciones/Propuesta de Integración de CSL para la tabla de citas.md",
