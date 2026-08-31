@@ -21,11 +21,17 @@ Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14534) 
 Se corrigieron dos errores relacionados con la navegación bidireccional citas->referencias y viceversa (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14495), los cuales tienen que ver con la ausencia de flechas de retorno en las notas al pie del HTML para publicar y las flechas duplicadas en la sección de referencias y notas al pie del PDF. Este error está pusheado en una rama del repositorio JatsParser pero aún NO está en producción, ni tampoco parcheado en el servidor.
 
 *Error en preg_match para la generacion del HTML de previsualizacion en jatsParser:*
-Se corrigió un error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14334) para utilizar la función stripos 
+Se corrigió un error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14334) para utilizar la función stripos a la hora de procesar el HTML de publicación recuperado de la base de datos en vez de utilzar preg_match(), ya que resulta ineficiente utilizar las regex en este caso (debido a las imágenes que estan en base64, lo cual hace que se exceda el pcre.backtrack_limit definido en la configuración de PHP).
+Este error fue solucionado y pusheado en una rama del repositorio de JatsParser, pero aún no está en las ramas estables. En el servidor de producción se modificó el archivo php.ini para parchear este problema.
+
+*Falta el metadato "prefijo" en el PDF generado:*
+Se corrigió un error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14173) que tenía que ver con la no aparición del prefijo (metadato que se carga en OJS) en el PDF.
+Esto ocurría porque en el frontpage.tpl de la plantilla PDF no se especificaba su recuperación en la estructura definida.
+La solución a este problema está pusheada en el repositorio de JatsParser, 
 
 h1. Errores o problemas/trabas pendientes para solucionar
 
-En discord:*
+*En discord:*
 
 1. https://discord.com/channels/707986471834877994/1280517594960629792/1498286569780416584
 2. https://discord.com/channels/707986471834877994/1280517594960629792/1497303022328484113
@@ -42,7 +48,7 @@ En discord:*
 13. **Idea para OpenAlex:** https://discord.com/channels/707986471834877994/1280517594960629792/1534582585198645269
 14.  Había un mensaje donde Lola mencionaba lo de sacar el punto cuando se menciona el número de la edición o algo así, osea en vez de ser "1.° ed." que sea 1° ed o algo así era. Le podemos consultar a Lola esto.
 
-**En Trac:**
+*En Trac:*
 - https://trac.prebi.unlp.edu.ar/issues/14622
 - https://trac.prebi.unlp.edu.ar/issues/14492
 - 
