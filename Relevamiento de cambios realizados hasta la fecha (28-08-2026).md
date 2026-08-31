@@ -40,7 +40,13 @@ En el servidor de producción se modificó el archivo php.ini para parchear este
 *Falta el metadato "prefijo" en el PDF generado:*
 Se corrigió un error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14173) que tenía que ver con la no aparición del prefijo (metadato que se carga en OJS) en el PDF.
 Esto ocurría porque en el frontpage.tpl de la plantilla PDF no se especificaba su recuperación en la estructura definida.
-La solución a este problema está pusheada en el repositorio de JatsParser, pero aún no está en las ramas estables. Está parcheado en el servidor de producción (se hizo el cambio en el archivo frontpage.tpl de la plantilla).
+La solución a este problema está pusheada en el repositorio de GitHub de JatsParser (commit https://github.com/sedici/JATSParserPlugin/commit/17523edc2dbbc0d2e6e18be2b88dfd0d2333024a ---> se me mezcló con el commit del et al de la tabla de citas jeje srry), pero aún no está en las ramas estables. Está parcheado en el servidor de producción (se hizo el cambio en el archivo frontpage.tpl de la plantilla).
+
+*Reubicación del directorio de plantillas compiladas de Smarty (templates_c):*
+Este error (explicado en https://trac.prebi.unlp.edu.ar/issues/14149) fue solucionado y pusheado a una rama del repositorio de JatsParser en GitHub (commit https://github.com/sedici/JATSParser/commit/c22177186a6f14747f27cb799fc4d0dee13cf3ea), pero todavía no está en ninguna rama estable. 
+Esto está parcheado a mano en el servidor de producción.
+
+*Error por dejar campo "otro" vacío al seleccionar el estilo de cita en la configuración de JatsParser":
 
 h1. Errores o problemas/trabas pendientes para solucionar
 
