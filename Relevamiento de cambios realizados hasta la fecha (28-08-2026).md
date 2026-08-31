@@ -46,7 +46,13 @@ La solución a este problema está pusheada en el repositorio de GitHub de JatsP
 Este error (explicado en https://trac.prebi.unlp.edu.ar/issues/14149) fue solucionado y pusheado a una rama del repositorio de JatsParser en GitHub (commit https://github.com/sedici/JATSParser/commit/c22177186a6f14747f27cb799fc4d0dee13cf3ea), pero todavía no está en ninguna rama estable. 
 Esto está parcheado a mano en el servidor de producción.
 
-*Error por dejar campo "otro" vacío al seleccionar el estilo de cita en la configuración de JatsParser":
+*Error por dejar campo "otro" vacío al seleccionar el estilo de cita en la configuración de JatsParser":*
+Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14147) ya fue solucionado y pusheado a una rama del repositorio de JatsParser en GitHub (commit https://github.com/sedici/JATSParser/commit/be199bfa0a091a7aeddd6a6a9ee2fa3b6b0dc9e0), pero todavía no está en ninguna rama estable.
+Esto no está parcheado ni subido al servidor de producción.
+
+*Warning de PHP al procesar artículos sin endnotes:*
+Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14142) ya fue solucionado y pusheado a una rama del repositorio de JatsParser en GitHub (commit https://github.com/sedici/JATSParser/commit/6af400419ff531d1bb311eceb5f2ba0df9bfbf64), pero todavía no está en ninguna rama estable.
+Esto no está parcheado ni subido al servidor de producción.
 
 h1. Errores o problemas/trabas pendientes para solucionar
 
