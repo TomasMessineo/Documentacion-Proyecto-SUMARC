@@ -20,7 +20,8 @@ Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14534) 
 *Corrección de Navegación Bidireccional en Referencias y Notas al pie (HTML y PDF):*
 Se corrigieron dos errores relacionados con la navegación bidireccional citas->referencias y viceversa (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14495), los cuales tienen que ver con la ausencia de flechas de retorno en las notas al pie del HTML para publicar y las flechas duplicadas en la sección de referencias y notas al pie del PDF. Este error está pusheado en una rama del repositorio JatsParser pero aún NO está en producción, ni tampoco parcheado en el servidor.
 
-
+*Error en preg_match para la generacion del HTML de previsualizacion en jatsParser:*
+Se corrigió un error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14334) para utilizar la función stripos 
 
 h1. Errores o problemas/trabas pendientes para solucionar
 
@@ -44,3 +45,4 @@ En discord:*
 **En Trac:**
 - https://trac.prebi.unlp.edu.ar/issues/14622
 - https://trac.prebi.unlp.edu.ar/issues/14492
+- 
