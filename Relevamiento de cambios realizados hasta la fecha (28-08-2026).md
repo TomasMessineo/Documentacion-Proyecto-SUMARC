@@ -66,6 +66,8 @@ Este cambio tampoco recuerdo si estaba parcheado y subido en el servidor de prod
 Este problema (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14057) ya fue solucionado y pusheado a una rama del repositorio de JatsParser en GitHub (commit https://github.com/sedici/JATSParserPlugin/commit/797cbf62a5b8dd51601d027f77c782268953eb3a, y se le suma un pequeño cambio en las traducciones PO: https://github.com/sedici/JATSParserPlugin/commit/8dcd45f9ffd28b1a167e8366f4c15a01996909c6). 
 Este cambio no está parcheado ni subido al servidor de producción.
 
+Hacer un ticket Fixes-Issues que tenga dos subtareas: Una con todos los fixes para sumarc 2.1, y 
+
 ---
 
 h1. Errores o problemas/trabas pendientes para solucionar
