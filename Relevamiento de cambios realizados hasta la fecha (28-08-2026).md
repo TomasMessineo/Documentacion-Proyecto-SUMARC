@@ -24,7 +24,7 @@ Esto ya está parcheado en el servidor de producción, donde se modificó a mano
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14496) se solucionó y se pusheó al repositorio de Github de JatsParser (Commit [https://github.com/sedici/JATSParser/commit/cea5855fda2b4d9f892952a6588868f1149f0930](https://github.com/sedici/JATSParser/commit/d0a810e404e293a4ba07df33691ab23cb096c1c2)). Esta solución aún no está en las ramas estables, pero aún así fue parcheado en el servidor de producción. 
 
 *Error al generar las referencias por caracter especial "&amp;"*:
-Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14552 y su solución: https://trac.prebi.unlp.edu.ar/issues/14556) ya fue arreglado, se debía a autores institucionales que tenían un ampersand en su nombre, los cuales ocasionaban que las referencias no sean renderizadas por la librería CiteProc. Este arreglo ya está subida a GitHub (commit https://github.com/sedici/JATSParser/commit/d9f4c4d30a969cfb7f9e2799c0c38bc9c3eab983) pero aún no está desplegada en producción, por ende se optó por realizar el cambio a mano en el servidor de producción. La solución a este problema está detallada en el ticket https://trac.prebi.unlp.edu.ar/issues/14556.
+Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14552 y su solución: https://trac.prebi.unlp.edu.ar/issues/14556) ya fue arreglado, se debía a autores institucionales que tenían un ampersand en su nombre, los cuales ocasionaban que las referencias no sean renderizadas por la librería CiteProc. Este arreglo ya está subida a GitHub (commit https://github.com/sedici/JATSParser/commit/d9f4c4d30a969cfb7f9e2799c0c38bc9c3eab983) pero aún no está desplegada en producción, por ende se optó por realizar el cambio a mano en el servidor de producción.
 
 *Corrección de cursivas en referencias de tipo Sitio Web (webpage)*:
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14534) ya fue solucionado y está subido a GitHub (commit https://github.com/sedici/JATSParser/commit/3fa718f49dcde1106d1697072aac1d46be3c9bdd), pero aún no está desplegada en producción, por ende se optó por realizar el cambio a mano en el servidor de producción. 
@@ -93,3 +93,10 @@ h1. Errores o problemas/trabas pendientes para solucionar
 *En Trac:*
 - https://trac.prebi.unlp.edu.ar/issues/14622
 - https://trac.prebi.unlp.edu.ar/issues/14492
+
+
+---
+---
+
+
+**Nota:** Ser menos técnico al mencionar la inyección de fecha para las referencias en la configuración de fecha
