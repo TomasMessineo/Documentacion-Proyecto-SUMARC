@@ -1,7 +1,7 @@
 En este ticket se mencionaran todos los cambios realizados hasta el día de la fecha: 28 de agosto de 2026. 
 Esto servirá para poder explicar detalladamente cada cambio realizado el día que lancemos una nueva release de SUMARC, además de que nos permitirá saber cuáles son las modificaciones que hasta el momento solo están agregadas como parche en el servidor de producción de revistas y que todavía no son parte de una release oficial de SUMARC.
 
-h1. Errores revisados
+h1. Cambios realizados y problemas revisados
 
 *Corrección en el formato de fecha de publicación en vista de artículo:*
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14769) ya fue solucionado.
@@ -61,6 +61,12 @@ Este cambio NO recuerdo si estaba parcheado y subido en el servidor de producci�
 *PHP Warning: "Trying to access array offset on null" al renderizar subtítulo en frontpage.tpl*:
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14140) ya fue solucionado y pusheado a una rama del repositorio de JatsParser en GitHub (commit https://github.com/sedici/JATSParserPlugin/commit/fbc2345ac72861a35bda59b892bd12bcea012fe0), pero todavía no está en ninguna rama estable.
 Este cambio tampoco recuerdo si estaba parcheado y subido en el servidor de producción.
+
+*Añadido de botones "Volver" y "Restablecer Todo" en la configuración de plantillas PDF:*
+Este problema (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14057) ya fue solucionado y pusheado a una rama del repositorio de JatsParser en GitHub (commit https://github.com/sedici/JATSParserPlugin/commit/797cbf62a5b8dd51601d027f77c782268953eb3a, y se le suma un pequeño cambio en las traducciones PO: https://github.com/sedici/JATSParserPlugin/commit/8dcd45f9ffd28b1a167e8366f4c15a01996909c6). 
+Este cambio no está parcheado ni subido al servidor de producción.
+
+---
 
 h1. Errores o problemas/trabas pendientes para solucionar
 
