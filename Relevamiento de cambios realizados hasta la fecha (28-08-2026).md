@@ -85,9 +85,10 @@ h1. Errores o problemas/trabas pendientes para solucionar
 11. https://discord.com/channels/707986471834877994/1280517594960629792/1524488990831677610
 12. https://discord.com/channels/707986471834877994/1280517594960629792/1535308597502943414
 13. **Idea para OpenAlex:** https://discord.com/channels/707986471834877994/1280517594960629792/1534582585198645269
-14.  Había un mensaje donde Lola mencionaba lo de sacar el punto cuando se menciona el número de la edición o algo así, osea en vez de ser "1.° ed." que sea 1° ed o algo así era. Le podemos consultar a Lola esto.
+14.  Había un mensaje donde Lola mencionaba lo de sacar el punto cuando se menciona el número de la edición o algo así, osea en vez de ser "1°. ed." que sea 1° ed o algo así era. Le podemos consultar a Lola esto.
 15. https://discord.com/channels/707986471834877994/1280517594960629792/1542595782572507228
 16. https://discord.com/channels/707986471834877994/1280517594960629792/1542533950612971611 -> Solo el punto 3, el de los links que no son clickables.
+17. Documentar y tener en cuenta el peso del plugin JatsParser, ya que pesa +100 MB
 
 *En Trac:*
 - https://trac.prebi.unlp.edu.ar/issues/14622
