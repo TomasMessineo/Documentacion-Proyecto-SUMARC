@@ -32,7 +32,7 @@ Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14534) 
 *Corrección de Navegación Bidireccional en Referencias y Notas al pie (HTML y PDF):*
 Se corrigieron dos errores relacionados con la navegación bidireccional citas->referencias y viceversa (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14495), los cuales tienen que ver con la ausencia de flechas de retorno en las notas al pie del HTML para publicar y las flechas duplicadas en la sección de referencias y notas al pie del PDF. El cambio para solucionar este problema está pusheados en una rama del repositorio JatsParser en GitHub (commit https://github.com/sedici/JATSParser/commit/c71058c15e860a4c7ffd517fdf64ab15930482d5) pero aún NO está en ninguna rama estable ni tampoco parcheado en el servidor.
 
-*Error en preg_match para la generacion del HTML de previsualizacion en jatsParser:*
+*Error crítico: en preg_match para la generacion del HTML de previsualizacion en jatsParser:*
 Se corrigió un error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14334) para utilizar la función stripos a la hora de procesar el HTML de publicación recuperado de la base de datos en vez de utilzar preg_match(), ya que resulta ineficiente utilizar las regex en este caso (debido a las imágenes que estan en base64, lo cual hace que se exceda el pcre.backtrack_limit definido en la configuración de PHP).
 Este error fue solucionado y pusheado en una rama del repositorio de JatsParser en GitHub (commit https://github.com/sedici/JATSParserPlugin/commit/67c0656f16e92c321f9c39fe5dc755c2aa941fb5), pero aún no está en ninguna rama estable. 
 En el servidor de producción se modificó el archivo php.ini para parchear este problema.
@@ -72,8 +72,8 @@ h1. Errores o problemas/trabas pendientes para solucionar
 
 *En discord:*
 
-1. https://discord.com/channels/707986471834877994/1280517594960629792/1498286569780416584
-2. https://discord.com/channels/707986471834877994/1280517594960629792/1497303022328484113
+1. https://discord.com/channels/707986471834877994/1280517594960629792/1498286569780416584 -> HECHO -> Campo "Otro" vacío.
+2. https://discord.com/channels/707986471834877994/1280517594960629792/1497303022328484113 -> NO está resuelto, la tabla de citas toma a los editores como autores y agrega "et all".
 3. https://discord.com/channels/707986471834877994/1280517594960629792/1497297342058205205
 4. https://discord.com/channels/707986471834877994/1280517594960629792/1496994058264908027
 5. https://discord.com/channels/707986471834877994/1280517594960629792/1496952531304054926
