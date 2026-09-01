@@ -75,21 +75,15 @@ h1. Errores o problemas/trabas pendientes para solucionar
 1. https://discord.com/channels/707986471834877994/1280517594960629792/1498286569780416584 -> HECHO -> Campo "Otro" vacío.
 2. https://discord.com/channels/707986471834877994/1280517594960629792/1497303022328484113 -> Indicar en la documentación la configuración para activar finfo_open() , y también cambiar el version.xml de texture. También quedan los "Errores de Mpdf".
 3. https://discord.com/channels/707986471834877994/1280517594960629792/1497297342058205205 -> NO está resuelto, la tabla de citas toma a los editores como autores y agrega "et all".
+4. https://discord.com/channels/707986471834877994/1280517594960629792/1503753515183640637 -> Esto lo hicimos, sería el sandbox para el taller (y faltaría hacer el que solo tiene SUMARC instalado sin ningún usuario creado)
 
-4. https://discord.com/channels/707986471834877994/1280517594960629792/1496994058264908027
-5. https://discord.com/channels/707986471834877994/1280517594960629792/1496952531304054926
-6. https://discord.com/channels/707986471834877994/1280517594960629792/1496900357685510175
-7. https://discord.com/channels/707986471834877994/1280517594960629792/1496849346132578445 -> Error del directorio caché de smarty que ya fue solucionado (creo)
-8. https://discord.com/channels/707986471834877994/1280517594960629792/1503441651492982914 -> Ya parcheado en producción, pero no está en rama stable
-9. https://discord.com/channels/707986471834877994/1280517594960629792/1503403134268080199 -> solución: https://discord.com/channels/707986471834877994/1280517594960629792/1503448298248470638
-10. https://discord.com/channels/707986471834877994/1280517594960629792/1503753515183640637 -> Esto lo hicimos, sería el sandbox para el taller (y faltaría hacer el que solo tiene SUMARC instalado sin ningún usuario creado)
-11. https://discord.com/channels/707986471834877994/1280517594960629792/1524488990831677610
-12. https://discord.com/channels/707986471834877994/1280517594960629792/1535308597502943414
-13. **Idea para OpenAlex:** https://discord.com/channels/707986471834877994/1280517594960629792/1534582585198645269
-14.  Había un mensaje donde Lola mencionaba lo de sacar el punto cuando se menciona el número de la edición o algo así, osea en vez de ser "1°. ed." que sea 1° ed o algo así era. Le podemos consultar a Lola esto.
-15. https://discord.com/channels/707986471834877994/1280517594960629792/1542595782572507228
-16. https://discord.com/channels/707986471834877994/1280517594960629792/1542533950612971611 -> Solo el punto 3, el de los links que no son clickables.
-17. Documentar y tener en cuenta el peso del plugin JatsParser, ya que pesa +100 MB
+5. https://discord.com/channels/707986471834877994/1280517594960629792/1524488990831677610
+6. https://discord.com/channels/707986471834877994/1280517594960629792/1535308597502943414
+7. **Idea para OpenAlex:** https://discord.com/channels/707986471834877994/1280517594960629792/1534582585198645269
+8.  Había un mensaje donde Lola mencionaba lo de sacar el punto cuando se menciona el número de la edición o algo así, osea en vez de ser "1°. ed." que sea 1° ed o algo así era. Le podemos consultar a Lola esto.
+9. https://discord.com/channels/707986471834877994/1280517594960629792/1542595782572507228
+10. https://discord.com/channels/707986471834877994/1280517594960629792/1542533950612971611 -> Solo el punto 3, el de los links que no son clickables.
+11. Documentar y tener en cuenta el peso del plugin JatsParser, ya que pesa +100 MB
 
 *En Trac:*
 - https://trac.prebi.unlp.edu.ar/issues/14622
