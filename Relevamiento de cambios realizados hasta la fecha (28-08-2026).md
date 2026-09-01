@@ -3,7 +3,7 @@ Esto servirá para poder explicar detalladamente cada cambio realizado el día q
 
 h1. Errores revisados
 
-*Error solucionado: Corrección en el formato de fecha de publicación en vista de artículo*
+*Corrección en el formato de fecha de publicación en vista de artículo:*
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14769) ya fue solucionado.
 Debido a que la solución a este problema aún no fue desplegada en producción (está implementado y subido en las ramas dev-3_4 y dev-3_3 del plugin JatsParser, pero no en las ramas stable-3-3 y stable-3.4), se aplicó un parche temporal directamente en la configuración del OJS de producción para normalizar la visualización de la fecha en los artículos. Esto está mejor explicado en el ticket  https://trac.prebi.unlp.edu.ar/issues/14504. 
 La solución definitiva a este problema (sin necesidad de ningún parche) se verá reflejada cuando se lance la nueva release de SUMARC, ya que esta solución está subida a GitHub (commit: https://github.com/sedici/JATSParserPlugin/commit/c31431a9866f6ca8e14be7ec7d8d8e889e3a74b2), solo falta mergear todos los cambios a stable e instalar dicha versión en el servidor de producción. El ticket que detalla la solución definitiva a este problema es https://trac.prebi.unlp.edu.ar/issues/14504. 
@@ -23,8 +23,8 @@ Esto ya está parcheado en el servidor de producción, donde se modificó a mano
 *Impresión de &amp; literal en vez de & en las referencias:*
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14496) se solucionó y se pusheó al repositorio de Github de JatsParser (Commit [https://github.com/sedici/JATSParser/commit/cea5855fda2b4d9f892952a6588868f1149f0930](https://github.com/sedici/JATSParser/commit/d0a810e404e293a4ba07df33691ab23cb096c1c2)). Esta solución aún no está en las ramas estables, pero aún así fue parcheado en el servidor de producción. 
 
-Error solucionado: Error al generar las referencias por caracter especial "&amp;"*:
-Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14552) ya fue arreglado, se debía a autores institucionales que tenían un ampersand en su nombre, los cuales ocasionaban que las referencias no sean renderizadas por la librería CiteProc. Este arreglo ya está subida a GitHub (commit https://github.com/sedici/JATSParser/commit/d9f4c4d30a969cfb7f9e2799c0c38bc9c3eab983) pero aún no está desplegada en producción, por ende se optó por realizar el cambio a mano en el servidor de producción. La solución a este problema está detallada en el ticket https://trac.prebi.unlp.edu.ar/issues/14556.
+*Error al generar las referencias por caracter especial "&amp;"*:
+Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14552 y su solución: https://trac.prebi.unlp.edu.ar/issues/14556) ya fue arreglado, se debía a autores institucionales que tenían un ampersand en su nombre, los cuales ocasionaban que las referencias no sean renderizadas por la librería CiteProc. Este arreglo ya está subida a GitHub (commit https://github.com/sedici/JATSParser/commit/d9f4c4d30a969cfb7f9e2799c0c38bc9c3eab983) pero aún no está desplegada en producción, por ende se optó por realizar el cambio a mano en el servidor de producción. La solución a este problema está detallada en el ticket https://trac.prebi.unlp.edu.ar/issues/14556.
 
 *Corrección de cursivas en referencias de tipo Sitio Web (webpage)*:
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14534) ya fue solucionado y está subido a GitHub (commit https://github.com/sedici/JATSParser/commit/3fa718f49dcde1106d1697072aac1d46be3c9bdd), pero aún no está desplegada en producción, por ende se optó por realizar el cambio a mano en el servidor de producción. 
@@ -54,13 +54,13 @@ Esto no está parcheado ni subido al servidor de producción.
 Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14142) ya fue solucionado y pusheado a una rama del repositorio de JatsParser en GitHub (commit https://github.com/sedici/JATSParser/commit/6af400419ff531d1bb311eceb5f2ba0df9bfbf64), pero todavía no está en ninguna rama estable.
 Esto no está parcheado ni subido al servidor de producción.
 
-*PHP Warning: "Undefined array key 1 / 2" al formatear la fecha de publicación en JatsParserPlugin.inc.php*
-https://trac.prebi.unlp.edu.ar/issues/14139
-https://github.com/sedici/JATSParserPlugin/commit/92f69a1849f27dd4d411f83c4d2ab36e4117f202
+*PHP Warning: "Undefined array key 1 / 2" al formatear la fecha de publicación en JatsParserPlugin.inc.php:*
+Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14139) ya fue solucionado y pusheado a una rama del repositorio de JatsParser en Github (commit https://github.com/sedici/JATSParserPlugin/commit/92f69a1849f27dd4d411f83c4d2ab36e4117f202), pero todavía no está en ninguna rama estable.
+Este cambio NO recuerdo si estaba parcheado y subido en el servidor de producción (creo que no).
 
 *PHP Warning: "Trying to access array offset on null" al renderizar subtítulo en frontpage.tpl*:
-https://trac.prebi.unlp.edu.ar/issues/14140
-https://github.com/sedici/JATSParserPlugin/commit/fbc2345ac72861a35bda59b892bd12bcea012fe0
+Este error (explicado en el ticket https://trac.prebi.unlp.edu.ar/issues/14140) ya fue solucionado y pusheado a una rama del repositorio de JatsParser en GitHub (commit https://github.com/sedici/JATSParserPlugin/commit/fbc2345ac72861a35bda59b892bd12bcea012fe0), pero todavía no está en ninguna rama estable.
+Este cambio tampoco recuerdo si estaba parcheado y subido en el servidor de producción.
 
 h1. Errores o problemas/trabas pendientes para solucionar
 
