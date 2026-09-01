@@ -73,8 +73,9 @@ h1. Errores o problemas/trabas pendientes para solucionar
 *En discord:*
 
 1. https://discord.com/channels/707986471834877994/1280517594960629792/1498286569780416584 -> HECHO -> Campo "Otro" vacío.
-2. https://discord.com/channels/707986471834877994/1280517594960629792/1497303022328484113 -> NO está resuelto, la tabla de citas toma a los editores como autores y agrega "et all".
-3. https://discord.com/channels/707986471834877994/1280517594960629792/1497297342058205205
+2. https://discord.com/channels/707986471834877994/1280517594960629792/1497303022328484113 -> Indicar en la documentación la configuración para activar finfo_open() , y también cambiar el version.xml de texture. También quedan los "Errores de Mpdf".
+3. https://discord.com/channels/707986471834877994/1280517594960629792/1497297342058205205 -> NO está resuelto, la tabla de citas toma a los editores como autores y agrega "et all".
+
 4. https://discord.com/channels/707986471834877994/1280517594960629792/1496994058264908027
 5. https://discord.com/channels/707986471834877994/1280517594960629792/1496952531304054926
 6. https://discord.com/channels/707986471834877994/1280517594960629792/1496900357685510175
