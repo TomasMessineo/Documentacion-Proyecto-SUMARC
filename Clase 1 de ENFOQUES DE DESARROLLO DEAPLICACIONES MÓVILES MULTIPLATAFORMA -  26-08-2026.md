@@ -24,7 +24,7 @@ Y así con los demás, fueron evolucionando.
 
 En el celular uso lo que necesito rápido, si algo es medio complejo de hacer en celular, voy a preferir hacerlo por la compu. 
 La compu la uso para actividades de larga duración, la uso en casa o en mi depto, el teléfono lo puedo usar en movimiento, para actividades de corta duración. El teléfono se va a utilizar en lugares donde tengo poco tiempo o en momentos donde estoy apurado. Esto es determinístico para desarrollar la aplicación, ya que el usuario lo va a usar en momentos de movilidad. Para esto hay que hacer una interfaz muy intuitiva y muy fácil de usar, probablemente a la larga no se va a terminar usando. El usuario tiende a memorizar los pasos para ejecutar una aplicación, y esto no debería pasar... el diseño o interfaz debería ser muy intuitivo para que la persona no tenga que memorizar los pasos.
-Si tengo una aplicación web, esta es portable. La desventaje es que tiene que hacer una petición y volver, y así sucesivamente. Si hago una app mobile, tiene que ser rápida.
+Si tengo una aplicación web, esta es portable. La desventaja es que tiene que hacer una petición y volver, y así sucesivamente. Si hago una aplicación móvil, tiene que ser rápida.
 
 # Aspectos de IS
 
